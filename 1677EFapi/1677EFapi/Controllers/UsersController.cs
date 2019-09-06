@@ -18,7 +18,8 @@ namespace _1677EFapi.Controllers
         public List<Collect> GetUser()
 
         {
-            return bll.GetUser();
+            var USers =  bll.GetUser();
+            return USers;
         }
     }
 }
