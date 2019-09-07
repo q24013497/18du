@@ -39,13 +39,13 @@ namespace DAL
         public DbSet<Trade> Trade { get; set; }
         public DbSet<Model.Type> Type { get; set; }
         public DbSet<UserInfo> UserInfo { get; set; }
-        public DbSet<VisitorsTApplay> VisitorsTApplay { get; set; }
+        public DbSet<VisitorsTApplay> VisitorsTApplay { get; set; } 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseMySQL("Data Source=169.254.227.86;Initial Catalog=videoplatform;User ID=luojianing;pwd=123");
+                optionsBuilder.UseMySQL("Data Source=localhost;Initial Catalog=Videoplatform;User ID=root;pwd=1234");
             }
             
         }

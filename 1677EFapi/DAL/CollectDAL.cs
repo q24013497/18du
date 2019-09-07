@@ -14,16 +14,14 @@ namespace DAL
         }
         public int AddCollect(Collect ct)
         {
-           db.Collect.Add(ct);
-            return db.SaveChanges();
-
-            
+            db.Collect.Add(ct);
+            return db.SaveChanges();           
         }
 
         public int DeleteCollect(int id)
         {
             Collect ct = new Collect { Id = id };
-            db.Entry(ct).State = EntityState.Deleted;
+            db.Entry(ct).State = EntityState.Deleted;                       
             return db.SaveChanges();
         }
         public Collect Fan(int id)
@@ -32,7 +30,6 @@ namespace DAL
         }
         public int UpdateCollect(Collect ct)
         {
-            db.Collect.Add(ct);
             db.Entry(ct).State = EntityState.Modified;
             return db.SaveChanges();
         }

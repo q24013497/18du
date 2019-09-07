@@ -17,8 +17,10 @@ namespace _1677EFapi.Controllers
         [HttpGet]
         public List<Collect> GetUser()
 
+
         {
-            return bll.GetUser();
+            
+            return  bll.GetUser();
         }
     }
 }
