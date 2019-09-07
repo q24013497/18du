@@ -39,13 +39,22 @@ namespace DAL
         public DbSet<Trade> Trade { get; set; }
         public DbSet<Model.Type> Type { get; set; }
         public DbSet<UserInfo> UserInfo { get; set; }
+        public DbSet<EquipmentRentals> EquipmentRentals { get; set; }
+        public DbSet<Images> Images { get; set; }
+        public DbSet<Integral> Integral { get; set; }
+        public DbSet<Origin> Origin { get; set; }
+        public DbSet<Price> Price { get; set; }
+        public DbSet<Style> Style { get; set; }
+        public DbSet<TryOut> TryOut { get; set; }
+        public DbSet<VideoActivities> VideoActivities { get; set; }
         public DbSet<VisitorsTApplay> VisitorsTApplay { get; set; }
+        
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseMySQL("Data Source=169.254.227.86;Initial Catalog=videoplatform;User ID=zhaozhehan;pwd=123");
+                optionsBuilder.UseMySQL("Data Source=169.254.227.86;Initial Catalog=videoplatform;User ID=chenyongfan;pwd=123");
             }
             
         }

@@ -16,10 +16,7 @@ namespace DAL
         {
            db.Collect.Add(ct);
             return db.SaveChanges();
-
-            
         }
-
         public int DeleteCollect(int id)
         {
             Collect ct = new Collect { Id = id };

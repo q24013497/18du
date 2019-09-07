@@ -1,0 +1,75 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Master</title>
+</head>
+<body>
+    <div>
+    <table>
+        <thead class="divstudents" id="divstudents">
+            <tr>
+                <td>ID</td>
+                <td>商品名称</td>
+                <td>市场价格</td>
+                <td>会员价格</td>
+                <td>销量</td>
+                <td>剩余库存量</td>
+                <td>品牌Id</td>
+                <td>店铺Id</td>
+                <td>所提供服务</td>
+                <td>图片</td>
+                <td>商品详情</td>
+                <td>店铺类型</td>
+                <td>创建时间</td>
+        </thead>
+        <tbody>
+            <tr v-for="item in InboxList">
+                <td>{{item.Id}}</td>
+                <td>{{item.Name}}</td>
+                <td>{{item.MarketPrice}}</td>
+                <td>{{item.ProPay}}</td>
+                <td>{{item.Sales}}</td>
+                <td>{{item.SKU}}</td>
+                <td>{{item.OriginId}}</td>
+                <td>{{item.ShopId}}</td>
+                <td>{{item.Saas}}</td>
+                <td>{{item.Image}}</td>
+                <td>{{item.Details}}</td>
+                <td>{{item.StoreType}}</td>
+                <td>{{item.CreateTime}}</td>
+
+            </tr>
+        </tbody>
+    </table>
+    </div>
+</body>
+</html>
+<script>
+    var vm = new Vue({
+        el: "#divstudents",
+        data: {
+
+        },
+        mounted() {
+                this.pagehandler();
+            },
+            methods: {
+                pagehandler: function () {
+                    //axios.get("/test/GetStudentList", { params: { pageindex: page, pagesize: this.pageSize, name: this.searchname} }).then((response) => {
+                    axios.get("http://localhost:53782/api/Master").then((response) => {
+
+                        for (var i = 0; i < response.InboxList.length; i++) {
+                            this.studentlist.push(response.InboxList[i]);
+                        }
+                    });
+                }
+            }
+    })
+</script>
