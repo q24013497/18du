@@ -8,11 +8,12 @@ namespace Model
     /// <summary>
     /// 资讯表
     /// </summary>
-   public class Information
-    {/// <summary>
-    /// 主键
-    /// </summary>
-[Key]
+    public class Information
+    {
+        /// <summary>
+        /// 主键
+        /// </summary>
+        [Key]
         public int Id { get; set; }
         /// <summary>
         /// 资讯名称
@@ -34,5 +35,7 @@ namespace Model
         /// 详情介绍Id
         /// </summary>
         public int DetailId { get; set; }
+
+        public string Content { get; set; }
     }
 }
