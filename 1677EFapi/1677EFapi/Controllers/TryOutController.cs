@@ -4,22 +4,21 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using BLL;
 using Model;
+using BLL;
+
 namespace _1677EFapi.Controllers
 {
-    [Route("api/[controller]/action")]
+    [Route("api/[controller]")]
     [ApiController]
-    public class UsersController : ControllerBase
+    public class TryOutController : ControllerBase
     {
-        CollectBLL bll = new CollectBLL();
+        TryOutBLL bll = new TryOutBLL();
 
         [HttpGet]
-        public List<Collect> GetUser()
-
+        public List<TryOut> GetTryOut()
         {
-            var USers =  bll.GetUser();
-            return USers;
+            return bll.GetTryOut();
         }
     }
 }

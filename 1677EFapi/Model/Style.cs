@@ -1,24 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace Model
 {
     /// <summary>
-    /// 详情表
+    /// 物品样式表
     /// </summary>
-    public class Evaluate
+    public class Style
     {
         /// <summary>
         /// 主键
         /// </summary>
-        [Key]
         public int Id { get; set; }
+
         /// <summary>
-        /// 评价内容
+        /// 物品样式名称
         /// </summary>
-        public string Content { get; set; }
+
+        public string Name { get; set; }
+
         /// <summary>
         /// Pid
         /// </summary>

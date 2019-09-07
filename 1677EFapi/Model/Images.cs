@@ -1,27 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace Model
 {
     /// <summary>
-    /// 详情表
+    /// 图片表
     /// </summary>
-    public class Evaluate
+    public class Images
     {
         /// <summary>
-        /// 主键
+        /// 主键ID
         /// </summary>
-        [Key]
         public int Id { get; set; }
+
         /// <summary>
-        /// 评价内容
+        /// URL
         /// </summary>
-        public string Content { get; set; }
+        public string Url { get; set; }
+
         /// <summary>
-        /// Pid
+        /// 主数据Id
         /// </summary>
-        public int Pid { get; set; }
+        public int MasterId { get; set; }
     }
 }
