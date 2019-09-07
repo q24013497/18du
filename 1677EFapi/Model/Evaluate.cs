@@ -8,10 +8,11 @@ namespace Model
     /// <summary>
     /// 详情表
     /// </summary>
-  public  class Evaluate
-    {/// <summary>
-    /// 主键
-    /// </summary>
+    public class Evaluate
+    {
+        /// <summary>
+        /// 主键
+        /// </summary>
         [Key]
         public int Id { get; set; }
         /// <summary>
