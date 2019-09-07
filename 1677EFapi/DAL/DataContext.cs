@@ -40,6 +40,7 @@ namespace DAL
         public DbSet<Model.Type> Type { get; set; }
         public DbSet<UserInfo> UserInfo { get; set; }
         public DbSet<VisitorsTApplay> VisitorsTApplay { get; set; }
+        
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
