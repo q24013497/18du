@@ -1,0 +1,606 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="X-UA-Compatible" content="IE=8" /><script language="javascript" type="text/javascript"> 
+            var applicationPath = "";
+            var skinPath = "/templates/master/default";
+            var subsiteuserId = "0";
+        </script>
+<meta http-equiv="content-language" content="zh-CN" />
+<link rel="icon" type="image/x-icon" href="http://www.18-du.com/favicon.ico" media="screen" />
+<link rel="shortcut icon" type="image/x-icon" href="http://www.18-du.com/favicon.ico" media="screen" />
+<meta name="author" content="Hishop development team" />
+<meta name="GENERATOR" content="1.2" />
+<title>十八度影像平台</title>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<link href="style.css" tppabs="http://www.18-du.com/Utility/sysrc/css/style.css" rel="stylesheet" type="text/css" /><link href="a.add.css" tppabs="http://www.18-du.com/Utility/sysrc/css/lrtk.css" rel="stylesheet" type="text/css" /><link href="AllSearch.aspx-CategoryId=54&brandid=.css" tppabs="http://www.18-du.com/Utility/sysrc/css/menu.css" rel="stylesheet" type="text/css" />
+    <script src="jquery-1.8.3.min.js" tppabs="http://www.18-du.com/Utility/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="AllSearch-1.aspx-categoryid=54&brandid=4" tppabs="http://www.18-du.com/Utility/sysrc/js/koala.min.1.5.js" type="text/javascript"></script>
+    <script src="img-self-adaption.js" tppabs="http://www.18-du.com/Utility/sysrc/js/img-self-adaption.js" type="text/javascript"></script>
+
+    <script src="globals.js" tppabs="http://www.18-du.com/Utility/globals.js" type="text/javascript"></script>
+    <script src="getParmByUrl.js" tppabs="http://www.18-du.com/Utility/getParmByUrl.js" type="text/javascript"></script>
+   <link href="kkpager_orange.css" tppabs="http://www.18-du.com/Utility/tool/css/kkpager_orange.css" rel="stylesheet" type="text/css" />
+   <script src="kkpager.js" tppabs="http://www.18-du.com/Utility/tool/kkpager.js" type="text/javascript"></script>
+    
+     <link href="AllSearch.aspx-CategoryId=54&brandid=5.css" tppabs="http://www.18-du.com/Utility/tool/css/swiper.min.css" rel="stylesheet" type="text/css" />
+        <script src="AllSearch-1.aspx-categoryid=54&brandid=15" tppabs="http://www.18-du.com/Utility/tool/swiper.min.js" type="text/javascript"></script>    
+
+          <link href="AllSearch.aspx-CategoryId=54&brandid=145.css" tppabs="http://www.18-du.com/Utility/tool/css/weui.min.css" rel="stylesheet" type="text/css" />
+<script src="DialogShow.js" tppabs="http://www.18-du.com/Utility/tool/DialogShow.js" type="text/javascript"></script>
+<script src="jquery.cookie.js" tppabs="http://www.18-du.com/Utility/jquery.cookie.js" type="text/javascript"></script>
+<script type="text/javascript" src="maps-v=1.3&key=1fbaa444c63bd5e19dc104e7472e0c13&&plugin=AMap.CitySearch" tppabs="http://webapi.amap.com/maps?v=1.3&key=1fbaa444c63bd5e19dc104e7472e0c13&&plugin=AMap.CitySearch"></script>
+   <script src="PIE.js" tppabs="http://www.18-du.com/Utility/sysrc/js/PIE.js" type="text/javascript"></script>
+  <script type="text/javascript">
+
+      
+      var sUserAgent = navigator.userAgent.toLowerCase();
+      var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+      var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+      var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+      var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+      var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+      var bIsAndroid = sUserAgent.match(/android/i) == "android";
+      var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+      var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+      if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+          //假如页面传递的url中含有mobilechange参数，则，路径不会被统一修改，而是调用页面上自定义的weburlchangtomobileurl去更改路径
+          if (location.search.indexOf("mobilechange") > 0) {
+              setTimeout(function () {
+                  if (weburlchangtomobileurl!=undefined)
+                  weburlchangtomobileurl();//将当前页面转发到对应的手机端页面
+              })
+
+
+          } else {
+              location.href = "Default.aspx-ReferralUserId=0.htm"/*tpa=http://www.18-du.com/Vshop/Default.aspx*/;
+          }
+      }
+
+       
+
+
+      $(function () {
+
+          if (window.PIE) {
+              $('.rounded').each(function () {
+                  PIE.attach(this);
+              });
+          }
+
+           if($.cookie('SelectCity') == null) {
+               var citysearch = new AMap.CitySearch();
+               citysearch.getLocalCity(function (status, result) {
+                   result.city = result.city.replace('市', '');
+                   if (status === 'complete' && result.info === 'OK') {
+                       if (result && result.city && result.bounds) {
+                           $("#splocate").html(result.city);
+                           $.cookie('SelectCity', result.city, { expires: 1, path: '/' });
+                       }
+                   }
+                   else {
+                       $("#splocate").html("全国");
+                       $.cookie('SelectCity', "", { expires: 1, path: '/' });
+                   }
+               })
+           } else {
+               $.cookie('SelectCity', $.cookie('SelectCity').toString().replace('市', ''))
+           }
+           
+           
+     });
+    </script>
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "hm.js-c6b81c0821cb37f81f6c558a3388720e"/*tpa=https://hm.baidu.com/hm.js?c6b81c0821cb37f81f6c558a3388720e*/;
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<style>
+.site-header_main ul li a{ color:#888888 !important}
+.site-header_main ul li a:hover{ color:#ff9999 !important}
+</style>
+ 
+<title>
+
+</title></head>
+<body style=" background:#fff">
+
+<div class="site-header container" style=" background-color:#DDDDDD; height:35px;">
+        <div class="site-header_main" style=" letter-spacing:1px; height:35px;">
+            <div class="left">
+                <ul>
+                    <li style=" display:none"><span class="span_citychange" id="splocate">
+                    <span>全国</span>
+                    </span>
+                    <a href="javascript:GotoChangeCity()" id="aselcity">【切换城市】</a></li>
+     
+                </ul>
+            </div>
+            <div class="right">
+                <ul style=" min-height:35px;">
+                    <li style=" height:35px; line-height:35px; color:#888888;">
+                        <label style=" font-weight:400; color:#888888; font-family:微软雅黑; font-size:13px;">您好，欢迎来到18度影像城！</label>
+                           <a id="ThemaActivity_ctl00___Common_MyAccountLink1" href="Register1.aspx.htm" tppabs="http://www.18-du.com/Register1.aspx" target="_blank">注册</a>
+                           </li>
+                    <li class="spacer" style=" color:#999999;"></li>
+                    <li style=" height:35px; line-height:35px; color:#999999 ;"><a id="ThemaActivity_ctl00___Common_Link_Login1" href="login.aspx.htm" tppabs="http://www.18-du.com/login.aspx">登录</a></li>
+                     <li class="spacer" style=" color:#999999;"></li>
+                    <li style=" height:35px; line-height:35px; color:#999999;" ><a id="ThemaActivity_ctl00___Common_ShopAccountLink1" href="http://bad_redirect">商户登入</a></li>
+                    <li  style="color:#999999;"></li>
+                    <li  style=" height:35px; line-height:35px; color:#999999;"><a></a></li> 
+                </ul>
+            </div>
+        </div>
+ </div>
+
+ <script type="text/javascript">
+     function GotoChangeCity() {
+         //localStorage.historyurl = location.href;
+         localStorage.historyurl = "ProductList.aspx.htm"/*tpa=http://www.18-du.com/ProductList.aspx*/;
+         location.href = "http:///" + location.host + "/city_choose.aspx";
+     }
+ 
+ </script>
+
+
+<div class="site_header_center" style="z-index:10000">
+
+
+
+<style>
+.site-header-logo_black_bg{min-height:60px !important}
+.site-header-logo_black{padding:inherit !important}
+.site_header_center{min-height:70px !important}
+.logo_black{height:70px !important}
+.menuchoiceflage a li{ color:#676767 !important}
+.header_menu_black_select{ border:#676767 1px solid}
+.menuchoiceflage li{ width:14% !important;}
+</style>
+<div class="site-header-logo_black_bg" style=" background-color:#ededed">
+            <div class="site-header-logo_black"style=" min-height:70px;">
+                <div class="logo_black" style=" min-height:70px; width:140px; margin-left:13%">
+                    <a href="index.htm" tppabs="http://www.18-du.com/">
+                        <img src="741a1cca0874e21c72528c06f2ba031.png" tppabs="http://www.18-du.com/Utility/sysrc/img/741a1cca0874e21c72528c06f2ba031.png"  width="120px" height="80px" style=" width:90px; height:60px; margin-top:3px;" /></a>
+                </div>
+ 
+                <div class="header-info_black" style=" width:550px; margin-left:5px;">
+                    <ul class="menuchoiceflage" target="_blank">
+                   <a href="Default-2.aspx.htm" tppabs="http://www.18-du.com/Default.aspx">
+                            <li>首页</li>
+                        </a> 
+                      
+                        <a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?CategoryId=54&valuestr=26_77  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.18-du.com/AllSearch.aspx?CategoryId=54&valuestr=26_77'" tppabs="http://www.18-du.com/ProductListNew.aspx" target="_blank">
+                            <li class="">影像器材</li>
+                        </a>
+                        <a href="ArticleList.aspx.htm" tppabs="http://www.18-du.com/ArticleList.aspx" target="_blank">
+                               <li>资讯中心</li>
+                         </a> 
+                          <a href="VoteMain.aspx.htm" tppabs="http://www.18-du.com/CommentMenage/VoteMain.aspx" target="_blank">
+                            <li>活动中心</li>
+                         </a>
+                         
+                    </ul>
+
+            
+
+                    
+                </div>
+             
+                <div class="i_cart_w" style=" margin-top:16px; width:155px; height:35px;  float:left; margin-left:30px;">
+                    <div class="cart_w" style=" height:35px;">
+                        <a href="ShopCart.aspx.htm" tppabs="http://www.18-du.com/ShopCart.aspx" style=" width:65px; height:32px; display:block; background-color:#fff; border:#ccc solid 0.2px; color:#808080; font-size:11px; line-height:35px;
+                             background:url(/Utility/sysrc/img/447216837427072197_03.png) -6px center no-repeat; padding-left:40px;">我的购物车  </a>
+                    </div>
+                    <div class="clear">
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+<script type="text/javascript">
+
+    //头部菜单选中标识
+    function HeadeMenu_Choice(MenuName) {
+        var headmenu = $(".menuchoiceflage a li");
+        for (var i = 0; i < headmenu.length; i++) {
+            if ($(headmenu[i]).html() == MenuName) {
+                $(headmenu[i]).addClass("header_menu_black_select");
+            }
+
+        }
+    }
+
+</script>
+</div>
+<form name="aspnetForm" method="post" action="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=10093  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=10093'" tppabs="http://www.18-du.com/ThemaActivity.aspx?ThemaId=266?__VIEWSTATE=/wEPDwUJNzY2NzM3NjU0D2QWAmYPZBYCZg9kFgQCBA9kFgICAQ8WAh4EVGV4dAWPETwhRE9DVFlQRSBodG1sPg0KPGh0bWwgbGFuZz0iZW4iPg0KPGhlYWQ+DQoJPG1ldGEgY2hhcnNldD0iVVRGLTgiPg0KCTx0aXRsZT5Eb2N1bWVudDwvdGl0bGU+DQo8L2hlYWQ+DQo8Ym9keT4NCjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+DQpwIGltZ3sNCgl3aWR0aDogMTAwJTsNCn0NCjwvc3R5bGU+DQo8cD4NCgk8aW1nIHNyYz0iL2tpbmRlZGl0b3IvYXNwLm5ldC8uLi9hdHRhY2hlZC9pbWFnZS8yMDE5MDMwNS8yMDE5MDMwNTEzNDg1N184MzkwLmpwZyIgYWx0PSIiIHN0eWxlPSJmb250LXNpemU6MTJweDsiIC8+PGEgaHJlZj0iaHR0cDovL3d3dy4xOC1kdS5jb20vUHJvZHVjdERldGFpbC5hc3B4P1Byb2R1Y3RJZD04OTYyIiB0YXJnZXQ9Il9ibGFuayIgc3R5bGU9ImZvbnQtc2l6ZToxMnB4OyI+PGltZyBzcmM9Ii9raW5kZWRpdG9yL2FzcC5uZXQvLi4vYXR0YWNoZWQvaW1hZ2UvMjAxOTAzMDUvMjAxOTAzMDUxMzQ4NThfMjA4Mi5qcGciIGFsdD0iIiAvPjwvYT48YSBocmVmPSJodHRwOi8vd3d3LjE4LWR1LmNvbS9Qcm9kdWN0RGV0YWlsLmFzcHg/UHJvZHVjdElkPTkxNzQiIHRhcmdldD0iX2JsYW5rIiBzdHlsZT0iZm9udC1zaXplOjEycHg7Ij48aW1nIHNyYz0iL2tpbmRlZGl0b3IvYXNwLm5ldC8uLi9hdHRhY2hlZC9pbWFnZS8yMDE5MDMwNS8yMDE5MDMwNTEzNDg1OF81NTAwLmpwZyIgYWx0PSIiIC8+PC9hPjxhIGhyZWY9Imh0dHA6Ly93d3cuMTgtZHUuY29tL1Byb2R1Y3REZXRhaWwuYXNweD9Qcm9kdWN0SWQ9OTE3MyIgdGFyZ2V0PSJfYmxhbmsiIHN0eWxlPSJmb250LXNpemU6MTJweDsiPjxpbWcgc3JjPSIva2luZGVkaXRvci9hc3AubmV0Ly4uL2F0dGFjaGVkL2ltYWdlLzIwMTkwMzA1LzIwMTkwMzA1MTM0ODU4Xzg1MjcuanBnIiBhbHQ9IiIgLz48L2E+PGltZyBzcmM9Ii9raW5kZWRpdG9yL2FzcC5uZXQvLi4vYXR0YWNoZWQvaW1hZ2UvMjAxOTAzMDUvMjAxOTAzMDUxMzQ4NTlfMDMxNS5qcGciIGFsdD0iIiBzdHlsZT0iZm9udC1zaXplOjEycHg7IiAvPjxhIGhyZWY9Imh0dHA6Ly93d3cuMTgtZHUuY29tL1Byb2R1Y3REZXRhaWwuYXNweD9Qcm9kdWN0SWQ9OTE3NSIgdGFyZ2V0PSJfYmxhbmsiIHN0eWxlPSJmb250LXNpemU6MTJweDsiPjxpbWcgc3JjPSIva2luZGVkaXRvci9hc3AubmV0Ly4uL2F0dGFjaGVkL2ltYWdlLzIwMTkwMzA1LzIwMTkwMzA1MTM0ODU5XzIxODAuanBnIiBhbHQ9IiIgLz48L2E+PGEgaHJlZj0iaHR0cDovL3d3dy4xOC1kdS5jb20vUHJvZHVjdERldGFpbC5hc3B4P1Byb2R1Y3RJZD0zODMiIHRhcmdldD0iX2JsYW5rIiBzdHlsZT0iZm9udC1zaXplOjEycHg7Ij48aW1nIHNyYz0iL2tpbmRlZGl0b3IvYXNwLm5ldC8uLi9hdHRhY2hlZC9pbWFnZS8yMDE5MDMwNS8yMDE5MDMwNTEzNDg1OV8zODYwLmpwZyIgYWx0PSIiIC8+PC9hPiANCjwvcD4NCjxwPg0KCTxhIGhyZWY9Imh0dHA6Ly93d3cuMTgtZHUuY29tL1Byb2R1Y3REZXRhaWwuYXNweD9Qcm9kdWN0SWQ9NjgyIiB0YXJnZXQ9Il9ibGFuayI+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZToxMnB4OyI+PC9zcGFuPjwvYT48YSBocmVmPSJodHRwOi8vd3d3LjE4LWR1LmNvbS9Qcm9kdWN0RGV0YWlsLmFzcHg/UHJvZHVjdElkPTY4MiIgdGFyZ2V0PSJfYmxhbmsiIHN0eWxlPSJ3aGl0ZS1zcGFjZTpub3JtYWw7Ij48aW1nIHNyYz0iL2tpbmRlZGl0b3IvYXR0YWNoZWQvaW1hZ2UvMjAxOTAzMDUvMjAxOTAzMDUxNDE0MDNfNjAyMC5qcGciIGFsdD0iIiAvPjwvYT48c3BhbiBzdHlsZT0iZm9udC1zaXplOjEycHg7Ij48YSBocmVmPSJodHRwOi8vd3d3LjE4LWR1LmNvbS9Qcm9kdWN0RGV0YWlsLmFzcHg/UHJvZHVjdElkPTkxNzciIHRhcmdldD0iX2JsYW5rIiBzdHlsZT0id2hpdGUtc3BhY2U6bm9ybWFsOyI+PGltZyBzcmM9Ii9raW5kZWRpdG9yL2F0dGFjaGVkL2ltYWdlLzIwMTkwMzA1LzIwMTkwMzA1MTQxNTAxXzAxMDUuanBnIiBhbHQ9IiIgLz48L2E+PC9zcGFuPjxhIGhyZWY9Imh0dHA6Ly93d3cuMTgtZHUuY29tL1Byb2R1Y3REZXRhaWwuYXNweD9Qcm9kdWN0SWQ9OTE3NiIgdGFyZ2V0PSJfYmxhbmsiIHN0eWxlPSJmb250LXNpemU6MTJweDsiPjxpbWcgc3JjPSIva2luZGVkaXRvci9hc3AubmV0Ly4uL2F0dGFjaGVkL2ltYWdlLzIwMTkwMzA1LzIwMTkwMzA1MTM0OTAxXzc3NzYuanBnIiBhbHQ9IiIgLz48L2E+IA0KPC9wPgkNCjwvYm9keT4NCjwvaHRtbD5kAgYPZBYCZg9kFgYCAQ9kFgJmD2QWAgIBDxYCHgtfIUl0ZW1Db3VudAIEFghmD2QWBGYPFQEM5paw5omL5biu5YqpZAIBDxYCHwECAxYGZg9kFgJmDxUCGi9IZWxwRGV0YWlsLmFzcHg/SGVscElkPTE0DOeUqOaIt+WNj+iurmQCAQ9kFgJmDxUCGi9IZWxwRGV0YWlsLmFzcHg/SGVscElkPTE2DOaJvuWbnuWvhueggWQCAg9kFgJmDxUCGi9IZWxwRGV0YWlsLmFzcHg/SGVscElkPTE4DOS8muWRmOe7keWummQCAQ9kFgRmDxUBDOaIkeeahOW6l+mTumQCAQ8WAh8BAgIWBGYPZBYCZg8VAhovSGVscERldGFpbC5hc3B4P0hlbHBJZD0yMAzlj5HluIPllYblk4FkAgEPZBYCZg8VAhovSGVscERldGFpbC5hc3B4P0hlbHBJZD0yMQblj5HotKdkAgIPZBYEZg8VAQ/kvJrlkZjlupfnsonkuJ1kAgEPFgIfAQIDFgZmD2QWAmYPFQIaL0hlbHBEZXRhaWwuYXNweD9IZWxwSWQ9MjIM5Lya5ZGY5rOo5YaMZAIBD2QWAmYPFQIaL0hlbHBEZXRhaWwuYXNweD9IZWxwSWQ9MjMM5Lya5ZGY6K6k6K+BZAICD2QWAmYPFQIaL0hlbHBEZXRhaWwuYXNweD9IZWxwSWQ9MjUM5Lya5ZGY5Y2H57qnZAIDD2QWBGYPFQEM5bi46KeB6Zeu562UZAIBDxYCHwECBBYIZg9kFgJmDxUCGi9IZWxwRGV0YWlsLmFzcHg/SGVscElkPTM1DOS/ruaUueWvhueggWQCAQ9kFgJmDxUCGi9IZWxwRGV0YWlsLmFzcHg/SGVscElkPTM2EuWUruWQjuWkhOeQhuaXtuaViGQCAg9kFgJmDxUCGi9IZWxwRGV0YWlsLmFzcHg/SGVscElkPTM0BuWUruWQjmQCAw9kFgJmDxUCGi9IZWxwRGV0YWlsLmFzcHg/SGVscElkPTMwDOWFrOWPuOeugOS7i2QCAw9kFgJmD2QWAgIBDxYCHwFmZAIHD2QWAmYPZBYCAgEPFgIfAWZkZDQU8/OPjaleReuVQ0Dh39+Vb9O0&__VIEWSTATEGENERATOR=53F6B51E" id="aspnetForm">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNzY2NzM3NjU0D2QWAmYPZBYCZg9kFgQCBA9kFgICAQ8WAh4EVGV4dAWPETwhRE9DVFlQRSBodG1sPg0KPGh0bWwgbGFuZz0iZW4iPg0KPGhlYWQ+DQoJPG1ldGEgY2hhcnNldD0iVVRGLTgiPg0KCTx0aXRsZT5Eb2N1bWVudDwvdGl0bGU+DQo8L2hlYWQ+DQo8Ym9keT4NCjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+DQpwIGltZ3sNCgl3aWR0aDogMTAwJTsNCn0NCjwvc3R5bGU+DQo8cD4NCgk8aW1nIHNyYz0iL2tpbmRlZGl0b3IvYXNwLm5ldC8uLi9hdHRhY2hlZC9pbWFnZS8yMDE5MDMwNS8yMDE5MDMwNTEzNDg1N184MzkwLmpwZyIgYWx0PSIiIHN0eWxlPSJmb250LXNpemU6MTJweDsiIC8+PGEgaHJlZj0iaHR0cDovL3d3dy4xOC1kdS5jb20vUHJvZHVjdERldGFpbC5hc3B4P1Byb2R1Y3RJZD04OTYyIiB0YXJnZXQ9Il9ibGFuayIgc3R5bGU9ImZvbnQtc2l6ZToxMnB4OyI+PGltZyBzcmM9Ii9raW5kZWRpdG9yL2FzcC5uZXQvLi4vYXR0YWNoZWQvaW1hZ2UvMjAxOTAzMDUvMjAxOTAzMDUxMzQ4NThfMjA4Mi5qcGciIGFsdD0iIiAvPjwvYT48YSBocmVmPSJodHRwOi8vd3d3LjE4LWR1LmNvbS9Qcm9kdWN0RGV0YWlsLmFzcHg/UHJvZHVjdElkPTkxNzQiIHRhcmdldD0iX2JsYW5rIiBzdHlsZT0iZm9udC1zaXplOjEycHg7Ij48aW1nIHNyYz0iL2tpbmRlZGl0b3IvYXNwLm5ldC8uLi9hdHRhY2hlZC9pbWFnZS8yMDE5MDMwNS8yMDE5MDMwNTEzNDg1OF81NTAwLmpwZyIgYWx0PSIiIC8+PC9hPjxhIGhyZWY9Imh0dHA6Ly93d3cuMTgtZHUuY29tL1Byb2R1Y3REZXRhaWwuYXNweD9Qcm9kdWN0SWQ9OTE3MyIgdGFyZ2V0PSJfYmxhbmsiIHN0eWxlPSJmb250LXNpemU6MTJweDsiPjxpbWcgc3JjPSIva2luZGVkaXRvci9hc3AubmV0Ly4uL2F0dGFjaGVkL2ltYWdlLzIwMTkwMzA1LzIwMTkwMzA1MTM0ODU4Xzg1MjcuanBnIiBhbHQ9IiIgLz48L2E+PGltZyBzcmM9Ii9raW5kZWRpdG9yL2FzcC5uZXQvLi4vYXR0YWNoZWQvaW1hZ2UvMjAxOTAzMDUvMjAxOTAzMDUxMzQ4NTlfMDMxNS5qcGciIGFsdD0iIiBzdHlsZT0iZm9udC1zaXplOjEycHg7IiAvPjxhIGhyZWY9Imh0dHA6Ly93d3cuMTgtZHUuY29tL1Byb2R1Y3REZXRhaWwuYXNweD9Qcm9kdWN0SWQ9OTE3NSIgdGFyZ2V0PSJfYmxhbmsiIHN0eWxlPSJmb250LXNpemU6MTJweDsiPjxpbWcgc3JjPSIva2luZGVkaXRvci9hc3AubmV0Ly4uL2F0dGFjaGVkL2ltYWdlLzIwMTkwMzA1LzIwMTkwMzA1MTM0ODU5XzIxODAuanBnIiBhbHQ9IiIgLz48L2E+PGEgaHJlZj0iaHR0cDovL3d3dy4xOC1kdS5jb20vUHJvZHVjdERldGFpbC5hc3B4P1Byb2R1Y3RJZD0zODMiIHRhcmdldD0iX2JsYW5rIiBzdHlsZT0iZm9udC1zaXplOjEycHg7Ij48aW1nIHNyYz0iL2tpbmRlZGl0b3IvYXNwLm5ldC8uLi9hdHRhY2hlZC9pbWFnZS8yMDE5MDMwNS8yMDE5MDMwNTEzNDg1OV8zODYwLmpwZyIgYWx0PSIiIC8+PC9hPiANCjwvcD4NCjxwPg0KCTxhIGhyZWY9Imh0dHA6Ly93d3cuMTgtZHUuY29tL1Byb2R1Y3REZXRhaWwuYXNweD9Qcm9kdWN0SWQ9NjgyIiB0YXJnZXQ9Il9ibGFuayI+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZToxMnB4OyI+PC9zcGFuPjwvYT48YSBocmVmPSJodHRwOi8vd3d3LjE4LWR1LmNvbS9Qcm9kdWN0RGV0YWlsLmFzcHg/UHJvZHVjdElkPTY4MiIgdGFyZ2V0PSJfYmxhbmsiIHN0eWxlPSJ3aGl0ZS1zcGFjZTpub3JtYWw7Ij48aW1nIHNyYz0iL2tpbmRlZGl0b3IvYXR0YWNoZWQvaW1hZ2UvMjAxOTAzMDUvMjAxOTAzMDUxNDE0MDNfNjAyMC5qcGciIGFsdD0iIiAvPjwvYT48c3BhbiBzdHlsZT0iZm9udC1zaXplOjEycHg7Ij48YSBocmVmPSJodHRwOi8vd3d3LjE4LWR1LmNvbS9Qcm9kdWN0RGV0YWlsLmFzcHg/UHJvZHVjdElkPTkxNzciIHRhcmdldD0iX2JsYW5rIiBzdHlsZT0id2hpdGUtc3BhY2U6bm9ybWFsOyI+PGltZyBzcmM9Ii9raW5kZWRpdG9yL2F0dGFjaGVkL2ltYWdlLzIwMTkwMzA1LzIwMTkwMzA1MTQxNTAxXzAxMDUuanBnIiBhbHQ9IiIgLz48L2E+PC9zcGFuPjxhIGhyZWY9Imh0dHA6Ly93d3cuMTgtZHUuY29tL1Byb2R1Y3REZXRhaWwuYXNweD9Qcm9kdWN0SWQ9OTE3NiIgdGFyZ2V0PSJfYmxhbmsiIHN0eWxlPSJmb250LXNpemU6MTJweDsiPjxpbWcgc3JjPSIva2luZGVkaXRvci9hc3AubmV0Ly4uL2F0dGFjaGVkL2ltYWdlLzIwMTkwMzA1LzIwMTkwMzA1MTM0OTAxXzc3NzYuanBnIiBhbHQ9IiIgLz48L2E+IA0KPC9wPgkNCjwvYm9keT4NCjwvaHRtbD5kAgYPZBYCZg9kFgYCAQ9kFgJmD2QWAgIBDxYCHgtfIUl0ZW1Db3VudAIEFghmD2QWBGYPFQEM5paw5omL5biu5YqpZAIBDxYCHwECAxYGZg9kFgJmDxUCGi9IZWxwRGV0YWlsLmFzcHg/SGVscElkPTE0DOeUqOaIt+WNj+iurmQCAQ9kFgJmDxUCGi9IZWxwRGV0YWlsLmFzcHg/SGVscElkPTE2DOaJvuWbnuWvhueggWQCAg9kFgJmDxUCGi9IZWxwRGV0YWlsLmFzcHg/SGVscElkPTE4DOS8muWRmOe7keWummQCAQ9kFgRmDxUBDOaIkeeahOW6l+mTumQCAQ8WAh8BAgIWBGYPZBYCZg8VAhovSGVscERldGFpbC5hc3B4P0hlbHBJZD0yMAzlj5HluIPllYblk4FkAgEPZBYCZg8VAhovSGVscERldGFpbC5hc3B4P0hlbHBJZD0yMQblj5HotKdkAgIPZBYEZg8VAQ/kvJrlkZjlupfnsonkuJ1kAgEPFgIfAQIDFgZmD2QWAmYPFQIaL0hlbHBEZXRhaWwuYXNweD9IZWxwSWQ9MjIM5Lya5ZGY5rOo5YaMZAIBD2QWAmYPFQIaL0hlbHBEZXRhaWwuYXNweD9IZWxwSWQ9MjMM5Lya5ZGY6K6k6K+BZAICD2QWAmYPFQIaL0hlbHBEZXRhaWwuYXNweD9IZWxwSWQ9MjUM5Lya5ZGY5Y2H57qnZAIDD2QWBGYPFQEM5bi46KeB6Zeu562UZAIBDxYCHwECBBYIZg9kFgJmDxUCGi9IZWxwRGV0YWlsLmFzcHg/SGVscElkPTM1DOS/ruaUueWvhueggWQCAQ9kFgJmDxUCGi9IZWxwRGV0YWlsLmFzcHg/SGVscElkPTM2EuWUruWQjuWkhOeQhuaXtuaViGQCAg9kFgJmDxUCGi9IZWxwRGV0YWlsLmFzcHg/SGVscElkPTM0BuWUruWQjmQCAw9kFgJmDxUCGi9IZWxwRGV0YWlsLmFzcHg/SGVscElkPTMwDOWFrOWPuOeugOS7i2QCAw9kFgJmD2QWAgIBDxYCHwFmZAIHD2QWAmYPZBYCAgEPFgIfAWZkZDQU8/OPjaleReuVQ0Dh39+Vb9O0" />
+</div>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="53F6B51E" />
+</div>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset=utf-8"UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<style type="text/css">
+p img{
+	width: 100%;
+}
+</style>
+<p>
+	<img src="310_913a520fa59c4602bdb5808276e106be-2.png" tppabs="http://www.18-du.com/kindeditor/attached/image/20190305/20190305134857_8390.jpg" alt="" style="font-size:12px;" /><a href="ProductDetail.aspx-ProductId=8962.htm" tppabs="http://www.18-du.com/ProductDetail.aspx?ProductId=8962" target="_blank" style="font-size:12px;"><img src="ProductDetail-1.aspx-productid=10153" tppabs="http://www.18-du.com/kindeditor/attached/image/20190305/20190305134858_2082.jpg" alt="" /></a><a href="ProductDetail.aspx-ProductId=9174.htm" tppabs="http://www.18-du.com/ProductDetail.aspx?ProductId=9174" target="_blank" style="font-size:12px;"><img src="310_7c652cb16ff945fd964438b9b7eef837-2.png" tppabs="http://www.18-du.com/kindeditor/attached/image/20190305/20190305134858_5500.jpg" alt="" /></a><a href="ProductDetail.aspx-ProductId=9173.htm" tppabs="http://www.18-du.com/ProductDetail.aspx?ProductId=9173" target="_blank" style="font-size:12px;"><img src="310_58ff7598e1034180b6c487a76dcb9f7c-2.png" tppabs="http://www.18-du.com/kindeditor/attached/image/20190305/20190305134858_8527.jpg" alt="" /></a><img src="ProductDetail-2.aspx-productid=10151" tppabs="http://www.18-du.com/kindeditor/attached/image/20190305/20190305134859_0315.jpg" alt="" style="font-size:12px;" /><a href="ProductDetail.aspx-ProductId=9175.htm" tppabs="http://www.18-du.com/ProductDetail.aspx?ProductId=9175" target="_blank" style="font-size:12px;"><img src="310_10a213c8e3964e0d9e9666c90f4ebf4f-2.png" tppabs="http://www.18-du.com/kindeditor/attached/image/20190305/20190305134859_2180.jpg" alt="" /></a><a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=10213  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=10213'" tppabs="http://www.18-du.com/ProductDetail.aspx?ProductId=383" target="_blank" style="font-size:12px;"><img src="ProductDetail-2.aspx-productid=10140" tppabs="http://www.18-du.com/kindeditor/attached/image/20190305/20190305134859_3860.jpg" alt="" /></a> 
+</p>
+<p>
+	<a href="AllSearch.aspx-CategoryId=128.htm" tppabs="http://www.18-du.com/ProductDetail.aspx?ProductId=682" target="_blank"><span style="font-size:12px;"></span></a><a href="AllSearch.aspx-CategoryId=128.htm" tppabs="http://www.18-du.com/ProductDetail.aspx?ProductId=682" target="_blank" style="white-space:normal;"><img src="310_98f7ada0eb944562aa0380494dd8472e-2.jpg" tppabs="http://www.18-du.com/kindeditor/attached/image/20190305/20190305141403_6020.jpg" alt="" /></a><span style="font-size:12px;"><a href="ProductDetail.aspx-ProductId=9177.htm" tppabs="http://www.18-du.com/ProductDetail.aspx?ProductId=9177" target="_blank" style="white-space:normal;"><img src="ProductDetail-2.aspx-productid=10112" tppabs="http://www.18-du.com/kindeditor/attached/image/20190305/20190305141501_0105.jpg" alt="" /></a></span><a href="ProductDetail.aspx-ProductId=9176.htm" tppabs="http://www.18-du.com/ProductDetail.aspx?ProductId=9176" target="_blank" style="font-size:12px;"><img src="310_533d8b117a8f4d1cb699dd083fb0b9bc-2.jpg" tppabs="http://www.18-du.com/kindeditor/attached/image/20190305/20190305134901_7776.jpg" alt="" /></a> 
+</p>	
+</body>
+</html>
+
+</form>
+		
+
+<style>
+#aaa{ display:none;}
+</style>
+  <div class="footer" style=" float:none">
+        
+      <div id="aaa"> 
+
+
+<div class="footer-ul">
+
+      
+          <div class="ifot">
+           <div class="ifot1">新手帮助</div>
+		       <div class="ifot2">
+               <ul>
+               
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=14.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=14">
+                              用户协议
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=16.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=16">
+                              找回密码
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=18.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=18">
+                              会员绑定
+                          </a>  
+                        </li>
+                 
+                 </ul>
+		       </div>
+            </div>
+      
+          <div class="ifot">
+           <div class="ifot1">我的店铺</div>
+		       <div class="ifot2">
+               <ul>
+               
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=20.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=20">
+                              发布商品
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=21.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=21">
+                              发货
+                          </a>  
+                        </li>
+                 
+                 </ul>
+		       </div>
+            </div>
+      
+          <div class="ifot">
+           <div class="ifot1">会员店粉丝</div>
+		       <div class="ifot2">
+               <ul>
+               
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=22.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=22">
+                              会员注册
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=23.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=23">
+                              会员认证
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=25.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=25">
+                              会员升级
+                          </a>  
+                        </li>
+                 
+                 </ul>
+		       </div>
+            </div>
+      
+          <div class="ifot">
+           <div class="ifot1">常见问答</div>
+		       <div class="ifot2">
+               <ul>
+               
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=35.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=35">
+                              修改密码
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=36.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=36">
+                              售后处理时效
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=34.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=34">
+                              售后
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=30.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=30">
+                              公司简介
+                          </a>  
+                        </li>
+                 
+                 </ul>
+		       </div>
+            </div>
+    
+
+
+<div class="ifot infotewm lastifort">
+		   <div class="ifot2 APP">
+		      <img src="sheyingwxh.jpg" tppabs="http://www.18-du.com/Utility/sysrc/vshop/img/sheyingwxh.jpg" width="124" height="124">
+		   </div>
+		   <div class="ifot1 ewm" style="width:168px">关注我们公众号了解更多</div>
+ </div>
+
+ <div class="ifot ifotB" style=" padding-left:30px">
+				<p class="small_p">服务热线</p>
+				<p>010-63255589</p>
+				<p>服务监督电话：13601051438</p>
+				<p style="width:300px">周一到周六：9:00-18:00</p>
+		</div>
+</div>
+<div style=" width:57%; color:White; padding-left:14%; padding-top:15px; padding-bottom:10px">
+    <p class="MsoNormal">
+	    <strong><span style="font-size:14px;">北京十八度影像文化股份公司&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;北京市西城区马连道南街6号院1号楼12层1205A&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;010-63255589 &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;京ICP备16038196号-1 
+</span></strong> 
+    </p>
+</div>
+
+
+      </div> 
+        
+        
+        
+        
+        <div class="footer">
+        
+        
+
+
+<div class="footer-ul" style=" width:100%; min-height:240px;">
+
+      
+          <div class="ifot">
+           <div class="ifot1">新手帮助</div>
+		       <div class="ifot2">
+               <ul>
+               
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=14.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=14">
+                              用户协议
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=16.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=16">
+                              找回密码
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=18.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=18">
+                              用户绑定
+                          </a>  
+                        </li>
+                 
+                 </ul>
+		       </div>
+            </div>
+      
+          <div class="ifot" style=" display:none">
+           <div class="ifot1">我的店铺</div>
+		       <div class="ifot2">
+               <ul>
+               
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=20.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=20">
+                              发布商品
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=21.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=21">
+                              发货
+                          </a>  
+                        </li>
+                 
+                 </ul>
+		       </div>
+            </div>
+      
+          <div class="ifot" style=" display:none">
+           <div class="ifot1">会员店粉丝</div>
+		       <div class="ifot2">
+               <ul>
+               
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=22.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=22">
+                              会员注册
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=23.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=23">
+                              会员认证
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=25.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=25">
+                              会员升级
+                          </a>  
+                        </li>
+                 
+                 </ul>
+		       </div>
+            </div>
+      
+          <div class="ifot">
+           <div class="ifot1">常见问答</div>
+		       <div class="ifot2">
+               <ul>
+               
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=35.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=35">
+                              修改密码
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=36.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=36">
+                              售后处理时效
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=34.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=34">
+                              售后
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=30.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=30">
+                              公司简介
+                          </a>  
+                        </li>
+                 
+                 </ul>
+		       </div>
+            </div>
+    
+
+
+<div class="ifot infotewm lastifort" style=" margin-left:15%;">
+		   <div class="ifot2 APP">
+		      <img src="sheyingwxh.jpg" tppabs="http://www.18-du.com/Utility/sysrc/vshop/img/sheyingwxh.jpg" width="124" height="124">
+		   </div>
+		   <div class="ifot1 ewm" style="width:168px">关注我们公众号了解更多</div>
+ </div>
+
+ <div class="ifot ifotB" style=" padding-left:30px; width:35%">
+				<p class="small_p">服务热线</p>
+				<p>010-63255589</p>
+				<p>服务监督电话：13601051438</p>
+				<p style="width:300px">周一到周六：9:00-18:00</p>
+		</div>
+</div>
+<div style=" width:90%; color:White;padding-top:15px; padding-bottom:10px; text-align:center; margin:0 auto;">
+    <p style=" font-size:14px;">
+	 北京十八度影像文化股份公司&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;北京市西城区马连道南街6号院1号楼12层1205A&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;010-63255589 &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;京ICP备16038196号-1 
+    </p>
+</div>
+
+
+ </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    <div style=" display:none">
+    <div class="clear"></div>
+       <!-- 友情链接-->
+        
+
+<div class="footer_friendshipLink_total">
+	<div class="footer_friendshipLink">
+		<ul>
+
+<!--<li><a href='#' target="_blank">友情链接：</a></li>-->
+
+	</ul>
+   </div>
+</div>
+
+        <div class="clear"></div>
+    </div>    
+
+       
+        <div class="footer-bottom">
+         <!--底部自定义内容-->
+          <p>
+	<span style="color:#999999;font-family:'Microsoft YaHei', tahoma, arial, 'Hiragino Sans GB', '\\5b8b体', sans-serif;line-height:22px;">Copyright&nbsp;&copy; 2016 -&nbsp;2017 十八度 18-du.com&nbsp;版权所有 |&nbsp;京ICP备16038196号-1</span> 
+</p>
+<p>
+	<br />
+</p>
+          <script type="text/javascript">              var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cspan id='cnzz_stat_icon_1261274722'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1261274722%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+           <!-- 合作伙伴-->
+            
+
+<div class="footer_friendshipLink_total">
+	<div class="footer_friendshipLink">
+		<ul>
+
+	</ul>
+   </div>
+</div>
+
+        </div>
+         
+ </div>
+ </body>
+ </html>
+
+
