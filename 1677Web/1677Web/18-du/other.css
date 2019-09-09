@@ -1,0 +1,26 @@
+.popup_total{background: rgba(0,0,0,0.5); width: 100%; position:fixed; height: 100%; z-index:1200; top:0px;
+        margin: 0px; padding: 0px; border: 0 none;}
+.popup_center{
+             width: 24%;
+             margin-left:38%;
+             background: #fff;
+             min-height: 150px;
+             border-radius: 5px;
+             -webkit-border-radius: 5px;
+             -moz-border-radius: 5px;
+             border: 1px solid #ccc;
+             position: fixed;
+             top: 30%;
+             float:left;
+             }
+.popup_center_top{width: 98%; height: 40px; line-height: 40px; border-bottom: 2px solid #ccc;
+                padding: 0 1%; font-weight: 700; font-size: 16px; float: left; position: absolute;
+                top: 0px; background: rgb(239,239,239)}
+.popup_center_center{width: 90%; padding: 0 5%; margin-top: 50px; float: left; margin-bottom:60px;}
+.popup_center_buttom{border:0 none;position: absolute; bottom: 0px; float: left; width: 100%; background:rgb(239,239,239)}
+.popup_ok{border:0 none;width: 50%; float: left; height: 50px; line-height: 50px; text-align: center; background:rgb(239,239,239);
+                    border-top: 2px solid #ccc; border-right: 1px solid #ccc; box-sizing: border-box;  cursor:pointer;
+                    font-weight: 700;}
+.popup_cancal{border:0 none;width: 50%; float: right; height: 50px; line-height: 50px; text-align: center; background:rgb(239,239,239);
+                    border-top: 2px solid #ccc; border-left: 1px solid #ccc; box-sizing: border-box;cursor:pointer;
+                    font-weight: 700;}

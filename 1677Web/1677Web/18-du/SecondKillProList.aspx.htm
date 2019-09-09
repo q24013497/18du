@@ -1,0 +1,2287 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv=Content-Type content='text/html; charset=utf-8'>
+<script language="javascript" type="text/javascript"> 
+            var applicationPath = "";
+            var skinPath = "/templates/master/default";
+            var subsiteuserId = "0";
+        </script>
+<meta http-equiv="content-language" content="zh-CN" />
+<link rel="icon" type="image/x-icon" href="http://www.18-du.com/favicon.ico" media="screen" />
+<link rel="shortcut icon" type="image/x-icon" href="http://www.18-du.com/favicon.ico" media="screen" />
+<meta name="author" content="Hishop development team" />
+<meta name="GENERATOR" content="1.2" />
+<title>十八度影像平台</title>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<link href="style.css" tppabs="http://www.18-du.com/Utility/sysrc/css/style.css" rel="stylesheet" type="text/css" /><link href="a.add.css" tppabs="http://www.18-du.com/Utility/sysrc/css/lrtk.css" rel="stylesheet" type="text/css" /><link href="AllSearch.aspx-CategoryId=61&brandid=4.css" tppabs="http://www.18-du.com/Utility/sysrc/css/activity_menu.css" rel="stylesheet" type="text/css" />
+    <script src="jquery-1.8.3.min.js" tppabs="http://www.18-du.com/Utility/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="AllSearch-1.aspx-categoryid=54&brandid=4" tppabs="http://www.18-du.com/Utility/sysrc/js/koala.min.1.5.js" type="text/javascript"></script>
+
+
+        <script src="globals.js" tppabs="http://www.18-du.com/Utility/globals.js" type="text/javascript"></script>
+        <script src="getParmByUrl.js" tppabs="http://www.18-du.com/Utility/getParmByUrl.js" type="text/javascript"></script>
+   <link href="kkpager_orange.css" tppabs="http://www.18-du.com/Utility/tool/css/kkpager_orange.css" rel="stylesheet" type="text/css" />
+   <script src="kkpager.js" tppabs="http://www.18-du.com/Utility/tool/kkpager.js" type="text/javascript"></script>
+
+    <link href="AllSearch.aspx-CategoryId=54&brandid=5.css" tppabs="http://www.18-du.com/Utility/tool/css/swiper.min.css" rel="stylesheet" type="text/css" />
+        <script src="AllSearch-1.aspx-categoryid=54&brandid=15" tppabs="http://www.18-du.com/Utility/tool/swiper.min.js" type="text/javascript"></script>
+
+              <link href="AllSearch.aspx-CategoryId=54&brandid=145.css" tppabs="http://www.18-du.com/Utility/tool/css/weui.min.css" rel="stylesheet" type="text/css" />
+<script src="DialogShow.js" tppabs="http://www.18-du.com/Utility/tool/DialogShow.js" type="text/javascript"></script>
+<script src="jquery.cookie.js" tppabs="http://www.18-du.com/Utility/jquery.cookie.js" type="text/javascript"></script>
+ <script type="text/javascript" src="maps-v=1.3&key=1fbaa444c63bd5e19dc104e7472e0c13&&plugin=AMap.CitySearch" tppabs="http://webapi.amap.com/maps?v=1.3&key=1fbaa444c63bd5e19dc104e7472e0c13&&plugin=AMap.CitySearch"></script>
+    <script src="PIE.js" tppabs="http://www.18-du.com/Utility/sysrc/js/PIE.js" type="text/javascript"></script>
+    
+    <link href="newStyle.css" tppabs="http://www.18-du.com/Utility/sysrc/css/newStyle.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript">
+      var sUserAgent = navigator.userAgent.toLowerCase();
+      var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+      var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+      var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+      var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+      var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+      var bIsAndroid = sUserAgent.match(/android/i) == "android";
+      var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+      var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+      if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+          location.href = "Default.aspx-ReferralUserId=0.htm"/*tpa=http://www.18-du.com/Vshop/Default.aspx?ReferralUserId=0*/;
+      }
+
+      $(function () {
+
+          if (window.PIE) {
+              $('.rounded').each(function () {
+                  PIE.attach(this);
+              });
+          }
+
+          if ($.cookie('SelectCity') == null) {
+              var citysearch = new AMap.CitySearch();
+              citysearch.getLocalCity(function (status, result) {
+                  result.city = result.city.replace('市', '');
+                  if (status === 'complete' && result.info === 'OK') {
+                      if (result && result.city && result.bounds) {
+                          $("#splocate").html(result.city);
+                          $.cookie('SelectCity', result.city, { expires: 1, path: '/' });
+                      }
+                  }
+                  else {
+                      $("#splocate").html("全国");
+                      $.cookie('SelectCity', "", { expires: 1, path: '/' });
+                  }
+              })
+          } else {
+              $.cookie('SelectCity', $.cookie('SelectCity').toString().replace('市', ''));
+          }
+
+      });
+ </script>
+ <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "hm.js-c6b81c0821cb37f81f6c558a3388720e"/*tpa=https://hm.baidu.com/hm.js?c6b81c0821cb37f81f6c558a3388720e*/;
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<title>
+
+</title></head>
+<body  style=" background:#fff">
+
+<div class="site-header container">
+        <div class="site-header_main">
+            <div class="left">
+                <ul>
+                    <li style=" display:none"><span class="span_citychange" id="splocate">
+                    <span>全国</span>
+                    </span>
+                    <a href="javascript:GotoChangeCity()" id="aselcity">【切换城市】</a></li>
+                
+                </ul>
+            </div>
+            <div class="right">
+                <ul>
+                    <li>
+                        <label>
+您好，欢迎来到18度影像城!</label>
+                           <a id="SecondKillProList_ctl00___Common_MyAccountLink1" href="Register1.aspx.htm" tppabs="http://www.18-du.com/Register1.aspx" target="_blank">注册</a>
+                           </li>
+                    <li class="spacer"></li>
+                    <li><a id="SecondKillProList_ctl00___Common_Link_Login1" href="login.aspx.htm" tppabs="http://www.18-du.com/login.aspx">登录</a></li>
+                     <li class="spacer"></li>
+                    <li ><a id="SecondKillProList_ctl00___Common_ShopAccountLink1" href="http://bad_redirect" >商户登入</a></li>
+                    <li class="spacer"></li>
+                    <li ><a id="SecondKillProList_ctl00___CommonShopPreView1"></a></li>
+                </ul>
+            </div>
+        </div>
+ </div>
+
+ 
+ <script type="text/javascript">
+     function GotoChangeCity() {
+         //localStorage.historyurl = location.href;
+         localStorage.historyurl = "ProductList.aspx.htm"/*tpa=http://www.18-du.com/ProductList.aspx*/;
+         location.href = "http:///" + location.host + "/city_choose.aspx";
+     }
+ 
+ </script>
+
+<script src="310_45091dae80f94e178c13c81479e37474-1.jpg" tppabs="http://www.18-du.com/Utility/tool/executeTime.js" type="text/javascript"></script>
+<script>
+    var cssstyle = "0";
+</script>
+<form name="aspnetForm" method="post" action="http://www.18-du.com/SecondKillProList.aspx" id="aspnetForm">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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ZHVjdElkPTEwMTg2Si9TdG9yYWdlL21hc3Rlci9wcm9kdWN0L3RodW1iczIyMC8yMjBfZjkxZjI3MzFkNmZjNGFiYmIyYWNiNjAzNmE2NmZlYTkuanBnFeWumOaWueWunuS9k+aXl+iIsOW6lyhTZWNvbmRLaWxsUHJvRGV0YWlsLmFzcHg/UHJvZHVjdElkPTEwMTg2G01hbmZyb3R0by8g5pu85a+M5Zu+IE1WSy4uLmQCAQ8PFgIeBU1vbmV5KClbU3lzdGVtLkRlY2ltYWwsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OQkxMjU5LjAwMDBkZAIDDw8WAh8DKCsECTIyMTkuMDAwMGRkAgUPFgIfAQUBMWQCBg8VAQtodG1sc3Bhbjk3OGQCAQ9kFgJmD2QWAmYPZBYKZg8VBSdTZWNvbmRLaWxsUHJvRGV0YWlsLmFzcHg/UHJvZHVjdElkPTEyMzNKL1N0b3JhZ2UvbWFzdGVyL3Byb2R1Y3QvdGh1bWJzMjIwLzIyMF9lYmFmYWVmMjdmZTU0ZDg5YmY5MjhiMmE2MDMzZTFiYi5qcGcV5a6Y5pa55a6e5L2T5peX6Iiw5bqXJ1NlY29uZEtpbGxQcm9EZXRhaWwuYXNweD9Qcm9kdWN0SWQ9MTIzMxVOYXRpb25hbEdlb2dyYXBoaWMuLi5kAgEPDxYCHwMoKwQINzI5LjAwMDBkZAIDDw8WAh8DKCsECDc4OS4wMDAwZGQCBQ8WAh8BBQEwZAIGDxUBC2h0bWxzcGFuOTc1ZAICD2QWAmYPZBYCZg9kFgpmDxUFJ1NlY29uZEtpbGxQcm9EZXRhaWwuYXNweD9Qcm9kdWN0SWQ9ODk0NUovU3RvcmFnZS9tYXN0ZXIvcHJvZHVjdC90aHVtYnMyMjAvMjIwXzZhNjk4OGVlYzI4ODQ0ZDU4YjhmMmU5NTkxYjc0MDJhLmpwZxXlrpjmlrnlrp7kvZPml5foiLDlupcnU2Vjb25kS2lsbFByb0RldGFpbC5hc3B4P1Byb2R1Y3RJZD04OTQ1G01hbmZyb3R0by/mm7zlr4zlm74gTUIgUC4uLmQCAQ8PFgIfAygrBAkxMzM5LjAwMDBkZAIDDw8WAh8DKCsECTIwOTkuMDAwMGRkAgUPFgIfAQUBMGQCBg8VAQtodG1sc3Bhbjk3M2QCAw9kFgJmD2QWAmYPZBYKZg8VBSdTZWNvbmRLaWxsUHJvRGV0YWlsLmFzcHg/UHJvZHVjdElkPTg5NTZKL1N0b3JhZ2UvbWFzdGVyL3Byb2R1Y3QvdGh1bWJzMjIwLzIyMF8yY2I4NTNhMWExMDc0YjE2OWM1YzQ5NDE5YjM2OTUzZC5qcGcV5a6Y5pa55a6e5L2T5peX6Iiw5bqXJ1NlY29uZEtpbGxQcm9EZXRhaWwuYXNweD9Qcm9kdWN0SWQ9ODk1Nh9IUFJDL+S6mueOm+avlOWIqeS6miBSRTI2MDBXLi4uZAIBDw8WAh8DKCsECTE2MjkuMDAwMGRkAgMPDxYCHwMoKwQJMTY5OS4wMDAwZGQCBQ8WAh8BBQEwZAIGDxUBC2h0bWxzcGFuOTcyZAIED2QWAmYPZBYCZg8WAh8CBQRsYXN0FgpmDxUFJ1NlY29uZEtpbGxQcm9EZXRhaWwuYXNweD9Qcm9kdWN0SWQ9ODk0OUovU3RvcmFnZS9tYXN0ZXIvcHJvZHVjdC90aHVtYnMyMjAvMjIwXzMwMzg0N2I0ZGNlZDQ5OWI5OTA2ZmI2ZWM2Nzg4OWQzLmpwZxXlrpjmlrnlrp7kvZPml5foiLDlupcnU2Vjb25kS2lsbFByb0RldGFpbC5hc3B4P1Byb2R1Y3RJZD04OTQ5G01hbmZyb3R0by/mm7zlr4zlm74gTVZNWC4uLmQCAQ8PFgIfAygrBAkxNTk5LjAwMDBkZAIDDw8WAh8DKCsECTE4NzkuMDAwMGRkAgUPFgIfAQUBMGQCBg8VAQtodG1sc3Bhbjk3MWQCBQ9kFgJmD2QWAmYPFgIfAgUFZmlyc3QWCmYPFQUnU2Vjb25kS2lsbFByb0RldGFpbC5hc3B4P1Byb2R1Y3RJZD0zNjY2Si9TdG9yYWdlL21hc3Rlci9wcm9kdWN0L3RodW1iczIyMC8yMjBfZWVkNDRhN2EzNWQ1NGJhNjkyODFjNDJiZDAxNmZkZjEuanBnFeWumOaWueWunuS9k+aXl+iIsOW6lydTZWNvbmRLaWxsUHJvRGV0YWlsLmFzcHg/UHJvZHVjdElkPTM2NjYbTG93ZXByby/kuZDmkYTlrp0gTm92YSBTLi4uZAIBDw8WAh8DKCsECDM2OS4wMDAwZGQCAw8PFgIfAygrBAg1ODAuMDAwMGRkAgUPFgIfAQUBMGQCBg8VAQtodG1sc3Bhbjk3MGQCBg9kFgJmD2QWAmYPZBYKZg8VBSdTZWNvbmRLaWxsUHJvRGV0YWlsLmFzcHg/UHJvZHVjdElkPTY4OTNKL1N0b3JhZ2UvbWFzdGVyL3Byb2R1Y3QvdGh1bWJzMjIwLzIyMF82ZmE2NTFlOTFkNzU0OTAxYjU1ODIwZDYxNzJlODZhZi5qcGcV5a6Y5pa55a6e5L2T5peX6Iiw5bqXJ1NlY29uZEtpbGxQcm9EZXRhaWwuYXNweD9Qcm9kdWN0SWQ9Njg5MxlHR1Mv6YeR6ZKiIEE3SUkvQTdzSUkgLi4uZAIBDw8WAh8DKCsEBzY5LjAwMDBkZAIDDw8WAh8DKCsECDE1OC4wMDAwZGQCBQ8WAh8BBQEwZAIGDxUBC2h0bWxzcGFuOTc3ZAIED2QWAmYPZBYGAgEPZBYCZg9kFgICAQ8WAh8AAgQWCGYPZBYEZg8VAQzmlrDmiYvluK7liqlkAgEPFgIfAAIDFgZmD2QWAmYPFQIaL0hlbHBEZXRhaWwuYXNweD9IZWxwSWQ9MTQM55So5oi35Y2P6K6uZAIBD2QWAmYPFQIaL0hlbHBEZXRhaWwuYXNweD9IZWxwSWQ9MTYM5om+5Zue5a+G56CBZAICD2QWAmYPFQIaL0hlbHBEZXRhaWwuYXNweD9IZWxwSWQ9MTgM5Lya5ZGY57uR5a6aZAIBD2QWBGYPFQEM5oiR55qE5bqX6ZO6ZAIBDxYCHwACAhYEZg9kFgJmDxUCGi9IZWxwRGV0YWlsLmFzcHg/SGVscElkPTIwDOWPkeW4g+WVhuWTgWQCAQ9kFgJmDxUCGi9IZWxwRGV0YWlsLmFzcHg/SGVscElkPTIxBuWPkei0p2QCAg9kFgRmDxUBD+S8muWRmOW6l+eyieS4nWQCAQ8WAh8AAgMWBmYPZBYCZg8VAhovSGVscERldGFpbC5hc3B4P0hlbHBJZD0yMgzkvJrlkZjms6jlhoxkAgEPZBYCZg8VAhovSGVscERldGFpbC5hc3B4P0hlbHBJZD0yMwzkvJrlkZjorqTor4FkAgIPZBYCZg8VAhovSGVscERldGFpbC5hc3B4P0hlbHBJZD0yNQzkvJrlkZjljYfnuqdkAgMPZBYEZg8VAQzluLjop4Hpl67nrZRkAgEPFgIfAAIEFghmD2QWAmYPFQIaL0hlbHBEZXRhaWwuYXNweD9IZWxwSWQ9MzUM5L+u5pS55a+G56CBZAIBD2QWAmYPFQIaL0hlbHBEZXRhaWwuYXNweD9IZWxwSWQ9MzYS5ZSu5ZCO5aSE55CG5pe25pWIZAICD2QWAmYPFQIaL0hlbHBEZXRhaWwuYXNweD9IZWxwSWQ9MzQG5ZSu5ZCOZAIDD2QWAmYPFQIaL0hlbHBEZXRhaWwuYXNweD9IZWxwSWQ9MzAM5YWs5Y+4566A5LuLZAIDD2QWAmYPZBYCAgEPFgIfAGZkAgcPZBYCZg9kFgICAQ8WAh8AZmRk1M+Ih5qLpUMuadVC14NvYSM8pIs=" />
+</div>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="BF10D336" />
+</div>
+     <div class="site_header_center">
+        
+<script>
+
+    $(function () {
+        $(".dxs").hover(function () {
+            var children = $(this).children(".category-list_s");
+            if (children.find("dl > dd").length > 0) {
+                var index = children.attr("index");
+                children.css("display", "block");
+                var top = 0 * index;
+                children.css("display", "block");
+                children.css("top", "-" + top + "px");
+            }
+
+        }, function () {
+            // $(this).children(".nav-category-children").css("display", "none");
+        });
+
+        if ($("#hidmenuindex").val() != "0")
+            $("#a_link_" + $("#hidmenuindex").val()).addClass("li_hover");
+
+
+        $(".all-goods").click(function () { location.href = "AllSearch.aspx.htm"/*tpa=http://www.18-du.com/AllSearch.aspx*/ })
+
+
+        /*菜单下拉*/
+
+        $(".category").children().children().hover(function () {
+            if ($(this).children(".category-list_s").find("li").length == 0) {
+                $(this).children(".category-list_s").hide();
+            }
+            else {
+                $(this).children(".category-list_s").attr("style", "display:block; position:absolute;left:226px;");
+                var index = $(this).index();
+                //var top = 41 * index;
+                var leftLiHieght = $(this).height() + 1;
+                var top = leftLiHieght * index;
+                $(this).children(".category-list_s").css("display", "block");
+                $(this).children(".category-list_s").css("top", top + "px");
+            }
+
+        }
+        , function () {
+
+            $(this).children(".category-list_s").css("display", "none");
+        });
+
+        $(".fl_B_SearchTab2").click(function (event) {
+            event.stopPropagation();
+            $(this).find(".option").toggle();
+            $(this).parent().siblings().find(".option").hide();
+        });
+        $(document).click(function (event) {
+            var eo = $(event.target);
+            if ($(".fl_B_SearchTab").is(":visible") && eo.attr("class") != "option" && !eo.parent(".option").length)
+                $('.option').hide();
+        });
+        /*赋值给文本框*/
+        $(".option a").click(function () {
+            var value = $(this).text();
+            $(this).parent().siblings(".select_txt").text(value);
+            $("#select_value").val(value)
+        })
+
+    });
+
+
+    function searchshop() {
+        var key = $("#txtkeyword").val();
+        if (key == undefined)
+            key = "";
+
+        key = key.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace('/', '');
+        //var shopid = $().getParmByUrl("ShopId");
+        var searchtype = "0";
+//        if ($.trim($("span.select_txt").html()) == "搜商品")
+//            searchtype = 0;
+//        else
+//            searchtype = 1;
+        location.href = applicationPath + "/AllSearch.aspx?keywords=" + encodeURIComponent(key) + "&searchtype=" + searchtype;
+    }
+    $(document).ready(function () {
+
+        $('#txtkeyword').keydown(function (e) {
+            if (e.keyCode == 13) {
+                searchshop();
+                return false;
+            }
+        })
+
+    });
+</script>
+<style>
+#lianjie a:hover{ color:#ff9999}
+</style>
+<input type="hidden" name="SecondKillProList$ctl02$_$hidmenuindex" id="hidmenuindex" value="0" />
+<div class="site-header-logo_black_bg" style=" height:120px; background-color:#ededed">
+            <div class="site-header-logo_black" style=" padding:0;">
+                <div class="logo_black">
+                    <a href="index.htm" tppabs="http://www.18-du.com/">
+                        <img src="741a1cca0874e21c72528c06f2ba031.png" tppabs="http://www.18-du.com/Utility/sysrc/img/741a1cca0874e21c72528c06f2ba031.png" style=" width:140px; height:95px; margin-top:10%; " /></a>
+                </div>
+
+                <div class="header-info_black" style=" margin-top:0; width:476px;">
+             
+
+            <div class="nav-extra" style=" margin-left:15%;">
+ 
+                <input id="txtkeyword" class="txh_search_input" type="text" placeholder="请输入关键词" style="width:80.4%; border:2px solid #0099ff; margin-top:35px;">
+                <input id="btnserch" class="txh_search_button" type="button" value="搜  索" onclick="searchshop()" style="cursor:pointer;float:right; margin-top:35px;">
+            </div>
+            <div id="lianjie" style="height:50px; font-size:11px; color:#b1b1b1; line-height:40px; margin-top:70px; text-align:left; margin-left:15%;">
+            热门搜索 ：
+            <a href="AllSearch.aspx-SortBy=newpro&SortOrder=asc.htm" tppabs="http://www.18-du.com/AllSearch.aspx?SortBy=newpro&SortOrder=asc" style=" margin:4px;color:#b1b1b1;">新奇热卖</a>
+            <a href="AllSearch.aspx-CategoryId=48.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=48" style=" margin:4px;color:#b1b1b1;">玩转镜头</a>
+            <a href="AllSearch.aspx-CategoryId=47.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=47" style=" margin:4px;color:#b1b1b1;">数码相机</a>
+            <a href="AllSearch.aspx-CategoryId=54.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=54" style=" margin:4px;color:#b1b1b1;">摄像机</a>
+            <a href="AllSearch.aspx-CategoryId=61.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=61" style=" margin:4px;color:#b1b1b1;">摄影配件</a>
+            </div>
+                    
+                </div>
+             
+                <div class="i_cart_w" style="padding-top:5px; padding-left:30px">
+                    <div class="cart_w">
+                        <a href="ShopCart.aspx.htm" tppabs="http://www.18-du.com/ShopCart.aspx"><span style=" color:Gray" >购物车</span> </a>
+                       
+                    </div>
+                    <div class="clear">
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+<script type="text/javascript">
+
+    //头部菜单选中标识
+    function HeadeMenu_Choice(MenuName) {
+        var headmenu = $(".menuchoiceflage a li");
+        for (var i = 0; i < headmenu.length; i++) {
+            if ($(headmenu[i]).html() == MenuName) {
+                $(headmenu[i]).addClass("header_menu_black_select");
+            }
+
+        }
+    }
+
+</script>
+    </div>
+    <div class="clear"></div>
+     <!--分类,积分,租用类别,MenuIndex按顺序数积分商城,图片交易-->
+     
+<script>
+
+    $(function () {
+        $(".dxs").hover(function () {
+            var children = $(this).children(".category-list_s");
+            if (children.find("dl > dd").length > 0) {
+                var index = children.attr("index");
+                children.css("display", "block");
+                var top = 0 * index;
+                children.css("display", "block");
+                children.css("top", "-" + top + "px");
+            }
+
+        }, function () {
+            // $(this).children(".nav-category-children").css("display", "none");
+        });
+
+        if ($("#hidmenuindex").val() != "0")
+            $("#a_link_" + $("#hidmenuindex").val()).addClass("li_hover");
+
+
+        $(".all-goods").click(function () { location.href = "AllSearch.aspx.htm"/*tpa=http://www.18-du.com/AllSearch.aspx*/ })
+
+
+        /*菜单下拉*/
+
+        $(".category").children().children().hover(function () {
+            $(this).find("li[litopcat]").show();
+            if ($(this).children(".category-list_s").find("li").length == 0) {
+                $(this).children(".category-list_s").hide();
+            }
+            else {
+                $(this).children(".category-list_s").attr("style", "display:block; position:absolute;left:226px;background:#ddd;");
+                var index = $(this).index();
+                var top = 41 * index;
+                $(this).children(".category-list_s").css("display", "block");
+                $(this).children(".category-list_s").css("top", top + "px");
+            }
+
+        }
+        , function () {
+            $(this).children(".category-list_s").css("display", "none");
+        });
+
+        $(".fl_B_SearchTab2").click(function (event) {
+            event.stopPropagation();
+            $(this).find(".option").toggle();
+            $(this).parent().siblings().find(".option").hide();
+        });
+        $(document).click(function (event) {
+            var eo = $(event.target);
+            if ($(".fl_B_SearchTab2").is(":visible") && eo.attr("class") != "option" && !eo.parent(".option").length)
+                $('.option').hide();
+        });
+        /*赋值给文本框*/
+        $(".option a").click(function () {
+            var value = $(this).text();
+            $(this).parent().siblings(".select_txt").text(value);
+            $("#select_value").val(value)
+        })
+
+        var keyword = $().getParmByUrl("keywords");
+        $("#txtkeyword").val(decodeURIComponent(keyword));
+
+        var searchtype = $().getParmByUrl("searchtype");
+        if (searchtype == 0) {
+            $(".select_txt").text("搜商品");
+            $("#select_value").val("搜商品")
+        }
+        else {
+            $(".select_txt").text("搜店铺");
+            $("#select_value").val("搜店铺")
+        }
+
+    });
+
+
+    function searchshop() {
+        var key = $("#txtkeyword").val();
+        if (key == undefined)
+            key = "";
+
+        key = key.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace('/', '');
+        //var shopid = $().getParmByUrl("ShopId");
+        var searchtype = "0";
+//        if ($.trim($("span.select_txt").html()) == "搜商品")
+//            searchtype = 0;
+//        else
+//            searchtype = 1;
+        location.href = applicationPath + "/AllSearch.aspx?keywords=" + encodeURIComponent(key)+"&searchtype="+searchtype;
+    }
+    $(document).ready(function () {
+
+        $('#txtkeyword').keydown(function (e) {
+            if (e.keyCode == 13) {
+                searchshop();
+                return false;
+            }
+        })
+    });
+</script>
+<input type="hidden" name="SecondKillProList$ctl03$_$hidmenuindex" id="hidmenuindex" value="5" />
+<div class="shopNav txh_nav_bj" style=" width:100%" >
+    <div class="slideall" style=" margin-left:155px;" >
+        <div class="long-title txh_nav_long_title" style=" width:200px">
+            <div class="all-goods">
+                <a href="AllSearch.aspx.htm" tppabs="http://www.18-du.com/AllSearch.aspx" style="color:White">  
+                 <img src="4472168374270721971_03.png" tppabs="http://www.18-du.com/Templates/master/default/images/4472168374270721971_03.png" alt="" style=" width:27px; height:18px; margin-bottom:10px;" />
+                 <span style=" font-size:13px">全部分类</span> 
+                 </a>
+                <!--侧边导航 -->
+                <div id="nav" class="navfull">
+                    <div class="area clearfix">
+                        <div class="category-content" id="guide_2">
+
+                            <div class="category" style="background:#ddd; width:200px; ">
+                                <ul class="category-list" id="js_climit_li" style=" padding-bottom:30px; padding-left:28px; padding-top:10px">
+                                           
+                                              <li class="appliance js_toggle relative" rel="litopcat" style="">
+                                               <input name="SecondKillProList$ctl03$_$recordsone$ctl00$hidMainCategoryId" type="hidden" id="SecondKillProList_ctl03___recordsone_ctl00_hidMainCategoryId" value="47" />
+												<div class="category-info">
+													<h3 class="category-name b-category-name"><em></em>
+                                              
+                                                    <a href="AllSearch.aspx-CategoryId=47.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=47" class="ml-22" title='相机'>相机</a>
+                                                    </h3>
+													</div>
+													<ul class="category-list_s">
+                                                     
+														       <li>
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=66.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=66" class="ml-22" title='单反相机'>单反相机</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       
+                                                         
+														       
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=67.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=67" class="ml-22" title='微单相机'>微单相机</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       </li>
+                                                         
+														       <li>
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=68.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=68" class="ml-22" title='卡片相机'>卡片相机</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       
+                                                         
+														       
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=70.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=70" class="ml-22" title='拍立得'>拍立得</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       </li>
+                                                         
+														       <li>
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=154.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=154" class="ml-22" title='中画幅相机'>中画幅相机</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       </li>
+                                                         
+													</ul>
+											     </li>
+                                            
+                                              <li class="appliance js_toggle relative" rel="litopcat" style="">
+                                               <input name="SecondKillProList$ctl03$_$recordsone$ctl01$hidMainCategoryId" type="hidden" id="SecondKillProList_ctl03___recordsone_ctl01_hidMainCategoryId" value="48" />
+												<div class="category-info">
+													<h3 class="category-name b-category-name"><em></em>
+                                              
+                                                    <a href="AllSearch.aspx-CategoryId=48.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=48" class="ml-22" title='镜头'>镜头</a>
+                                                    </h3>
+													</div>
+													<ul class="category-list_s">
+                                                     
+														       <li>
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=71.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=71" class="ml-22" title='单反镜头'>单反镜头</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       
+                                                         
+														       
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=72.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=72" class="ml-22" title='中画幅镜头'>中画幅镜头</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       </li>
+                                                         
+														       <li>
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=73.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=73" class="ml-22" title='单电/微单镜头'>单电/微单镜头</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       
+                                                         
+														       
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=147.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=147" class="ml-22" title='微距镜头'>微距镜头</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       </li>
+                                                         
+														       <li>
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=151.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=151" class="ml-22" title='移轴镜头'>移轴镜头</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       
+                                                         
+														       
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=152.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=152" class="ml-22" title='增倍镜'>增倍镜</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       </li>
+                                                         
+													</ul>
+											     </li>
+                                            
+                                              <li class="appliance js_toggle relative" rel="litopcat" style="">
+                                               <input name="SecondKillProList$ctl03$_$recordsone$ctl02$hidMainCategoryId" type="hidden" id="SecondKillProList_ctl03___recordsone_ctl02_hidMainCategoryId" value="54" />
+												<div class="category-info">
+													<h3 class="category-name b-category-name"><em></em>
+                                              
+                                                    <a href="AllSearch.aspx-CategoryId=54.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=54" class="ml-22" title='摄像机'>摄像机</a>
+                                                    </h3>
+													</div>
+													<ul class="category-list_s">
+                                                     
+														       <li>
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=75.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=75" class="ml-22" title='家用摄像机'>家用摄像机</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       
+                                                         
+														       
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=76.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=76" class="ml-22" title='专业摄像机'>专业摄像机</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       </li>
+                                                         
+														       <li>
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=136.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=136" class="ml-22" title='运动摄像机'>运动摄像机</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       </li>
+                                                         
+													</ul>
+											     </li>
+                                            
+                                              <li class="appliance js_toggle relative" rel="litopcat" style="">
+                                               <input name="SecondKillProList$ctl03$_$recordsone$ctl03$hidMainCategoryId" type="hidden" id="SecondKillProList_ctl03___recordsone_ctl03_hidMainCategoryId" value="56" />
+												<div class="category-info">
+													<h3 class="category-name b-category-name"><em></em>
+                                              
+                                                    <a href="AllSearch.aspx-CategoryId=56.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=56" class="ml-22" title='三脚架云台'>三脚架云台</a>
+                                                    </h3>
+													</div>
+													<ul class="category-list_s">
+                                                     
+														       <li>
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=77.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=77" class="ml-22" title='独脚架'>独脚架</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       
+                                                         
+														       
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=78.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=78" class="ml-22" title='三脚架'>三脚架</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       </li>
+                                                         
+														       <li>
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=79.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=79" class="ml-22" title='云台'>云台</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       
+                                                         
+														       
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=80.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=80" class="ml-22" title='快装板及配件'>快装板及配件</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       </li>
+                                                         
+														       <li>
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=146.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=146" class="ml-22" title='稳定器'>稳定器</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       
+                                                         
+														       
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=149.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=149" class="ml-22" title='脚架包/袋'>脚架包/袋</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       </li>
+                                                         
+													</ul>
+											     </li>
+                                            
+                                              <li class="appliance js_toggle relative" rel="litopcat" style="">
+                                               <input name="SecondKillProList$ctl03$_$recordsone$ctl04$hidMainCategoryId" type="hidden" id="SecondKillProList_ctl03___recordsone_ctl04_hidMainCategoryId" value="58" />
+												<div class="category-info">
+													<h3 class="category-name b-category-name"><em></em>
+                                              
+                                                    <a href="AllSearch.aspx-CategoryId=58.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=58" class="ml-22" title='摄影包'>摄影包</a>
+                                                    </h3>
+													</div>
+													<ul class="category-list_s">
+                                                     
+														       <li>
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=91.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=91" class="ml-22" title='单肩摄影包'>单肩摄影包</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       
+                                                         
+														       
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=92.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=92" class="ml-22" title='双肩摄影包'>双肩摄影包</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       </li>
+                                                         
+														       <li>
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=93.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=93" class="ml-22" title='摄影腰包'>摄影腰包</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       
+                                                         
+														       
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=95.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=95" class="ml-22" title='镜头筒'>镜头筒</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       </li>
+                                                         
+														       <li>
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=96.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=96" class="ml-22" title='摄像机包'>摄像机包</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       
+                                                         
+														       
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=97.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=97" class="ml-22" title='拉杆箱/万用箱'>拉杆箱/万用箱</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       </li>
+                                                         
+													</ul>
+											     </li>
+                                            
+                                              <li class="appliance js_toggle relative" rel="litopcat" style="">
+                                               <input name="SecondKillProList$ctl03$_$recordsone$ctl05$hidMainCategoryId" type="hidden" id="SecondKillProList_ctl03___recordsone_ctl05_hidMainCategoryId" value="57" />
+												<div class="category-info">
+													<h3 class="category-name b-category-name"><em></em>
+                                              
+                                                    <a href="AllSearch.aspx-CategoryId=57.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=57" class="ml-22" title='滤镜'>滤镜</a>
+                                                    </h3>
+													</div>
+													<ul class="category-list_s">
+                                                     
+														       <li>
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=82.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=82" class="ml-22" title='UV镜'>UV镜</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       
+                                                         
+														       
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=83.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=83" class="ml-22" title='偏振镜'>偏振镜</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       </li>
+                                                         
+														       <li>
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=84.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=84" class="ml-22" title='减光镜'>减光镜</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       
+                                                         
+														       
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=85.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=85" class="ml-22" title='中灰渐变镜'>中灰渐变镜</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       </li>
+                                                         
+														       <li>
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=88.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=88" class="ml-22" title='近摄镜'>近摄镜</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       
+                                                         
+														       
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=89.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=89" class="ml-22" title='方片及附件'>方片及附件</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       </li>
+                                                         
+													</ul>
+											     </li>
+                                            
+                                              <li class="appliance js_toggle relative" rel="litopcat" style="">
+                                               <input name="SecondKillProList$ctl03$_$recordsone$ctl06$hidMainCategoryId" type="hidden" id="SecondKillProList_ctl03___recordsone_ctl06_hidMainCategoryId" value="59" />
+												<div class="category-info">
+													<h3 class="category-name b-category-name"><em></em>
+                                              
+                                                    <a href="AllSearch.aspx-CategoryId=59.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=59" class="ml-22" title='储存系列'>储存系列</a>
+                                                    </h3>
+													</div>
+													<ul class="category-list_s">
+                                                     
+														       <li>
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=132.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=132" class="ml-22" title='存储卡'>存储卡</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       
+                                                         
+														       
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=133.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=133" class="ml-22" title='读卡器'>读卡器</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       </li>
+                                                         
+														       <li>
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=134.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=134" class="ml-22" title='移动硬盘'>移动硬盘</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       
+                                                         
+														       
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=135.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=135" class="ml-22" title='U盘'>U盘</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       </li>
+                                                         
+													</ul>
+											     </li>
+                                            
+                                              <li class="appliance js_toggle relative" rel="litopcat" style="">
+                                               <input name="SecondKillProList$ctl03$_$recordsone$ctl07$hidMainCategoryId" type="hidden" id="SecondKillProList_ctl03___recordsone_ctl07_hidMainCategoryId" value="60" />
+												<div class="category-info">
+													<h3 class="category-name b-category-name"><em></em>
+                                              
+                                                    <a href="AllSearch.aspx-CategoryId=60.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=60" class="ml-22" title='电影视频设备'>电影视频设备</a>
+                                                    </h3>
+													</div>
+													<ul class="category-list_s">
+                                                     
+														       <li>
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=98.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=98" class="ml-22" title='单反视频套件'>单反视频套件</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       
+                                                         
+														       
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=100.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=100" class="ml-22" title='轨道及吸盘'>轨道及吸盘</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       </li>
+                                                         
+														       <li>
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=99.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=99" class="ml-22" title='斯坦尼康稳定器'>斯坦尼康稳定器</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       
+                                                         
+														       
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=101.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=101" class="ml-22" title='监视器及配件'>监视器及配件</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       </li>
+                                                         
+														       <li>
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=103.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=103" class="ml-22" title='电影脚架/摇臂'>电影脚架/摇臂</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       
+                                                         
+														       
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=102.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=102" class="ml-22" title='麦克风系列'>麦克风系列</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       </li>
+                                                         
+														       <li>
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=105.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=105" class="ml-22" title='GOPRO摄影配件'>GOPRO摄影配件</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       
+                                                         
+														       
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=104.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=104" class="ml-22" title='航拍飞行器'>航拍飞行器</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       </li>
+                                                         
+													</ul>
+											     </li>
+                                            
+                                              <li class="appliance js_toggle relative" rel="litopcat" style="">
+                                               <input name="SecondKillProList$ctl03$_$recordsone$ctl08$hidMainCategoryId" type="hidden" id="SecondKillProList_ctl03___recordsone_ctl08_hidMainCategoryId" value="62" />
+												<div class="category-info">
+													<h3 class="category-name b-category-name"><em></em>
+                                              
+                                                    <a href="AllSearch.aspx-CategoryId=62.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=62" class="ml-22" title='照明户外器材'>照明户外器材</a>
+                                                    </h3>
+													</div>
+													<ul class="category-list_s">
+                                                     
+														       <li>
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=119.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=119" class="ml-22" title='闪光灯'>闪光灯</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       
+                                                         
+														       
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=120.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=120" class="ml-22" title='反光板'>反光板</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       </li>
+                                                         
+														       <li>
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=121.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=121" class="ml-22" title='灯架'>灯架</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       </li>
+                                                         
+													</ul>
+											     </li>
+                                            
+                                              <li class="appliance js_toggle relative" rel="litopcat" style="">
+                                               <input name="SecondKillProList$ctl03$_$recordsone$ctl09$hidMainCategoryId" type="hidden" id="SecondKillProList_ctl03___recordsone_ctl09_hidMainCategoryId" value="61" />
+												<div class="category-info">
+													<h3 class="category-name b-category-name"><em></em>
+                                              
+                                                    <a href="AllSearch.aspx-CategoryId=61.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=61" class="ml-22" title='附件'>附件</a>
+                                                    </h3>
+													</div>
+													<ul class="category-list_s">
+                                                     
+														       <li>
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=106.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=106" class="ml-22" title='电池充电器'>电池充电器</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       
+                                                         
+														       
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=107.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=107" class="ml-22" title='遮光罩'>遮光罩</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       </li>
+                                                         
+														       <li>
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=108.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=108" class="ml-22" title='快门线/遥控器'>快门线/遥控器</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       
+                                                         
+														       
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=109.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=109" class="ml-22" title='测光表'>测光表</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       </li>
+                                                         
+														       <li>
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=110.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=110" class="ml-22" title='取景器'>取景器</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       
+                                                         
+														       
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=111.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=111" class="ml-22" title='望远镜'>望远镜</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       </li>
+                                                         
+														       <li>
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=112.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=112" class="ml-22" title='镜头盖/机身盖'>镜头盖/机身盖</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       
+                                                         
+														       
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=113.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=113" class="ml-22" title='转接环/转接镜'>转接环/转接镜</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       </li>
+                                                         
+														       <li>
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=114.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=114" class="ml-22" title='相机腕带/背带'>相机腕带/背带</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       
+                                                         
+														       
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=115.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=115" class="ml-22" title='对焦屏'>对焦屏</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       </li>
+                                                         
+														       <li>
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=116.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=116" class="ml-22" title='电源/数据线'>电源/数据线</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       
+                                                         
+														       
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=117.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=117" class="ml-22" title='防雨/防寒罩'>防雨/防寒罩</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       </li>
+                                                         
+														       <li>
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=118.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=118" class="ml-22" title='数码相框/打印'>数码相框/打印</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       
+                                                         
+														       
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=150.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=150" class="ml-22" title='显示器'>显示器</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       </li>
+                                                         
+														       <li>
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=137.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=137" class="ml-22" title='其他'>其他</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       
+                                                         
+														       
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=173.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=173" class="ml-22" title='电小二户外电源'>电小二户外电源</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       </li>
+                                                         
+													</ul>
+											     </li>
+                                            
+                                              <li class="appliance js_toggle relative" rel="litopcat" style="">
+                                               <input name="SecondKillProList$ctl03$_$recordsone$ctl10$hidMainCategoryId" type="hidden" id="SecondKillProList_ctl03___recordsone_ctl10_hidMainCategoryId" value="63" />
+												<div class="category-info">
+													<h3 class="category-name b-category-name"><em></em>
+                                              
+                                                    <a href="AllSearch.aspx-CategoryId=63.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=63" class="ml-22" title='清洁用品'>清洁用品</a>
+                                                    </h3>
+													</div>
+													<ul class="category-list_s">
+                                                     
+														       <li>
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=122.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=122" class="ml-22" title='清洁套'>清洁套</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       
+                                                         
+														       
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=123.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=123" class="ml-22" title='清洁布'>清洁布</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       </li>
+                                                         
+														       <li>
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=124.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=124" class="ml-22" title='清洁笔'>清洁笔</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       
+                                                         
+														       
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=125.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=125" class="ml-22" title='清洁液'>清洁液</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       </li>
+                                                         
+														       <li>
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=126.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=126" class="ml-22" title='气吹/气罐'>气吹/气罐</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       
+                                                         
+														       
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=127.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=127" class="ml-22" title='其他'>其他</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       </li>
+                                                         
+													</ul>
+											     </li>
+                                            
+                                              <li class="appliance js_toggle relative" rel="litopcat" style="">
+                                               <input name="SecondKillProList$ctl03$_$recordsone$ctl11$hidMainCategoryId" type="hidden" id="SecondKillProList_ctl03___recordsone_ctl11_hidMainCategoryId" value="64" />
+												<div class="category-info">
+													<h3 class="category-name b-category-name"><em></em>
+                                              
+                                                    <a href="AllSearch.aspx-CategoryId=64.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=64" class="ml-22" title='其他'>其他</a>
+                                                    </h3>
+													</div>
+													<ul class="category-list_s">
+                                                     
+														       <li>
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=128.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=128" class="ml-22" title='手机摄影器材'>手机摄影器材</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       
+                                                         
+														       
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=129.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=129" class="ml-22" title='投影仪/扫描仪'>投影仪/扫描仪</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       </li>
+                                                         
+														       <li>
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=130.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=130" class="ml-22" title='幕布'>幕布</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       
+                                                         
+														       
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=138.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=138" class="ml-22" title='蓝牙音箱'>蓝牙音箱</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       </li>
+                                                         
+														       <li>
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=139.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=139" class="ml-22" title='音乐播放器'>音乐播放器</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       
+                                                         
+														       
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=140.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=140" class="ml-22" title='耳机/耳麦'>耳机/耳麦</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       </li>
+                                                         
+														       <li>
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=141.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=141" class="ml-22" title='耳机放大器'>耳机放大器</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       
+                                                         
+														       
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=142.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=142" class="ml-22" title='艺术微喷'>艺术微喷</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       </li>
+                                                         
+														       <li>
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=148.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=148" class="ml-22" title='手机'>手机</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       
+                                                         
+														       
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=153.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=153" class="ml-22" title='打印机'>打印机</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       </li>
+                                                         
+														       <li>
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=157.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=157" class="ml-22" title='微课堂'>微课堂</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       
+                                                         
+														       
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=170.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=170" class="ml-22" title='快递'>快递</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       </li>
+                                                         
+														       <li>
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=171.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=171" class="ml-22" title='衣服'>衣服</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       
+                                                         
+														       
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=172.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=172" class="ml-22" title='徽章'>徽章</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       </li>
+                                                         
+													</ul>
+											     </li>
+                                            
+                                              <li class="appliance js_toggle relative" rel="litopcat" style="">
+                                               <input name="SecondKillProList$ctl03$_$recordsone$ctl12$hidMainCategoryId" type="hidden" id="SecondKillProList_ctl03___recordsone_ctl12_hidMainCategoryId" value="158" />
+												<div class="category-info">
+													<h3 class="category-name b-category-name"><em></em>
+                                              
+                                                    <a href="AllSearch.aspx-CategoryId=158.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=158" class="ml-22" title='影像服务'>影像服务</a>
+                                                    </h3>
+													</div>
+													<ul class="category-list_s">
+                                                     
+														       <li>
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=168.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=168" class="ml-22" title='画册制作'>画册制作</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       
+                                                         
+														       
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=162.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=162" class="ml-22" title='预约模特'>预约模特</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       </li>
+                                                         
+														       <li>
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=164.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=164" class="ml-22" title='摄影培训'>摄影培训</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       
+                                                         
+														       
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=167.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=167" class="ml-22" title='名师讲座'>名师讲座</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       </li>
+                                                         
+														       <li>
+                                                           
+															        <div class="category-info fl_categoryHref">
+																        <h3 class="category-name b-category-name">
+                                                                        <a href="AllSearch.aspx-CategoryId=169.htm" tppabs="http://www.18-du.com/AllSearch.aspx?CategoryId=169" class="ml-22" title='器材租赁'>器材租赁</a>
+                                                                        </h3>
+															        </div>
+                                                               
+														       </li>
+                                                         
+													</ul>
+											     </li>
+                                            
+                                   
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-cont"  >
+            <ul style=" padding-left:50px ">
+                <li class="index"><a href="ProductListnew.aspx.htm" tppabs="http://www.18-du.com/ProductListnew.aspx">智能数码</a></li>
+                <li class="index"><a href="TravelShow.aspx.htm" tppabs="http://www.18-du.com/Travel/TravelShow.aspx">影像活动</a></li>
+                <li class="index"><a href="PointShop.aspx.htm" tppabs="http://www.18-du.com/PointShop.aspx">积分商城</a></li>
+                
+                <li class="qc"><a href="TryOutProList.aspx.htm" tppabs="http://www.18-du.com/TryOutProList.aspx">试用新品</a></li>
+                <li class="qc"><a href="RentProList.aspx.htm" tppabs="http://www.18-du.com/RentProList.aspx">器材租赁</a></li>
+                <li class="qc last"><a href="SecondKillProList.aspx.htm" tppabs="http://www.18-du.com/SecondKillProList.aspx">秒杀商城</a></li>
+                <li class="qc last"><a href="ArticleList.aspx.htm" tppabs="http://www.18-du.com/ArticleList.aspx">资讯中心</a></li>
+                 
+            </ul>
+
+
+        </div>
+    </div>
+</div>
+
+
+      <!--轮播图-->
+      
+
+  
+
+
+<div class="banner-container">
+<div class="banner-main">
+            <!-- 代码 开始 -->
+    <div id="fsD1" class="focus">
+        <div id="D1pic1" class="fPic">
+        
+        <div class="fcon" style="display:none;">
+                <a target="_blank" href='' class="a_barner_link">
+                    <img class="ooxx" src="ProductDetail-1.aspx-productid=7229" tppabs="http://www.18-du.com/Storage/master/banner/20190422163601_7343.jpg" style="opacity: 0.72;">
+                </a>
+        </div>
+        
+        </div>
+
+        <div class="fbg">
+                <div class="D1fBt" id="D1fBt">
+                   
+                </div>
+        </div>
+
+        <span class="prev"></span>
+        <span class="next"></span>
+    </div>
+     <div class="clear"></div>
+
+  </div>
+  <div class="clear"></div>
+</div>
+
+<script>
+
+
+
+    $(function () {
+        var length = $(".a_barner_link").length;
+        if (length > 0) {
+            var html = '';
+            for (var i = 0; i < length; i++) {
+                html += '<a href="javascript:void(0)" hidefocus="true" target="_self" class="' + (i == 0 ? "current" : "") + '"></a>';
+            }
+            $("#D1fBt").html(html);
+        }
+
+
+
+        Qfast.add('widgets', { path: "AllSearch-1.aspx-categoryid=61&brandid=59"/*tpa=http://www.18-du.com/Utility/sysrc/js/terminator2.2.min.js*/, type: "js", requires: ['fx'] });
+
+        if ($(".ooxx").length > 1) {
+            Qfast(false, 'widgets', function () {
+                K.tabs({
+                    id: 'fsD1',   //焦点图包裹id  
+                    conId: "D1pic1",  //** 大图域包裹id  
+                    tabId: "D1fBt",
+                    tabTn: "a",
+                    conCn: '.fcon', //** 大图域配置class       
+                    auto: 1,   //自动播放 1或0
+                    effect: 'fade',   //效果配置
+                    eType: 'click', //** 鼠标事件
+                    pageBt: true, //是否有按钮切换页码
+                    bns: ['.prev', '.next'], //** 前后按钮配置class                          
+                    interval: 3000  //** 停顿时间  
+                })
+            })
+        } else {
+            Qfast(false, 'widgets', function () {
+                K.tabs({
+                    id: 'fsD1',   //焦点图包裹id  
+                    conId: "D1pic1",  //** 大图域包裹id  
+                    tabId: "D1fBt",
+                    tabTn: "a",
+                    conCn: '.fcon', //** 大图域配置class       
+                    auto:0,   //自动播放 1或0
+                    effect: 'fade',   //效果配置
+                   // eType: 'click', //** 鼠标事件
+                    pageBt: true, //是否有按钮切换页码
+                    bns: ['.prev', '.next'], //** 前后按钮配置class                          
+                    interval: 3000  //** 停顿时间  
+                })
+            })
+        }
+    })
+
+
+
+
+</script>
+                
+
+
+
+      <div class="s-main">
+            <!--spike-main 开始-->
+            <div class="spike-main">
+                <div class="spike-cur-time">
+                    <div class="left">
+                        <h2>进行中</h2> 
+                    </div>
+                </div>
+                <div class="spike-goods-list">
+                    <ul>
+                        <li id="SecondKillProList_rptlist_ctl00_ctl00_lilist" class="first">
+                            <div class="spt">
+                                <a href="javascript:if(confirm('http://www.18-du.com/310_6ccde196d00e41988ddb83a0653fda96.jpg  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.18-du.com/310_6ccde196d00e41988ddb83a0653fda96.jpg'" tppabs="http://www.18-du.com/SecondKillProDetail.aspx?ProductId=10186">
+                                    <img src="ProductDetail-1.aspx-productid=7228" tppabs="http://www.18-du.com/Storage/master/product/thumbs220/220_f91f2731d6fc4abbb2acb6036a66fea9.jpg" width="220" height="220"></a></div>
+                            <div class="spm">
+                             <p class="fl_d_proPrice">
+                            <span class="tleftTag" style=" width:60%">官方实体旗舰店</span>
+                                 </p>
+                            <p class="fl_d_proPrice">
+                                 <a href="javascript:if(confirm('http://www.18-du.com/310_6ccde196d00e41988ddb83a0653fda96.jpg  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.18-du.com/310_6ccde196d00e41988ddb83a0653fda96.jpg'" tppabs="http://www.18-du.com/SecondKillProDetail.aspx?ProductId=10186">Manfrotto/ 曼富图 MVK...</a>
+                                 
+                                 </p></div>
+                            <div class="spjg">
+                               秒杀价 ￥<span><span id="SecondKillProList_rptlist_ctl00_ctl00_FormatedMoneyLabel1">1259.00</span></span></div>
+                            <div class="y-jg">
+                                <span class="spyjg">￥<span><span id="SecondKillProList_rptlist_ctl00_ctl00_FormatedMoneyLabel2">2219.00</span></span></span> <span class="gm"><span>1</span>人已买</span>
+                            </div>
+                            <div class="spike_cur_time">
+                                 <span id='htmlspan978'></span>
+                                 <script type="text/javascript">  var execute_978; var nowTime_978=convertTime("2019-09-04 16:10:21"); var StartTime_978=convertTime("2019-08-08 09:55:24"); var EndTime_978=convertTime("2019-09-06 09:55:24"); function executeTime_978(nowTime_978) {  var flag = showTimeLimit(StartTime_978, EndTime_978,nowTime_978,"htmlspan978");if(flag)clearTimeout(execute_978); else { execute_978 = setTimeout(function(){ nowTime_978.setSeconds(nowTime_978.getSeconds() + 1); executeTime_978(nowTime_978);},1000);}} executeTime_978(nowTime_978); </script>
+                            </div>
+                        </li>
+
+
+
+                        <style>
+  .fl_d_proPrice{ float: left;font-size: 16px; color: #cd181c; text-align: left;}
+  .fl_d_proPrice .tleftTag { background: #cd181c none repeat scroll 0 0; color: #fff; text-align: center; font-size: 14px; padding: 4px 0;}
+  </style><li id="SecondKillProList_rptlist_ctl01_ctl00_lilist">
+                            <div class="spt">
+                                <a href="SecondKillProDetail.aspx-ProductId=1233.htm" tppabs="http://www.18-du.com/SecondKillProDetail.aspx?ProductId=1233">
+                                    <img src="220_ebafaef27fe54d89bf928b2a6033e1bb.jpg" tppabs="http://www.18-du.com/Storage/master/product/thumbs220/220_ebafaef27fe54d89bf928b2a6033e1bb.jpg" width="220" height="220"></a></div>
+                            <div class="spm">
+                             <p class="fl_d_proPrice">
+                            <span class="tleftTag" style=" width:60%">官方实体旗舰店</span>
+                                 </p>
+                            <p class="fl_d_proPrice">
+                                 <a href="SecondKillProDetail.aspx-ProductId=1233.htm" tppabs="http://www.18-du.com/SecondKillProDetail.aspx?ProductId=1233">NationalGeographic...</a>
+                                 
+                                 </p></div>
+                            <div class="spjg">
+                               秒杀价 ￥<span><span id="SecondKillProList_rptlist_ctl01_ctl00_FormatedMoneyLabel1">729.00</span></span></div>
+                            <div class="y-jg">
+                                <span class="spyjg">￥<span><span id="SecondKillProList_rptlist_ctl01_ctl00_FormatedMoneyLabel2">789.00</span></span></span> <span class="gm"><span>0</span>人已买</span>
+                            </div>
+                            <div class="spike_cur_time">
+                                 <span id='htmlspan975'></span>
+                                 <script type="text/javascript">  var execute_975; var nowTime_975=convertTime("2019-09-04 16:10:21"); var StartTime_975=convertTime("2019-08-08 09:55:24"); var EndTime_975=convertTime("2019-09-06 09:55:24"); function executeTime_975(nowTime_975) {  var flag = showTimeLimit(StartTime_975, EndTime_975,nowTime_975,"htmlspan975");if(flag)clearTimeout(execute_975); else { execute_975 = setTimeout(function(){ nowTime_975.setSeconds(nowTime_975.getSeconds() + 1); executeTime_975(nowTime_975);},1000);}} executeTime_975(nowTime_975); </script>
+                            </div>
+                        </li>
+
+
+
+                        <style>
+  .fl_d_proPrice{ float: left;font-size: 16px; color: #cd181c; text-align: left;}
+  .fl_d_proPrice .tleftTag { background: #cd181c none repeat scroll 0 0; color: #fff; text-align: center; font-size: 14px; padding: 4px 0;}
+  </style><li id="SecondKillProList_rptlist_ctl02_ctl00_lilist">
+                            <div class="spt">
+                                <a href="SecondKillProDetail.aspx-ProductId=8945.htm" tppabs="http://www.18-du.com/SecondKillProDetail.aspx?ProductId=8945">
+                                    <img src="220_6a6988eec28844d58b8f2e9591b7402a.jpg" tppabs="http://www.18-du.com/Storage/master/product/thumbs220/220_6a6988eec28844d58b8f2e9591b7402a.jpg" width="220" height="220"></a></div>
+                            <div class="spm">
+                             <p class="fl_d_proPrice">
+                            <span class="tleftTag" style=" width:60%">官方实体旗舰店</span>
+                                 </p>
+                            <p class="fl_d_proPrice">
+                                 <a href="SecondKillProDetail.aspx-ProductId=8945.htm" tppabs="http://www.18-du.com/SecondKillProDetail.aspx?ProductId=8945">Manfrotto/曼富图 MB P...</a>
+                                 
+                                 </p></div>
+                            <div class="spjg">
+                               秒杀价 ￥<span><span id="SecondKillProList_rptlist_ctl02_ctl00_FormatedMoneyLabel1">1339.00</span></span></div>
+                            <div class="y-jg">
+                                <span class="spyjg">￥<span><span id="SecondKillProList_rptlist_ctl02_ctl00_FormatedMoneyLabel2">2099.00</span></span></span> <span class="gm"><span>0</span>人已买</span>
+                            </div>
+                            <div class="spike_cur_time">
+                                 <span id='htmlspan973'></span>
+                                 <script type="text/javascript">  var execute_973; var nowTime_973=convertTime("2019-09-04 16:10:21"); var StartTime_973=convertTime("2019-08-08 09:55:24"); var EndTime_973=convertTime("2019-09-06 09:55:24"); function executeTime_973(nowTime_973) {  var flag = showTimeLimit(StartTime_973, EndTime_973,nowTime_973,"htmlspan973");if(flag)clearTimeout(execute_973); else { execute_973 = setTimeout(function(){ nowTime_973.setSeconds(nowTime_973.getSeconds() + 1); executeTime_973(nowTime_973);},1000);}} executeTime_973(nowTime_973); </script>
+                            </div>
+                        </li>
+
+
+
+                        <style>
+  .fl_d_proPrice{ float: left;font-size: 16px; color: #cd181c; text-align: left;}
+  .fl_d_proPrice .tleftTag { background: #cd181c none repeat scroll 0 0; color: #fff; text-align: center; font-size: 14px; padding: 4px 0;}
+  </style><li id="SecondKillProList_rptlist_ctl03_ctl00_lilist">
+                            <div class="spt">
+                                <a href="SecondKillProDetail.aspx-ProductId=8956.htm" tppabs="http://www.18-du.com/SecondKillProDetail.aspx?ProductId=8956">
+                                    <img src="220_2cb853a1a1074b169c5c49419b36953d.jpg" tppabs="http://www.18-du.com/Storage/master/product/thumbs220/220_2cb853a1a1074b169c5c49419b36953d.jpg" width="220" height="220"></a></div>
+                            <div class="spm">
+                             <p class="fl_d_proPrice">
+                            <span class="tleftTag" style=" width:60%">官方实体旗舰店</span>
+                                 </p>
+                            <p class="fl_d_proPrice">
+                                 <a href="SecondKillProDetail.aspx-ProductId=8956.htm" tppabs="http://www.18-du.com/SecondKillProDetail.aspx?ProductId=8956">HPRC/亚玛比利亚 RE2600W...</a>
+                                 
+                                 </p></div>
+                            <div class="spjg">
+                               秒杀价 ￥<span><span id="SecondKillProList_rptlist_ctl03_ctl00_FormatedMoneyLabel1">1629.00</span></span></div>
+                            <div class="y-jg">
+                                <span class="spyjg">￥<span><span id="SecondKillProList_rptlist_ctl03_ctl00_FormatedMoneyLabel2">1699.00</span></span></span> <span class="gm"><span>0</span>人已买</span>
+                            </div>
+                            <div class="spike_cur_time">
+                                 <span id='htmlspan972'></span>
+                                 <script type="text/javascript">  var execute_972; var nowTime_972=convertTime("2019-09-04 16:10:21"); var StartTime_972=convertTime("2019-08-08 09:55:24"); var EndTime_972=convertTime("2019-09-06 09:55:24"); function executeTime_972(nowTime_972) {  var flag = showTimeLimit(StartTime_972, EndTime_972,nowTime_972,"htmlspan972");if(flag)clearTimeout(execute_972); else { execute_972 = setTimeout(function(){ nowTime_972.setSeconds(nowTime_972.getSeconds() + 1); executeTime_972(nowTime_972);},1000);}} executeTime_972(nowTime_972); </script>
+                            </div>
+                        </li>
+
+
+
+                        <style>
+  .fl_d_proPrice{ float: left;font-size: 16px; color: #cd181c; text-align: left;}
+  .fl_d_proPrice .tleftTag { background: #cd181c none repeat scroll 0 0; color: #fff; text-align: center; font-size: 14px; padding: 4px 0;}
+  </style><li id="SecondKillProList_rptlist_ctl04_ctl00_lilist" class="last">
+                            <div class="spt">
+                                <a href="SecondKillProDetail.aspx-ProductId=8949.htm" tppabs="http://www.18-du.com/SecondKillProDetail.aspx?ProductId=8949">
+                                    <img src="220_303847b4dced499b9906fb6ec67889d3.jpg" tppabs="http://www.18-du.com/Storage/master/product/thumbs220/220_303847b4dced499b9906fb6ec67889d3.jpg" width="220" height="220"></a></div>
+                            <div class="spm">
+                             <p class="fl_d_proPrice">
+                            <span class="tleftTag" style=" width:60%">官方实体旗舰店</span>
+                                 </p>
+                            <p class="fl_d_proPrice">
+                                 <a href="SecondKillProDetail.aspx-ProductId=8949.htm" tppabs="http://www.18-du.com/SecondKillProDetail.aspx?ProductId=8949">Manfrotto/曼富图 MVMX...</a>
+                                 
+                                 </p></div>
+                            <div class="spjg">
+                               秒杀价 ￥<span><span id="SecondKillProList_rptlist_ctl04_ctl00_FormatedMoneyLabel1">1599.00</span></span></div>
+                            <div class="y-jg">
+                                <span class="spyjg">￥<span><span id="SecondKillProList_rptlist_ctl04_ctl00_FormatedMoneyLabel2">1879.00</span></span></span> <span class="gm"><span>0</span>人已买</span>
+                            </div>
+                            <div class="spike_cur_time">
+                                 <span id='htmlspan971'></span>
+                                 <script type="text/javascript">  var execute_971; var nowTime_971=convertTime("2019-09-04 16:10:21"); var StartTime_971=convertTime("2019-08-08 09:55:24"); var EndTime_971=convertTime("2019-09-06 09:55:24"); function executeTime_971(nowTime_971) {  var flag = showTimeLimit(StartTime_971, EndTime_971,nowTime_971,"htmlspan971");if(flag)clearTimeout(execute_971); else { execute_971 = setTimeout(function(){ nowTime_971.setSeconds(nowTime_971.getSeconds() + 1); executeTime_971(nowTime_971);},1000);}} executeTime_971(nowTime_971); </script>
+                            </div>
+                        </li>
+
+
+
+                        <style>
+  .fl_d_proPrice{ float: left;font-size: 16px; color: #cd181c; text-align: left;}
+  .fl_d_proPrice .tleftTag { background: #cd181c none repeat scroll 0 0; color: #fff; text-align: center; font-size: 14px; padding: 4px 0;}
+  </style><li id="SecondKillProList_rptlist_ctl05_ctl00_lilist" class="first">
+                            <div class="spt">
+                                <a href="SecondKillProDetail.aspx-ProductId=3666.htm" tppabs="http://www.18-du.com/SecondKillProDetail.aspx?ProductId=3666">
+                                    <img src="220_eed44a7a35d54ba69281c42bd016fdf1.jpg" tppabs="http://www.18-du.com/Storage/master/product/thumbs220/220_eed44a7a35d54ba69281c42bd016fdf1.jpg" width="220" height="220"></a></div>
+                            <div class="spm">
+                             <p class="fl_d_proPrice">
+                            <span class="tleftTag" style=" width:60%">官方实体旗舰店</span>
+                                 </p>
+                            <p class="fl_d_proPrice">
+                                 <a href="SecondKillProDetail.aspx-ProductId=3666.htm" tppabs="http://www.18-du.com/SecondKillProDetail.aspx?ProductId=3666">Lowepro/乐摄宝 Nova S...</a>
+                                 
+                                 </p></div>
+                            <div class="spjg">
+                               秒杀价 ￥<span><span id="SecondKillProList_rptlist_ctl05_ctl00_FormatedMoneyLabel1">369.00</span></span></div>
+                            <div class="y-jg">
+                                <span class="spyjg">￥<span><span id="SecondKillProList_rptlist_ctl05_ctl00_FormatedMoneyLabel2">580.00</span></span></span> <span class="gm"><span>0</span>人已买</span>
+                            </div>
+                            <div class="spike_cur_time">
+                                 <span id='htmlspan970'></span>
+                                 <script type="text/javascript">  var execute_970; var nowTime_970=convertTime("2019-09-04 16:10:21"); var StartTime_970=convertTime("2019-08-08 09:55:24"); var EndTime_970=convertTime("2019-09-06 09:55:24"); function executeTime_970(nowTime_970) {  var flag = showTimeLimit(StartTime_970, EndTime_970,nowTime_970,"htmlspan970");if(flag)clearTimeout(execute_970); else { execute_970 = setTimeout(function(){ nowTime_970.setSeconds(nowTime_970.getSeconds() + 1); executeTime_970(nowTime_970);},1000);}} executeTime_970(nowTime_970); </script>
+                            </div>
+                        </li>
+
+
+
+                        <style>
+  .fl_d_proPrice{ float: left;font-size: 16px; color: #cd181c; text-align: left;}
+  .fl_d_proPrice .tleftTag { background: #cd181c none repeat scroll 0 0; color: #fff; text-align: center; font-size: 14px; padding: 4px 0;}
+  </style><li id="SecondKillProList_rptlist_ctl06_ctl00_lilist">
+                            <div class="spt">
+                                <a href="javascript:if(confirm('http://www.18-du.com/310_84a3f39eadcc4d1da086d2a63532bb3f.jpg  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.18-du.com/310_84a3f39eadcc4d1da086d2a63532bb3f.jpg'" tppabs="http://www.18-du.com/SecondKillProDetail.aspx?ProductId=6893">
+                                    <img src="ProductDetail-1.aspx-productid=7227" tppabs="http://www.18-du.com/Storage/master/product/thumbs220/220_6fa651e91d754901b55820d6172e86af.jpg" width="220" height="220"></a></div>
+                            <div class="spm">
+                             <p class="fl_d_proPrice">
+                            <span class="tleftTag" style=" width:60%">官方实体旗舰店</span>
+                                 </p>
+                            <p class="fl_d_proPrice">
+                                 <a href="javascript:if(confirm('http://www.18-du.com/310_84a3f39eadcc4d1da086d2a63532bb3f.jpg  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.18-du.com/310_84a3f39eadcc4d1da086d2a63532bb3f.jpg'" tppabs="http://www.18-du.com/SecondKillProDetail.aspx?ProductId=6893">GGS/金钢 A7II/A7sII ...</a>
+                                 
+                                 </p></div>
+                            <div class="spjg">
+                               秒杀价 ￥<span><span id="SecondKillProList_rptlist_ctl06_ctl00_FormatedMoneyLabel1">69.00</span></span></div>
+                            <div class="y-jg">
+                                <span class="spyjg">￥<span><span id="SecondKillProList_rptlist_ctl06_ctl00_FormatedMoneyLabel2">158.00</span></span></span> <span class="gm"><span>0</span>人已买</span>
+                            </div>
+                            <div class="spike_cur_time">
+                                 <span id='htmlspan977'></span>
+                                 <script type="text/javascript">  var execute_977; var nowTime_977=convertTime("2019-09-04 16:10:21"); var StartTime_977=convertTime("2019-08-08 09:55:24"); var EndTime_977=convertTime("2019-09-06 09:55:24"); function executeTime_977(nowTime_977) {  var flag = showTimeLimit(StartTime_977, EndTime_977,nowTime_977,"htmlspan977");if(flag)clearTimeout(execute_977); else { execute_977 = setTimeout(function(){ nowTime_977.setSeconds(nowTime_977.getSeconds() + 1); executeTime_977(nowTime_977);},1000);}} executeTime_977(nowTime_977); </script>
+                            </div>
+                        </li>
+
+
+
+                        <style>
+  .fl_d_proPrice{ float: left;font-size: 16px; color: #cd181c; text-align: left;}
+  .fl_d_proPrice .tleftTag { background: #cd181c none repeat scroll 0 0; color: #fff; text-align: center; font-size: 14px; padding: 4px 0;}
+  </style>
+                        <div class="clear">
+                        </div>
+                    </ul>
+                </div>
+                <div class="order-num">
+               <div class="page_total">
+                  
+
+    <link href="kkpager_orange.css" tppabs="http://www.18-du.com/Utility/tool/css/kkpager_orange.css" rel="stylesheet" type="text/css" />
+    <script src="kkpager.js" tppabs="http://www.18-du.com/Utility/tool/kkpager.js" type="text/javascript"></script>
+
+
+
+<script type="text/javascript">
+function getParameter(name) { 
+	var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)"); 
+	var r = window.location.search.substr(1).match(reg); 
+	if (r!=null) return unescape(r[2]); return null;
+}
+
+//init
+$(function(){
+	var totalPage = $("#hidTotalPage").val();
+	var totalRecords =$("#hidTotalRecords").val();
+	var pageNo = getParameter($("#hidLinkName").val());
+	if(!pageNo){
+		pageNo = 1;
+	}
+	//生成分页
+	//有些参数是可选的，比如lang，若不传有默认值
+	kkpager.generPageHtml({
+	    pagerid:$("#hidContainer").val(),
+		pno : pageNo,
+		//总页码
+		total : totalPage,
+		//总数据条数
+		totalRecords : totalRecords,
+		//链接前部
+		hrefFormer : '',
+		//链接尾部
+		hrefLatter : '.html',
+
+        gopageWrapId		: $("#hidContainer").val()+"_gopageWrapId",
+		gopageButtonId		: $("#hidContainer").val()+'_kkpager_btn_go',
+		gopageTextboxId		: $("#hidContainer").val()+'_kkpager_btn_go_input',
+
+		getLink : function(n){
+			//return this.hrefFormer + this.hrefLatter + "?pno="+n;
+		    return AppendParameter($("#hidLinkName").val(),n);
+		},
+	    lang:{
+		prePageText: '<',
+        nextPageText: '>',
+		}
+		/*
+		,lang				: {
+			firstPageText			: '首页',
+			firstPageTipText		: '首页',
+			lastPageText			: '尾页',
+			lastPageTipText			: '尾页',
+			prePageText				: '上一页',
+			prePageTipText			: '上一页',
+			nextPageText			: '下一页',
+			nextPageTipText			: '下一页',
+			totalPageBeforeText		: '共',
+			totalPageAfterText		: '页',
+			currPageBeforeText		: '当前第',
+			currPageAfterText		: '页',
+			totalInfoSplitStr		: '/',
+			totalRecordsBeforeText	: '共',
+			totalRecordsAfterText	: '条数据',
+			gopageBeforeText		: '&nbsp;转到',
+			gopageButtonOkText		: '确定',
+			gopageAfterText			: '页',
+			buttonTipBeforeText		: '第',
+			buttonTipAfterText		: '页'
+		}*/
+		
+		//,
+		//mode : 'click',//默认值是link，可选link或者click
+		//click : function(n){
+		//	this.selectPage(n);
+		//  return false;
+		//}
+	});
+});
+</script>
+
+
+<input type="hidden" name="SecondKillProList$PageFY1$_$hidTotalPage" id="hidTotalPage" value="1" />
+<input type="hidden" name="SecondKillProList$PageFY1$_$hidTotalRecords" id="hidTotalRecords" value="7" />
+<input type="hidden" name="SecondKillProList$PageFY1$_$hidContainer" id="hidContainer" value="PageFY1" />
+<input type="hidden" name="SecondKillProList$PageFY1$_$hidLinkName" id="hidLinkName" value="PageIndex" />
+
+<div style="width:900px;margin-right:10px;">
+<div id="PageFY1" class="kkpager"></div>
+</div>
+
+               </div>
+            </div>
+            </div>
+            <!--spike-main 结束-->
+        </div>
+
+<style >
+			#left, #right{
+                position: fixed;
+                top:450px;
+                width:150px;
+                height: 150px;
+                line-height: 180px;
+                border: 0px solid #000;
+            }
+            #left{
+                left: 1px;
+            }
+            #right{
+                right: 0px;
+            }
+	</style>
+	        <div id="right">
+                <div style=" float:left; width:100%;">
+                    <div style=" width:100% ">
+                         <img src="2018012201.png" tppabs="http://www.18-du.com/Utility/sysrc/vshop/img/2018012201.png" width="100%">
+                    </div>
+                </div>
+            </div>
+      <script type="text/javascript">
+          HeadeMenu_Choice("影像器材");
+      </script>
+
+
+
+
+</form>
+<div class="clear"></div>
+<div class="margin50"></div>
+		
+
+<style>
+#aaa{ display:none;}
+</style>
+  <div class="footer" style=" float:none">
+        
+      <div id="aaa"> 
+
+
+<div class="footer-ul">
+
+      
+          <div class="ifot">
+           <div class="ifot1">新手帮助</div>
+		       <div class="ifot2">
+               <ul>
+               
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=14.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=14">
+                              用户协议
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=16.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=16">
+                              找回密码
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=18.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=18">
+                              会员绑定
+                          </a>  
+                        </li>
+                 
+                 </ul>
+		       </div>
+            </div>
+      
+          <div class="ifot">
+           <div class="ifot1">我的店铺</div>
+		       <div class="ifot2">
+               <ul>
+               
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=20.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=20">
+                              发布商品
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=21.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=21">
+                              发货
+                          </a>  
+                        </li>
+                 
+                 </ul>
+		       </div>
+            </div>
+      
+          <div class="ifot">
+           <div class="ifot1">会员店粉丝</div>
+		       <div class="ifot2">
+               <ul>
+               
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=22.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=22">
+                              会员注册
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=23.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=23">
+                              会员认证
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=25.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=25">
+                              会员升级
+                          </a>  
+                        </li>
+                 
+                 </ul>
+		       </div>
+            </div>
+      
+          <div class="ifot">
+           <div class="ifot1">常见问答</div>
+		       <div class="ifot2">
+               <ul>
+               
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=35.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=35">
+                              修改密码
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=36.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=36">
+                              售后处理时效
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=34.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=34">
+                              售后
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=30.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=30">
+                              公司简介
+                          </a>  
+                        </li>
+                 
+                 </ul>
+		       </div>
+            </div>
+    
+
+
+<div class="ifot infotewm lastifort">
+		   <div class="ifot2 APP">
+		      <img src="sheyingwxh.jpg" tppabs="http://www.18-du.com/Utility/sysrc/vshop/img/sheyingwxh.jpg" width="124" height="124">
+		   </div>
+		   <div class="ifot1 ewm" style="width:168px">关注我们公众号了解更多</div>
+ </div>
+
+ <div class="ifot ifotB" style=" padding-left:30px">
+				<p class="small_p">服务热线</p>
+				<p>010-63255589</p>
+				<p>服务监督电话：13601051438</p>
+				<p style="width:300px">周一到周六：9:00-18:00</p>
+		</div>
+</div>
+<div style=" width:57%; color:White; padding-left:14%; padding-top:15px; padding-bottom:10px">
+    <p class="MsoNormal">
+	    <strong><span style="font-size:14px;">北京十八度影像文化股份公司&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;北京市西城区马连道南街6号院1号楼12层1205A&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;010-63255589 &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;京ICP备16038196号-1 
+</span></strong> 
+    </p>
+</div>
+
+
+      </div> 
+        
+        
+        
+        
+        <div class="footer">
+        
+        
+
+
+<div class="footer-ul" style=" width:100%; min-height:240px;">
+
+      
+          <div class="ifot">
+           <div class="ifot1">新手帮助</div>
+		       <div class="ifot2">
+               <ul>
+               
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=14.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=14">
+                              用户协议
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=16.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=16">
+                              找回密码
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=18.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=18">
+                              用户绑定
+                          </a>  
+                        </li>
+                 
+                 </ul>
+		       </div>
+            </div>
+      
+          <div class="ifot" style=" display:none">
+           <div class="ifot1">我的店铺</div>
+		       <div class="ifot2">
+               <ul>
+               
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=20.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=20">
+                              发布商品
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=21.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=21">
+                              发货
+                          </a>  
+                        </li>
+                 
+                 </ul>
+		       </div>
+            </div>
+      
+          <div class="ifot" style=" display:none">
+           <div class="ifot1">会员店粉丝</div>
+		       <div class="ifot2">
+               <ul>
+               
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=22.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=22">
+                              会员注册
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=23.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=23">
+                              会员认证
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=25.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=25">
+                              会员升级
+                          </a>  
+                        </li>
+                 
+                 </ul>
+		       </div>
+            </div>
+      
+          <div class="ifot">
+           <div class="ifot1">常见问答</div>
+		       <div class="ifot2">
+               <ul>
+               
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=35.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=35">
+                              修改密码
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=36.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=36">
+                              售后处理时效
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=34.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=34">
+                              售后
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=30.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=30">
+                              公司简介
+                          </a>  
+                        </li>
+                 
+                 </ul>
+		       </div>
+            </div>
+    
+
+
+<div class="ifot infotewm lastifort" style=" margin-left:15%;">
+		   <div class="ifot2 APP">
+		      <img src="sheyingwxh.jpg" tppabs="http://www.18-du.com/Utility/sysrc/vshop/img/sheyingwxh.jpg" width="124" height="124">
+		   </div>
+		   <div class="ifot1 ewm" style="width:168px">关注我们公众号了解更多</div>
+ </div>
+
+ <div class="ifot ifotB" style=" padding-left:30px; width:35%">
+				<p class="small_p">服务热线</p>
+				<p>010-63255589</p>
+				<p>服务监督电话：13601051438</p>
+				<p style="width:300px">周一到周六：9:00-18:00</p>
+		</div>
+</div>
+<div style=" width:90%; color:White;padding-top:15px; padding-bottom:10px; text-align:center; margin:0 auto;">
+    <p style=" font-size:14px;">
+	 北京十八度影像文化股份公司&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;北京市西城区马连道南街6号院1号楼12层1205A&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;010-63255589 &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;京ICP备16038196号-1 
+    </p>
+</div>
+
+
+ </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    <div style=" display:none">
+    <div class="clear"></div>
+       <!-- 友情链接-->
+        
+
+<div class="footer_friendshipLink_total">
+	<div class="footer_friendshipLink">
+		<ul>
+
+<!--<li><a href='#' target="_blank">友情链接：</a></li>-->
+
+	</ul>
+   </div>
+</div>
+
+        <div class="clear"></div>
+    </div>    
+
+       
+        <div class="footer-bottom">
+         <!--底部自定义内容-->
+          <p>
+	<span style="color:#999999;font-family:'Microsoft YaHei', tahoma, arial, 'Hiragino Sans GB', '\\5b8b体', sans-serif;line-height:22px;">Copyright&nbsp;&copy; 2016 -&nbsp;2017 十八度 18-du.com&nbsp;版权所有 |&nbsp;京ICP备16038196号-1</span> 
+</p>
+<p>
+	<br />
+</p>
+          <script type="text/javascript">              var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cspan id='cnzz_stat_icon_1261274722'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1261274722%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+           <!-- 合作伙伴-->
+            
+
+<div class="footer_friendshipLink_total">
+	<div class="footer_friendshipLink">
+		<ul>
+
+	</ul>
+   </div>
+</div>
+
+        </div>
+         
+ </div>
+ </body>
+ </html>
+

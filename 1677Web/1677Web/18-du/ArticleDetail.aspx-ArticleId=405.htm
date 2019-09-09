@@ -1,0 +1,887 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv=Content-Type content='text/html; charset=utf-8'>
+<script language="javascript" type="text/javascript"> 
+            var applicationPath = "";
+            var skinPath = "/templates/master/default";
+            var subsiteuserId = "0";
+        </script>
+<meta http-equiv="content-language" content="zh-CN" />
+<link rel="icon" type="image/x-icon" href="http://www.18-du.com/favicon.ico" media="screen" />
+<link rel="shortcut icon" type="image/x-icon" href="http://www.18-du.com/favicon.ico" media="screen" />
+<meta name="author" content="Hishop development team" />
+<meta name="GENERATOR" content="1.2" />
+<title>十八度影像平台</title>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<link href="style.css" tppabs="http://www.18-du.com/Utility/sysrc/css/style.css" rel="stylesheet" type="text/css" /><link href="a.add.css" tppabs="http://www.18-du.com/Utility/sysrc/css/lrtk.css" rel="stylesheet" type="text/css" /><link href="AllSearch.aspx-CategoryId=61&brandid=4.css" tppabs="http://www.18-du.com/Utility/sysrc/css/activity_menu.css" rel="stylesheet" type="text/css" />
+    <script src="jquery-1.8.3.min.js" tppabs="http://www.18-du.com/Utility/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="AllSearch-1.aspx-categoryid=54&brandid=4" tppabs="http://www.18-du.com/Utility/sysrc/js/koala.min.1.5.js" type="text/javascript"></script>
+
+
+        <script src="globals.js" tppabs="http://www.18-du.com/Utility/globals.js" type="text/javascript"></script>
+        <script src="getParmByUrl.js" tppabs="http://www.18-du.com/Utility/getParmByUrl.js" type="text/javascript"></script>
+   <link href="kkpager_orange.css" tppabs="http://www.18-du.com/Utility/tool/css/kkpager_orange.css" rel="stylesheet" type="text/css" />
+   <script src="kkpager.js" tppabs="http://www.18-du.com/Utility/tool/kkpager.js" type="text/javascript"></script>
+
+    <link href="AllSearch.aspx-CategoryId=54&brandid=5.css" tppabs="http://www.18-du.com/Utility/tool/css/swiper.min.css" rel="stylesheet" type="text/css" />
+        <script src="AllSearch-1.aspx-categoryid=54&brandid=15" tppabs="http://www.18-du.com/Utility/tool/swiper.min.js" type="text/javascript"></script>
+
+              <link href="AllSearch.aspx-CategoryId=54&brandid=145.css" tppabs="http://www.18-du.com/Utility/tool/css/weui.min.css" rel="stylesheet" type="text/css" />
+<script src="DialogShow.js" tppabs="http://www.18-du.com/Utility/tool/DialogShow.js" type="text/javascript"></script>
+<script src="jquery.cookie.js" tppabs="http://www.18-du.com/Utility/jquery.cookie.js" type="text/javascript"></script>
+ <script type="text/javascript" src="maps-v=1.3&key=1fbaa444c63bd5e19dc104e7472e0c13&&plugin=AMap.CitySearch" tppabs="http://webapi.amap.com/maps?v=1.3&key=1fbaa444c63bd5e19dc104e7472e0c13&&plugin=AMap.CitySearch"></script>
+    <script src="PIE.js" tppabs="http://www.18-du.com/Utility/sysrc/js/PIE.js" type="text/javascript"></script>
+    
+    <link href="newStyle.css" tppabs="http://www.18-du.com/Utility/sysrc/css/newStyle.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript">
+      var sUserAgent = navigator.userAgent.toLowerCase();
+      var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+      var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+      var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+      var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+      var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+      var bIsAndroid = sUserAgent.match(/android/i) == "android";
+      var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+      var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+      if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+          location.href = "Default.aspx-ReferralUserId=0.htm"/*tpa=http://www.18-du.com/Vshop/Default.aspx?ReferralUserId=0*/;
+      }
+
+      $(function () {
+
+          if (window.PIE) {
+              $('.rounded').each(function () {
+                  PIE.attach(this);
+              });
+          }
+
+          if ($.cookie('SelectCity') == null) {
+              var citysearch = new AMap.CitySearch();
+              citysearch.getLocalCity(function (status, result) {
+                  result.city = result.city.replace('市', '');
+                  if (status === 'complete' && result.info === 'OK') {
+                      if (result && result.city && result.bounds) {
+                          $("#splocate").html(result.city);
+                          $.cookie('SelectCity', result.city, { expires: 1, path: '/' });
+                      }
+                  }
+                  else {
+                      $("#splocate").html("全国");
+                      $.cookie('SelectCity', "", { expires: 1, path: '/' });
+                  }
+              })
+          } else {
+              $.cookie('SelectCity', $.cookie('SelectCity').toString().replace('市', ''));
+          }
+
+      });
+ </script>
+ <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "hm.js-c6b81c0821cb37f81f6c558a3388720e"/*tpa=https://hm.baidu.com/hm.js?c6b81c0821cb37f81f6c558a3388720e*/;
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<title>
+
+</title></head>
+<body  style=" background:#fff">
+
+<div class="site-header container">
+        <div class="site-header_main">
+            <div class="left">
+                <ul>
+                    <li style=" display:none"><span class="span_citychange" id="splocate">
+                    <span>全国</span>
+                    </span>
+                    <a href="javascript:GotoChangeCity()" id="aselcity">【切换城市】</a></li>
+                
+                </ul>
+            </div>
+            <div class="right">
+                <ul>
+                    <li>
+                        <label>
+您好，欢迎来到18度影像城!</label>
+                           <a id="ArticleDetail_ctl00___Common_MyAccountLink1" href="Register1.aspx.htm" tppabs="http://www.18-du.com/Register1.aspx" target="_blank">注册</a>
+                           </li>
+                    <li class="spacer"></li>
+                    <li><a id="ArticleDetail_ctl00___Common_Link_Login1" href="login.aspx.htm" tppabs="http://www.18-du.com/login.aspx">登录</a></li>
+                     <li class="spacer"></li>
+                    <li ><a id="ArticleDetail_ctl00___Common_ShopAccountLink1" href="http://bad_redirect" >商户登入</a></li>
+                    <li class="spacer"></li>
+                    <li ><a id="ArticleDetail_ctl00___CommonShopPreView1"></a></li>
+                </ul>
+            </div>
+        </div>
+ </div>
+
+ 
+ <script type="text/javascript">
+     function GotoChangeCity() {
+         //localStorage.historyurl = location.href;
+         localStorage.historyurl = "ProductList.aspx.htm"/*tpa=http://www.18-du.com/ProductList.aspx*/;
+         location.href = "http:///" + location.host + "/city_choose.aspx";
+     }
+ 
+ </script>
+
+<style>
+.p_div img {
+    width: 100%;
+    height: auto;
+}
+</style>
+<form name="aspnetForm" method="post" action="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9494  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9494'" tppabs="http://www.18-du.com/ArticleDetail.aspx?ArticleId=405?__VIEWSTATE=/wEPDwUKMTQ4NjU5NjgyNw9kFgJmD2QWAmYPZBYEAgIPZBYKAgMPFgIeBFRleHQFIeivmuiBmOaRhOW9sea0u+WKqOS4k+WRmOOAgeiusuW4iGQCBQ8PFgQfAAUG5aS05p2hHgtOYXZpZ2F0ZVVybAUhQXJ0aWNsZVR5cGVMaXN0LmFzcHg/Q2F0ZWdvcnlJZD03ZGQCBw8WAh8ABQoyMDE5LTA2LTA2ZAIJDxYCHwAFxSs8cD4NCgk8Yj48aW1nIGFsdD0iIiBzcmM9Ii9raW5kZWRpdG9yL2F0dGFjaGVkL2ltYWdlLzIwMTkwMzIyLzIwMTkwMzIyMTUwNjM0XzkzNTUuanBlZyIgLz48YnIgLz4NCjwvYj4gDQo8L3A+DQo8aDEgc3R5bGU9InRleHQtYWxpZ246Y2VudGVyOyI+DQoJPGI+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTozMnB4OyI+PGJyIC8+DQo8L3NwYW4+PC9iPiANCjwvaDE+DQo8aDEgc3R5bGU9InRleHQtYWxpZ246Y2VudGVyOyI+DQoJPGI+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTozMnB4OyI+5oub6IGY5pGE5b2x5rS75Yqo5LiT5ZGYJmFtcDvorrLluIg8L3NwYW4+PC9iPiANCjwvaDE+DQo8cD4NCgk8Yj48YnIgLz4NCjwvYj4gDQo8L3A+DQo8aDIgc3R5bGU9InRleHQtYWxpZ246Y2VudGVyOyI+DQoJPGI+PHNwYW4gc3R5bGU9ImJhY2tncm91bmQtY29sb3I6IHJnYigyNTUsIDI1NSwgMjU1KTsgY29sb3I6IHJnYig1MSwgMTI3LCAyMjkpOyBmb250LXNpemU6IDI0cHg7IiBmb250LXNpemU6MjRweDsiPSIiPuS4gOOAgeWyl+S9jeiBjOi0ozwvc3Bhbj48L2I+IA0KPC9oMj4NCjxwPg0KCTxiPjxzcGFuIHN0eWxlPSJiYWNrZ3JvdW5kLWNvbG9yOiNGRkZGRkY7Y29sb3I6IzMzN0ZFNTsiPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTpTaW1IZWk7Ij48L3NwYW4+PGJyIC8+DQo8L3NwYW4+PC9iPiANCjwvcD4NCjxwPg0KCTHjgIHlm7Tnu5Xlhazlj7jnmoTlvbHlg4/mlofljJbpobnnm67vvIzotJ/otKPmjJbmjpjjgIHliIbmnpDlub/lpKflvbHlj4vpnIDmsYLvvIzotJ/otKPlvbHlg4/mlofljJbpobnnm67op4TliJLjgIHokL3lrp7kuI7miafooYzvvJvmiafooYzmtLvliqjmjqjov5vjgIHnu5/nrbnljY/osIPmtLvliqjotYTmupDjgIHmgLvnu5Por4TkvLDmtLvliqjmlYjmnpzvvJs8c3Bhbj48L3NwYW4+IA0KPC9wPg0KPHA+DQoJMuOAgeWPguS4juWFrOWPuOW9seWDj+aWh+WMlumhueebrui/kOiQpe+8jOWMheaLrOS9huS4jemZkOS6ju+8mjxzcGFuPjwvc3Bhbj4gDQo8L3A+DQo8cD4NCgnikaDjgIo8c3Bhbj4xODwvc3Bhbj7luqblvbHlg4/lvq7or77loILjgIvnmoTnur/kuIo8c3Bhbj4vPC9zcGFuPue6v+S4i+S4k+mimOa0u+WKqOOAgeW4guWcuuaOqOW5v+WPiuWTgeeJjOa0u+WKqOeahOetluWIkuWPiuaJp+ihjO+8m+WNj+WKqeW8gOWxleaRhOW9seinhumikeivvueoi+etie+8jOWNj+WKqeWPguS4juWvueWfueiureivvueoi+eahOaPkOe6suOAgeWGheWuueaWueWQkeOAgeW9ouW8j+OAgeaOqOW5v+aooeW8j+OAgeiusuW4iOWuieaOkuetieeOr+iKgui/m+ihjOetluWIkuS4juaJp+ihjO+8mzxzcGFuPjwvc3Bhbj4gDQo8L3A+DQo8cD4NCgnikaHlj4LkuI7lr7nlhazlj7jlvbHlg4/mlofljJbpobnnm67jgIrmkYTlvbHml4XmuLjjgIvlubPlj7DnmoTmi5vllYbmjqjlub/lt6XkvZzvvIzpnaLlkJHnpL7kvJrmi5vllYbmkYTlvbHml4XmuLjlkIjkvZzkvJnkvLTvvIzmjqjlub/ooYzmkYTnur/ot6/vvIzlop7liqDooYzmkYTnlLXllYblubPlj7DorqLljZXplIDllK7vvJs8c3Bhbj48L3NwYW4+IA0KPC9wPg0KPHA+DQoJ4pGi5a+56KGM5pGE57q/6LevPHNwYW4+Lzwvc3Bhbj7nur/kuIvmkYTlvbHmtLvliqjnmoTnrZbliJLjgIHlrqPkvKDjgIHmi5vli5/vvIzotJ/otKPmkYTlvbHmtLvliqjnmoTmiafooYzokL3lnLDvvIzmjIflr7zmkYTlvbHniLHlpb3ogIXlpoLkvZXkvb/nlKjnm7jmnLrjgIHmi43mkYTnhafniYfjgIHmtLvliqg8c3Bhbj4vPC9zcGFuPuihjOeoi+S4reaRhOW9seefpeivhueahOiusuino+etie+8mzxzcGFuPjwvc3Bhbj4gDQo8L3A+DQo8cD4NCgnikaPlnKjlvZPlnLDlvIDmi5PlvbHlj4votYTmupDvvIzphY3lkIjlvZPlnLDkv7HkuZDpg6jmtLvliqjvvIzlu7rnq4vlvZPlnLDlvbHlj4vlvq7kv6HnvqTnrYnjgII8c3Bhbj48L3NwYW4+IA0KPC9wPg0KPHA+DQoJ5Lul5LiK5bel5L2c5YaF5a655Y+v5o6l5Y+X5YW86IGM77yM6K+m5oOF5Y+v5Yiw5YWs5Y+46Z2i6LCI55u45YWz5ZCI5L2c5pa55qGI44CCPHNwYW4+PC9zcGFuPiANCjwvcD4NCjxwPg0KCTxpbWcgYWx0PSIiIHNyYz0iL2tpbmRlZGl0b3IvYXR0YWNoZWQvaW1hZ2UvMjAxOTAzMjIvMjAxOTAzMjIxNTM5MDhfMTQ3Ni5wbmciIC8+IA0KPC9wPg0KPHA+DQoJPGJyIC8+DQo8L3A+DQo8aDIgc3R5bGU9InRleHQtYWxpZ246Y2VudGVyOyI+DQoJPGI+PHNwYW4gc3R5bGU9ImNvbG9yOiMzMzdGRTU7Zm9udC1zaXplOjI0cHg7Ij7kuozjgIHku7vogYzotYTmoLw8L3NwYW4+PC9iPiANCjwvaDI+DQo8cD4NCgk8Yj48c3BhbiBzdHlsZT0iY29sb3I6IzMzN0ZFNTsiPjxiciAvPg0KPC9zcGFuPjwvYj4gDQo8L3A+DQo8cD4NCgkx44CB5a2m5Y6G5Y+K6IGM5Lia6LWE5qC877ya5aSn5LiT5Y+K5Lul5LiK5a2m5Y6G77yM5pGE5b2x44CB5bm/5ZGK44CB5biC5Zy66JCl6ZSA5LiT5Lia5LyY5YWI77ybPHNwYW4+PC9zcGFuPiANCjwvcD4NCjxwPg0KCTLjgIHlt6XkvZzmioDog73vvJo8Yj7ng63niLHmkYTlvbE8L2I+44CB5pyJ5LiA5a6a55qE5pGE5b2x5rC05bmz77yI5L2c5ZOB6I635aWW6ICF5LyY5YWI77yJ44CB54af57uD5L2/55So5bi455So55qE5Zu+5YOP5aSE55CG6L2v5Lu277yI5aaCPHNwYW4+cHM8L3NwYW4+44CBPHNwYW4+bHI8L3NwYW4+44CBPHNwYW4+cHI8L3NwYW4+44CBPHNwYW4+ZmNwPC9zcGFuPuetie+8ie+8jOeGn+e7g+S9v+eUqOeUteiEke+8jOacieiJr+WlveeahOS5pumdouaWh+Wtl+iDveWKm++8jDxiPuiJr+Wlveayn+mAmuWNj+iwg+iDveWKmzwvYj7jgILoia/lpb3nmoQ8c3Bhbj5QUFQ8L3NwYW4+5Yi25L2c6IO95Yqb44CB5pa55qGI5bGV56S66IO95Yqb44CC5pyJ5Yib5paw57K+56We77yM6auY5pWI546H77yM6Imv5aW95pyN5Yqh5oSP6K+G5Y+K5Li75YqoPGI+5omn6KGM6IO95YqbPC9iPuOAgjxzcGFuPjwvc3Bhbj4gDQo8L3A+DQo8cD4NCgkz44CB5bel5L2c57uP6aqM77ya5YW35pyJ5LiA5a6a55qE5biC5Zy66JCl6ZSA44CB562W5YiS57uP6aqM44CB5aaC5pu+57uP562W5YiS6L+Q6KGM6L+H5b6u6K++5aCC44CB5pGE5b2x5Z+56K6t77yM5oiW5Zyo5pGE5b2x5a2m5qCh44CB5oql56S+44CB5pGE5b2x5p2C5b+X44CB5pGE5b2x5L+x5LmQ6YOo44CB5peF6KGM56S+562J6KGM5Lia5bel5L2c6L+H77yM5YW35pyJ5LiA5a6aPGI+5Lia5Yqh5ouT5bGV6IO95YqbPC9iPuOAgjxzcGFuPjwvc3Bhbj4gDQo8L3A+DQo8cD4NCgk8Yj40PC9iPjxiPuOAgeeGn+aCieaXoOS6uuacuuaTjeS9nOOAgTxzcGFuPkdvcHJvPC9zcGFuPuS9v+eUqOOAgeWFqOaZr+aRhOW9seetieeJueauiuaKgOiDveeahOW6lOiBmOiAhe+8jOWPr+S9nOS4uuWKoOWIhumhue+8mzwvYj4gDQo8L3A+DQo8cD4NCgk144CB5Liq5oCn54m55b6B77ya6KaB5rGC5oCn5qC85LmQ6KeC5byA5pyX77yM5Yuk5oGz6LiP5a6e77yM56iz5a6a5oCn5by644CB5pyJ5q+F5Yqb44CB6IO95ZCD6Ium77yM6Z2i5a+55bel5L2c5Lit55qE5Zuw6Zq+5YGa5Yiw5LiN6L275piT5pS+5byD77yb5pyJ6Imv5aW955qE6Ieq5oiR566h55CG6IO95Yqb44CB6L6D5by655qE5rKf6YCa6KGo6L6+6IO95Yqb44CB5Yib5paw6IO95Yqb44CB54us56uL5a2m5Lmg6IO95Yqb44CB6LaF5by655qE5omn6KGM5Yqb5ZKM5Zui6Zif5ZCI5L2c6IO95Yqb44CCPHNwYW4+PC9zcGFuPiANCjwvcD4NCjxwPg0KCTxiciAvPg0KPC9wPg0KPGgxIHN0eWxlPSJ0ZXh0LWFsaWduOmNlbnRlcjsiPg0KCTxzdHJvbmc+PHNwYW4gc3R5bGU9ImNvbG9yOiMzMzdGRTU7Zm9udC1zaXplOjMycHg7Ij7lpoLmgqjlr7nor6XlspfkvY3lhYXmu6HlhbTotqPvvIzmrKLov47mgqjliqDlhaUxOOW6puWboumYn+OAgjwvc3Bhbj48L3N0cm9uZz4gDQo8L2gxPg0KPHA+DQoJPHN0cm9uZz48c3BhbiBzdHlsZT0iY29sb3I6IzMzN0ZFNTsiPjxiciAvPg0KPC9zcGFuPjwvc3Ryb25nPiANCjwvcD4NCjxwPg0KCTxpbWcgYWx0PSIiIHNyYz0iL2tpbmRlZGl0b3IvYXR0YWNoZWQvaW1hZ2UvMjAxOTAzMjIvMjAxOTAzMjIxNjMyMzFfMzkwNi5qcGciIC8+IA0KPC9wPg0KPGgxIHN0eWxlPSJ0ZXh0LWFsaWduOmNlbnRlcjsiPg0KCTxzcGFuIHN0eWxlPSJjb2xvcjojMzM3RkU1O2ZvbnQtZmFtaWx5OlNpbUhlaTtmb250LXNpemU6MzJweDsiPuW3peS9nOWcsOeCuTwvc3Bhbj4gDQo8L2gxPg0KPHA+DQoJ5YyX5Lqs77ya5YyX5Lqs5biC6KW/5Z+O5Yy66ams6L+e6YGT5Y2O552m5aSn5Y6mPHNwYW4+MTIwNTwvc3Bhbj4gDQo8L3A+DQo8cD4NCgnph43luobvvJrph43luobluILlj5HpvpnlnaHnn7Pmnajot688c3Bhbj4xMzwvc3Bhbj7lj7fkvbDohb7mlbDnoIHlub/lnLo8c3Bhbj4yRi1EMkQzPC9zcGFuPiANCjwvcD4NCjxwPg0KCeilv+Wuie+8mumZleilv+ecgeilv+WuieW4guS4nOaWsOenkei0uDxzcGFuPkE8L3NwYW4+5bqn6Zeo6Z2i5bqXDQrmgZLkuLDlvbHlg488c3Bhbj48L3NwYW4+IA0KPC9wPg0KPHA+DQoJ5rWO5Y2X77ya5bGx5Lic55yB5rWO5Y2X5biC5bGx5aSn6LevPHNwYW4+MTc4PC9zcGFuPuWPt+mTtuW6p+aVsOeggeW5v+WcujxzcGFuPjE3PC9zcGFuPualvDxzcGFuPjE3MDU8L3NwYW4+5a6kPHNwYW4+PC9zcGFuPiANCjwvcD4NCjxwPg0KCeaIkOmDve+8muWbm+W3neecgeaIkOmDveW4guS6uuawkeWNl+i3r+Wbm+auteS4gOWPt+aVsOeggeW5v+WcujxzcGFuPjEyPC9zcGFuPualvDxzcGFuPkE2QTwvc3Bhbj4gDQo8L3A+DQo8cD4NCgnmrabmsYnvvJrmuZbljJfnnIHmrabmsYnluILmsZ/lsrjljLrljZfkuqzot688c3Bhbj4yMjwvc3Bhbj7lj7fmqLHoirHmlbDnoIE8c3Bhbj48L3NwYW4+IA0KPC9wPg0KPHA+DQoJ5ZOI5bCU5ruo77ya6buR6b6Z5rGf55yB5ZOI5bCU5ruo5biC5Y2X5bKX5Yy65Y2X6YCa5aSn6KGXPHNwYW4+Mjg4PC9zcGFuPuWPtzxzcGFuPjwvc3Bhbj4gDQo8L3A+DQo8cD4NCgnkuIrmtbfjgIHlub/lt57jgIHlpKnmtKXjgIHmt7HlnLM8c3Bhbj48L3NwYW4+IA0KPC9wPg0KPHA+DQoJPGJyIC8+DQo8L3A+DQo8aDI+DQo8L2gyPg0KPHAgc3R5bGU9InRleHQtYWxpZ246Y2VudGVyOyI+DQoJPHNwYW4gc3R5bGU9ImZvbnQtc2l6ZToyMnB4OyI+5aaC5oKo5a+56K+l5bKX5L2N5YWF5ruh5YW06Laj77yM5qyi6L+O5oKo5Yqg5YWlMTjluqblm6LpmJ/vvIE8L3NwYW4+IA0KPC9wPg0KPHAgc3R5bGU9InRleHQtYWxpZ246Y2VudGVyOyI+DQoJPHNwYW4gc3R5bGU9ImZvbnQtc2l6ZToyMnB4OyI+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&__VIEWSTATEGENERATOR=E325A0EE" id="aspnetForm">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTQ4NjU5NjgyNw9kFgJmD2QWAmYPZBYEAgIPZBYKAgMPFgIeBFRleHQFIeivmuiBmOaRhOW9sea0u+WKqOS4k+WRmOOAgeiusuW4iGQCBQ8PFgQfAAUG5aS05p2hHgtOYXZpZ2F0ZVVybAUhQXJ0aWNsZVR5cGVMaXN0LmFzcHg/Q2F0ZWdvcnlJZD03ZGQCBw8WAh8ABQoyMDE5LTA2LTA2ZAIJDxYCHwAFxSs8cD4NCgk8Yj48aW1nIGFsdD0iIiBzcmM9Ii9raW5kZWRpdG9yL2F0dGFjaGVkL2ltYWdlLzIwMTkwMzIyLzIwMTkwMzIyMTUwNjM0XzkzNTUuanBlZyIgLz48YnIgLz4NCjwvYj4gDQo8L3A+DQo8aDEgc3R5bGU9InRleHQtYWxpZ246Y2VudGVyOyI+DQoJPGI+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTozMnB4OyI+PGJyIC8+DQo8L3NwYW4+PC9iPiANCjwvaDE+DQo8aDEgc3R5bGU9InRleHQtYWxpZ246Y2VudGVyOyI+DQoJPGI+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTozMnB4OyI+5oub6IGY5pGE5b2x5rS75Yqo5LiT5ZGYJmFtcDvorrLluIg8L3NwYW4+PC9iPiANCjwvaDE+DQo8cD4NCgk8Yj48YnIgLz4NCjwvYj4gDQo8L3A+DQo8aDIgc3R5bGU9InRleHQtYWxpZ246Y2VudGVyOyI+DQoJPGI+PHNwYW4gc3R5bGU9ImJhY2tncm91bmQtY29sb3I6IHJnYigyNTUsIDI1NSwgMjU1KTsgY29sb3I6IHJnYig1MSwgMTI3LCAyMjkpOyBmb250LXNpemU6IDI0cHg7IiBmb250LXNpemU6MjRweDsiPSIiPuS4gOOAgeWyl+S9jeiBjOi0ozwvc3Bhbj48L2I+IA0KPC9oMj4NCjxwPg0KCTxiPjxzcGFuIHN0eWxlPSJiYWNrZ3JvdW5kLWNvbG9yOiNGRkZGRkY7Y29sb3I6IzMzN0ZFNTsiPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTpTaW1IZWk7Ij48L3NwYW4+PGJyIC8+DQo8L3NwYW4+PC9iPiANCjwvcD4NCjxwPg0KCTHjgIHlm7Tnu5Xlhazlj7jnmoTlvbHlg4/mlofljJbpobnnm67vvIzotJ/otKPmjJbmjpjjgIHliIbmnpDlub/lpKflvbHlj4vpnIDmsYLvvIzotJ/otKPlvbHlg4/mlofljJbpobnnm67op4TliJLjgIHokL3lrp7kuI7miafooYzvvJvmiafooYzmtLvliqjmjqjov5vjgIHnu5/nrbnljY/osIPmtLvliqjotYTmupDjgIHmgLvnu5Por4TkvLDmtLvliqjmlYjmnpzvvJs8c3Bhbj48L3NwYW4+IA0KPC9wPg0KPHA+DQoJMuOAgeWPguS4juWFrOWPuOW9seWDj+aWh+WMlumhueebrui/kOiQpe+8jOWMheaLrOS9huS4jemZkOS6ju+8mjxzcGFuPjwvc3Bhbj4gDQo8L3A+DQo8cD4NCgnikaDjgIo8c3Bhbj4xODwvc3Bhbj7luqblvbHlg4/lvq7or77loILjgIvnmoTnur/kuIo8c3Bhbj4vPC9zcGFuPue6v+S4i+S4k+mimOa0u+WKqOOAgeW4guWcuuaOqOW5v+WPiuWTgeeJjOa0u+WKqOeahOetluWIkuWPiuaJp+ihjO+8m+WNj+WKqeW8gOWxleaRhOW9seinhumikeivvueoi+etie+8jOWNj+WKqeWPguS4juWvueWfueiureivvueoi+eahOaPkOe6suOAgeWGheWuueaWueWQkeOAgeW9ouW8j+OAgeaOqOW5v+aooeW8j+OAgeiusuW4iOWuieaOkuetieeOr+iKgui/m+ihjOetluWIkuS4juaJp+ihjO+8mzxzcGFuPjwvc3Bhbj4gDQo8L3A+DQo8cD4NCgnikaHlj4LkuI7lr7nlhazlj7jlvbHlg4/mlofljJbpobnnm67jgIrmkYTlvbHml4XmuLjjgIvlubPlj7DnmoTmi5vllYbmjqjlub/lt6XkvZzvvIzpnaLlkJHnpL7kvJrmi5vllYbmkYTlvbHml4XmuLjlkIjkvZzkvJnkvLTvvIzmjqjlub/ooYzmkYTnur/ot6/vvIzlop7liqDooYzmkYTnlLXllYblubPlj7DorqLljZXplIDllK7vvJs8c3Bhbj48L3NwYW4+IA0KPC9wPg0KPHA+DQoJ4pGi5a+56KGM5pGE57q/6LevPHNwYW4+Lzwvc3Bhbj7nur/kuIvmkYTlvbHmtLvliqjnmoTnrZbliJLjgIHlrqPkvKDjgIHmi5vli5/vvIzotJ/otKPmkYTlvbHmtLvliqjnmoTmiafooYzokL3lnLDvvIzmjIflr7zmkYTlvbHniLHlpb3ogIXlpoLkvZXkvb/nlKjnm7jmnLrjgIHmi43mkYTnhafniYfjgIHmtLvliqg8c3Bhbj4vPC9zcGFuPuihjOeoi+S4reaRhOW9seefpeivhueahOiusuino+etie+8mzxzcGFuPjwvc3Bhbj4gDQo8L3A+DQo8cD4NCgnikaPlnKjlvZPlnLDlvIDmi5PlvbHlj4votYTmupDvvIzphY3lkIjlvZPlnLDkv7HkuZDpg6jmtLvliqjvvIzlu7rnq4vlvZPlnLDlvbHlj4vlvq7kv6HnvqTnrYnjgII8c3Bhbj48L3NwYW4+IA0KPC9wPg0KPHA+DQoJ5Lul5LiK5bel5L2c5YaF5a655Y+v5o6l5Y+X5YW86IGM77yM6K+m5oOF5Y+v5Yiw5YWs5Y+46Z2i6LCI55u45YWz5ZCI5L2c5pa55qGI44CCPHNwYW4+PC9zcGFuPiANCjwvcD4NCjxwPg0KCTxpbWcgYWx0PSIiIHNyYz0iL2tpbmRlZGl0b3IvYXR0YWNoZWQvaW1hZ2UvMjAxOTAzMjIvMjAxOTAzMjIxNTM5MDhfMTQ3Ni5wbmciIC8+IA0KPC9wPg0KPHA+DQoJPGJyIC8+DQo8L3A+DQo8aDIgc3R5bGU9InRleHQtYWxpZ246Y2VudGVyOyI+DQoJPGI+PHNwYW4gc3R5bGU9ImNvbG9yOiMzMzdGRTU7Zm9udC1zaXplOjI0cHg7Ij7kuozjgIHku7vogYzotYTmoLw8L3NwYW4+PC9iPiANCjwvaDI+DQo8cD4NCgk8Yj48c3BhbiBzdHlsZT0iY29sb3I6IzMzN0ZFNTsiPjxiciAvPg0KPC9zcGFuPjwvYj4gDQo8L3A+DQo8cD4NCgkx44CB5a2m5Y6G5Y+K6IGM5Lia6LWE5qC877ya5aSn5LiT5Y+K5Lul5LiK5a2m5Y6G77yM5pGE5b2x44CB5bm/5ZGK44CB5biC5Zy66JCl6ZSA5LiT5Lia5LyY5YWI77ybPHNwYW4+PC9zcGFuPiANCjwvcD4NCjxwPg0KCTLjgIHlt6XkvZzmioDog73vvJo8Yj7ng63niLHmkYTlvbE8L2I+44CB5pyJ5LiA5a6a55qE5pGE5b2x5rC05bmz77yI5L2c5ZOB6I635aWW6ICF5LyY5YWI77yJ44CB54af57uD5L2/55So5bi455So55qE5Zu+5YOP5aSE55CG6L2v5Lu277yI5aaCPHNwYW4+cHM8L3NwYW4+44CBPHNwYW4+bHI8L3NwYW4+44CBPHNwYW4+cHI8L3NwYW4+44CBPHNwYW4+ZmNwPC9zcGFuPuetie+8ie+8jOeGn+e7g+S9v+eUqOeUteiEke+8jOacieiJr+WlveeahOS5pumdouaWh+Wtl+iDveWKm++8jDxiPuiJr+Wlveayn+mAmuWNj+iwg+iDveWKmzwvYj7jgILoia/lpb3nmoQ8c3Bhbj5QUFQ8L3NwYW4+5Yi25L2c6IO95Yqb44CB5pa55qGI5bGV56S66IO95Yqb44CC5pyJ5Yib5paw57K+56We77yM6auY5pWI546H77yM6Imv5aW95pyN5Yqh5oSP6K+G5Y+K5Li75YqoPGI+5omn6KGM6IO95YqbPC9iPuOAgjxzcGFuPjwvc3Bhbj4gDQo8L3A+DQo8cD4NCgkz44CB5bel5L2c57uP6aqM77ya5YW35pyJ5LiA5a6a55qE5biC5Zy66JCl6ZSA44CB562W5YiS57uP6aqM44CB5aaC5pu+57uP562W5YiS6L+Q6KGM6L+H5b6u6K++5aCC44CB5pGE5b2x5Z+56K6t77yM5oiW5Zyo5pGE5b2x5a2m5qCh44CB5oql56S+44CB5pGE5b2x5p2C5b+X44CB5pGE5b2x5L+x5LmQ6YOo44CB5peF6KGM56S+562J6KGM5Lia5bel5L2c6L+H77yM5YW35pyJ5LiA5a6aPGI+5Lia5Yqh5ouT5bGV6IO95YqbPC9iPuOAgjxzcGFuPjwvc3Bhbj4gDQo8L3A+DQo8cD4NCgk8Yj40PC9iPjxiPuOAgeeGn+aCieaXoOS6uuacuuaTjeS9nOOAgTxzcGFuPkdvcHJvPC9zcGFuPuS9v+eUqOOAgeWFqOaZr+aRhOW9seetieeJueauiuaKgOiDveeahOW6lOiBmOiAhe+8jOWPr+S9nOS4uuWKoOWIhumhue+8mzwvYj4gDQo8L3A+DQo8cD4NCgk144CB5Liq5oCn54m55b6B77ya6KaB5rGC5oCn5qC85LmQ6KeC5byA5pyX77yM5Yuk5oGz6LiP5a6e77yM56iz5a6a5oCn5by644CB5pyJ5q+F5Yqb44CB6IO95ZCD6Ium77yM6Z2i5a+55bel5L2c5Lit55qE5Zuw6Zq+5YGa5Yiw5LiN6L275piT5pS+5byD77yb5pyJ6Imv5aW955qE6Ieq5oiR566h55CG6IO95Yqb44CB6L6D5by655qE5rKf6YCa6KGo6L6+6IO95Yqb44CB5Yib5paw6IO95Yqb44CB54us56uL5a2m5Lmg6IO95Yqb44CB6LaF5by655qE5omn6KGM5Yqb5ZKM5Zui6Zif5ZCI5L2c6IO95Yqb44CCPHNwYW4+PC9zcGFuPiANCjwvcD4NCjxwPg0KCTxiciAvPg0KPC9wPg0KPGgxIHN0eWxlPSJ0ZXh0LWFsaWduOmNlbnRlcjsiPg0KCTxzdHJvbmc+PHNwYW4gc3R5bGU9ImNvbG9yOiMzMzdGRTU7Zm9udC1zaXplOjMycHg7Ij7lpoLmgqjlr7nor6XlspfkvY3lhYXmu6HlhbTotqPvvIzmrKLov47mgqjliqDlhaUxOOW6puWboumYn+OAgjwvc3Bhbj48L3N0cm9uZz4gDQo8L2gxPg0KPHA+DQoJPHN0cm9uZz48c3BhbiBzdHlsZT0iY29sb3I6IzMzN0ZFNTsiPjxiciAvPg0KPC9zcGFuPjwvc3Ryb25nPiANCjwvcD4NCjxwPg0KCTxpbWcgYWx0PSIiIHNyYz0iL2tpbmRlZGl0b3IvYXR0YWNoZWQvaW1hZ2UvMjAxOTAzMjIvMjAxOTAzMjIxNjMyMzFfMzkwNi5qcGciIC8+IA0KPC9wPg0KPGgxIHN0eWxlPSJ0ZXh0LWFsaWduOmNlbnRlcjsiPg0KCTxzcGFuIHN0eWxlPSJjb2xvcjojMzM3RkU1O2ZvbnQtZmFtaWx5OlNpbUhlaTtmb250LXNpemU6MzJweDsiPuW3peS9nOWcsOeCuTwvc3Bhbj4gDQo8L2gxPg0KPHA+DQoJ5YyX5Lqs77ya5YyX5Lqs5biC6KW/5Z+O5Yy66ams6L+e6YGT5Y2O552m5aSn5Y6mPHNwYW4+MTIwNTwvc3Bhbj4gDQo8L3A+DQo8cD4NCgnph43luobvvJrph43luobluILlj5HpvpnlnaHnn7Pmnajot688c3Bhbj4xMzwvc3Bhbj7lj7fkvbDohb7mlbDnoIHlub/lnLo8c3Bhbj4yRi1EMkQzPC9zcGFuPiANCjwvcD4NCjxwPg0KCeilv+Wuie+8mumZleilv+ecgeilv+WuieW4guS4nOaWsOenkei0uDxzcGFuPkE8L3NwYW4+5bqn6Zeo6Z2i5bqXDQrmgZLkuLDlvbHlg488c3Bhbj48L3NwYW4+IA0KPC9wPg0KPHA+DQoJ5rWO5Y2X77ya5bGx5Lic55yB5rWO5Y2X5biC5bGx5aSn6LevPHNwYW4+MTc4PC9zcGFuPuWPt+mTtuW6p+aVsOeggeW5v+WcujxzcGFuPjE3PC9zcGFuPualvDxzcGFuPjE3MDU8L3NwYW4+5a6kPHNwYW4+PC9zcGFuPiANCjwvcD4NCjxwPg0KCeaIkOmDve+8muWbm+W3neecgeaIkOmDveW4guS6uuawkeWNl+i3r+Wbm+auteS4gOWPt+aVsOeggeW5v+WcujxzcGFuPjEyPC9zcGFuPualvDxzcGFuPkE2QTwvc3Bhbj4gDQo8L3A+DQo8cD4NCgnmrabmsYnvvJrmuZbljJfnnIHmrabmsYnluILmsZ/lsrjljLrljZfkuqzot688c3Bhbj4yMjwvc3Bhbj7lj7fmqLHoirHmlbDnoIE8c3Bhbj48L3NwYW4+IA0KPC9wPg0KPHA+DQoJ5ZOI5bCU5ruo77ya6buR6b6Z5rGf55yB5ZOI5bCU5ruo5biC5Y2X5bKX5Yy65Y2X6YCa5aSn6KGXPHNwYW4+Mjg4PC9zcGFuPuWPtzxzcGFuPjwvc3Bhbj4gDQo8L3A+DQo8cD4NCgnkuIrmtbfjgIHlub/lt57jgIHlpKnmtKXjgIHmt7HlnLM8c3Bhbj48L3NwYW4+IA0KPC9wPg0KPHA+DQoJPGJyIC8+DQo8L3A+DQo8aDI+DQo8L2gyPg0KPHAgc3R5bGU9InRleHQtYWxpZ246Y2VudGVyOyI+DQoJPHNwYW4gc3R5bGU9ImZvbnQtc2l6ZToyMnB4OyI+5aaC5oKo5a+56K+l5bKX5L2N5YWF5ruh5YW06Laj77yM5qyi6L+O5oKo5Yqg5YWlMTjluqblm6LpmJ/vvIE8L3NwYW4+IA0KPC9wPg0KPHAgc3R5bGU9InRleHQtYWxpZ246Y2VudGVyOyI+DQoJPHNwYW4gc3R5bGU9ImZvbnQtc2l6ZToyMnB4OyI+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" />
+</div>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="E325A0EE" />
+</div>
+     <div class="site_header_center">
+        
+
+
+<style>
+.site-header-logo_black_bg{min-height:60px !important}
+.site-header-logo_black{padding:inherit !important}
+.site_header_center{min-height:70px !important}
+.logo_black{height:70px !important}
+.menuchoiceflage a li{ color:#676767 !important}
+.header_menu_black_select{ border:#676767 1px solid}
+.menuchoiceflage li{ width:14% !important;}
+</style>
+<div class="site-header-logo_black_bg" style=" background-color:#ededed">
+            <div class="site-header-logo_black"style=" min-height:70px;">
+                <div class="logo_black" style=" min-height:70px; width:140px; margin-left:13%">
+                    <a href="index.htm" tppabs="http://www.18-du.com/">
+                        <img src="741a1cca0874e21c72528c06f2ba031.png" tppabs="http://www.18-du.com/Utility/sysrc/img/741a1cca0874e21c72528c06f2ba031.png"  width="120px" height="80px" style=" width:90px; height:60px; margin-top:3px;" /></a>
+                </div>
+ 
+                <div class="header-info_black" style=" width:550px; margin-left:5px;">
+                    <ul class="menuchoiceflage" target="_blank">
+                   <a href="Default-2.aspx.htm" tppabs="http://www.18-du.com/Default.aspx">
+                            <li>首页</li>
+                        </a> 
+                      
+                        <a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?CategoryId=54&valuestr=26_77  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.18-du.com/AllSearch.aspx?CategoryId=54&valuestr=26_77'" tppabs="http://www.18-du.com/ProductListNew.aspx" target="_blank">
+                            <li class="">影像器材</li>
+                        </a>
+                        <a href="ArticleList.aspx.htm" tppabs="http://www.18-du.com/ArticleList.aspx" target="_blank">
+                               <li>资讯中心</li>
+                         </a> 
+                          <a href="VoteMain.aspx.htm" tppabs="http://www.18-du.com/CommentMenage/VoteMain.aspx" target="_blank">
+                            <li>活动中心</li>
+                         </a>
+                         
+                    </ul>
+
+            
+
+                    
+                </div>
+             
+                <div class="i_cart_w" style=" margin-top:16px; width:155px; height:35px;  float:left; margin-left:30px;">
+                    <div class="cart_w" style=" height:35px;">
+                        <a href="ShopCart.aspx.htm" tppabs="http://www.18-du.com/ShopCart.aspx" style=" width:65px; height:32px; display:block; background-color:#fff; border:#ccc solid 0.2px; color:#808080; font-size:11px; line-height:35px;
+                             background:url(/Utility/sysrc/img/447216837427072197_03.png) -6px center no-repeat; padding-left:40px;">我的购物车  </a>
+                    </div>
+                    <div class="clear">
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+<script type="text/javascript">
+
+    //头部菜单选中标识
+    function HeadeMenu_Choice(MenuName) {
+        var headmenu = $(".menuchoiceflage a li");
+        for (var i = 0; i < headmenu.length; i++) {
+            if ($(headmenu[i]).html() == MenuName) {
+                $(headmenu[i]).addClass("header_menu_black_select");
+            }
+
+        }
+    }
+
+</script>
+    </div>
+    <div class="clear"></div>
+
+
+    <div class="center-main">
+  <div class="news_details">
+        <div class="left">
+            <div class="news_title"><h2> 诚聘摄影活动专员、讲师  </h2></div>
+               
+                <div class="news_type_time"><span class="news_type"> <a id="ArticleDetail_linkcate" href="ArticleTypeList.aspx-CategoryId=7.htm" tppabs="http://www.18-du.com/ArticleTypeList.aspx?CategoryId=7">头条</a> </span><label class="news_time"> 2019-06-06 </label></div>
+                <div class="bottom_border"></div>
+                <div class="p_div">
+                     <p>
+	<b><img alt="" src="ProductDetail-1.aspx-productid=9496" tppabs="http://www.18-du.com/kindeditor/attached/image/20190322/20190322150634_9355.jpeg" /><br />
+</b> 
+</p>
+<h1 style="text-align:center;">
+	<b><span style="font-size:32px;"><br />
+</span></b> 
+</h1>
+<h1 style="text-align:center;">
+	<b><span style="font-size:32px;">招聘摄影活动专员&amp;讲师</span></b> 
+</h1>
+<p>
+	<b><br />
+</b> 
+</p>
+<h2 style="text-align:center;">
+	<b><span style="background-color: rgb(255, 255, 255); color: rgb(51, 127, 229); font-size: 24px;" font-size:24px;"="">一、岗位职责</span></b> 
+</h2>
+<p>
+	<b><span style="background-color:#FFFFFF;color:#337FE5;"><span style="font-family:SimHei;"></span><br />
+</span></b> 
+</p>
+<p>
+	1、围绕公司的影像文化项目，负责挖掘、分析广大影友需求，负责影像文化项目规划、落实与执行；执行活动推进、统筹协调活动资源、总结评估活动效果；<span></span> 
+</p>
+<p>
+	2、参与公司影像文化项目运营，包括但不限于：<span></span> 
+</p>
+<p>
+	①《<span>18</span>度影像微课堂》的线上<span>/</span>线下专题活动、市场推广及品牌活动的策划及执行；协助开展摄影视频课程等，协助参与对培训课程的提纲、内容方向、形式、推广模式、讲师安排等环节进行策划与执行；<span></span> 
+</p>
+<p>
+	②参与对公司影像文化项目《摄影旅游》平台的招商推广工作，面向社会招商摄影旅游合作伙伴，推广行摄线路，增加行摄电商平台订单销售；<span></span> 
+</p>
+<p>
+	③对行摄线路<span>/</span>线下摄影活动的策划、宣传、招募，负责摄影活动的执行落地，指导摄影爱好者如何使用相机、拍摄照片、活动<span>/</span>行程中摄影知识的讲解等；<span></span> 
+</p>
+<p>
+	④在当地开拓影友资源，配合当地俱乐部活动，建立当地影友微信群等。<span></span> 
+</p>
+<p>
+	以上工作内容可接受兼职，详情可到公司面谈相关合作方案。<span></span> 
+</p>
+<p>
+	<img alt="" src="310_16c5993a6d834440a9e488ece5ca115f-1.jpg" tppabs="http://www.18-du.com/kindeditor/attached/image/20190322/20190322153908_1476.png" /> 
+</p>
+<p>
+	<br />
+</p>
+<h2 style="text-align:center;">
+	<b><span style="color:#337FE5;font-size:24px;">二、任职资格</span></b> 
+</h2>
+<p>
+	<b><span style="color:#337FE5;"><br />
+</span></b> 
+</p>
+<p>
+	1、学历及职业资格：大专及以上学历，摄影、广告、市场营销专业优先；<span></span> 
+</p>
+<p>
+	2、工作技能：<b>热爱摄影</b>、有一定的摄影水平（作品获奖者优先）、熟练使用常用的图像处理软件（如<span>ps</span>、<span>lr</span>、<span>pr</span>、<span>fcp</span>等），熟练使用电脑，有良好的书面文字能力，<b>良好沟通协调能力</b>。良好的<span>PPT</span>制作能力、方案展示能力。有创新精神，高效率，良好服务意识及主动<b>执行能力</b>。<span></span> 
+</p>
+<p>
+	3、工作经验：具有一定的市场营销、策划经验、如曾经策划运行过微课堂、摄影培训，或在摄影学校、报社、摄影杂志、摄影俱乐部、旅行社等行业工作过，具有一定<b>业务拓展能力</b>。<span></span> 
+</p>
+<p>
+	<b>4</b><b>、熟悉无人机操作、<span>Gopro</span>使用、全景摄影等特殊技能的应聘者，可作为加分项；</b> 
+</p>
+<p>
+	5、个性特征：要求性格乐观开朗，勤恳踏实，稳定性强、有毅力、能吃苦，面对工作中的困难做到不轻易放弃；有良好的自我管理能力、较强的沟通表达能力、创新能力、独立学习能力、超强的执行力和团队合作能力。<span></span> 
+</p>
+<p>
+	<br />
+</p>
+<h1 style="text-align:center;">
+	<strong><span style="color:#337FE5;font-size:32px;">如您对该岗位充满兴趣，欢迎您加入18度团队。</span></strong> 
+</h1>
+<p>
+	<strong><span style="color:#337FE5;"><br />
+</span></strong> 
+</p>
+<p>
+	<img alt="" src="ProductDetail-1.aspx-productid=9495" tppabs="http://www.18-du.com/kindeditor/attached/image/20190322/20190322163231_3906.jpg" /> 
+</p>
+<h1 style="text-align:center;">
+	<span style="color:#337FE5;font-family:SimHei;font-size:32px;">工作地点</span> 
+</h1>
+<p>
+	北京：北京市西城区马连道华睦大厦<span>1205</span> 
+</p>
+<p>
+	重庆：重庆市发龙坡石杨路<span>13</span>号佰腾数码广场<span>2F-D2D3</span> 
+</p>
+<p>
+	西安：陕西省西安市东新科贸<span>A</span>座门面店
+恒丰影像<span></span> 
+</p>
+<p>
+	济南：山东省济南市山大路<span>178</span>号银座数码广场<span>17</span>楼<span>1705</span>室<span></span> 
+</p>
+<p>
+	成都：四川省成都市人民南路四段一号数码广场<span>12</span>楼<span>A6A</span> 
+</p>
+<p>
+	武汉：湖北省武汉市江岸区南京路<span>22</span>号樱花数码<span></span> 
+</p>
+<p>
+	哈尔滨：黑龙江省哈尔滨市南岗区南通大街<span>288</span>号<span></span> 
+</p>
+<p>
+	上海、广州、天津、深圳<span></span> 
+</p>
+<p>
+	<br />
+</p>
+<h2>
+</h2>
+<p style="text-align:center;">
+	<span style="font-size:22px;">如您对该岗位充满兴趣，欢迎您加入18度团队！</span> 
+</p>
+<p style="text-align:center;">
+	<span style="font-size:22px;">联系人：赵老师</span>&nbsp;
+</p>
+<p style="text-align:center;">
+	<span style="font-size:22px;">电话：15901213958</span>
+</p>
+<h1 style="text-align:center;">
+</h1>
+<p>
+	<img alt="" src="310_196b0591b64340c78273f8636baf6024-1.jpg" tppabs="http://www.18-du.com/kindeditor/attached/image/20190322/20190322153505_7594.jpg" /> 
+</p>
+<p>
+	<br />
+</p>
+<audio controls="controls" style="display:none;"></audio> 
+                </div>
+        </div>
+
+       
+
+
+
+ <div class="right">
+            <div class="title">
+                <span class="hot_news" style="color: #262626;float: left;margin-left: 10px; background: url(/Utility/sysrc/img/hot_news.png) no-repeat left center; float: left; padding-left: 40px;height: 40px;line-height: 40px;">热门文章</span><span class="hot_more"><a href="ArticleTypeList.aspx.htm" tppabs="http://www.18-du.com/ArticleTypeList.aspx">更多</a></span></div>
+            <ul>
+            
+                <li style=" display:none;">
+                   <a href="ArticleDetail.aspx-ArticleId=423.htm" tppabs="http://www.18-du.com/ArticleDetail.aspx?ArticleId=423">
+                        
+                   </a>
+                </li>
+                
+                <li class="articletag5">
+                    <a href="ArticleDetail.aspx-ArticleId=423.htm" tppabs="http://www.18-du.com/ArticleDetail.aspx?ArticleId=423">
+                        <span class="one_span" style=" float:left;width:30px;color: #ff6464;">1</span><i>理念革新——适马fp相机诞生</i>
+                    </a>
+                </li>
+
+
+            
+                <li style=" display:none;">
+                   <a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?CategoryId=68&brandid=6  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.18-du.com/AllSearch.aspx?CategoryId=68&brandid=6'" tppabs="http://www.18-du.com/ArticleDetail.aspx?ArticleId=422">
+                        
+                   </a>
+                </li>
+                
+                <li class="articletag5">
+                    <a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?CategoryId=68&brandid=6  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.18-du.com/AllSearch.aspx?CategoryId=68&brandid=6'" tppabs="http://www.18-du.com/ArticleDetail.aspx?ArticleId=422">
+                        <span class="one_span" style=" float:left;width:30px;color: #ff6464;">2</span><i>尼康发布兼容尼康Z卡口系统定焦镜头尼克尔Z 85mm f/1.8 S</i>
+                    </a>
+                </li>
+
+
+            
+                <li style=" display:none;">
+                   <a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?CategoryId=68&brandid=5  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.18-du.com/AllSearch.aspx?CategoryId=68&brandid=5'" tppabs="http://www.18-du.com/ArticleDetail.aspx?ArticleId=421">
+                        
+                   </a>
+                </li>
+                
+                <li class="articletag5">
+                    <a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?CategoryId=68&brandid=5  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.18-du.com/AllSearch.aspx?CategoryId=68&brandid=5'" tppabs="http://www.18-du.com/ArticleDetail.aspx?ArticleId=421">
+                        <span class="one_span" style=" float:left;width:30px;color: #ff6464;">3</span><i>镜头丨适马 85mm F1.4 Art 新王登基</i>
+                    </a>
+                </li>
+
+
+            
+                <li style=" display:none;">
+                   <a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?CategoryId=68&brandid=9  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.18-du.com/AllSearch.aspx?CategoryId=68&brandid=9'" tppabs="http://www.18-du.com/ArticleDetail.aspx?ArticleId=420">
+                        
+                   </a>
+                </li>
+                
+                <li class="articletag5">
+                    <a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?CategoryId=68&brandid=9  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.18-du.com/AllSearch.aspx?CategoryId=68&brandid=9'" tppabs="http://www.18-du.com/ArticleDetail.aspx?ArticleId=420">
+                        <span class="one_span" style=" float:left;width:30px;color: #ff6464;">4</span><i>体验丨尼康Z 7街拍弱光人像实战赏析</i>
+                    </a>
+                </li>
+
+
+            
+                <li style=" display:none;">
+                   <a href="ArticleDetail.aspx-ArticleId=414.htm" tppabs="http://www.18-du.com/ArticleDetail.aspx?ArticleId=414">
+                        中国的跌路版图
+
+运营里程达9...
+                   </a>
+                </li>
+                
+                <li class="articletag5">
+                    <a href="ArticleDetail.aspx-ArticleId=414.htm" tppabs="http://www.18-du.com/ArticleDetail.aspx?ArticleId=414">
+                        <span class="one_span" style=" float:left;width:30px;color: #ff6464;">5</span><i>图赏 | 看完立马泪奔！铁道工人用37年拍出火车上的人生百态！</i>
+                    </a>
+                </li>
+
+
+            
+                <li style=" display:none;">
+                   <a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?CategoryId=68&minSalePrice=1&maxSalePrice=2999  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.18-du.com/AllSearch.aspx?CategoryId=68&minSalePrice=1&maxSalePrice=2999'" tppabs="http://www.18-du.com/ArticleDetail.aspx?ArticleId=412">
+                        一个27岁的上海摄影师@youkn...
+                   </a>
+                </li>
+                
+                <li class="articletag5">
+                    <a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?CategoryId=68&minSalePrice=1&maxSalePrice=2999  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.18-du.com/AllSearch.aspx?CategoryId=68&minSalePrice=1&maxSalePrice=2999'" tppabs="http://www.18-du.com/ArticleDetail.aspx?ArticleId=412">
+                        <span class="one_span" style=" float:left;width:30px;color: #ff6464;">6</span><i>图赏 | 90后上海摄影师镜头下的绝色中国，爆红INS：美到令人窒息！ InsDaily</i>
+                    </a>
+                </li>
+
+
+            
+                <li style=" display:none;">
+                   <a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?CategoryId=68&minSalePrice=10000  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.18-du.com/AllSearch.aspx?CategoryId=68&minSalePrice=10000'" tppabs="http://www.18-du.com/ArticleDetail.aspx?ArticleId=419">
+                        中国最牛的一个县：美女如云，还能一...
+                   </a>
+                </li>
+                
+                <li class="articletag5">
+                    <a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?CategoryId=68&minSalePrice=10000  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.18-du.com/AllSearch.aspx?CategoryId=68&minSalePrice=10000'" tppabs="http://www.18-du.com/ArticleDetail.aspx?ArticleId=419">
+                        <span class="one_span" style=" float:left;width:30px;color: #ff6464;">7</span><i>中国最牛的一个县：美女如云，还能一脚跨三国！</i>
+                    </a>
+                </li>
+
+
+            
+                <li style=" display:none;">
+                   <a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?SortBy=default&SortOrder=desc&CategoryId=68  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.18-du.com/AllSearch.aspx?SortBy=default&SortOrder=desc&CategoryId=68'" tppabs="http://www.18-du.com/ArticleDetail.aspx?ArticleId=417">
+                        索尼发布超远摄定焦FE 600mm...
+                   </a>
+                </li>
+                
+                <li class="articletag5">
+                    <a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?SortBy=default&SortOrder=desc&CategoryId=68  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.18-du.com/AllSearch.aspx?SortBy=default&SortOrder=desc&CategoryId=68'" tppabs="http://www.18-du.com/ArticleDetail.aspx?ArticleId=417">
+                        <span class="one_span" style=" float:left;width:30px;color: #ff6464;">8</span><i>长炮来袭 索尼发布超远摄定焦FE 600mm F4和变焦镜头FE 200-600mm F5.6-6.3</i>
+                    </a>
+                </li>
+
+
+            
+                <li style=" display:none;">
+                   <a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?SortBy=sale&SortOrder=desc&CategoryId=68  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.18-du.com/AllSearch.aspx?SortBy=sale&SortOrder=desc&CategoryId=68'" tppabs="http://www.18-du.com/ArticleDetail.aspx?ArticleId=411">
+                        索尼G大师镜头FE 135mm F...
+                   </a>
+                </li>
+                
+                <li class="articletag5">
+                    <a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?SortBy=sale&SortOrder=desc&CategoryId=68  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.18-du.com/AllSearch.aspx?SortBy=sale&SortOrder=desc&CategoryId=68'" tppabs="http://www.18-du.com/ArticleDetail.aspx?ArticleId=411">
+                        <span class="one_span" style=" float:left;width:30px;color: #ff6464;">9</span><i>也许是最好的人像镜头 致索尼G大师镜头SEL135F1.8GM</i>
+                    </a>
+                </li>
+
+
+            
+                <li style=" display:none;">
+                   <a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?SortBy=price&SortOrder=desc&CategoryId=68  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.18-du.com/AllSearch.aspx?SortBy=price&SortOrder=desc&CategoryId=68'" tppabs="http://www.18-du.com/ArticleDetail.aspx?ArticleId=416">
+                        2019年5月23日，富士在日本东...
+                   </a>
+                </li>
+                
+                <li class="articletag5">
+                    <a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?SortBy=price&SortOrder=desc&CategoryId=68  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.18-du.com/AllSearch.aspx?SortBy=price&SortOrder=desc&CategoryId=68'" tppabs="http://www.18-du.com/ArticleDetail.aspx?ArticleId=416">
+                        <span class="one_span" style=" float:left;width:30px;color: #ff6464;">10</span><i>体验 | 按次快门一个亿是什么感觉 富士GFX100深度体验</i>
+                    </a>
+                </li>
+
+
+            
+            </ul>
+ </div>
+
+  </div>
+
+</div>
+
+      <script type="text/javascript">
+          HeadeMenu_Choice("资讯中心");
+      </script>
+
+
+</form>
+<div class="clear"></div>
+<div class="margin50"></div>
+		
+
+<style>
+#aaa{ display:none;}
+</style>
+  <div class="footer" style=" float:none">
+        
+      <div id="aaa"> 
+
+
+<div class="footer-ul">
+
+      
+          <div class="ifot">
+           <div class="ifot1">新手帮助</div>
+		       <div class="ifot2">
+               <ul>
+               
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=14.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=14">
+                              用户协议
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=16.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=16">
+                              找回密码
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=18.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=18">
+                              会员绑定
+                          </a>  
+                        </li>
+                 
+                 </ul>
+		       </div>
+            </div>
+      
+          <div class="ifot">
+           <div class="ifot1">我的店铺</div>
+		       <div class="ifot2">
+               <ul>
+               
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=20.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=20">
+                              发布商品
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=21.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=21">
+                              发货
+                          </a>  
+                        </li>
+                 
+                 </ul>
+		       </div>
+            </div>
+      
+          <div class="ifot">
+           <div class="ifot1">会员店粉丝</div>
+		       <div class="ifot2">
+               <ul>
+               
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=22.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=22">
+                              会员注册
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=23.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=23">
+                              会员认证
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=25.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=25">
+                              会员升级
+                          </a>  
+                        </li>
+                 
+                 </ul>
+		       </div>
+            </div>
+      
+          <div class="ifot">
+           <div class="ifot1">常见问答</div>
+		       <div class="ifot2">
+               <ul>
+               
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=35.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=35">
+                              修改密码
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=36.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=36">
+                              售后处理时效
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=34.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=34">
+                              售后
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=30.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=30">
+                              公司简介
+                          </a>  
+                        </li>
+                 
+                 </ul>
+		       </div>
+            </div>
+    
+
+
+<div class="ifot infotewm lastifort">
+		   <div class="ifot2 APP">
+		      <img src="sheyingwxh.jpg" tppabs="http://www.18-du.com/Utility/sysrc/vshop/img/sheyingwxh.jpg" width="124" height="124">
+		   </div>
+		   <div class="ifot1 ewm" style="width:168px">关注我们公众号了解更多</div>
+ </div>
+
+ <div class="ifot ifotB" style=" padding-left:30px">
+				<p class="small_p">服务热线</p>
+				<p>010-63255589</p>
+				<p>服务监督电话：13601051438</p>
+				<p style="width:300px">周一到周六：9:00-18:00</p>
+		</div>
+</div>
+<div style=" width:57%; color:White; padding-left:14%; padding-top:15px; padding-bottom:10px">
+    <p class="MsoNormal">
+	    <strong><span style="font-size:14px;">北京十八度影像文化股份公司&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;北京市西城区马连道南街6号院1号楼12层1205A&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;010-63255589 &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;京ICP备16038196号-1 
+</span></strong> 
+    </p>
+</div>
+
+
+      </div> 
+        
+        
+        
+        
+        <div class="footer">
+        
+        
+
+
+<div class="footer-ul" style=" width:100%; min-height:240px;">
+
+      
+          <div class="ifot">
+           <div class="ifot1">新手帮助</div>
+		       <div class="ifot2">
+               <ul>
+               
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=14.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=14">
+                              用户协议
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=16.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=16">
+                              找回密码
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=18.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=18">
+                              用户绑定
+                          </a>  
+                        </li>
+                 
+                 </ul>
+		       </div>
+            </div>
+      
+          <div class="ifot" style=" display:none">
+           <div class="ifot1">我的店铺</div>
+		       <div class="ifot2">
+               <ul>
+               
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=20.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=20">
+                              发布商品
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=21.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=21">
+                              发货
+                          </a>  
+                        </li>
+                 
+                 </ul>
+		       </div>
+            </div>
+      
+          <div class="ifot" style=" display:none">
+           <div class="ifot1">会员店粉丝</div>
+		       <div class="ifot2">
+               <ul>
+               
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=22.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=22">
+                              会员注册
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=23.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=23">
+                              会员认证
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=25.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=25">
+                              会员升级
+                          </a>  
+                        </li>
+                 
+                 </ul>
+		       </div>
+            </div>
+      
+          <div class="ifot">
+           <div class="ifot1">常见问答</div>
+		       <div class="ifot2">
+               <ul>
+               
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=35.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=35">
+                              修改密码
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=36.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=36">
+                              售后处理时效
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=34.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=34">
+                              售后
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=30.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=30">
+                              公司简介
+                          </a>  
+                        </li>
+                 
+                 </ul>
+		       </div>
+            </div>
+    
+
+
+<div class="ifot infotewm lastifort" style=" margin-left:15%;">
+		   <div class="ifot2 APP">
+		      <img src="sheyingwxh.jpg" tppabs="http://www.18-du.com/Utility/sysrc/vshop/img/sheyingwxh.jpg" width="124" height="124">
+		   </div>
+		   <div class="ifot1 ewm" style="width:168px">关注我们公众号了解更多</div>
+ </div>
+
+ <div class="ifot ifotB" style=" padding-left:30px; width:35%">
+				<p class="small_p">服务热线</p>
+				<p>010-63255589</p>
+				<p>服务监督电话：13601051438</p>
+				<p style="width:300px">周一到周六：9:00-18:00</p>
+		</div>
+</div>
+<div style=" width:90%; color:White;padding-top:15px; padding-bottom:10px; text-align:center; margin:0 auto;">
+    <p style=" font-size:14px;">
+	 北京十八度影像文化股份公司&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;北京市西城区马连道南街6号院1号楼12层1205A&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;010-63255589 &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;京ICP备16038196号-1 
+    </p>
+</div>
+
+
+ </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    <div style=" display:none">
+    <div class="clear"></div>
+       <!-- 友情链接-->
+        
+
+<div class="footer_friendshipLink_total">
+	<div class="footer_friendshipLink">
+		<ul>
+
+<!--<li><a href='#' target="_blank">友情链接：</a></li>-->
+
+	</ul>
+   </div>
+</div>
+
+        <div class="clear"></div>
+    </div>    
+
+       
+        <div class="footer-bottom">
+         <!--底部自定义内容-->
+          <p>
+	<span style="color:#999999;font-family:'Microsoft YaHei', tahoma, arial, 'Hiragino Sans GB', '\\5b8b体', sans-serif;line-height:22px;">Copyright&nbsp;&copy; 2016 -&nbsp;2017 十八度 18-du.com&nbsp;版权所有 |&nbsp;京ICP备16038196号-1</span> 
+</p>
+<p>
+	<br />
+</p>
+          <script type="text/javascript">              var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cspan id='cnzz_stat_icon_1261274722'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1261274722%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+           <!-- 合作伙伴-->
+            
+
+<div class="footer_friendshipLink_total">
+	<div class="footer_friendshipLink">
+		<ul>
+
+	</ul>
+   </div>
+</div>
+
+        </div>
+         
+ </div>
+ </body>
+ </html>
+
