@@ -1,7 +1,78 @@
 ﻿
 @{
-    ViewData["Title"] = "Index";
+    Layout = null;
 }
-<a href="~/TryOutProList.aspx.htm">~/TryOutProList.aspx.htm</a>
-<h2>Index</h2>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>TryOut</title>
+    <script src="~/js/vue/vue.js"></script>
+    <script src="~/js/vue/axios.js"></script>
+
+</head>
+<body>
+    <div>
+        <table class="divstudents" id="divstudents">
+            <thead >
+                <tr>
+                    <td>ID</td>
+                    <td>商品名称</td>
+                    <td>原市场价格</td>
+                    <td>会员价格</td>
+                    <td>限购数量</td>
+                    <td>积分限制</td>
+                    <td>物品类别ID</td>
+                    <td>商品简介</td>
+                    <td>图片</td>
+                    <td>商品详情</td>
+                    <td>创建时间</td>
+                    <td>到期时间</td>
+            </thead>
+            <tbody>
+                <tr v-for="item in InboxList">
+                    <td>{{item.id}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.price}}</td>
+                    <td>{{item.proPay}}</td>
+                    <td>{{item.sales}}</td>
+                    <td>{{item.integral}}</td>
+                    <td>{{item.typeId}}</td>
+                    <td>{{item.about}}</td>
+                    <td>{{item.image}}</td>
+                    <td>{{item.details}}</td>
+                    <td>{{item.createTime}}</td>
+                    <td>{{item.endTime}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+<script>
+    var vm = new Vue({
+        el: "#divstudents",
+        data: {
+            InboxList:[]
+        },
+        mounted() {
+            this.pagehandler();
+        },
+        methods: {
+            pagehandler: function () {
+                //axios.get("/test/GetStudentList", { params: { pageindex: page, pagesize: this.pageSize, name: this.searchname} }).then((response) => {
+                axios.get("http://localhost:53782/api/TryOut").then((response) => {
+                    this.InboxList = [];
+                    console.log(response)
+                    for (var i = 0; i < response.data.length; i++) {
+                        this.InboxList.push(response.data[i]);
+                    }
+                    console.log(this.InboxList)
+                });
+            }
+        }
+    })
+</script>
 

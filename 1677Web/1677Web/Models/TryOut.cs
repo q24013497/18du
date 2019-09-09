@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Model
+namespace _1677Web.Models
 {
     /// <summary>
     /// 试用表
