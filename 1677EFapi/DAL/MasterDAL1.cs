@@ -1,16 +1,15 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Microsoft.EntityFrameworkCore;
-using Model;
 
 namespace DAL
 {
-    public class MasterDAL
+   public class MasterDAL1
     {
         DataContext db = new DataContext();
-        public List<Master> GetMasters1()
+        public List<Master> GetMasters()
         {
             return db.Master.ToList();
         }
