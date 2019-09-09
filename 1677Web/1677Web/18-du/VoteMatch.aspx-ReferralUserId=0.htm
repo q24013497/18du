@@ -1,0 +1,297 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    
+
+<!-- 手机端的头部注释 -->
+<meta charset=utf-8"utf-8">
+<meta http-equiv="cleartype" content="on">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+<meta name="format-detection" content="telephone=no, email=no">
+<meta name="apple-itunes-app" content="app-id=507161324">
+<meta name="theme-color" content="#ffffff">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">   
+    <title>摄影比赛项目</title>
+    
+
+
+
+<script src="AllSearch-2.aspx-categoryid=79&brandid=49" tppabs="http://www.18-du.com/CommentMenage/source/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+<link href="AllSearch.aspx-CategoryId=47&brandid=32.css" tppabs="http://www.18-du.com/CommentMenage/source/bootstrap/css/bootstrap-theme.css" rel="stylesheet" type="text/css" />
+<link href="AllSearch.aspx-CategoryId=47&brandid=22.css" tppabs="http://www.18-du.com/CommentMenage/source/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<script src="AllSearch-1.aspx-categoryid=47&brandid=135" tppabs="http://www.18-du.com/CommentMenage/source/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="common.js" tppabs="http://www.18-du.com/CommentMenage/source/js/common.js" type="text/javascript"></script>
+<script src="AllSearch-2.aspx-categoryid=54&valuestr=" tppabs="http://www.18-du.com/CommentMenage/source/js/MessageForm.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="style-2.css" tppabs="http://www.18-du.com/Utility/sysrc/vshop/css/style.css" />    
+    <script src="TimetoolScript.js" tppabs="http://www.18-du.com/CommentMenage/source/js/TimetoolScript.js" type="text/javascript"></script>
+    <script src="VoteHelpScript.js" tppabs="http://www.18-du.com/CommentMenage/source/js/VoteHelpScript.js" type="text/javascript"></script>
+
+     <style type="text/css">
+        .wwy_photo_top{float:left; width:100%;}
+	    .wwy_photo_top img{width:100%;}
+	    .wwy_perworks{width:100%; margin-bottom:5vw; background-color:#fff;}
+	    .wwy_perworks .worksimg{width:100%;}
+	    .photo_position{float:left; width:96%; padding:0 2%;}
+	    .wwy_allworks div{float:left; width:100%; padding:1vw 0;}
+	    .wwy_allworks div p{float:left; width:96%; padding:1vw 2%;}
+	    .wwy_allworks div p:nth-child(1) span{float:left;}
+	    .wwy_allworks div p:nth-child(1) label{float:right; }
+	    .worksimg{width:100%;}
+	    .photo_position{margin-top:-9%;}
+     </style>
+
+</head>
+<body>
+
+<div class="photo_topimg" style=" display:none;">
+    <img id="tupian_banner" src="AllSearch-1.aspx-categoryid=47&brandid=39" tppabs="http://www.18-du.com/Utility/sysrc/vshop/img/photocontest_01.png"/>
+</div>
+<script type="text/javascript">
+    //获取首页图片
+    function SelectMainImage() {
+        $.ajax({
+            type: 'POST',
+            url: "http://" + window.location.host + '/CommentMenage/API/VoteManageAPI.ashx',
+            data: {
+                action: 'SelectVoteMainImage'
+            },
+            beforeSend: function () {
+            },
+            success: function (data) {
+                if (data != "") {
+                    var json = eval(data)[0];
+                    var Message = json.message[0];
+                    if (Message.code == 0) {
+                        var tablejson1 = [];
+                        var tablejson2 = [];
+                        //基础配置信息
+                        if (json.data1.length > 0) {
+                            tablejson1 = json.data1[0].table;
+                            var imagepathdefine = "shop_banner.jpg"/*tpa=http://www.18-du.com/Utility/sysrc/img/shop_banner.jpg*/;
+                            var imagepath = imagepathdefine;
+                            if (tablejson1[0].f1 != "") {
+                                imagepath = tablejson1[0].f1;
+                            }
+                            $("#tupian_banner").attr("src", imagepath);
+                            //首页图加载处理
+                            $('#tupian_banner').load(function () {
+                            }).error(function () {
+                                $("#tupian_banner").attr("src", imagepathdefine); //加载失败，用默认图片替换
+                            });
+                        }
+                    } else {
+                        alert(Message.message);
+                    }
+                }
+            },
+            dataType: 'text'
+        });
+    }
+
+    $(function () {
+        //应客户要求，去除主图片
+        //SelectMainImage(); //初始化加载主图片
+    })
+
+        
+</script>
+
+
+
+<div class="photo_topimg">
+    <img  src="AllSearch-1.aspx-categoryid=47&brandid=136" tppabs="http://www.18-du.com/Utility/sysrc/vshop/img/20190315200025.png" style=" float:left; width:20%"/> <div style=" float:left; width:60%; padding-top:35px" ><span style=" width:60%; font-size:16px; padding-left:-10px" > 微影赛</span></div> 
+</div>
+<div id="ItemListDiv" style=" width:98%; padding-left:2%; padding-right:1%; padding-top:2%">
+
+
+</div>
+
+
+<style type="text/css">
+    .thisfindmorepage{display:none;height:9vw; font-size:7vw;}
+</style>
+
+<div id="FindMoreDateDiv"  class='btn text-center btn-info ' style=" width:100%;display:none;"  onclick="findmoredata()" >
+    <label id="thispageindexlabel" style=" display:none;">1</label>
+    加载更多...
+</div>
+
+<div style=" width:100%; height:30vw;">
+
+</div>
+<script type="text/javascript">
+
+    //查询投票列表
+    thispagesize = 10;
+
+    //活动信息查询
+    function SelectActivyInfo(pageindex) {
+        $.ajax({
+            type: 'POST',
+            url: "http://" + window.location.host + '/CommentMenage/API/VoteManageAPI.ashx',
+            data: {
+                action: 'SelectActivityInfo',
+                pageindex: pageindex,
+                pagesize: thispagesize
+            },
+            beforeSend: function () {
+
+            },
+            success: function (data) {
+                if (data != "") {
+                    var json = eval(data)[0];
+                    var Message = json.message[0];
+                    if (Message.code == 0) {
+                        if (json.data1.length > 0) {
+                            var data1 = json.data1[0];
+                            var tablecountsum = data1.tablecountsum[0];
+                            
+                            //查看更多和没有更多数据的层显示控制
+                            if (Math.ceil(tablecountsum.countsum / thispagesize) - pageindex > 0) {
+                                $("#FindMoreDateDiv").show();
+                                $("#NotMoreDateDiv").hide();
+                            } else {
+                                $("#FindMoreDateDiv").hide();
+                                if (pageindex != 1) {
+                                    $("#NotMoreDateDiv").show();
+                                }
+                            }
+                            $("#thispageindexlabel").text(pageindex);
+                            //查看更多和没有更多数据的层显示控制结束
+
+                            CreateActivityulHtml(data1.table);
+
+                        } else {
+                            //查询出来的数据有错，跳转到投票页面
+                            location.href = "http:///" + location.host + "/CommentMenage/vshop/VoteMain.aspx";
+                        }
+                    } else {
+                        ShowMessage(Message.message);
+                    }
+                }
+            },
+            dataType: 'text'
+        });
+
+    }
+
+
+
+
+    //创建投票列表
+    function CreateActivityulHtml(json) {
+        var html = "";
+        for (var i = 0; i < json.length; i++) {
+            html = "<div class='wwy_perworks'>"
+                 + "    <img class='worksimg' src='" + json[i].image1 + "' onclick=\"GotoJoinVote('" + json[i].guid + "')\" />"
+                 + "    <p class='photo_position'>"
+                 + "        <span class='wwy_floatleft'>" + decodeURIComponent(json[i].title) + "</span>"
+                 + "    </p>"
+                 + "    <div class='vote_info'style='padding-top:10px' >"
+                 + "        <span >已报名：<label style='font-weight:400'>" + json[i].JoinNum + "人</label></span>"
+                 + "    </div>"
+                 + "    <div class='vote_info'>"
+                 + "        <span>开始时间：<label style='font-weight:400'>" + FormatTime_Short(json[i].time1) + "</label></span>"
+                 + "    </div>"
+                 + "    <div class='vote_info'>"
+                 + "        <span>结束时间：<label style='font-weight:400'>" + FormatTime_Short(json[i].time2) + "</label></span>"
+                 + "    </div>"
+                 + "    <div class='vote_info' style='word-wrap: break-word;'>"
+                 + "        <p style=''>简介：</p>" + decodeURIComponent(json[i].text)
+                 + "    </div>"
+                 + "    <div style='text-align: right; padding-top:10px'>"
+                 + "        <input type='button' class='btn btn-info' style='margin-right:3vw; border-color:#FF9E3E; background-color:#FF9E3E; font-family:宋体; width:90px; font-weight:600;font-size:16px; margin-bottom:2vw;' value='去报名' onclick=\"GotoJoinVote('" + json[i].guid + "')\"  />"
+                 + "    </div>"
+                 + "</div>";
+            $("#ItemListDiv").append(html);
+            
+        }
+        
+    }
+
+    //发现更多
+    function findmoredata() {
+        var thispageindex = $("#thispageindexlabel").text();
+        SelectActivyInfo(parseInt(thispageindex) + 1);
+
+    }
+
+
+    //去投票
+    function GotoJoinVote(guid) {
+        location.href = GetWebUrl() + "/CommentMenage/vshop/AddImageVote.aspx?activityguid=" + guid;
+    }
+
+
+
+
+    $(function () {
+
+        SelectActivyInfo(1);
+
+    });
+    
+    
+    
+</script>
+
+
+
+
+
+<!-- Hidistro.UI.SaleSystem.Tags.SheYing.VoteFooter  -->
+
+
+<!--底部开始-->
+<div class="index_bottom" style=" height:50px">
+	<ul>
+	<li onclick="VoteGotoUrl('VoteMatch.aspx-ReferralUserId=0.htm'/*tpa=http://www.18-du.com/CommentMenage/vshop/VoteMatch.aspx*/)" >
+			<img src="AllSearch-1.aspx-categoryid=47&minsaleprice=1&maxsaleprice=2999" tppabs="http://www.18-du.com/Utility/sysrc/vshop/img/wwy_b1.png" style=" width:30%"/>
+			<p>比赛</p>
+		</li>
+		<li onclick="VoteGotoUrl('http://bad_redirect')" >
+		    <img src="AllSearch-1.aspx-categoryid=47&minsaleprice=3000&maxsaleprice=5999" tppabs="http://www.18-du.com/Utility/sysrc/vshop/img/wwy_a1.png" style=" width:30%"/>
+			<p>作品</p>
+		</li>
+		
+		<li onclick="VoteGotoUrl('http://bad_redirect')" >
+			<img src="AllSearch-1.aspx-categoryid=47&minsaleprice=10000" tppabs="http://www.18-du.com/Utility/sysrc/vshop/img/wwy_c1.png" style=" width:30%"/>
+			<p>我的</p>
+		</li>
+		<li onclick="VoteGotoUrl('http://bad_redirect')" >
+			<img src="AllSearch-1.aspx-sortby=default&sortorder=desc&categoryid=47" tppabs="http://www.18-du.com/Utility/sysrc/vshop/img/index_h.png" style=" width:30%"/>
+			<p>商城</p>
+		</li></a>
+	</ul>
+</div>
+
+<script type="text/javascript">
+
+    function VoteGotoUrl(url) {
+        location.href = GetWebUrl() + url;
+    }
+
+    
+</script>   
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

@@ -150,17 +150,27 @@ var _hmt = _hmt || [];
 
 
 <script type="text/javascript">
-    document.title = "ÊëÑÂΩ±ÊäïÁ•®";
+    document.title = "ÊëÑÂΩ±ÊØîËµõÈ°πÁõÆ";
 </script>
+    <script language="javascript" type="text/javascript"> 
+            var applicationPath = "";
+            var skinPath = "/templates/master/default";
+            var subsiteuserId = "0";
+        </script>
+<meta http-equiv="content-language" content="zh-CN" />
+<link rel="icon" type="image/x-icon" href="http://www.18-du.com/favicon.ico" media="screen" />
+<link rel="shortcut icon" type="image/x-icon" href="http://www.18-du.com/favicon.ico" media="screen" />
+<meta name="author" content="Hishop development team" />
+<meta name="GENERATOR" content="1.2" />
 
     <link href="style.css" tppabs="http://www.18-du.com/Utility/sysrc/css/style.css" type="text/css" rel="stylesheet" />
-    <script type="text/javascript" src="center.js" tppabs="http://www.18-du.com/Utility/sysrc/js/center.js"></script>
     <script src="common.js" tppabs="http://www.18-du.com/CommentMenage/source/js/common.js" type="text/javascript"></script>    
-    <link href="lrtk.css" tppabs="http://www.18-du.com/Utility/sysrc/css/lrtk.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="koala.min.1.5.js" tppabs="http://www.18-du.com/Utility/sysrc/js/koala.min.1.5.js"></script>
-    <script type="text/javascript" src="img-self-adaption.js" tppabs="http://www.18-du.com/Utility/sysrc/js/img-self-adaption.js"></script>
+    <script language="javascript" src="276a18e2ffea4d5a94f2532370cb1aa9-2.jpeg" tppabs="http://www.18-du.com/Utility/sysrc/js/category1.js" type="text/javascript"></script>
+    <link href="268e3f9f7ce348439efadd7709b792d9.jpeg.css" tppabs="http://www.18-du.com/Utility/sysrc/css/category1.css" type="text/css" rel="stylesheet">
+    <link href="dbea67bfb5b44ad09f52e0173fde9472.jpeg.css" tppabs="http://www.18-du.com/Utility/sysrc/css/list.css" type="text/css" rel="stylesheet">
+    <script src="img-self-adaption.js" tppabs="http://www.18-du.com/Utility/sysrc/js/img-self-adaption.js" type="text/javascript"></script>
     <script src="TimetoolScript.js" tppabs="http://www.18-du.com/CommentMenage/source/js/TimetoolScript.js" type="text/javascript"></script>
-    <script src="VoteHelpScript.js" tppabs="http://www.18-du.com/CommentMenage/source/js/VoteHelpScript.js" type="text/javascript"></script>
+
     
 
 
@@ -176,12 +186,12 @@ var _hmt = _hmt || [];
         }
     });
 </script>
-    
+
     <style type="text/css">
         .pointer{ cursor:pointer}
     </style>
 
-       
+   
 <!-- Hidistro.UI.SaleSystem.Tags.SheYing.Header_Main_black2  -->
 <style type="text/css" >
     /* ÈöêËóèÈ°∂Á∫ßÂ§¥ÈÉ®‰∏äÁöÑ‰∏™‰∫∫‰ø°ÊÅØ*/
@@ -261,9 +271,8 @@ var _hmt = _hmt || [];
 
 
 
-    <!--logo search end-->      
-    
-    
+    <!--logo search end-->    
+
     <!--logo search end-->
     <div class="clear">
     </div>
@@ -281,10 +290,10 @@ var _hmt = _hmt || [];
                         data: {
                             action: 'SelectVoteMainImage'
                         },
-                        beforeSend: function() {
+                        beforeSend: function () {
                             //activityname, imagepath, starttime, endtime, activityInfo
                         },
-                        success: function(data) {
+                        success: function (data) {
                             if (data != "") {
                                 var json = eval(data)[0];
                                 var Message = json.message[0];
@@ -301,9 +310,9 @@ var _hmt = _hmt || [];
                                         }
                                         $(".MainPageImage").attr("src", imagepath);
                                         //È¶ñÈ°µÂõæÂä†ËΩΩÂ§ÑÁêÜ
-                                        $('.MainPageImage').load(function() {
-                                        }).error(function() {
-                                            $(".MainPageImage").attr("src", imagepathdefine); //Âä†ËΩΩÂ§±Ë¥•ÔºåÁî®ÈªòËÆ§ÂõæÁâáÊõøÊç¢
+                                        $('.MainPageImage').load(function () {
+                                        }).error(function () {
+                                            $(".MainPageImage").attr("src", imagepathdefine);
                                         });
                                     }
                                 } else {
@@ -315,235 +324,32 @@ var _hmt = _hmt || [];
                     });
                 }
 
-                $(function() {
-                    SelectMainImage(); //ÂàùÂßãÂåñÂä†ËΩΩ‰∏ªÂõæÁâá
+                $(function () {
+                    SelectMainImage();//ÂàùÂßãÂåñÂä†ËΩΩ‰∏ªÂõæÁâá
                 })
 
         
             </script>
-
-            <style>
-            
-            .line_01 {
-    padding: 0 20px 0;
-    margin: 50px auto;
-    line-height: 1px;
-    border-left: 200px solid #ffc000;
-    border-right: 200px solid #ffc000;
-    text-align: center;
-    width: 200px;
-    font-size: 21px;
-    color: #ffc000;
-    font-weight: 600;
-}
-            </style>
-
-            <div class="line_01">ÊëÑÂΩ±‰ΩúÂìÅ</div>
-            
             <div class="lacpp">
-                
-                
-
-
-<div class="lac_cap">
-                    <span style=" background:#FFC000; height:40px; padding:0 10px; float:left; color:#fff">È¶ñÂ±äÂ§©ÂùõÊùØ‚Äú‰∏ÄË∑ÉÂçÉÈáåÁöÑ‰∏≠ÂõΩ‚ÄùÊëÑÂΩ±Â§ßËµõ</span>
+                <div class="lac_cap">
+                    ÊëÑÂΩ±ÊØîËµõÈ°πÁõÆ
                     <div class="clear"></div>
                 </div>
                 <div class="clear">
                 </div>
                 
-                <div class="vote_total" >
+                <div class="vote_total">
                     <ul id="Activityul">
-                        
-                        <li  class='" + ((Math.ceil(3 / 2) - 3 / 2) == 0 ? "two_li" : "one_li") + "'>
-                                                <div class='vote_img'>
-                                                      <a href="javascript:if(confirm('http://www.18-du.com/CommentMenage/VoteDetaile.aspx?guid=%22E40DE9BA-45A0-4507-B12D-ED0D88F2E783%22&activityguid=%223B21801A-52FA-4B0B-8A4C-5F905AD6F2DF%22  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ ≤ªø…”√, ªÚ∑≈∆˙¡Àœ¬‘ÿ, ªÚœÓƒøº¥Ω´Õ£÷π°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='http://www.18-du.com/CommentMenage/VoteDetaile.aspx?guid="E40DE9BA-45A0-4507-B12D-ED0D88F2E783"&activityguid="3B21801A-52FA-4B0B-8A4C-5F905AD6F2DF"'" tppabs="http://www.18-du.com/CommentMenage/VoteDetaile.aspx?guid="E40DE9BA-45A0-4507-B12D-ED0D88F2E783"&activityguid="3B21801A-52FA-4B0B-8A4C-5F905AD6F2DF"">
-                                                      <img src="1768e4d2b-2525-45f7-be10-24a27c21650a.jpg" tppabs="http://www.18-du.com/Storage/sheying/comment/1768e4d2b-2525-45f7-be10-24a27c21650a.jpg" onload='chgdivimgwh(this,327,260)' /></a>
-                                                  </div>
-                                                  <div class='vote_img_title'>
-                                                      ‰º¥ÂÑø
-                                                 </div>
-                                                  <div class='vote_info' style=" display:none;">
-                                                      <span>ÊâÄÂ±ûÊ¥ªÂä®Ôºö<label>‰º¥ÂÑø</label></span>
-                                                 </div>
-                                                  <div class='vote_info'>
-                                                      <span>ÊäïÁ®ø‰∫∫Ôºö<label>ÈÉ≠‰∏ΩÂçé</label></span>
-                                                  </div>
-                                                  <div class='vote_info'>
-                                                      <span>‰ΩøÁî®Âô®ÊùêÔºö<label>Âçé‰∏∫P10</label></span>
-                                                  </div>
-                                                  <div class='vote_info'style='display:none'>
-                                                      <span>Áé∞ÊéíÂêçÔºö<label>0</label></span>
-                                                 </div>
-                                                  <div class='vote_info' style='display:none'>
-                                                      <span>Â∑≤ÊäïÁ•®Ôºö<label>0</label></span>
-                                                  </div>
-                                                  <div class='vote_button' style='display:none'>
-                                                       <a href="VoteDetaile.aspx-guid=E40DE9BA-45A0-4507-B12D-ED0D88F2E783&activityguid=3B21801A-52FA-4B0B-8A4C-5F905AD6F2DF.htm" tppabs="http://www.18-du.com/CommentMenage/VoteDetaile.aspx?guid=E40DE9BA-45A0-4507-B12D-ED0D88F2E783&activityguid=3B21801A-52FA-4B0B-8A4C-5F905AD6F2DF">
-                                                          <input type='button'  value='Êäï‰∏ÄÁ•®' />
-                                                      </a>
-                                                 </div>
-                                                 </li>
-                        
-                        <li  class='" + ((Math.ceil(3 / 2) - 3 / 2) == 0 ? "two_li" : "one_li") + "'>
-                                                <div class='vote_img'>
-                                                      <a href="javascript:if(confirm('http://www.18-du.com/CommentMenage/VoteDetaile.aspx?guid=%22DA81145E-27BE-410C-926F-C305C70AE20E%22&activityguid=%223B21801A-52FA-4B0B-8A4C-5F905AD6F2DF%22  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ ≤ªø…”√, ªÚ∑≈∆˙¡Àœ¬‘ÿ, ªÚœÓƒøº¥Ω´Õ£÷π°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='http://www.18-du.com/CommentMenage/VoteDetaile.aspx?guid="DA81145E-27BE-410C-926F-C305C70AE20E"&activityguid="3B21801A-52FA-4B0B-8A4C-5F905AD6F2DF"'" tppabs="http://www.18-du.com/CommentMenage/VoteDetaile.aspx?guid="DA81145E-27BE-410C-926F-C305C70AE20E"&activityguid="3B21801A-52FA-4B0B-8A4C-5F905AD6F2DF"">
-                                                      <img src="194245feb-2d4e-4953-a182-ba0228ce5156.jpg" tppabs="http://www.18-du.com/Storage/sheying/comment/194245feb-2d4e-4953-a182-ba0228ce5156.jpg" onload='chgdivimgwh(this,327,260)' /></a>
-                                                  </div>
-                                                  <div class='vote_img_title'>
-                                                      ÁâµÊâã
-                                                 </div>
-                                                  <div class='vote_info' style=" display:none;">
-                                                      <span>ÊâÄÂ±ûÊ¥ªÂä®Ôºö<label>ÁâµÊâã</label></span>
-                                                 </div>
-                                                  <div class='vote_info'>
-                                                      <span>ÊäïÁ®ø‰∫∫Ôºö<label>ÈÉ≠‰∏ΩÂçé</label></span>
-                                                  </div>
-                                                  <div class='vote_info'>
-                                                      <span>‰ΩøÁî®Âô®ÊùêÔºö<label>Âçé‰∏∫P30ÊâãÊú∫</label></span>
-                                                  </div>
-                                                  <div class='vote_info'style='display:none'>
-                                                      <span>Áé∞ÊéíÂêçÔºö<label>0</label></span>
-                                                 </div>
-                                                  <div class='vote_info' style='display:none'>
-                                                      <span>Â∑≤ÊäïÁ•®Ôºö<label>0</label></span>
-                                                  </div>
-                                                  <div class='vote_button' style='display:none'>
-                                                       <a href="VoteDetaile.aspx-guid=DA81145E-27BE-410C-926F-C305C70AE20E&activityguid=3B21801A-52FA-4B0B-8A4C-5F905AD6F2DF.htm" tppabs="http://www.18-du.com/CommentMenage/VoteDetaile.aspx?guid=DA81145E-27BE-410C-926F-C305C70AE20E&activityguid=3B21801A-52FA-4B0B-8A4C-5F905AD6F2DF">
-                                                          <input type='button'  value='Êäï‰∏ÄÁ•®' />
-                                                      </a>
-                                                 </div>
-                                                 </li>
-                        
-                        <li  class='" + ((Math.ceil(3 / 2) - 3 / 2) == 0 ? "two_li" : "one_li") + "'>
-                                                <div class='vote_img'>
-                                                      <a href="javascript:if(confirm('http://www.18-du.com/CommentMenage/VoteDetaile.aspx?guid=%220EF681BE-6C93-44A7-AEE7-5ED448C07846%22&activityguid=%223B21801A-52FA-4B0B-8A4C-5F905AD6F2DF%22  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ ≤ªø…”√, ªÚ∑≈∆˙¡Àœ¬‘ÿ, ªÚœÓƒøº¥Ω´Õ£÷π°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='http://www.18-du.com/CommentMenage/VoteDetaile.aspx?guid="0EF681BE-6C93-44A7-AEE7-5ED448C07846"&activityguid="3B21801A-52FA-4B0B-8A4C-5F905AD6F2DF"'" tppabs="http://www.18-du.com/CommentMenage/VoteDetaile.aspx?guid="0EF681BE-6C93-44A7-AEE7-5ED448C07846"&activityguid="3B21801A-52FA-4B0B-8A4C-5F905AD6F2DF"">
-                                                      <img src="170ca3d69-3a95-48e9-a7b3-94bbb51111c3.jpg" tppabs="http://www.18-du.com/Storage/sheying/comment/170ca3d69-3a95-48e9-a7b3-94bbb51111c3.jpg" onload='chgdivimgwh(this,327,260)' /></a>
-                                                  </div>
-                                                  <div class='vote_img_title'>
-                                                      ÂΩíÈÄî
-                                                 </div>
-                                                  <div class='vote_info' style=" display:none;">
-                                                      <span>ÊâÄÂ±ûÊ¥ªÂä®Ôºö<label>ÂΩíÈÄî</label></span>
-                                                 </div>
-                                                  <div class='vote_info'>
-                                                      <span>ÊäïÁ®ø‰∫∫Ôºö<label>ÈÉ≠‰∏ΩÂçé</label></span>
-                                                  </div>
-                                                  <div class='vote_info'>
-                                                      <span>‰ΩøÁî®Âô®ÊùêÔºö<label>Âçé‰∏∫P10ÊâãÊú∫</label></span>
-                                                  </div>
-                                                  <div class='vote_info'style='display:none'>
-                                                      <span>Áé∞ÊéíÂêçÔºö<label>0</label></span>
-                                                 </div>
-                                                  <div class='vote_info' style='display:none'>
-                                                      <span>Â∑≤ÊäïÁ•®Ôºö<label>0</label></span>
-                                                  </div>
-                                                  <div class='vote_button' style='display:none'>
-                                                       <a href="VoteDetaile.aspx-guid=0EF681BE-6C93-44A7-AEE7-5ED448C07846&activityguid=3B21801A-52FA-4B0B-8A4C-5F905AD6F2DF.htm" tppabs="http://www.18-du.com/CommentMenage/VoteDetaile.aspx?guid=0EF681BE-6C93-44A7-AEE7-5ED448C07846&activityguid=3B21801A-52FA-4B0B-8A4C-5F905AD6F2DF">
-                                                          <input type='button'  value='Êäï‰∏ÄÁ•®' />
-                                                      </a>
-                                                 </div>
-                                                 </li>
-                        
-                        <li  class='" + ((Math.ceil(3 / 2) - 3 / 2) == 0 ? "two_li" : "one_li") + "'>
-                                                <div class='vote_img'>
-                                                      <a href="javascript:if(confirm('http://www.18-du.com/CommentMenage/VoteDetaile.aspx?guid=%226E737F9E-6F30-4AB9-AEF7-F58F4A953EE6%22&activityguid=%223B21801A-52FA-4B0B-8A4C-5F905AD6F2DF%22  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ ≤ªø…”√, ªÚ∑≈∆˙¡Àœ¬‘ÿ, ªÚœÓƒøº¥Ω´Õ£÷π°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='http://www.18-du.com/CommentMenage/VoteDetaile.aspx?guid="6E737F9E-6F30-4AB9-AEF7-F58F4A953EE6"&activityguid="3B21801A-52FA-4B0B-8A4C-5F905AD6F2DF"'" tppabs="http://www.18-du.com/CommentMenage/VoteDetaile.aspx?guid="6E737F9E-6F30-4AB9-AEF7-F58F4A953EE6"&activityguid="3B21801A-52FA-4B0B-8A4C-5F905AD6F2DF"">
-                                                      <img src="1de4876ac-a3b1-4b0c-8aa7-93c6a0809201.jpg" tppabs="http://www.18-du.com/Storage/sheying/comment/1de4876ac-a3b1-4b0c-8aa7-93c6a0809201.jpg" onload='chgdivimgwh(this,327,260)' /></a>
-                                                  </div>
-                                                  <div class='vote_img_title'>
-                                                      ÈùôË∞ß
-                                                 </div>
-                                                  <div class='vote_info' style=" display:none;">
-                                                      <span>ÊâÄÂ±ûÊ¥ªÂä®Ôºö<label>ÈùôË∞ß</label></span>
-                                                 </div>
-                                                  <div class='vote_info'>
-                                                      <span>ÊäïÁ®ø‰∫∫Ôºö<label>ÈÉ≠‰∏ΩÂçé</label></span>
-                                                  </div>
-                                                  <div class='vote_info'>
-                                                      <span>‰ΩøÁî®Âô®ÊùêÔºö<label>Âçé‰∏∫P30ÊâãÊú∫</label></span>
-                                                  </div>
-                                                  <div class='vote_info'style='display:none'>
-                                                      <span>Áé∞ÊéíÂêçÔºö<label>0</label></span>
-                                                 </div>
-                                                  <div class='vote_info' style='display:none'>
-                                                      <span>Â∑≤ÊäïÁ•®Ôºö<label>0</label></span>
-                                                  </div>
-                                                  <div class='vote_button' style='display:none'>
-                                                       <a href="VoteDetaile.aspx-guid=6E737F9E-6F30-4AB9-AEF7-F58F4A953EE6&activityguid=3B21801A-52FA-4B0B-8A4C-5F905AD6F2DF.htm" tppabs="http://www.18-du.com/CommentMenage/VoteDetaile.aspx?guid=6E737F9E-6F30-4AB9-AEF7-F58F4A953EE6&activityguid=3B21801A-52FA-4B0B-8A4C-5F905AD6F2DF">
-                                                          <input type='button'  value='Êäï‰∏ÄÁ•®' />
-                                                      </a>
-                                                 </div>
-                                                 </li>
-                        
-                        <li  class='" + ((Math.ceil(3 / 2) - 3 / 2) == 0 ? "two_li" : "one_li") + "'>
-                                                <div class='vote_img'>
-                                                      <a href="javascript:if(confirm('http://www.18-du.com/CommentMenage/VoteDetaile.aspx?guid=%22FA318947-05D0-4D73-A066-3B993CE89439%22&activityguid=%223B21801A-52FA-4B0B-8A4C-5F905AD6F2DF%22  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ ≤ªø…”√, ªÚ∑≈∆˙¡Àœ¬‘ÿ, ªÚœÓƒøº¥Ω´Õ£÷π°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='http://www.18-du.com/CommentMenage/VoteDetaile.aspx?guid="FA318947-05D0-4D73-A066-3B993CE89439"&activityguid="3B21801A-52FA-4B0B-8A4C-5F905AD6F2DF"'" tppabs="http://www.18-du.com/CommentMenage/VoteDetaile.aspx?guid="FA318947-05D0-4D73-A066-3B993CE89439"&activityguid="3B21801A-52FA-4B0B-8A4C-5F905AD6F2DF"">
-                                                      <img src="1e268af2e-08d9-4f0f-92bf-b6b7de8f74d7.jpeg" tppabs="http://www.18-du.com/Storage/sheying/comment/1e268af2e-08d9-4f0f-92bf-b6b7de8f74d7.jpeg" onload='chgdivimgwh(this,327,260)' /></a>
-                                                  </div>
-                                                  <div class='vote_img_title'>
-                                                      ÈùôË∞ß
-                                                 </div>
-                                                  <div class='vote_info' style=" display:none;">
-                                                      <span>ÊâÄÂ±ûÊ¥ªÂä®Ôºö<label>ÈùôË∞ß</label></span>
-                                                 </div>
-                                                  <div class='vote_info'>
-                                                      <span>ÊäïÁ®ø‰∫∫Ôºö<label>ÈÉ≠‰∏ΩÂçé</label></span>
-                                                  </div>
-                                                  <div class='vote_info'>
-                                                      <span>‰ΩøÁî®Âô®ÊùêÔºö<label>Âçé‰∏∫P30</label></span>
-                                                  </div>
-                                                  <div class='vote_info'style='display:none'>
-                                                      <span>Áé∞ÊéíÂêçÔºö<label>0</label></span>
-                                                 </div>
-                                                  <div class='vote_info' style='display:none'>
-                                                      <span>Â∑≤ÊäïÁ•®Ôºö<label>0</label></span>
-                                                  </div>
-                                                  <div class='vote_button' style='display:none'>
-                                                       <a href="VoteDetaile.aspx-guid=FA318947-05D0-4D73-A066-3B993CE89439&activityguid=3B21801A-52FA-4B0B-8A4C-5F905AD6F2DF.htm" tppabs="http://www.18-du.com/CommentMenage/VoteDetaile.aspx?guid=FA318947-05D0-4D73-A066-3B993CE89439&activityguid=3B21801A-52FA-4B0B-8A4C-5F905AD6F2DF">
-                                                          <input type='button'  value='Êäï‰∏ÄÁ•®' />
-                                                      </a>
-                                                 </div>
-                                                 </li>
-                        
-                        <li  class='" + ((Math.ceil(3 / 2) - 3 / 2) == 0 ? "two_li" : "one_li") + "'>
-                                                <div class='vote_img'>
-                                                      <a href="javascript:if(confirm('http://www.18-du.com/CommentMenage/VoteDetaile.aspx?guid=%22DCA789EE-A2B5-4B07-8CE6-7C9CFD6E1C25%22&activityguid=%223B21801A-52FA-4B0B-8A4C-5F905AD6F2DF%22  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ ≤ªø…”√, ªÚ∑≈∆˙¡Àœ¬‘ÿ, ªÚœÓƒøº¥Ω´Õ£÷π°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='http://www.18-du.com/CommentMenage/VoteDetaile.aspx?guid="DCA789EE-A2B5-4B07-8CE6-7C9CFD6E1C25"&activityguid="3B21801A-52FA-4B0B-8A4C-5F905AD6F2DF"'" tppabs="http://www.18-du.com/CommentMenage/VoteDetaile.aspx?guid="DCA789EE-A2B5-4B07-8CE6-7C9CFD6E1C25"&activityguid="3B21801A-52FA-4B0B-8A4C-5F905AD6F2DF"">
-                                                      <img src="125612b8e-5e9a-4bb0-b792-446bc88caeef.jpg" tppabs="http://www.18-du.com/Storage/sheying/comment/125612b8e-5e9a-4bb0-b792-446bc88caeef.jpg" onload='chgdivimgwh(this,327,260)' /></a>
-                                                  </div>
-                                                  <div class='vote_img_title'>
-                                                      Â±ãÊ™ê‰∏ãÁöÑÈ£éÊôØ
-                                                 </div>
-                                                  <div class='vote_info' style=" display:none;">
-                                                      <span>ÊâÄÂ±ûÊ¥ªÂä®Ôºö<label>Â±ãÊ™ê‰∏ãÁöÑÈ£éÊôØ</label></span>
-                                                 </div>
-                                                  <div class='vote_info'>
-                                                      <span>ÊäïÁ®ø‰∫∫Ôºö<label>ÈÉ≠‰∏ΩÂçé</label></span>
-                                                  </div>
-                                                  <div class='vote_info'>
-                                                      <span>‰ΩøÁî®Âô®ÊùêÔºö<label>Âçé‰∏∫P30ÂπøËßí</label></span>
-                                                  </div>
-                                                  <div class='vote_info'style='display:none'>
-                                                      <span>Áé∞ÊéíÂêçÔºö<label>0</label></span>
-                                                 </div>
-                                                  <div class='vote_info' style='display:none'>
-                                                      <span>Â∑≤ÊäïÁ•®Ôºö<label>0</label></span>
-                                                  </div>
-                                                  <div class='vote_button' style='display:none'>
-                                                       <a href="VoteDetaile.aspx-guid=DCA789EE-A2B5-4B07-8CE6-7C9CFD6E1C25&activityguid=3B21801A-52FA-4B0B-8A4C-5F905AD6F2DF.htm" tppabs="http://www.18-du.com/CommentMenage/VoteDetaile.aspx?guid=DCA789EE-A2B5-4B07-8CE6-7C9CFD6E1C25&activityguid=3B21801A-52FA-4B0B-8A4C-5F905AD6F2DF">
-                                                          <input type='button'  value='Êäï‰∏ÄÁ•®' />
-                                                      </a>
-                                                 </div>
-                                                 </li>
                         
                     </ul>
                 </div>
-
-
-     
+                
                 <div class="clear">
                 </div>
                 <div class="margin50"></div>
                 <!--È°µÁ†Å-->    
+
+                
                 
 
 <!--  Hidistro.UI.SaleSystem.Tags.SheYing.PageSet_JavaScript.cs    -->
@@ -683,26 +489,231 @@ var _hmt = _hmt || [];
     }
 
 </script>
+
+                
+
+
+<div class="lac_cap" style=" display:none;">
+                    È¶ñÂ±äÂ§©ÂùõÊùØ‚Äú‰∏ÄË∑ÉÂçÉÈáåÁöÑ‰∏≠ÂõΩ‚ÄùÊëÑÂΩ±Â§ßËµõ
+                    <div class="clear"></div>
+                </div>
+                <div class="clear">
+                </div>
+                
+                <div class="vote_total" style=" display:none;">
+                    <ul id="">
+                        
+                        <li class='" + ((Math.ceil(3 / 2) - 3 / 2) == 0 ? "two_li" : "one_li") + "'>
+                                                <div class='vote_img'>
+                                                      <a href="javascript:if(confirm('http://www.18-du.com/CommentMenage/ShopCenter.aspx?ReferralUserId=0&ShopId=46  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ ≤ªø…”√, ªÚ∑≈∆˙¡Àœ¬‘ÿ, ªÚœÓƒøº¥Ω´Õ£÷π°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='http://www.18-du.com/CommentMenage/ShopCenter.aspx?ReferralUserId=0&ShopId=46'" tppabs="http://www.18-du.com/CommentMenage/VoteDetaile.aspx?guid=" E40DE9BA-45A0-4507-B12D-ED0D88F2E783 "&activityguid="3B21801A-52FA-4B0B-8A4C-5F905AD6F2DF  "">
+                                                      <img src="1768e4d2b-2525-45f7-be10-24a27c21650a.jpg" tppabs="http://www.18-du.com/Storage/sheying/comment/1768e4d2b-2525-45f7-be10-24a27c21650a.jpg" onload='chgdivimgwh(this,327,260)' /></a>
+                                                  </div>
+                                                  <div class='vote_img_title'>
+                                                      ‰º¥ÂÑø
+                                                 </div>
+                                                  <div class='vote_info' style=" display:none;">
+                                                      <span>ÊâÄÂ±ûÊ¥ªÂä®Ôºö<label>‰º¥ÂÑø</label></span>
+                                                 </div>
+                                                  <div class='vote_info'>
+                                                      <span>ÊäïÁ®ø‰∫∫Ôºö<label>ÈÉ≠‰∏ΩÂçé</label></span>
+                                                  </div>
+                                                  <div class='vote_info'>
+                                                      <span>‰ΩøÁî®Âô®ÊùêÔºö<label>Âçé‰∏∫P10</label></span>
+                                                  </div>
+                                                  <div class='vote_info'>
+                                                      <span>Áé∞ÊéíÂêçÔºö<label>0</label></span>
+                                                 </div>
+                                                  <div class='vote_info'>
+                                                      <span>Â∑≤ÊäïÁ•®Ôºö<label>0</label></span>
+                                                  </div>
+                                                  <div class='vote_button'>
+                                                       <a href="javascript:if(confirm('http://www.18-du.com/CommentMenage/ShopCenter.aspx?ReferralUserId=0&ShopId=46  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ ≤ªø…”√, ªÚ∑≈∆˙¡Àœ¬‘ÿ, ªÚœÓƒøº¥Ω´Õ£÷π°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='http://www.18-du.com/CommentMenage/ShopCenter.aspx?ReferralUserId=0&ShopId=46'" tppabs="http://www.18-du.com/CommentMenage/VoteDetaile.aspx?guid=" E40DE9BA-45A0-4507-B12D-ED0D88F2E783 "&activityguid="3B21801A-52FA-4B0B-8A4C-5F905AD6F2DF  "">
+                                                          <input type='button'  value='Êäï‰∏ÄÁ•®' />
+                                                      </a>
+                                                 </div>
+                                                 </li>
+                        
+                        <li class='" + ((Math.ceil(3 / 2) - 3 / 2) == 0 ? "two_li" : "one_li") + "'>
+                                                <div class='vote_img'>
+                                                      <a href="javascript:if(confirm('http://www.18-du.com/CommentMenage/20190909100754.jpg  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ ≤ªø…”√, ªÚ∑≈∆˙¡Àœ¬‘ÿ, ªÚœÓƒøº¥Ω´Õ£÷π°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='http://www.18-du.com/CommentMenage/20190909100754.jpg'" tppabs="http://www.18-du.com/CommentMenage/VoteDetaile.aspx?guid=" DA81145E-27BE-410C-926F-C305C70AE20E "&activityguid="3B21801A-52FA-4B0B-8A4C-5F905AD6F2DF  "">
+                                                      <img src="194245feb-2d4e-4953-a182-ba0228ce5156.jpg" tppabs="http://www.18-du.com/Storage/sheying/comment/194245feb-2d4e-4953-a182-ba0228ce5156.jpg" onload='chgdivimgwh(this,327,260)' /></a>
+                                                  </div>
+                                                  <div class='vote_img_title'>
+                                                      ÁâµÊâã
+                                                 </div>
+                                                  <div class='vote_info' style=" display:none;">
+                                                      <span>ÊâÄÂ±ûÊ¥ªÂä®Ôºö<label>ÁâµÊâã</label></span>
+                                                 </div>
+                                                  <div class='vote_info'>
+                                                      <span>ÊäïÁ®ø‰∫∫Ôºö<label>ÈÉ≠‰∏ΩÂçé</label></span>
+                                                  </div>
+                                                  <div class='vote_info'>
+                                                      <span>‰ΩøÁî®Âô®ÊùêÔºö<label>Âçé‰∏∫P30ÊâãÊú∫</label></span>
+                                                  </div>
+                                                  <div class='vote_info'>
+                                                      <span>Áé∞ÊéíÂêçÔºö<label>0</label></span>
+                                                 </div>
+                                                  <div class='vote_info'>
+                                                      <span>Â∑≤ÊäïÁ•®Ôºö<label>0</label></span>
+                                                  </div>
+                                                  <div class='vote_button'>
+                                                       <a href="javascript:if(confirm('http://www.18-du.com/CommentMenage/20190909100754.jpg  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ ≤ªø…”√, ªÚ∑≈∆˙¡Àœ¬‘ÿ, ªÚœÓƒøº¥Ω´Õ£÷π°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='http://www.18-du.com/CommentMenage/20190909100754.jpg'" tppabs="http://www.18-du.com/CommentMenage/VoteDetaile.aspx?guid=" DA81145E-27BE-410C-926F-C305C70AE20E "&activityguid="3B21801A-52FA-4B0B-8A4C-5F905AD6F2DF  "">
+                                                          <input type='button'  value='Êäï‰∏ÄÁ•®' />
+                                                      </a>
+                                                 </div>
+                                                 </li>
+                        
+                        <li class='" + ((Math.ceil(3 / 2) - 3 / 2) == 0 ? "two_li" : "one_li") + "'>
+                                                <div class='vote_img'>
+                                                      <a href="javascript:if(confirm('http://www.18-du.com/CommentMenage/tamronThematicPage.aspx?ReferralUserId=0  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ ≤ªø…”√, ªÚ∑≈∆˙¡Àœ¬‘ÿ, ªÚœÓƒøº¥Ω´Õ£÷π°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='http://www.18-du.com/CommentMenage/tamronThematicPage.aspx?ReferralUserId=0'" tppabs="http://www.18-du.com/CommentMenage/VoteDetaile.aspx?guid=" 0EF681BE-6C93-44A7-AEE7-5ED448C07846 "&activityguid="3B21801A-52FA-4B0B-8A4C-5F905AD6F2DF  "">
+                                                      <img src="170ca3d69-3a95-48e9-a7b3-94bbb51111c3.jpg" tppabs="http://www.18-du.com/Storage/sheying/comment/170ca3d69-3a95-48e9-a7b3-94bbb51111c3.jpg" onload='chgdivimgwh(this,327,260)' /></a>
+                                                  </div>
+                                                  <div class='vote_img_title'>
+                                                      ÂΩíÈÄî
+                                                 </div>
+                                                  <div class='vote_info' style=" display:none;">
+                                                      <span>ÊâÄÂ±ûÊ¥ªÂä®Ôºö<label>ÂΩíÈÄî</label></span>
+                                                 </div>
+                                                  <div class='vote_info'>
+                                                      <span>ÊäïÁ®ø‰∫∫Ôºö<label>ÈÉ≠‰∏ΩÂçé</label></span>
+                                                  </div>
+                                                  <div class='vote_info'>
+                                                      <span>‰ΩøÁî®Âô®ÊùêÔºö<label>Âçé‰∏∫P10ÊâãÊú∫</label></span>
+                                                  </div>
+                                                  <div class='vote_info'>
+                                                      <span>Áé∞ÊéíÂêçÔºö<label>0</label></span>
+                                                 </div>
+                                                  <div class='vote_info'>
+                                                      <span>Â∑≤ÊäïÁ•®Ôºö<label>0</label></span>
+                                                  </div>
+                                                  <div class='vote_button'>
+                                                       <a href="javascript:if(confirm('http://www.18-du.com/CommentMenage/tamronThematicPage.aspx?ReferralUserId=0  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ ≤ªø…”√, ªÚ∑≈∆˙¡Àœ¬‘ÿ, ªÚœÓƒøº¥Ω´Õ£÷π°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='http://www.18-du.com/CommentMenage/tamronThematicPage.aspx?ReferralUserId=0'" tppabs="http://www.18-du.com/CommentMenage/VoteDetaile.aspx?guid=" 0EF681BE-6C93-44A7-AEE7-5ED448C07846 "&activityguid="3B21801A-52FA-4B0B-8A4C-5F905AD6F2DF  "">
+                                                          <input type='button'  value='Êäï‰∏ÄÁ•®' />
+                                                      </a>
+                                                 </div>
+                                                 </li>
+                        
+                        <li class='" + ((Math.ceil(3 / 2) - 3 / 2) == 0 ? "two_li" : "one_li") + "'>
+                                                <div class='vote_img'>
+                                                      <a href="javascript:if(confirm('http://www.18-du.com/CommentMenage/20190909100802.jpg  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ ≤ªø…”√, ªÚ∑≈∆˙¡Àœ¬‘ÿ, ªÚœÓƒøº¥Ω´Õ£÷π°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='http://www.18-du.com/CommentMenage/20190909100802.jpg'" tppabs="http://www.18-du.com/CommentMenage/VoteDetaile.aspx?guid=" 6E737F9E-6F30-4AB9-AEF7-F58F4A953EE6 "&activityguid="3B21801A-52FA-4B0B-8A4C-5F905AD6F2DF  "">
+                                                      <img src="1de4876ac-a3b1-4b0c-8aa7-93c6a0809201.jpg" tppabs="http://www.18-du.com/Storage/sheying/comment/1de4876ac-a3b1-4b0c-8aa7-93c6a0809201.jpg" onload='chgdivimgwh(this,327,260)' /></a>
+                                                  </div>
+                                                  <div class='vote_img_title'>
+                                                      ÈùôË∞ß
+                                                 </div>
+                                                  <div class='vote_info' style=" display:none;">
+                                                      <span>ÊâÄÂ±ûÊ¥ªÂä®Ôºö<label>ÈùôË∞ß</label></span>
+                                                 </div>
+                                                  <div class='vote_info'>
+                                                      <span>ÊäïÁ®ø‰∫∫Ôºö<label>ÈÉ≠‰∏ΩÂçé</label></span>
+                                                  </div>
+                                                  <div class='vote_info'>
+                                                      <span>‰ΩøÁî®Âô®ÊùêÔºö<label>Âçé‰∏∫P30ÊâãÊú∫</label></span>
+                                                  </div>
+                                                  <div class='vote_info'>
+                                                      <span>Áé∞ÊéíÂêçÔºö<label>0</label></span>
+                                                 </div>
+                                                  <div class='vote_info'>
+                                                      <span>Â∑≤ÊäïÁ•®Ôºö<label>0</label></span>
+                                                  </div>
+                                                  <div class='vote_button'>
+                                                       <a href="javascript:if(confirm('http://www.18-du.com/CommentMenage/20190909100802.jpg  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ ≤ªø…”√, ªÚ∑≈∆˙¡Àœ¬‘ÿ, ªÚœÓƒøº¥Ω´Õ£÷π°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='http://www.18-du.com/CommentMenage/20190909100802.jpg'" tppabs="http://www.18-du.com/CommentMenage/VoteDetaile.aspx?guid=" 6E737F9E-6F30-4AB9-AEF7-F58F4A953EE6 "&activityguid="3B21801A-52FA-4B0B-8A4C-5F905AD6F2DF  "">
+                                                          <input type='button'  value='Êäï‰∏ÄÁ•®' />
+                                                      </a>
+                                                 </div>
+                                                 </li>
+                        
+                        <li class='" + ((Math.ceil(3 / 2) - 3 / 2) == 0 ? "two_li" : "one_li") + "'>
+                                                <div class='vote_img'>
+                                                      <a href="javascript:if(confirm('http://www.18-du.com/CommentMenage/ProductDetail.aspx?ProductId=9353  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ ≤ªø…”√, ªÚ∑≈∆˙¡Àœ¬‘ÿ, ªÚœÓƒøº¥Ω´Õ£÷π°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='http://www.18-du.com/CommentMenage/ProductDetail.aspx?ProductId=9353'" tppabs="http://www.18-du.com/CommentMenage/VoteDetaile.aspx?guid=" FA318947-05D0-4D73-A066-3B993CE89439 "&activityguid="3B21801A-52FA-4B0B-8A4C-5F905AD6F2DF  "">
+                                                      <img src="1e268af2e-08d9-4f0f-92bf-b6b7de8f74d7.jpeg" tppabs="http://www.18-du.com/Storage/sheying/comment/1e268af2e-08d9-4f0f-92bf-b6b7de8f74d7.jpeg" onload='chgdivimgwh(this,327,260)' /></a>
+                                                  </div>
+                                                  <div class='vote_img_title'>
+                                                      ÈùôË∞ß
+                                                 </div>
+                                                  <div class='vote_info' style=" display:none;">
+                                                      <span>ÊâÄÂ±ûÊ¥ªÂä®Ôºö<label>ÈùôË∞ß</label></span>
+                                                 </div>
+                                                  <div class='vote_info'>
+                                                      <span>ÊäïÁ®ø‰∫∫Ôºö<label>ÈÉ≠‰∏ΩÂçé</label></span>
+                                                  </div>
+                                                  <div class='vote_info'>
+                                                      <span>‰ΩøÁî®Âô®ÊùêÔºö<label>Âçé‰∏∫P30</label></span>
+                                                  </div>
+                                                  <div class='vote_info'>
+                                                      <span>Áé∞ÊéíÂêçÔºö<label>0</label></span>
+                                                 </div>
+                                                  <div class='vote_info'>
+                                                      <span>Â∑≤ÊäïÁ•®Ôºö<label>0</label></span>
+                                                  </div>
+                                                  <div class='vote_button'>
+                                                       <a href="javascript:if(confirm('http://www.18-du.com/CommentMenage/ProductDetail.aspx?ProductId=9353  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ ≤ªø…”√, ªÚ∑≈∆˙¡Àœ¬‘ÿ, ªÚœÓƒøº¥Ω´Õ£÷π°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='http://www.18-du.com/CommentMenage/ProductDetail.aspx?ProductId=9353'" tppabs="http://www.18-du.com/CommentMenage/VoteDetaile.aspx?guid=" FA318947-05D0-4D73-A066-3B993CE89439 "&activityguid="3B21801A-52FA-4B0B-8A4C-5F905AD6F2DF  "">
+                                                          <input type='button'  value='Êäï‰∏ÄÁ•®' />
+                                                      </a>
+                                                 </div>
+                                                 </li>
+                        
+                        <li class='" + ((Math.ceil(3 / 2) - 3 / 2) == 0 ? "two_li" : "one_li") + "'>
+                                                <div class='vote_img'>
+                                                      <a href="javascript:if(confirm('http://www.18-du.com/CommentMenage/y8.jpg  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ ≤ªø…”√, ªÚ∑≈∆˙¡Àœ¬‘ÿ, ªÚœÓƒøº¥Ω´Õ£÷π°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='http://www.18-du.com/CommentMenage/y8.jpg'" tppabs="http://www.18-du.com/CommentMenage/VoteDetaile.aspx?guid=" DCA789EE-A2B5-4B07-8CE6-7C9CFD6E1C25 "&activityguid="3B21801A-52FA-4B0B-8A4C-5F905AD6F2DF  "">
+                                                      <img src="125612b8e-5e9a-4bb0-b792-446bc88caeef.jpg" tppabs="http://www.18-du.com/Storage/sheying/comment/125612b8e-5e9a-4bb0-b792-446bc88caeef.jpg" onload='chgdivimgwh(this,327,260)' /></a>
+                                                  </div>
+                                                  <div class='vote_img_title'>
+                                                      Â±ãÊ™ê‰∏ãÁöÑÈ£éÊôØ
+                                                 </div>
+                                                  <div class='vote_info' style=" display:none;">
+                                                      <span>ÊâÄÂ±ûÊ¥ªÂä®Ôºö<label>Â±ãÊ™ê‰∏ãÁöÑÈ£éÊôØ</label></span>
+                                                 </div>
+                                                  <div class='vote_info'>
+                                                      <span>ÊäïÁ®ø‰∫∫Ôºö<label>ÈÉ≠‰∏ΩÂçé</label></span>
+                                                  </div>
+                                                  <div class='vote_info'>
+                                                      <span>‰ΩøÁî®Âô®ÊùêÔºö<label>Âçé‰∏∫P30ÂπøËßí</label></span>
+                                                  </div>
+                                                  <div class='vote_info'>
+                                                      <span>Áé∞ÊéíÂêçÔºö<label>0</label></span>
+                                                 </div>
+                                                  <div class='vote_info'>
+                                                      <span>Â∑≤ÊäïÁ•®Ôºö<label>0</label></span>
+                                                  </div>
+                                                  <div class='vote_button'>
+                                                       <a href="javascript:if(confirm('http://www.18-du.com/CommentMenage/y8.jpg  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ ≤ªø…”√, ªÚ∑≈∆˙¡Àœ¬‘ÿ, ªÚœÓƒøº¥Ω´Õ£÷π°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='http://www.18-du.com/CommentMenage/y8.jpg'" tppabs="http://www.18-du.com/CommentMenage/VoteDetaile.aspx?guid=" DCA789EE-A2B5-4B07-8CE6-7C9CFD6E1C25 "&activityguid="3B21801A-52FA-4B0B-8A4C-5F905AD6F2DF  "">
+                                                          <input type='button'  value='Êäï‰∏ÄÁ•®' />
+                                                      </a>
+                                                 </div>
+                                                 </li>
+                        
+                    </ul>
+                </div>
+
+
+
                 <div class="clear"></div>
+
+
                 <script type="text/javascript">
-
-                    thispagesize = 6;
-
-                    //ÂæÖÊäïÁ•®ÂàóË°®‰ø°ÊÅØÊü•ËØ¢
-                    function SelectVoteInfo(pageindex) {
+                    
+                    thispagesize=12;
+                    
+                    //Ê¥ªÂä®‰ø°ÊÅØÊü•ËØ¢
+                    function SelectActivyInfo(pageindex) {
+//                        var activityname = $("#activitynametext").val();
+//                        var starttime = $("#starttime").val();
+//                        var endtime = $("#endtime").val();
                         $.ajax({
                             type: 'POST',
                             url: "http://" + window.location.host + '/CommentMenage/API/VoteManageAPI.ashx',
                             data: {
-                                action: 'SelectVoteShowInfo',
+                                action: 'SelectActivityInfo',
                                 pageindex: pageindex,
-                                pagesize: thispagesize,
-                                endtime: FormatTime_Long(getservertime())
+                                pagesize: thispagesize
+//                                starttime: starttime,
+//                                endtime: endtime
                             },
-                            beforeSend: function() {
+                            beforeSend: function () {
 
                             },
-                            success: function(data) {
+                            success: function (data) {
                                 if (data != "") {
                                     var json = eval(data)[0];
                                     var Message = json.message[0];
@@ -710,13 +721,12 @@ var _hmt = _hmt || [];
                                         if (json.data1.length > 0) {
                                             var data1 = json.data1[0];
                                             var tablecountsum = data1.tablecountsum[0];
-                                            PageSet_JavaScript_CreatePageHtml(tablecountsum.countsum, thispagesize, SelectVoteInfo);
+                                            PageSet_JavaScript_CreatePageHtml(tablecountsum.countsum, thispagesize, SelectActivyInfo);
                                             CreateActivityulHtml(data1.table);
-
 
                                         } else {
                                             //Êü•ËØ¢Âá∫Êù•ÁöÑÊï∞ÊçÆÊúâÈîôÔºåË∑≥ËΩ¨Âà∞Ê¥ªÂä®ÁÆ°ÁêÜÈ°µÈù¢
-                                            //location.href = "http:///" + location.host + "/CommentMenage/VoteMain.aspx";
+                                            location.href="http:///"+location.host+"/CommentMenage/VoteMain.aspx";
                                         }
                                     } else {
                                         alert(Message.message);
@@ -728,101 +738,90 @@ var _hmt = _hmt || [];
 
                     }
 
+                    var d = new Date();
+                    //    alert(d);
+                    d = formatTime(d, 1);
 
                     //ÂàõÂª∫ÊëÑÂΩ±Ê¥ªÂä®ÂàóË°®
                     function CreateActivityulHtml(json) {
-                        //   document.getElementById("Activityul").innerHTML = "";
-                        var Activityulhtml = "";
                         for (var i = 0; i < json.length; i++) {
-                            Activityulhtml += "<li class='" + ((Math.ceil(3 / 2) - 3 / 2) == 0 ? "two_li" : "one_li") + "'>"
+                            var Activityulhtml  ="<li class='one_li'>"
                                                 + "  <div class='vote_img'>"
-                                                + "      <a href='http://bad_redirect'>"
-                                                + "      <img src='" + json[i].image1 + "'  onload='chgdivimgwh(this,327,260)' /></a>"
+                                                + "      <a onclick=\"Vote('" + FormatTime_Short(json[i].time1) + "','" + FormatTime_Short(json[i].time2) + "','" + json[i].guid + "')\">"
+                                                + "      <img src='"+json[i].image1+"'  onload='chgdivimgwh(this,327,260)' /></a>"
                                                 + "  </div>"
                                                 + "  <div class='vote_img_title'>"
-                                                + "      " + decodeURIComponent(json[i].title)
+                                                + "      "+decodeURIComponent(json[i].title)
                                                 + "  </div>"
                                                 + "  <div class='vote_info'>"
-                                                + "      <span>ÊâÄÂ±ûÊ¥ªÂä®Ôºö<label>" + decodeURIComponent(json[i].activityname) + "</label></span>"
+                                                + "      <span style='display:none'>Â∑≤Êä•ÂêçÔºö<label>" + json[i].JoinNum + "‰∫∫</label></span>"
+                                                 + "     <span>Êî∂ÈõÜÂõæÁâáÔºö<label>" + json[i].tuNumber + "Âº†</label></span>"
                                                 + "  </div>"
                                                 + "  <div class='vote_info'>"
-                                                + "      <span>ÊäïÁ®ø‰∫∫Ôºö<label>" + decodeURIComponent(json[i].text2) + "</label></span>"
+                                                + "        <span>ÂºÄÂßãÊó∂Èó¥Ôºö<label>" + FormatTime_Short(json[i].time1) + "</label></span>"
                                                 + "  </div>"
                                                 + "  <div class='vote_info'>"
-                                                + "      <span>‰ΩøÁî®Âô®ÊùêÔºö<label>" + decodeURIComponent(json[i].text1) + "</label></span>"
+                                                + "        <span>ÁªìÊùüÊó∂Èó¥Ôºö<label>" + FormatTime_Short(json[i].time2) + "</label></span>"
                                                 + "  </div>"
-                                                + "  <div class='vote_info' style='display:none'>"
-                                                + "      <span>Áé∞ÊéíÂêçÔºö<label>" + json[i].fl2 + "</label></span>"
+                                                + "  <div class='vote_info' style='word-wrap: break-word;height:64px;'>"
+                                                + "      <p style=''>ÁÆÄ‰ªãÔºö</p>" + text_decodeURIComponent(json[i].text, 25)
                                                 + "  </div>"
-                                                + "  <div class='vote_info' style='display:none'>"
-                                                + "      <span>Â∑≤ÊäïÁ•®Ôºö<label>" + json[i].fl1 + "</label></span>"
-                                                + "  </div>"
-                                                + "  <div class='vote_button' style='display:none'>"
-                                                + "      <a href='http://bad_redirect'>"
-                                                + "          <input type='button'  value='Êäï‰∏ÄÁ•®' />"
+                                                + "  <div class='vote_button'>"
+                                                + "      <a onclick=\"Vote('" + FormatTime_Short(json[i].time1) + "','" + FormatTime_Short(json[i].time2) + "','" + json[i].guid + "')\">"
+                                                + "          <input type='button' value='ÂéªÊä•Âêç' />"
                                                 + "      </a>"
                                                 + "  </div>"
                                                 + " </li>";
-
-                            //       $("#Activityul").append(Activityulhtml);
+                            $("#Activityul").append(Activityulhtml);
                         }
-
-                        $("#Activityul").html(Activityulhtml);
-
                     }
 
 
 
-
-
-
-                    $(function() {
+                    function Vote(starttime, endtime, guid) {
+                        if (d < starttime || d > endtime) {
+                            alert("Ê¥ªÂä®ËøòÊú™ÂºÄÂßãÔºåÊàñÂ∑≤ÁªìÊùüÔºÅ");
+                        }
+                        else {
+                            window.location.href = "VoteMain.aspx.htm"/*tpa=http://www.18-du.com/CommentMenage/AddImageVote.aspx?activityguid=*/ + guid + ""
+                        }
+                    }   
+                    $(function(){
 
                         HeadeMenu_Choice("Ê¥ªÂä®‰∏≠ÂøÉ");
-                        SelectVoteInfo(1);
-
+                        SelectActivyInfo(1);
+                    
                     });
 
 
 
+                    function formatTime(time, type) {
+                        var temp_time = new Number(time);
+                        var temp_date = new Date(temp_time);
+                        var temp_year1 = "";
+                        var temp_month1 = "";
+                        var temp_day1 = "";
+                        if (type == 1) {
+                            temp_year1 = temp_date.getFullYear();
+                            temp_month1 = (temp_date.getMonth() + 1) > 9 ? (temp_date.getMonth() + 1) : "0" + (temp_date.getMonth() + 1);
+                            temp_day1 = (temp_date.getDate()) > 9 ? (temp_date.getDate()) : "0" + (temp_date.getDate());
+                            return temp_year1.toString() + "-" + temp_month1.toString() + "-" + temp_day1.toString();
+                        } else if (type == 2) {
+                            temp_year1 = temp_date.getFullYear();
+                            temp_month1 = (temp_date.getMonth() + 1) > 9 ? (temp_date.getMonth() + 1) : "0" + (temp_date.getMonth() + 1);
+                            return temp_year1.toString() + temp_month1.toString();
+                        }
+                    }
+
                 </script>
 
             </div>
-
-
-            
-            
+            <!--ÂÖ®ÈÉ®ÂàÜÁ±ªÂÜÖÂÆπÁªìÊùü-->
         </div>
     </div>
 
-
-
-
-
-
-
-            
-    <div class="clear"></div> 
-    <script src="common.js" tppabs="http://www.18-du.com/CommentMenage/source/js/common.js" type="text/javascript"></script>
-<!-- Â∑¶‰æßÊÇ¨ÊµÆÊåâÈíÆ-->
-<div style=" height: 50px; position:absolute;width:120px; right: 250px; top: 400px; color: #fff; line-height:50px;">
-	<div class="vote_detail_info" style=" width:200px;height:70px;margin-left:1px; margin-top:1px; background:#f1dd00; line-height:60px; border-radius:10px;">
-		<div class="subimit_button"  style="width:200px; height:70px; line-height:60px; font-size:32px; font-weight:800; cursor:pointer;color: #fff; border:none " onclick="GotoFaTie()" >ÊàëË¶ÅÂèÇËµõ</div>
-	</div>
-</div>
-<script type="text/javascript">
-    function GotoFaTie() {
-        var href = "";
-        var guid = getParam("activityguid");
-        if (guid != "") {
-            href = "VoteMain.aspx.htm"/*tpa=http://www.18-du.com/CommentMenage/AddImageVote.aspx?activityguid=*/ + guid;
-        } else {
-            href = "VoteMatchList.aspx.htm"/*tpa=http://www.18-du.com/CommentMenage/VoteMatchList.aspx*/;
-        }
-        location.href = "index-1.htm"/*tpa=http://www.18-du.com/CommentMenage/*/ + href;
-    }
-</script>
     
+
     		
 
 <style>
@@ -1179,3 +1178,4 @@ var _hmt = _hmt || [];
 
 </body>
 </html>
+

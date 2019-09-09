@@ -46,7 +46,7 @@
       var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
       var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
       if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
-          location.href = "Default.aspx-ReferralUserId=0.htm"/*tpa=http://www.18-du.com/Vshop/Default.aspx?ReferralUserId=0*/;
+          location.href = "Default.aspx-ReferralUserId=0.htm"/*tpa=http://www.18-du.com/Vshop/Default.aspx*/;
       }
 
       $(function () {
@@ -114,7 +114,7 @@ var _hmt = _hmt || [];
                     <li class="spacer"></li>
                     <li><a id="ArticleTypeList_ctl00___Common_Link_Login1" href="login.aspx.htm" tppabs="http://www.18-du.com/login.aspx">登录</a></li>
                      <li class="spacer"></li>
-                    <li ><a id="ArticleTypeList_ctl00___Common_ShopAccountLink1" href="javascript:if(confirm('http://www.18-du.com/selleradmin/login.aspx?returnUrl=/selleradmin  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.18-du.com/selleradmin/login.aspx?returnUrl=/selleradmin'" tppabs="http://www.18-du.com/SellerAdmin">商户登入</a></li>
+                    <li ><a id="ArticleTypeList_ctl00___Common_ShopAccountLink1" href="login.aspx-returnUrl=-selleradmin.htm" tppabs="http://www.18-du.com/SellerAdmin">商户登入</a></li>
                     <li class="spacer"></li>
                     <li ><a id="ArticleTypeList_ctl00___CommonShopPreView1"></a></li>
                 </ul>
@@ -132,9 +132,9 @@ var _hmt = _hmt || [];
  
  </script>
 
-<form name="aspnetForm" method="post" action="fi000004..htm" tppabs="http://www.18-du.com/ArticleTypeList.aspx?CategoryId=3?__VIEWSTATE=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&__VIEWSTATEGENERATOR=60CFDE3B&ArticleTypeList$PageFY1$_$hidTotalPage=39&ArticleTypeList$PageFY1$_$hidTotalRecords=311&ArticleTypeList$PageFY1$_$hidContainer=PageFY1&ArticleTypeList$PageFY1$_$hidLinkName=PageIndex" id="aspnetForm">
+<form name="aspnetForm" method="post" action="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?SortBy=newpro&SortOrder=asc&brandid=94  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.18-du.com/AllSearch.aspx?SortBy=newpro&SortOrder=asc&brandid=94'" tppabs="http://www.18-du.com/ArticleTypeList.aspx?CategoryId=6?__VIEWSTATE=/wEPDwULLTE5MTE1OTc2MDAPZBYCZg9kFgJmD2QWBAICD2QWAgIFDxYCHgtfIUl0ZW1Db3VudAIIFhBmD2QWAmYPZBYGZg8VAyBBcnRpY2xlRGV0YWlsLmFzcHg/QXJ0aWNsZUlkPTQyMz0vU3RvcmFnZS9tYXN0ZXIvYXJ0aWNsZS85MjY4YWM4MTUzMTM0MmM2ODczODk0NzY5ZWQxZGVjMC5qcGVnJueQhuW/temdqeaWsOKAlOKAlOmAgumprGZw55u45py66K+e55SfZAIBDxYCHgRUaW1lBnD+LjCsGdcIZAICDxUCAAblhY3otLlkAgEPZBYCZg9kFgZmDxUDIEFydGljbGVEZXRhaWwuYXNweD9BcnRpY2xlSWQ9NDIxPS9TdG9yYWdlL21hc3Rlci9hcnRpY2xlL2MyNmFhNDE2MzMxNDQyNmFhNmI1NzI0NzE2OWI4YmFmLmpwZWcq6ZWc5aS05Lio6YCC6amsIDg1bW0gRjEuNCBBcnQg5paw546L55m75Z+6ZAIBDxYCHwEG4Ka0mXEB1whkAgIPFQIABuWFjei0uWQCAg9kFgJmD2QWBmYPFQMgQXJ0aWNsZURldGFpbC5hc3B4P0FydGljbGVJZD0zOTc9L1N0b3JhZ2UvbWFzdGVyL2FydGljbGUvYjIxZWZlZDFmZWFlNDMwMWJlMmIwNTFlY2RiOWJlYWEuanBlZzDohb7pvpnjgIzkuInmrL7mlrDlk4HplZzlpLTjgI3lsIbkuo7lubTkuK3kuIrluIJkAgEPFgIfAQYQWHTz75fWCGQCAg8VAgAG5YWN6LS5ZAIDD2QWAmYPZBYGZg8VAyBBcnRpY2xlRGV0YWlsLmFzcHg/QXJ0aWNsZUlkPTM0ODwvU3RvcmFnZS9tYXN0ZXIvYXJ0aWNsZS85Y2FkNjY4NWIwNjk0MzJhYWJmYjY3YTUzNmNmYjQ1Ny5qcGcx5ryr5ri45Lit5Zu94oCU5YyX5Lqs56uZ77yMNy4yOeacrOWRqOaXpeetieaCqOadpWQCAQ8WAh8BBnDAnu/X89UIZAICDxUCMea8q+a4uOS4reWbveKAlOWMl+S6rOerme+8jDcuMjnmnKzlkajml6XnrYnmgqjmnaUG5YWN6LS5ZAIED2QWAmYPZBYGZg8VAyBBcnRpY2xlRGV0YWlsLmFzcHg/QXJ0aWNsZUlkPTM0NzwvU3RvcmFnZS9tYXN0ZXIvYXJ0aWNsZS80ODMwMGIzZjQ1OWM0OGIyODIwOTI4NTIzM2I1ZGVkOC5qcGcz5ryr5ri45Lit5Zu94oCU5YyX5Lqs56uZ77yM5Li76aKY5beh5bGV5Y2z5bCG5byA5ZCvZAIBDxYCHwEGEKDRwH7x1QhkAgIPFQIz5ryr5ri45Lit5Zu94oCU5YyX5Lqs56uZ77yM5Li76aKY5beh5bGV5Y2z5bCG5byA5ZCvBuWFjei0uWQCBQ9kFgJmD2QWBmYPFQMgQXJ0aWNsZURldGFpbC5hc3B4P0FydGljbGVJZD0zNDY8L1N0b3JhZ2UvbWFzdGVyL2FydGljbGUvNzdjM2E1NjQzMDZhNDVjY2ExNDllMGU3ZmY0ZjAwZWEuanBnJOaKgOW3p++8muaVmeS9oOWmguS9leaLjeWlveWwj+WnkOWnkGQCAQ8WAh8BBrDCa64t7tUIZAICDxUCceimgeivtOaXheaLjeeVjOeahOaJm+aKiuWtkA0KDQrpgqPlj6/opoHpnZ7lgKrlpq7ojqvlsZ7kuoYNCg0K6ZqP5oSP57+757+75aW555qE5b6u5Y2a6YO95piv4oCc5peF5ouN5pWZ56eR5Lmm4oCdBuWFjei0uWQCBg9kFgJmD2QWBmYPFQMgQXJ0aWNsZURldGFpbC5hc3B4P0FydGljbGVJZD0zNDU8L1N0b3JhZ2UvbWFzdGVyL2FydGljbGUvZjdjNzUwMzhlYWU3NGY0MmEzMjEzYjFlMWNmNjY2ZDkuanBnReihjOaRhO+8mumYv+WwlOWxse+8jOWQjeS4uuKAnOWxseKAne+8jOWNtOaYr+S4gOS4que+juS4vee6r+WHgOWwj+WfjmQCAQ8WAh8BBuC8mOCG7dUIZAICDxUCPOmYv+WwlOWxse+8jOWQjeS4uuKAnOWxseKAne+8jOWNtOaYr+S4gOS4que+juS4vee6r+WHgOWwj+WfjgblhY3otLlkAgcPZBYCZg9kFgZmDxUDIEFydGljbGVEZXRhaWwuYXNweD9BcnRpY2xlSWQ9MzQ0PC9TdG9yYWdlL21hc3Rlci9hcnRpY2xlLzI1NmQ3OTkwNjk3NjQ2ZWFhOWQ5MzMzMmVjYzNlNjcxLmpwZznmg4rlpYfvvJrnmofluJ3nnIvkuobopoHltKnmuoPvvJrmuIXku6PlnoPlnL7lpY/mipjpm4bplKZkAgEPFgIfAQZgyU5Bo+zVCGQCAg8VAjnmg4rlpYfvvJrnmofluJ3nnIvkuobopoHltKnmuoPvvJrmuIXku6PlnoPlnL7lpY/mipjpm4bplKYG5YWN6LS5ZAIED2QWAmYPZBYGAgEPZBYCZg9kFgICAQ8WAh8AAgQWCGYPZBYEZg8VAQzmlrDmiYvluK7liqlkAgEPFgIfAAIDFgZmD2QWAmYPFQIaL0hlbHBEZXRhaWwuYXNweD9IZWxwSWQ9MTQM55So5oi35Y2P6K6uZAIBD2QWAmYPFQIaL0hlbHBEZXRhaWwuYXNweD9IZWxwSWQ9MTYM5om+5Zue5a+G56CBZAICD2QWAmYPFQIaL0hlbHBEZXRhaWwuYXNweD9IZWxwSWQ9MTgM5Lya5ZGY57uR5a6aZAIBD2QWBGYPFQEM5oiR55qE5bqX6ZO6ZAIBDxYCHwACAhYEZg9kFgJmDxUCGi9IZWxwRGV0YWlsLmFzcHg/SGVscElkPTIwDOWPkeW4g+WVhuWTgWQCAQ9kFgJmDxUCGi9IZWxwRGV0YWlsLmFzcHg/SGVscElkPTIxBuWPkei0p2QCAg9kFgRmDxUBD+S8muWRmOW6l+eyieS4nWQCAQ8WAh8AAgMWBmYPZBYCZg8VAhovSGVscERldGFpbC5hc3B4P0hlbHBJZD0yMgzkvJrlkZjms6jlhoxkAgEPZBYCZg8VAhovSGVscERldGFpbC5hc3B4P0hlbHBJZD0yMwzkvJrlkZjorqTor4FkAgIPZBYCZg8VAhovSGVscERldGFpbC5hc3B4P0hlbHBJZD0yNQzkvJrlkZjljYfnuqdkAgMPZBYEZg8VAQzluLjop4Hpl67nrZRkAgEPFgIfAAIEFghmD2QWAmYPFQIaL0hlbHBEZXRhaWwuYXNweD9IZWxwSWQ9MzUM5L+u5pS55a+G56CBZAIBD2QWAmYPFQIaL0hlbHBEZXRhaWwuYXNweD9IZWxwSWQ9MzYS5ZSu5ZCO5aSE55CG5pe25pWIZAICD2QWAmYPFQIaL0hlbHBEZXRhaWwuYXNweD9IZWxwSWQ9MzQG5ZSu5ZCOZAIDD2QWAmYPFQIaL0hlbHBEZXRhaWwuYXNweD9IZWxwSWQ9MzAM5YWs5Y+4566A5LuLZAIDD2QWAmYPZBYCAgEPFgIfAGZkAgcPZBYCZg9kFgICAQ8WAh8AZmRk3qm53ggHh3pSYgCmMfutOIlvx8c=&__VIEWSTATEGENERATOR=60CFDE3B&ArticleTypeList$PageFY1$_$hidTotalPage=26&ArticleTypeList$PageFY1$_$hidTotalRecords=201&ArticleTypeList$PageFY1$_$hidContainer=PageFY1&ArticleTypeList$PageFY1$_$hidLinkName=PageIndex" id="aspnetForm">
 <div>
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
 </div>
 
 <div>
@@ -216,7 +216,7 @@ var _hmt = _hmt || [];
 
     <div class="top_location" style="font-family: '微软雅黑';">
     <div class="location_div">
-       <span class='index_location'><a href="ArticleList.aspx.htm" tppabs="http://www.18-du.com/ArticleList.aspx">资讯中心</a>&gt;</span><span class='detail_loc'><a href="ArticleTypeList.aspx-CategoryId=3.htm" tppabs="http://www.18-du.com/ArticleTypeList.aspx?CategoryId=3">器材资讯</a></span>
+       <span class='index_location'><a href="ArticleList.aspx.htm" tppabs="http://www.18-du.com/ArticleList.aspx">资讯中心</a>&gt;</span><span class='second_loc'><a href="ArticleTypeList.aspx-CategoryId=3.htm" tppabs="http://www.18-du.com/ArticleTypeList.aspx?CategoryId=3">器材资讯&gt;</a></span><span class='detail_loc'><a href="ArticleTypeList.aspx-CategoryId=6.htm" tppabs="http://www.18-du.com/ArticleTypeList.aspx?CategoryId=6">器材动态</a></span>
     </div>
     </div>
 
@@ -238,28 +238,6 @@ var _hmt = _hmt || [];
             理念革新——适马fp相机诞生</h2>
         <p class="time">
             2019-08-05 13:52:42</p>
-        <p class="info">
-            </p>
-        <p class="info">
-            价格： <span style= " color:Red; "> 免费</span>
-            </p>
-
-    </div>
-    </a>
-</li>
-
-
-
-<li>
-   <a href="ArticleDetail.aspx-ArticleId=422.htm" tppabs="http://www.18-du.com/ArticleDetail.aspx?ArticleId=422">
-    <div class="news_img2">
-        <img src="af627c63f59047c5865fa17198f74155.jpeg" tppabs="http://www.18-du.com/Storage/master/article/af627c63f59047c5865fa17198f74155.jpeg"  height="120" width="219" style="margin-left: 0px;">
-    </div>
-    <div class="news_info">
-        <h2 class="title">
-            尼康发布兼容尼康Z卡口系统定焦镜头尼克尔Z 85mm f/1.8 S</h2>
-        <p class="time">
-            2019-08-05 13:46:51</p>
         <p class="info">
             </p>
         <p class="info">
@@ -295,15 +273,15 @@ var _hmt = _hmt || [];
 
 
 <li>
-   <a href="ArticleDetail.aspx-ArticleId=420.htm" tppabs="http://www.18-du.com/ArticleDetail.aspx?ArticleId=420">
+   <a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?SortBy=newpro&SortOrder=asc&brandid=59  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.18-du.com/AllSearch.aspx?SortBy=newpro&SortOrder=asc&brandid=59'" tppabs="http://www.18-du.com/ArticleDetail.aspx?ArticleId=397">
     <div class="news_img2">
-        <img src="788944a0849a4742a7f0b759e1a90243.jpeg" tppabs="http://www.18-du.com/Storage/master/article/788944a0849a4742a7f0b759e1a90243.jpeg"  height="120" width="219" style="margin-left: 0px;">
+        <img src="AllSearch-2.aspx-sortby=newpro&sortorder=asc&brandid=12" tppabs="http://www.18-du.com/Storage/master/article/b21efed1feae4301be2b051ecdb9beaa.jpeg"  height="120" width="219" style="margin-left: 0px;">
     </div>
     <div class="news_info">
         <h2 class="title">
-            体验丨尼康Z 7街拍弱光人像实战赏析</h2>
+            腾龙「三款新品镜头」将于年中上市</h2>
         <p class="time">
-            2019-07-05 17:43:15</p>
+            2019-02-21 11:30:15</p>
         <p class="info">
             </p>
         <p class="info">
@@ -317,17 +295,17 @@ var _hmt = _hmt || [];
 
 
 <li>
-   <a href="ArticleDetail.aspx-ArticleId=417.htm" tppabs="http://www.18-du.com/ArticleDetail.aspx?ArticleId=417">
+   <a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?SortBy=newpro&SortOrder=asc&brandid=55  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.18-du.com/AllSearch.aspx?SortBy=newpro&SortOrder=asc&brandid=55'" tppabs="http://www.18-du.com/ArticleDetail.aspx?ArticleId=348">
     <div class="news_img2">
-        <img src="8c51b2adbf0d4032b826dc0f85a0769b.jpg" tppabs="http://www.18-du.com/Storage/master/article/8c51b2adbf0d4032b826dc0f85a0769b.jpg"  height="120" width="219" style="margin-left: 0px;">
+        <img src="AllSearch-1.aspx-sortby=newpro&sortorder=asc&brandid=15" tppabs="http://www.18-du.com/Storage/master/article/9cad6685b069432aabfb67a536cfb457.jpg"  height="120" width="219" style="margin-left: 0px;">
     </div>
     <div class="news_info">
         <h2 class="title">
-            长炮来袭 索尼发布超远摄定焦FE 600mm F4和变焦镜头FE 200-600mm F5.6-6.3</h2>
+            漫游中国—北京站，7.29本周日等您来</h2>
         <p class="time">
-            2019-06-16 13:40:21</p>
+            2018-07-27 15:45:10</p>
         <p class="info">
-            索尼发布超远摄定焦FE 600mm F4和变焦镜头FE 200-600mm F5.6-6.3</p>
+            漫游中国—北京站，7.29本周日等您来</p>
         <p class="info">
             价格： <span style= " color:Red; "> 免费</span>
             </p>
@@ -339,17 +317,17 @@ var _hmt = _hmt || [];
 
 
 <li>
-   <a href="ArticleDetail.aspx-ArticleId=411.htm" tppabs="http://www.18-du.com/ArticleDetail.aspx?ArticleId=411">
+   <a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?SortBy=newpro&SortOrder=asc&brandid=16  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.18-du.com/AllSearch.aspx?SortBy=newpro&SortOrder=asc&brandid=16'" tppabs="http://www.18-du.com/ArticleDetail.aspx?ArticleId=347">
     <div class="news_img2">
-        <img src="cfeb5b33835545968654d40cc6aad9ab.png" tppabs="http://www.18-du.com/Storage/master/article/cfeb5b33835545968654d40cc6aad9ab.png"  height="120" width="219" style="margin-left: 0px;">
+        <img src="AllSearch-1.aspx-sortby=newpro&sortorder=asc&brandid=145" tppabs="http://www.18-du.com/Storage/master/article/48300b3f459c48b28209285233b5ded8.jpg"  height="120" width="219" style="margin-left: 0px;">
     </div>
     <div class="news_info">
         <h2 class="title">
-            也许是最好的人像镜头 致索尼G大师镜头SEL135F1.8GM</h2>
+            漫游中国—北京站，主题巡展即将开启</h2>
         <p class="time">
-            2019-06-16 13:17:18</p>
+            2018-07-24 16:01:44</p>
         <p class="info">
-            索尼G大师镜头FE 135mm F1.8 GM镜头发布以来，已经有很多媒体在试用体会。</p>
+            漫游中国—北京站，主题巡展即将开启</p>
         <p class="info">
             价格： <span style= " color:Red; "> 免费</span>
             </p>
@@ -361,17 +339,21 @@ var _hmt = _hmt || [];
 
 
 <li>
-   <a href="ArticleDetail.aspx-ArticleId=416.htm" tppabs="http://www.18-du.com/ArticleDetail.aspx?ArticleId=416">
+   <a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?SortBy=newpro&SortOrder=asc&brandid=46  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.18-du.com/AllSearch.aspx?SortBy=newpro&SortOrder=asc&brandid=46'" tppabs="http://www.18-du.com/ArticleDetail.aspx?ArticleId=346">
     <div class="news_img2">
-        <img src="5ebe42a6778a474fbd90212498f8aad7.jpg" tppabs="http://www.18-du.com/Storage/master/article/5ebe42a6778a474fbd90212498f8aad7.jpg"  height="120" width="219" style="margin-left: 0px;">
+        <img src="AllSearch-1.aspx-sortby=newpro&sortorder=asc&brandid=32" tppabs="http://www.18-du.com/Storage/master/article/77c3a564306a45cca149e0e7ff4f00ea.jpg"  height="120" width="219" style="margin-left: 0px;">
     </div>
     <div class="news_info">
         <h2 class="title">
-            体验 | 按次快门一个亿是什么感觉 富士GFX100深度体验</h2>
+            技巧：教你如何拍好小姐姐</h2>
         <p class="time">
-            2019-06-16 13:10:50</p>
+            2018-07-20 10:43:51</p>
         <p class="info">
-            2019年5月23日，富士在日本东京正式发布了旗下的一亿像素中画幅相机</p>
+            要说旅拍界的扛把子
+
+那可要非倪妮莫属了
+
+随意翻翻她的微博都是“旅拍教科书”</p>
         <p class="info">
             价格： <span style= " color:Red; "> 免费</span>
             </p>
@@ -383,19 +365,41 @@ var _hmt = _hmt || [];
 
 
 <li>
-   <a href="ArticleDetail.aspx-ArticleId=409.htm" tppabs="http://www.18-du.com/ArticleDetail.aspx?ArticleId=409">
+   <a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?SortBy=newpro&SortOrder=asc&brandid=63  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.18-du.com/AllSearch.aspx?SortBy=newpro&SortOrder=asc&brandid=63'" tppabs="http://www.18-du.com/ArticleDetail.aspx?ArticleId=345">
     <div class="news_img2">
-        <img src="e19567475b5e49b6b23e74cb18401496.jpeg" tppabs="http://www.18-du.com/Storage/master/article/e19567475b5e49b6b23e74cb18401496.jpeg"  height="120" width="219" style="margin-left: 0px;">
+        <img src="AllSearch-1.aspx-sortby=newpro&sortorder=asc&brandid=150" tppabs="http://www.18-du.com/Storage/master/article/f7c75038eae74f42a3213b1e1cf666d9.jpg"  height="120" width="219" style="margin-left: 0px;">
     </div>
     <div class="news_info">
         <h2 class="title">
-            新品发布！老蛙LAOWA上新! FF 100mm F2.8</h2>
+            行摄：阿尔山，名为“山”，却是一个美丽纯净小城</h2>
         <p class="time">
-            2019-04-15 13:29:30</p>
+            2018-07-19 14:49:49</p>
         <p class="info">
+            阿尔山，名为“山”，却是一个美丽纯净小城</p>
+        <p class="info">
+            价格： <span style= " color:Red; "> 免费</span>
             </p>
+
+    </div>
+    </a>
+</li>
+
+
+
+<li>
+   <a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?SortBy=newpro&SortOrder=asc&brandid=148  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.18-du.com/AllSearch.aspx?SortBy=newpro&SortOrder=asc&brandid=148'" tppabs="http://www.18-du.com/ArticleDetail.aspx?ArticleId=344">
+    <div class="news_img2">
+        <img src="AllSearch-1.aspx-sortby=newpro&sortorder=asc&brandid=57" tppabs="http://www.18-du.com/Storage/master/article/256d7990697646eaa9d93332ecc3e671.jpg"  height="120" width="219" style="margin-left: 0px;">
+    </div>
+    <div class="news_info">
+        <h2 class="title">
+            惊奇：皇帝看了要崩溃：清代垃圾奏折集锦</h2>
+        <p class="time">
+            2018-07-18 11:40:26</p>
         <p class="info">
-            价格： <span style= " color:Red; "> 0.5元</span>
+            惊奇：皇帝看了要崩溃：清代垃圾奏折集锦</p>
+        <p class="info">
+            价格： <span style= " color:Red; "> 免费</span>
             </p>
 
     </div>
@@ -495,8 +499,8 @@ $(function(){
 </script>
 
 
-<input type="hidden" name="ArticleTypeList$PageFY1$_$hidTotalPage" id="hidTotalPage" value="39" />
-<input type="hidden" name="ArticleTypeList$PageFY1$_$hidTotalRecords" id="hidTotalRecords" value="311" />
+<input type="hidden" name="ArticleTypeList$PageFY1$_$hidTotalPage" id="hidTotalPage" value="26" />
+<input type="hidden" name="ArticleTypeList$PageFY1$_$hidTotalRecords" id="hidTotalRecords" value="201" />
 <input type="hidden" name="ArticleTypeList$PageFY1$_$hidContainer" id="hidContainer" value="PageFY1" />
 <input type="hidden" name="ArticleTypeList$PageFY1$_$hidLinkName" id="hidLinkName" value="PageIndex" />
 
