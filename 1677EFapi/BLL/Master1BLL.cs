@@ -8,7 +8,7 @@ namespace BLL
 {
    public class Master1BLL
     {
-        MasterDAL dal = new MasterDAL();
+        MasterDAL1 dal = new MasterDAL1();
         public List<Master> GetMasters1()
         {
             return dal.GetMasters1();

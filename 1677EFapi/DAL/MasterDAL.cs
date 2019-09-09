@@ -10,7 +10,7 @@ namespace DAL
     public class MasterDAL
     {
         DataContext db = new DataContext();
-        public List<Master> GetMasters1()
+        public List<Master> GetMasters()
         {
             return db.Master.ToList();
         }

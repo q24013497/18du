@@ -16,7 +16,7 @@ namespace _1677EFapi.Controllers
         Master1BLL bll = new Master1BLL();
 
         [HttpGet]
-        public List<Master> GetMaster()
+        public List<Master> GetMaster1()
         {
             List<Master> Masters1 = bll.GetMasters1();
             return Masters1;
