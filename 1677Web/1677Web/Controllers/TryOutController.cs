@@ -41,5 +41,9 @@ namespace _1677Web.Controllers
         {
             return View();
         }
+        public IActionResult ShowIndex()
+        {
+            return View();
+        }
     }
 }
