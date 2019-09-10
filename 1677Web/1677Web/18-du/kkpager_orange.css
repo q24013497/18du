@@ -1,0 +1,138 @@
+.kkpager{
+	clear:both;
+	
+	padding:5px 0px 5px 0px;line-height:35px; font-size:16px; float:right;
+}
+.kkpager a{
+	float: left;
+	display: inline;
+	margin-right: 5px;
+	cursor: pointer;
+	background: #fff;
+	text-decoration:none;
+	color:#B3B3B3;
+    font-weight: 700;
+	margin-right: 5px;
+    border: 1px solid #E8E8E8;
+    cursor: pointer;
+    font-weight: 700;
+    height: 35px;
+    line-height: 35px;
+    min-width: 35px;
+    text-align: center;
+    transition: color 0.1s linear 0s;
+    margin-left: 5px;
+    padding:3px;
+}
+
+.kkpager span.disabled{
+	float: left;
+	display: inline;
+	margin-right: 5px;
+	cursor: pointer;
+	background: #fff;
+	text-decoration:none;
+	color:#B3B3B3;
+    font-weight: 700;
+	margin-right: 5px;
+    border: 1px solid #E8E8E8;
+    cursor: pointer;
+    font-weight: 700;
+    height: 35px;
+    line-height: 35px;
+    min-width: 35px;
+    text-align: center;
+    transition: color 0.1s linear 0s;
+    margin-left: 5px;
+    padding:3px
+}
+.kkpager span.curr{
+	display: inline;
+	margin-right: 5px;
+	background: #1249b2;
+    border: 1px solid #E8E8E8;
+    color: #fff;
+    cursor: pointer;
+    float: left;
+    font-weight: 700;
+    height: 35px;
+    line-height: 35px;
+    min-width: 35px;
+    text-align: center;
+    transition: color 0.1s linear 0s;
+    margin-left: 5px;
+    padding:3px
+}
+.kkpager a:hover{
+	border:1px solid #1249b2; 
+	background-color:#1249b2; 
+	color:#fff;
+}
+.kkpager span.normalsize{
+}
+.kkpager_gopage_wrap{
+	position:relative;
+	left:0px;
+	top:0px;
+}
+.kkpager_btn_go {
+	width:50px;
+	height:37px;
+	border:0px;
+	overflow:hidden;
+	line-height:140%;
+	padding:0px;
+	margin:0px;
+	text-align:center;
+	cursor:pointer;
+	background-color:#1249b2;
+	color:#FFF;
+	position:absolute;
+	left:0px;
+	top:-6px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	margin-top:-2px;
+	margin-left:25px
+}
+.kkpager_btn_go_input{
+	width:36px;
+	height:28px;
+	color:#999;
+	text-align:center;
+	margin-left:1px;
+	margin-right:1px;
+	border:1px solid #DFDFDF;
+	position:relative;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	left:0px;
+	top:0px;
+	outline:none;
+	padding:3px
+}
+
+.kkpager_btn_go_input.focus{
+	border-color:#FF6600;
+}
+
+.kkpager .pageBtnWrap{
+	float:left;
+}
+.kkpager .infoTextAndGoPageBtnWrap{
+	float:right;
+}
+.kkpager .spanDot{
+	float:left;
+	margin-right:5px;
+}
+
+.kkpager .currPageNum{
+	color:#1249b2;
+
+}
+
+.kkpager .infoTextAndGoPageBtnWrap{
+	
+}
+

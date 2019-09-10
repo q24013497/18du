@@ -1,0 +1,1706 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv=Content-Type content='text/html; charset=utf-8'>
+<meta http-equiv="X-UA-Compatible" content="IE=8" /><script language="javascript" type="text/javascript"> 
+            var applicationPath = "";
+            var skinPath = "/templates/master/default";
+            var subsiteuserId = "0";
+        </script>
+<meta http-equiv="content-language" content="zh-CN" />
+<link rel="icon" type="image/x-icon" href="http://www.18-du.com/favicon.ico" media="screen" />
+<link rel="shortcut icon" type="image/x-icon" href="http://www.18-du.com/favicon.ico" media="screen" />
+<meta name="author" content="Hishop development team" />
+<meta name="GENERATOR" content="1.2" />
+<title>åå…«åº¦å½±åƒå¹³å°</title>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<title>
+	åå…«åº¦å½±åƒå¹³å°
+</title><link href="newStyle.css" tppabs="http://www.18-du.com/Utility/sysrc/css/newStyle.css" rel="stylesheet" type="text/css" /><link href="other.css" tppabs="http://www.18-du.com/Utility/tool/css/other.css" rel="stylesheet" type="text/css" />
+    <script src="jquery-1.8.3.min.js" tppabs="http://www.18-du.com/Utility/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="img-self-adaption.js" tppabs="http://www.18-du.com/Utility/sysrc/js/img-self-adaption.js" type="text/javascript"></script>
+    <script src="globals.js" tppabs="http://www.18-du.com/Utility/globals.js" type="text/javascript"></script>
+    <script src="getParmByUrl.js" tppabs="http://www.18-du.com/Utility/getParmByUrl.js" type="text/javascript"></script>
+    <link href="kkpager_orange.css" tppabs="http://www.18-du.com/Utility/tool/css/kkpager_orange.css" rel="stylesheet" type="text/css" />
+    <script src="kkpager.js" tppabs="http://www.18-du.com/Utility/tool/kkpager.js" type="text/javascript"></script>
+    <script src="DialogShow.js" tppabs="http://www.18-du.com/Utility/tool/DialogShow.js" type="text/javascript"></script> 
+    <script src="jquery.cookie.js" tppabs="http://www.18-du.com/Utility/jquery.cookie.js" type="text/javascript"></script>
+    <script type="text/javascript" src="maps-v=1.3&key=1fbaa444c63bd5e19dc104e7472e0c13&&plugin=AMap.CitySearch" tppabs="http://webapi.amap.com/maps?v=1.3&key=1fbaa444c63bd5e19dc104e7472e0c13&&plugin=AMap.CitySearch"></script>
+    <script src="PIE.js" tppabs="http://www.18-du.com/Utility/sysrc/js/PIE.js" type="text/javascript"></script>
+   <style>
+   #ThemaActivityShop_ctl00___Common_ShopAccountLink1{ color:#888888}
+   #ThemaActivityShop_ctl00___Common_MyAccountLink1{ color:#888888}
+   #ThemaActivityShop_ctl00___Common_Link_Login1{ color:#888888}  
+   #ThemaActivityShop_ctl00___Common_Link_Login1:hover{color:#ff5400}
+   #ThemaActivityShop_ctl00___Common_MyAccountLink1:hover{color:#ff5400}
+   #ThemaActivityShop_ctl00___Common_ShopAccountLink1:hover{color:#ff5400}
+   </style>
+  <script type="text/javascript">
+      console.log($().getParmByUrl("ProductId"));
+      var sUserAgent = navigator.userAgent.toLowerCase();
+      var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+      var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+      var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+      var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+      var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+      var bIsAndroid = sUserAgent.match(/android/i) == "android";
+      var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+      var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+      if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+          //å‡å¦‚é¡µé¢ä¼ é€’çš„urlä¸­å«æœ‰mobilechangeå‚æ•°ï¼Œåˆ™ï¼Œè·¯å¾„ä¸ä¼šè¢«ç»Ÿä¸€ä¿®æ”¹ï¼Œè€Œæ˜¯è°ƒç”¨é¡µé¢ä¸Šè‡ªå®šä¹‰çš„weburlchangtomobileurlå»æ›´æ”¹è·¯å¾„
+          if (location.search.indexOf("mobilechange") > 0) {
+              setTimeout(function () {
+                  if (weburlchangtomobileurl!=undefined)
+                  weburlchangtomobileurl();//å°†å½“å‰é¡µé¢è½¬å‘åˆ°å¯¹åº”çš„æ‰‹æœºç«¯é¡µé¢
+              })
+          } else {
+              var url = location.href.toString();
+              if ((/productdetail.aspx/i).test(url)) {
+                  var pid = "";
+                  if ($().getParmByUrl("ProductId") != "") {
+                      pid = $().getParmByUrl("ProductId");
+                  }
+                  if ($().getParmByUrl("Productid") != "") {
+                      pid = $().getParmByUrl("Productid");
+                  }
+                  if ($().getParmByUrl("productId") != "") {
+                      pid = $().getParmByUrl("productId");
+                  }
+                  if ($().getParmByUrl("productid") != "") {
+                      pid = $().getParmByUrl("productid");
+                  }
+                  window.location.href = "http://bad_redirect" + pid;
+              }
+              else
+                  location.href = "Default.aspx-ReferralUserId=0.htm"/*tpa=http://www.18-du.com/Vshop/Default.aspx?ReferralUserId=0*/;
+          }
+      }
+      $(function () {
+
+          if (window.PIE) {
+              $('.rounded').each(function () {
+                  PIE.attach(this);
+              });
+          }
+
+           if($.cookie('SelectCity') == null) {
+               var citysearch = new AMap.CitySearch();
+               citysearch.getLocalCity(function (status, result) {
+                   if (status === 'complete' && result.info === 'OK') {
+                       if (result && result.city && result.bounds) {
+                           $("#splocate").html(result.city);
+                           $.cookie('SelectCity', result.city, { expires: 1, path: '/' });
+                       }
+                   }
+                   else {
+                       $("#splocate").html("å…¨å›½");
+                       $.cookie('SelectCity', "", { expires: 1, path: '/' });
+                   }
+               })
+           }       
+           
+     });
+    </script>
+</head>
+<body>
+
+<div class="site-header container" style=" background-color:#DDDDDD; height:35px;">
+        <div class="site-header_main">
+         
+            <div class="right"style=" line-height:35px; margin-right:250px;">
+         
+                        <label style=" font-weight:400">æ‚¨å¥½ï¼Œæ¬¢è¿æ¥åˆ°18åº¦å½±åƒåŸï¼</label>
+                     <span style="color:#888888; margin-left:10px;">           <a id="ShopCenter_ctl00___Common_Link_Login1" href="login.aspx.htm" tppabs="http://www.18-du.com/login.aspx">ç™»å½•</a></span> 
+                      
+                    <span style="color:#888888; margin:0 10px;">      |</span> 
+                    
+              <span style="color:#888888;">    <a id="ShopCenter_ctl00___Common_MyAccountLink1" href="Register1.aspx.htm" tppabs="http://www.18-du.com/Register1.aspx" target="_blank">æ³¨å†Œ</a></span> 
+             <span style="color:#888888; margin:0 10px;">      |</span> 
+                 
+                   <span style="color:#888888;">    <a id="ShopCenter_ctl00___Common_ShopAccountLink1" href="http://bad_redirect" >å•†æˆ·ç™»å…¥</a></span>  
+         
+                     <span style="color:#888888">   <a></a></span> 
+             
+            </div>
+        </div>
+ </div>
+
+ <script type="text/javascript">
+     function GotoChangeCity() {
+         //localStorage.historyurl = location.href;
+         localStorage.historyurl = "ProductList.aspx.htm"/*tpa=http://www.18-du.com/ProductList.aspx*/;
+         location.href = "http:///" + location.host + "/city_choose.aspx";
+     }
+ 
+ </script>
+
+
+
+
+<form name="aspnetForm" method="post" action="http://www.18-du.com/ShopCenter.aspx?ShopId=54" id="aspnetForm">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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PTE2MgzpooTnuqbmqKHnibkM6aKE57qm5qih54m5ZAICD2QWAmYPFQMpL1Nob3BTZWFyY2guYXNweD9TaG9wSWQ9NTQmQ2F0ZWdvcnlJZD0xNjQM5pGE5b2x5Z+56K6tDOaRhOW9seWfueiurWQCAw9kFgJmDxUDKS9TaG9wU2VhcmNoLmFzcHg/U2hvcElkPTU0JkNhdGVnb3J5SWQ9MTY3DOWQjeW4iOiusuW6pwzlkI3luIjorrLluqdkAgQPZBYCZg8VAykvU2hvcFNlYXJjaC5hc3B4P1Nob3BJZD01NCZDYXRlZ29yeUlkPTE2OQzlmajmnZDnp5/otYEM5Zmo5p2Q56ef6LWBZAIJD2QWAmYPZBYCAgEPFgIfAgIHFg5mD2QWAmYPFQI9aHR0cDovLzE4LWR1LmNvbS9UaGVtYUFjdGl2aXR5U2hvcC5hc3B4P1RoZW1hSWQ9MzUwJlNob3BJZD01NC4vU3RvcmFnZS9tYXN0ZXIvYmFubmVyLzIwMTgxMjE0MTcyNjMzXzc0MTcuanBnZAIBD2QWAmYPFQIyaHR0cDovLzE4LWR1LmNvbS9Qcm9kdWN0RGV0YWlsLmFzcHg/UHJvZHVjdElkPTYxMjkuL1N0b3JhZ2UvbWFzdGVyL2Jhbm5lci8yMDE4MTIxNTIxNTIwN18wMDMzLmpwZ2QCAg9kFgJmDxUCMmh0dHA6Ly8xOC1kdS5jb20vUHJvZHVjdERldGFpbC5hc3B4P1Byb2R1Y3RJZD05MDY3Li9TdG9yYWdlL21hc3Rlci9iYW5uZXIvMjAxODEyMTUxNDM5MjRfODQ5MS5qcGdkAgMPZBYCZg8VAjJodHRwOi8vMTgtZHUuY29tL1Byb2R1Y3REZXRhaWwuYXNweD9Qcm9kdWN0SWQ9OTAwNy4vU3RvcmFnZS9tYXN0ZXIvYmFubmVyLzIwMTgxMjE1MjEyODQ4XzUyNzAuanBnZAIED2QWAmYPFQIALi9TdG9yYWdlL21hc3Rlci9iYW5uZXIvMjAxODEyMjIwNjM3MDVfMDg2OC5qcGdkAgUPZBYCZg8VAj1odHRwOi8vMTgtZHUuY29tL1RoZW1hQWN0aXZpdHlTaG9wLmFzcHg/VGhlbWFJZD0zNTcmU2hvcElkPTU0Li9TdG9yYWdlL21hc3Rlci9iYW5uZXIvMjAxODEyMjMxNTE2MTVfNzg4OS5qcGdkAgYPZBYCZg8VAgAuL1N0b3JhZ2UvbWFzdGVyL2Jhbm5lci8yMDE5MDEyMjA5MjcxOV8wMjg0LmpwZ2QCCw8WAh4JaW5uZXJodG1sBUY8bGk+MTwvbGk+PGxpPjI8L2xpPjxsaT4zPC9saT48bGk+NDwvbGk+PGxpPjU8L2xpPjxsaT42PC9saT48bGk+NzwvbGk+ZAIND2QWAmYPZBYCAgEPFgIfAgIEFghmD2QWBmYPFQIiL1Byb2R1Y3REZXRhaWwuYXNweD9wcm9kdWN0SWQ9ODA4OUovU3RvcmFnZS9tYXN0ZXIvcHJvZHVjdC90aHVtYnMzMTAvMzEwXzU3ZDRhZmFkOTQ0MzRjM2U5NjUxNTQ2ZjBlZDA5N2MzLmpwZ2QCAQ8PFgIeBU1vbmV5KClbU3lzdGVtLkRlY2ltYWwsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OQoxMzc5OS4wMDAwZGQCAg8VAjlTb255L+e0ouWwvCBJTENFLTdNM0sg5YWo55S75bmF5b6u5Y2V55u45py677yIYTdNMy9BNzPvvIkiL1Byb2R1Y3REZXRhaWwuYXNweD9wcm9kdWN0SWQ9ODA4OWQCAQ9kFgZmDxUCIi9Qcm9kdWN0RGV0YWlsLmFzcHg/cHJvZHVjdElkPTg5NjdKL1N0b3JhZ2UvbWFzdGVyL3Byb2R1Y3QvdGh1bWJzMzEwLzMxMF80NGQ0NzIwNDJkMzE0MTI3ODRjOGM3NWE0ZThkMzQ2Yi5wbmdkAgEPDxYCHwQoKwQKMTE5MDAuMDAwMGRkAgIPFQImRnVqaWZpbG0v5a+M5aOrIFgtVDMgMTgtNTXpgIHljp/oo4XljIUiL1Byb2R1Y3REZXRhaWwuYXNweD9wcm9kdWN0SWQ9ODk2N2QCAg9kFgZmDxUCIi9Qcm9kdWN0RGV0YWlsLmFzcHg/cHJvZHVjdElkPTkwNjdKL1N0b3JhZ2UvbWFzdGVyL3Byb2R1Y3QvdGh1bWJzMzEwLzMxMF8yYWJiYTFiNTU2MzE0MTQ0ODBkMTUzODA0N2Y5Y2EwYi5wbmdkAgEPDxYCHwQoKwQKMTMzOTkuMDAwMGRkAgIPFQIrTmlrb24v5bC85bq3IFo2IOWFqOeUu+W5heW+ruWNleaVsOeggeebuOacuiIvUHJvZHVjdERldGFpbC5hc3B4P3Byb2R1Y3RJZD05MDY3ZAIDD2QWBmYPFQIiL1Byb2R1Y3REZXRhaWwuYXNweD9wcm9kdWN0SWQ9OTA2OUovU3RvcmFnZS9tYXN0ZXIvcHJvZHVjdC90aHVtYnMzMTAvMzEwX2U1MWIzY2ViMTZkMTQ2ZmNiYzQ3ODZmOGFjYzM2YWU2LnBuZ2QCAQ8PFgIfBCgrBAoyMTA5OS4wMDAwZGQCAg8VAitOaWtvbi/lsLzlurcgWjcg5YWo55S75bmF5b6u5Y2V5pWw56CB55u45py6Ii9Qcm9kdWN0RGV0YWlsLmFzcHg/cHJvZHVjdElkPTkwNjlkAg8PZBYCZg9kFgJmDxYCHwJmZAITDxYCHwICBBYIZg9kFgJmD2QWAmYPFgIeBWNsYXNzBQpkcHRqUmlnaHQxFgRmDxUBIVByb2R1Y3REZXRhaWwuYXNweD9Qcm9kdWN0SWQ9NzgyMmQCAQ8WBB4Dc3JjBUovU3RvcmFnZS9tYXN0ZXIvcHJvZHVjdC90aHVtYnMzMTAvMzEwXzE2N2RkZWZhZmIzZDQwMDA5YTE2ZjM2ZDc5NjEwZjk5LmpwZx4Gb25sb2FkBRljaGdkaXZpbWd3aCh0aGlzLDM1MCwyNDYpZAIBD2QWAmYPZBYCZg8WAh8FBQpkcHRqUmlnaHQyFgRmDxUBIVByb2R1Y3REZXRhaWwuYXNweD9Qcm9kdWN0SWQ9NzI2OWQCAQ8WBB8GBUovU3RvcmFnZS9tYXN0ZXIvcHJvZHVjdC90aHVtYnMzMTAvMzEwXzhiNTMxMzViYzhkNzQzMTFhNTU2NmNjYmYxNDBlMTAzLmpwZx8HBRljaGdkaXZpbWd3aCh0aGlzLDQ1NCwyNDYpZAICD2QWAmYPZBYCZg8WAh8FBQpkcHRqUmlnaHQzFgRmDxUBIVByb2R1Y3REZXRhaWwuYXNweD9Qcm9kdWN0SWQ9Njk5NGQCAQ8WBB8GBUovU3RvcmFnZS9tYXN0ZXIvcHJvZHVjdC90aHVtYnMzMTAvMzEwXzg1MDI3NzI0ZWU5YTQ2NWQ5ZjNlMjI2MTQ4ODY2NWQ2LmpwZx8HBRljaGdkaXZpbWd3aCh0aGlzLDQ1NCwyNDYpZAIDD2QWAmYPZBYCZg8WAh8FBQpkcHRqUmlnaHQ0FgRmDxUBIVByb2R1Y3REZXRhaWwuYXNweD9Qcm9kdWN0SWQ9Njc0M2QCAQ8WBB8GBUovU3RvcmFnZS9tYXN0ZXIvcHJvZHVjdC90aHVtYnMzMTAvMzEwXzNlN2I0NTJmMmJmNzQ2MDk4Njg0Mjc3OTgxZGY2ZGQwLmpwZx8HBRljaGdkaXZpbWd3aCh0aGlzLDM1MCwyNDYpZAIVDxYCHwICBBYIZg9kFgJmD2QWAmYPFgIfBQUKZHB0alJpZ2h0MRYEZg8VASFQcm9kdWN0RGV0YWlsLmFzcHg/UHJvZHVjdElkPTYwOTBkAgEPFgQfBgVKL1N0b3JhZ2UvbWFzdGVyL3Byb2R1Y3QvdGh1bWJzMzEwLzMxMF9hMjdlNDFlZWFiMTQ0MDhjYmMyMTFjOTE0NmE0NWJiYy5qcGcfBwUZY2hnZGl2aW1nd2godGhpcyw0NTQsMjQ2KWQCAQ9kFgJmD2QWAmYPFgIfBQUKZHB0alJpZ2h0MhYEZg8VASFQcm9kdWN0RGV0YWlsLmFzcHg/UHJvZHVjdElkPTc4OTlkAgEPFgQfBgVKL1N0b3JhZ2UvbWFzdGVyL3Byb2R1Y3QvdGh1bWJzMzEwLzMxMF85OGZjNGE3NzhlMTg0MjM0YjIyZjBiYzczZWQ3MWQ3YS5qcGcfBwUZY2hnZGl2aW1nd2godGhpcywzNTAsMjQ2KWQCAg9kFgJmD2QWAmYPFgIfBQUKZHB0alJpZ2h0MxYEZg8VASFQcm9kdWN0RGV0YWlsLmFzcHg/UHJvZHVjdElkPTcwMTVkAgEPFgQfBgVKL1N0b3JhZ2UvbWFzdGVyL3Byb2R1Y3QvdGh1bWJzMzEwLzMxMF83MGJlM2I4ZWY1NmI0NTRjODY3NTNhY2QzNzk5YTgyZC5qcGcfBwUZY2hnZGl2aW1nd2godGhpcywzNTAsMjQ2KWQCAw9kFgJmD2QWAmYPFgIfBQUKZHB0alJpZ2h0NBYEZg8VASFQcm9kdWN0RGV0YWlsLmFzcHg/UHJvZHVjdElkPTY3OTRkAgEPFgQfBgVKL1N0b3JhZ2UvbWFzdGVyL3Byb2R1Y3QvdGh1bWJzMzEwLzMxMF85MjcyNDJlOWNjYzE0NzhkOTA2ZWRkMzZhYTA3YzFmNC5qcGcfBwUZY2hnZGl2aW1nd2godGhpcyw0NTQsMjQ2KWQCGQ9kFgJmD2QWAmYPFgIfAmZkAhsPZBYCZg9kFgJmDxYCHwICBhYMZg9kFgZmDxUDIVByb2R1Y3REZXRhaWwuYXNweD9wcm9kdWN0SWQ9NzA0MkovU3RvcmFnZS9tYXN0ZXIvcHJvZHVjdC90aHVtYnMzMTAvMzEwXzc5YjljMWZhZGFlYzQ1OGU5MjA3Yzc5MDBkOWY2ZjBmLnBuZzBOaWtvbi/lsLzlurcgRDg1MOWNleacuui6qyDlhajnlLvluYXljZXlj43nm7jmnLpkAgEPDxYCHwQoKwQKMjQ5MzAuMDAwMGRkAgIPFQEhUHJvZHVjdERldGFpbC5hc3B4P3Byb2R1Y3RJZD03MDQyZAIBD2QWBmYPFQMhUHJvZHVjdERldGFpbC5hc3B4P3Byb2R1Y3RJZD02OTEySi9TdG9yYWdlL21hc3Rlci9wcm9kdWN0L3RodW1iczMxMC8zMTBfMmFiZDg2NjEwYzJmNGQxNGJlYjQ3YWZjYmIzYmExNTguanBnW+S4veaLje+8iExJUEHvvInov5HmkYTplZwg5b6u6Led6ZWcKzIgKzQgKzEw5pS+5aSn6ZWcIOW4puaCqOWPkeeOsOW+ruWmmeeahOS4lueVjCDov5HmkYTplZxkAgEPDxYCHwQoKwQIMTUwLjAwMDBkZAICDxUBIVByb2R1Y3REZXRhaWwuYXNweD9wcm9kdWN0SWQ9NjkxMmQCAg9kFgZmDxUDIVByb2R1Y3REZXRhaWwuYXNweD9wcm9kdWN0SWQ9NjkxOUovU3RvcmFnZS9tYXN0ZXIvcHJvZHVjdC90aHVtYnMzMTAvMzEwX2U5ZWVmNDAxNmM4MTRiZjI4ZGQ2NGRjYzQ1NDdmNmM2LnBuZ0DkuL3mi43vvIhMSVBB77yJ5Y+v6LCDTkTplZwgTkQ4LTIwMDDlh4/lhYnplZwg5Y+M6Z2i6auY5riF6ZWA6IacZAIBDw8WAh8EKCsECDM5OS4wMDAwZGQCAg8VASFQcm9kdWN0RGV0YWlsLmFzcHg/cHJvZHVjdElkPTY5MTlkAgMPZBYGZg8VAyFQcm9kdWN0RGV0YWlsLmFzcHg/cHJvZHVjdElkPTczOTVKL1N0b3JhZ2UvbWFzdGVyL3Byb2R1Y3QvdGh1bWJzMzEwLzMxMF84NDRhNmY1ZGYxNGE0Y2MyODgzNWUzMjI2NzQzNjljMS5qcGc1RnVqaWZpbG0v5a+M5aOrIFgtRTPlpZfmnLooMTgtNTVtbSnml4HovbTlvq7ljZXnm7jmnLpkAgEPDxYCHwQoKwQJODQ5MC4wMDAwZGQCAg8VASFQcm9kdWN0RGV0YWlsLmFzcHg/cHJvZHVjdElkPTczOTVkAgQPZBYGZg8VAyFQcm9kdWN0RGV0YWlsLmFzcHg/cHJvZHVjdElkPTc0NTlKL1N0b3JhZ2UvbWFzdGVyL3Byb2R1Y3QvdGh1bWJzMzEwLzMxMF9hZjU5MTYzMDQxOGM0Zjc0YjMxN2IzY2MzNTJlYjdlNS5wbmcrU29ueS/ntKLlsLwgSUxDRS03Uk0zIEE3Uk0zIOWFqOeUu+W5heW+ruWNlWQCAQ8PFgIfBCgrBAoxOTM5MC4wMDAwZGQCAg8VASFQcm9kdWN0RGV0YWlsLmFzcHg/cHJvZHVjdElkPTc0NTlkAgUPZBYGZg8VAyFQcm9kdWN0RGV0YWlsLmFzcHg/cHJvZHVjdElkPTc0NTlKL1N0b3JhZ2UvbWFzdGVyL3Byb2R1Y3QvdGh1bWJzMzEwLzMxMF9hZjU5MTYzMDQxOGM0Zjc0YjMxN2IzY2MzNTJlYjdlNS5wbmcrU29ueS/ntKLlsLwgSUxDRS03Uk0zIEE3Uk0zIOWFqOeUu+W5heW+ruWNlWQCAQ8PFgIfBCgrBAoxOTM5MC4wMDAwZGQCAg8VASFQcm9kdWN0RGV0YWlsLmFzcHg/cHJvZHVjdElkPTc0NTlkAh0PZBYCZg9kFgJmDxYCHwICBhYMZg9kFgZmDxUDIVByb2R1Y3REZXRhaWwuYXNweD9wcm9kdWN0SWQ9NjA5NkovU3RvcmFnZS9tYXN0ZXIvcHJvZHVjdC90aHVtYnMzMTAvMzEwXzZkMDdiNTA5NDI0YjRjMzViZTM4YWEyNzIyNDRjOTkzLmpwZzhDYW5vbi/kvbPog70gRU9TIDVEIE1hcmsgSVYg5YWo55S75bmF5Y2V5Y+N5py66LqrL+Wll+acumQCAQ8PFgIfBCgrBAoxNjQ5OS4wMDAwZGQCAg8VASFQcm9kdWN0RGV0YWlsLmFzcHg/cHJvZHVjdElkPTYwOTZkAgEPZBYGZg8VAyFQcm9kdWN0RGV0YWlsLmFzcHg/cHJvZHVjdElkPTYxMzFKL1N0b3JhZ2UvbWFzdGVyL3Byb2R1Y3QvdGh1bWJzMzEwLzMxMF9mMjM2MTQ2NGFkNDQ0NzUwOGE2OTg5Mjk4MGQ5OTFkNi5wbmcuQ2Fub24v5L2z6IO9IEVPUyA3N0Qg5pWw56CB5Y2V5Y+N55u45py6L+Wll+acumQCAQ8PFgIfBCgrBAk0OTk5LjAwMDBkZAICDxUBIVByb2R1Y3REZXRhaWwuYXNweD9wcm9kdWN0SWQ9NjEzMWQCAg9kFgZmDxUDIVByb2R1Y3REZXRhaWwuYXNweD9wcm9kdWN0SWQ9Mzg2NEovU3RvcmFnZS9tYXN0ZXIvcHJvZHVjdC90aHVtYnMzMTAvMzEwX2NmYjJmMzZiMWI3NDQ4NTZiODY2M2IwMTYwMDc3YjA5LmpwZy5DYW5vbi/kvbPog70gUG93ZXJTaG90IEczIFgg6auY5riF5pWw56CB55u45py6ZAIBDw8WAh8EKCsECTU0OTkuMDAwMGRkAgIPFQEhUHJvZHVjdERldGFpbC5hc3B4P3Byb2R1Y3RJZD0zODY0ZAIDD2QWBmYPFQMhUHJvZHVjdERldGFpbC5hc3B4P3Byb2R1Y3RJZD0zODc4Si9TdG9yYWdlL21hc3Rlci9wcm9kdWN0L3RodW1iczMxMC8zMTBfMmRjNDMyNTdhYWE3NGYyYzgzMmI3YzI1MjkwMjI5YzAucG5nH05pa29uL+WwvOW6tyBENTAwIOWNleWPjSDmnLrouqtkAgEPDxYCHwQoKwQJNzg4MC4wMDAwZGQCAg8VASFQcm9kdWN0RGV0YWlsLmFzcHg/cHJvZHVjdElkPTM4NzhkAgQPZBYGZg8VAyFQcm9kdWN0RGV0YWlsLmFzcHg/cHJvZHVjdElkPTYwOTVKL1N0b3JhZ2UvbWFzdGVyL3Byb2R1Y3QvdGh1bWJzMzEwLzMxMF9jZmQ1MTg0MTk4NGI0ZTMxOTA1MTE4ZGMxNDk4YWQyYi5wbmcTTEVUTy/lipvlm74gR1QtNTQyOGQCAQ8PFgIfBCgrBAk0MjgwLjAwMDBkZAICDxUBIVByb2R1Y3REZXRhaWwuYXNweD9wcm9kdWN0SWQ9NjA5NWQCBQ9kFgZmDxUDIVByb2R1Y3REZXRhaWwuYXNweD9wcm9kdWN0SWQ9NjE2MUovU3RvcmFnZS9tYXN0ZXIvcHJvZHVjdC90aHVtYnMzMTAvMzEwXzkzOTg1ZDYwNmFhMDQwZWM4NmY3MzE1MTU3ODM0MWI2LnBuZ0NDYW5vbi/kvbPog70gRU9TIE0zIOW+ruWNleWll+acuu+8iEVGLU0gMTUtNDVtbSBmLzMuNS02LjMgSVMgU1RN77yJZAIBDw8WAh8EKCsECTI4OTkuMDAwMGRkAgIPFQEhUHJvZHVjdERldGFpbC5hc3B4P3Byb2R1Y3RJZD02MTYxZAIfDxYCHwEFATFkAgQPZBYCZg9kFgYCAQ9kFgJmD2QWAgIBDxYCHwICBBYIZg9kFgRmDxUBDOaWsOaJi+W4ruWKqWQCAQ8WAh8CAgMWBmYPZBYCZg8VAhovSGVscERldGFpbC5hc3B4P0hlbHBJZD0xNAznlKjmiLfljY/orq5kAgEPZBYCZg8VAhovSGVscERldGFpbC5hc3B4P0hlbHBJZD0xNgzmib7lm57lr4bnoIFkAgIPZBYCZg8VAhovSGVscERldGFpbC5hc3B4P0hlbHBJZD0xOAzkvJrlkZjnu5HlrppkAgEPZBYEZg8VAQzmiJHnmoTlupfpk7pkAgEPFgIfAgICFgRmD2QWAmYPFQIaL0hlbHBEZXRhaWwuYXNweD9IZWxwSWQ9MjAM5Y+R5biD5ZWG5ZOBZAIBD2QWAmYPFQIaL0hlbHBEZXRhaWwuYXNweD9IZWxwSWQ9MjEG5Y+R6LSnZAICD2QWBGYPFQEP5Lya5ZGY5bqX57KJ5LidZAIBDxYCHwICAxYGZg9kFgJmDxUCGi9IZWxwRGV0YWlsLmFzcHg/SGVscElkPTIyDOS8muWRmOazqOWGjGQCAQ9kFgJmDxUCGi9IZWxwRGV0YWlsLmFzcHg/SGVscElkPTIzDOS8muWRmOiupOivgWQCAg9kFgJmDxUCGi9IZWxwRGV0YWlsLmFzcHg/SGVscElkPTI1DOS8muWRmOWNh+e6p2QCAw9kFgRmDxUBDOW4uOingemXruetlGQCAQ8WAh8CAgQWCGYPZBYCZg8VAhovSGVscERldGFpbC5hc3B4P0hlbHBJZD0zNQzkv67mlLnlr4bnoIFkAgEPZBYCZg8VAhovSGVscERldGFpbC5hc3B4P0hlbHBJZD0zNhLllK7lkI7lpITnkIbml7bmlYhkAgIPZBYCZg8VAhovSGVscERldGFpbC5hc3B4P0hlbHBJZD0zNAbllK7lkI5kAgMPZBYCZg8VAhovSGVscERldGFpbC5hc3B4P0hlbHBJZD0zMAzlhazlj7jnroDku4tkAgMPZBYCZg9kFgICAQ8WAh8CZmQCBw9kFgJmD2QWAgIBDxYCHwJmZGQymMBf/icG3postts4LPgAKbcTpQ==" />
+</div>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CDC90480" />
+</div>
+    <!--site-header-->
+    <!--logo search start-->
+
+
+  
+ 
+ 
+ 
+ 
+   
+    
+    
+
+    <div class="site_header_center" style="z-index:10000">
+
+
+
+<style>
+.site-header-logo_black_bg{min-height:60px !important}
+.site-header-logo_black{padding:inherit !important}
+.site_header_center{min-height:70px !important}
+.logo_black{height:70px !important}
+.menuchoiceflage a li{ color:#676767 !important}
+.header_menu_black_select{ border:#676767 1px solid}
+</style>
+<div class="site-header-logo_black_bg" style=" background-color:#ededed">
+            <div class="site-header-logo_black" style=" min-height:70px; ">
+                <div class="logo_black" style=" min-height:70px;">
+                    <a href="index.htm" tppabs="http://www.18-du.com/">
+                        <img src="741a1cca0874e21c72528c06f2ba031.png" tppabs="http://www.18-du.com/Utility/sysrc/img/741a1cca0874e21c72528c06f2ba031.png" width="120px" height="80px" style=" width:90px; height:60px; margin-top:3px;"></a>
+                </div>
+ 
+                <div class="header-info_black" style="margin-top:17.5px">
+                    <ul class="menuchoiceflage" target="_blank">
+                  <a href="Default-2.aspx.htm" tppabs="http://www.18-du.com/Default.aspx">
+                            <li>é¦–é¡µ</li>
+                        </a> 
+                      
+                        <a href="ProductList.aspx.htm" tppabs="http://www.18-du.com/ProductList.aspx" target="_blank">
+                            <li class="">å½±åƒå™¨æ</li>
+                        </a>
+                        <a href="ArticleList.aspx.htm" tppabs="http://www.18-du.com/ArticleList.aspx" target="_blank">
+                               <li>èµ„è®¯ä¸­å¿ƒ</li>
+                         </a> 
+                         
+                    </ul>
+
+            
+
+                    
+                </div>
+             
+                <div class="i_cart_w" style=" margin-top:16px; width:155px; height:35px;  float:left">
+                    <div class="cart_w" style=" height:35px;">
+                        <a href="ShopCart.aspx.htm" tppabs="http://www.18-du.com/ShopCart.aspx" style=" width:65px; height:32px; display:block; background-color:#fff; border:#ccc solid 0.2px; color:#808080; font-size:11px; line-height:35px;
+                             background:url(/Utility/sysrc/img/447216837427072197_03.png) -6px center no-repeat; padding-left:40px;">æˆ‘çš„è´­ç‰©è½¦  </a>
+                    </div>
+                    <div class="clear">
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+<script type="text/javascript">
+
+    //å¤´éƒ¨èœå•é€‰ä¸­æ ‡è¯†
+    function HeadeMenu_Choice(MenuName) {
+        var headmenu = $(".menuchoiceflage a li");
+        for (var i = 0; i < headmenu.length; i++) {
+            if ($(headmenu[i]).html() == MenuName) {
+                $(headmenu[i]).addClass("header_menu_black_select");
+            }
+
+        }
+    }
+
+</script>
+</div>
+
+    
+    <script type="text/javascript">
+        function searchshop_() {
+            var key = $("#txtkeyword_").val();
+            if (key == undefined)
+                key = "";
+
+            key = key.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace('/', '');
+            var searchtype = "";
+          //  if ($.trim($("span.select_txt").html()) == "æœå•†å“")
+           // if ($.trim($("#txtkeyword")))
+                searchtype = 0;
+           // else
+            //    searchtype = 1;
+            location.href = applicationPath + "/AllSearch.aspx?keywords=" + encodeURIComponent(key) + "&searchtype=" + searchtype;
+        }
+        $(document).ready(function () {
+
+            $('#txtkeyword').keydown(function (e) {
+                if (e.keyCode == 13) {
+                    searchshop();
+                    return false;
+                }
+            })
+        });
+    </script>
+    <style>
+    .fl_B_Keywords a{ color:#b1b1b1; font-size:11px;}
+    </style>
+    <!--logo search end-->
+    <div class="clear"></div>
+    
+    <!--mainå¼€å§‹-->
+    <div class="fl_B_dpBg">
+        <div class="fl_B_dpCenter">
+            <div class="fl_B_dpLeft">
+                <span class="fl_dpLogo">
+                 <img id="ShopCenter_shoplogo" src="ProductDetail-1.aspx-productid=9655" tppabs="http://www.18-du.com/Storage/master/shop/images/cb915ec3dd3040a7a0b57b8a841dd918.jpg" style="height:55px;width:55px;border-width:0px;" />
+                    </span> <span class="fl_dpName">
+                         <span id="ShopCenter_lblshopname">å±±ä¸œæƒ ä½³æ‘„å½±å™¨æä¸“è¥åº—</span>   </span>
+						<script type="text/javascript">
+                            
+                            /*
+						    window.onload = function () {
+						        var oImg = document.getElementById('fl_dpSCImg');
+						        var onOff = true;
+
+						        oImg.onclick = function () {
+						            if (onOff) {
+						                oImg.src = 'shoucang.jpg'/*tpa=http://www.18-du.com/Utility/sysrc/img/shoucang.jpg*/;  //è½®æ¢å›¾åˆ‡æ¢
+						                onOff = false;
+						            } else {
+						                oImg.src = 'shoucang2.jpg'/*tpa=http://www.18-du.com/Utility/sysrc/img/shoucang2.jpg*/;
+						                onOff = true;
+						            }
+						        };
+
+						    }; 
+                            */
+						    $(function () {
+						        isexistsshopfavo();
+						        $("#fl_dpSCImg").bind("click", function () {
+						            var f = checklogin();
+						            if (!f)
+						                ShowPCMsg("è¯·å…ˆç™»å…¥ï¼", "AllSearch.aspx-CategoryId=146&brandid=15.htm"/*tpa=http://www.18-du.com/AllSearch.aspx?CategoryId=146&brandid=15*/);
+						            else {
+						                $.post("http://www.18-du.com/API/SheYingProcess.ashx", { "action": "AddShopFavorite", "shopid": $().getParmByUrl("ShopId") }, function (data) {
+						                    if (data.Flag) {
+						                        if (data.Style == "0")
+						                            $("#fl_dpSCImg").attr("src", 'shoucang.jpg'/*tpa=http://www.18-du.com/Utility/sysrc/img/shoucang.jpg*/);
+						                        else
+						                            $("#fl_dpSCImg").attr("src", 'shoucang2.jpg'/*tpa=http://www.18-du.com/Utility/sysrc/img/shoucang2.jpg*/);
+						                    }
+						                }, 'json')
+						            }
+						        })
+						    })
+
+						    function checkscshop() {
+						        var flag = false;
+						        $.ajax({
+						            url: "http://www.18-du.com/API/SheYingProcess.ashx",
+						            type: "POST",
+						            async: false,
+						            data: { "action": "IsExistsShopFavorite", "shopid": $().getParmByUrl("ShopId") },
+						            success: function (data) {
+						                flag = data.Flag;
+						            }
+						        })
+						        return flag;
+                            }
+
+						    function isexistsshopfavo() {
+						        var f = checklogin();
+						        if (!f)
+						            $("#fl_dpSCImg").attr("src", 'shoucang.jpg'/*tpa=http://www.18-du.com/Utility/sysrc/img/shoucang.jpg*/);
+						        else {
+						            var t = checkscshop();
+                                    if(t)
+                                        $("#fl_dpSCImg").attr("src", 'shoucang2.jpg'/*tpa=http://www.18-du.com/Utility/sysrc/img/shoucang2.jpg*/);
+                                    else
+                                        $("#fl_dpSCImg").attr("src", 'shoucang.jpg'/*tpa=http://www.18-du.com/Utility/sysrc/img/shoucang.jpg*/);
+                                }
+                            }
+                            
+						</script> 
+                <p class="fl_dpSC"><a href="javascript:void();">
+                <img id="fl_dpSCImg" src="shoucang2.jpg" tppabs="http://www.18-du.com/Utility/sysrc/img/shoucang2.jpg">
+                </a>
+                
+                </p>
+                 <p class="fl_dpSC">
+                                        <a href='javascript:;' onclick='Toc()' style="background-image: url(/kefu.png);
+    display: block;
+    width: 90px;
+    height: 28px;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: auto;
+    border-radius: 5px;
+    background-color: #42b8f4;"></a>
+    </p>
+
+            </div>
+            <div class="fl_B_dpRight">
+                    <input type="text" class="dpSearchInpt" id="txtkeyword"/>
+                    <label class="dpSearchBtn" onclick="searchshop()" style="cursor:pointer">
+                        æœæœ¬åº—</label>
+            </div>
+        </div>
+    </div>
+    <!--èœå•æ -->
+    <div class="fl_B_navMenuO">
+        <div class="fl_B_navMenuC">
+             
+
+
+<ul class="fl_B_navMenuUl">
+                <li><a href="default-1.aspx.htm" tppabs="http://www.18-du.com/default.aspx">é¦–é¡µ</a></li>
+                <li><a href="javascript:if(confirm('http://www.18-du.com/310_a949ea452276417a93cedcf367613653.png  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_a949ea452276417a93cedcf367613653.png'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54" id="shopallsearch">å…¨éƒ¨åˆ†ç±»</a>
+                    <div class="nav_category_section">
+                        <ul class="nav_category_list">
+                            
+                             <li><a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9644  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9644'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=47" title='ç›¸æœº'>ç›¸æœº</a></li>
+                        
+                             <li><a href="javascript:if(confirm('http://www.18-du.com/310_e6f943e042a94e199e73e1fe942afe6e.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_e6f943e042a94e199e73e1fe942afe6e.jpg'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=48" title='é•œå¤´'>é•œå¤´</a></li>
+                        
+                             <li><a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9640  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9640'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=54" title='æ‘„åƒæœº'>æ‘„åƒæœº</a></li>
+                        
+                             <li><a href="javascript:if(confirm('http://www.18-du.com/310_85af675ec5fe4abeaf90fa3899215ec7.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_85af675ec5fe4abeaf90fa3899215ec7.jpg'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=56" title='ä¸‰è„šæ¶äº‘å°'>ä¸‰è„šæ¶äº‘å°</a></li>
+                        
+                             <li><a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9639  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9639'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=58" title='æ‘„å½±åŒ…'>æ‘„å½±åŒ…</a></li>
+                        
+                             <li><a href="javascript:if(confirm('http://www.18-du.com/310_1128e74e7fef4cce90a6272f90ade2c2.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_1128e74e7fef4cce90a6272f90ade2c2.jpg'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=57" title='æ»¤é•œ'>æ»¤é•œ</a></li>
+                        
+                             <li><a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9638  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9638'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=59" title='å‚¨å­˜ç³»åˆ—'>å‚¨å­˜ç³»åˆ—</a></li>
+                        
+                             <li><a href="javascript:if(confirm('http://www.18-du.com/310_984de978ae0b43f5bc0e7583f1f41e2e.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_984de978ae0b43f5bc0e7583f1f41e2e.jpg'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=60" title='ç”µå½±è§†é¢‘è®¾å¤‡'>ç”µå½±è§†é¢‘è®¾å¤‡</a></li>
+                        
+                             <li><a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9637  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9637'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=62" title='ç…§æ˜æˆ·å¤–å™¨æ'>ç…§æ˜æˆ·å¤–å™¨æ</a></li>
+                        
+                             <li><a href="javascript:if(confirm('http://www.18-du.com/310_d0b42f85f8f340dbbe17d9e5df93bfd3.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_d0b42f85f8f340dbbe17d9e5df93bfd3.jpg'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=61" title='é™„ä»¶'>é™„ä»¶</a></li>
+                        
+                             <li><a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9636  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9636'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=63" title='æ¸…æ´ç”¨å“'>æ¸…æ´ç”¨å“</a></li>
+                        
+                             <li><a href="javascript:if(confirm('http://www.18-du.com/310_6750919b3c76402da427eb9f09e32564.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_6750919b3c76402da427eb9f09e32564.jpg'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=64" title='å…¶ä»–'>å…¶ä»–</a></li>
+                        
+                             <li><a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9635  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9635'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=158" title='å½±åƒæœåŠ¡'>å½±åƒæœåŠ¡</a></li>
+                        
+                        </ul>
+                    </div>
+                </li>
+
+                 
+                         <li>
+                            <input name="ShopCenter$ctl03$_$recordsone1$ctl00$hidMainCategoryId" type="hidden" id="ShopCenter_ctl03___recordsone1_ctl00_hidMainCategoryId" value="47" />
+                            <a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9644  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9644'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=47" title='ç›¸æœº'>ç›¸æœº</a>
+                         
+                             <div class="nav_category_section">
+                                <ul class="nav_category_list">
+                                    
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/310_e58c8986625a4c48847b90f33c71ddae.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_e58c8986625a4c48847b90f33c71ddae.jpg'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=66" title='å•åç›¸æœº'>å•åç›¸æœº</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9624  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9624'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=67" title='å¾®å•ç›¸æœº'>å¾®å•ç›¸æœº</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/310_e77258b61e18487da34da40de7f68d6c.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_e77258b61e18487da34da40de7f68d6c.jpg'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=68" title='å¡ç‰‡ç›¸æœº'>å¡ç‰‡ç›¸æœº</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9623  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9623'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=70" title='æ‹ç«‹å¾—'>æ‹ç«‹å¾—</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/310_dd31256bd3a64e3b81e0de12dbb969c2.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_dd31256bd3a64e3b81e0de12dbb969c2.jpg'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=154" title='ä¸­ç”»å¹…ç›¸æœº'>ä¸­ç”»å¹…ç›¸æœº</a></li>
+                                
+                                </ul>
+                            </div>
+                         </li>
+                        
+                         <li>
+                            <input name="ShopCenter$ctl03$_$recordsone1$ctl01$hidMainCategoryId" type="hidden" id="ShopCenter_ctl03___recordsone1_ctl01_hidMainCategoryId" value="48" />
+                            <a href="javascript:if(confirm('http://www.18-du.com/310_e6f943e042a94e199e73e1fe942afe6e.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_e6f943e042a94e199e73e1fe942afe6e.jpg'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=48" title='é•œå¤´'>é•œå¤´</a>
+                         
+                             <div class="nav_category_section">
+                                <ul class="nav_category_list">
+                                    
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9622  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9622'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=71" title='å•åé•œå¤´'>å•åé•œå¤´</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/310_bb22d252565e4f908c8426a41f6a86bb.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_bb22d252565e4f908c8426a41f6a86bb.jpg'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=72" title='ä¸­ç”»å¹…é•œå¤´'>ä¸­ç”»å¹…é•œå¤´</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9621  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9621'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=73" title='å•ç”µ/å¾®å•é•œå¤´'>å•ç”µ/å¾®å•é•œå¤´</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/310_4ffd339a08634025884c8e1cd6dc6d83.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_4ffd339a08634025884c8e1cd6dc6d83.jpg'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=147" title='å¾®è·é•œå¤´'>å¾®è·é•œå¤´</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?CategoryId=83&brandid=  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/AllSearch.aspx?CategoryId=83&brandid='" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=151" title='ç§»è½´é•œå¤´'>ç§»è½´é•œå¤´</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?CategoryId=83&brandid=6  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/AllSearch.aspx?CategoryId=83&brandid=6'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=152" title='å¢å€é•œ'>å¢å€é•œ</a></li>
+                                
+                                </ul>
+                            </div>
+                         </li>
+                        
+                         <li>
+                            <input name="ShopCenter$ctl03$_$recordsone1$ctl02$hidMainCategoryId" type="hidden" id="ShopCenter_ctl03___recordsone1_ctl02_hidMainCategoryId" value="54" />
+                            <a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9640  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9640'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=54" title='æ‘„åƒæœº'>æ‘„åƒæœº</a>
+                         
+                             <div class="nav_category_section">
+                                <ul class="nav_category_list">
+                                    
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?CategoryId=83&brandid=4  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/AllSearch.aspx?CategoryId=83&brandid=4'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=75" title='å®¶ç”¨æ‘„åƒæœº'>å®¶ç”¨æ‘„åƒæœº</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?CategoryId=83&brandid=29  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/AllSearch.aspx?CategoryId=83&brandid=29'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=76" title='ä¸“ä¸šæ‘„åƒæœº'>ä¸“ä¸šæ‘„åƒæœº</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?CategoryId=83&brandid=7  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/AllSearch.aspx?CategoryId=83&brandid=7'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=136" title='è¿åŠ¨æ‘„åƒæœº'>è¿åŠ¨æ‘„åƒæœº</a></li>
+                                
+                                </ul>
+                            </div>
+                         </li>
+                        
+                         <li>
+                            <input name="ShopCenter$ctl03$_$recordsone1$ctl03$hidMainCategoryId" type="hidden" id="ShopCenter_ctl03___recordsone1_ctl03_hidMainCategoryId" value="56" />
+                            <a href="javascript:if(confirm('http://www.18-du.com/310_85af675ec5fe4abeaf90fa3899215ec7.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_85af675ec5fe4abeaf90fa3899215ec7.jpg'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=56" title='ä¸‰è„šæ¶äº‘å°'>ä¸‰è„šæ¶äº‘å°</a>
+                         
+                             <div class="nav_category_section">
+                                <ul class="nav_category_list">
+                                    
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?CategoryId=83&brandid=52  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/AllSearch.aspx?CategoryId=83&brandid=52'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=77" title='ç‹¬è„šæ¶'>ç‹¬è„šæ¶</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?CategoryId=83&brandid=16  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/AllSearch.aspx?CategoryId=83&brandid=16'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=78" title='ä¸‰è„šæ¶'>ä¸‰è„šæ¶</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?CategoryId=83&brandid=63  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/AllSearch.aspx?CategoryId=83&brandid=63'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=79" title='äº‘å°'>äº‘å°</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?CategoryId=83&brandid=95  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/AllSearch.aspx?CategoryId=83&brandid=95'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=80" title='å¿«è£…æ¿åŠé…ä»¶'>å¿«è£…æ¿åŠé…ä»¶</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?CategoryId=83&brandid=92  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/AllSearch.aspx?CategoryId=83&brandid=92'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=146" title='ç¨³å®šå™¨'>ç¨³å®šå™¨</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?CategoryId=83&brandid=119  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/AllSearch.aspx?CategoryId=83&brandid=119'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=149" title='è„šæ¶åŒ…/è¢‹'>è„šæ¶åŒ…/è¢‹</a></li>
+                                
+                                </ul>
+                            </div>
+                         </li>
+                        
+                         <li>
+                            <input name="ShopCenter$ctl03$_$recordsone1$ctl04$hidMainCategoryId" type="hidden" id="ShopCenter_ctl03___recordsone1_ctl04_hidMainCategoryId" value="58" />
+                            <a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9639  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9639'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=58" title='æ‘„å½±åŒ…'>æ‘„å½±åŒ…</a>
+                         
+                             <div class="nav_category_section">
+                                <ul class="nav_category_list">
+                                    
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?CategoryId=83&brandid=26  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/AllSearch.aspx?CategoryId=83&brandid=26'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=91" title='å•è‚©æ‘„å½±åŒ…'>å•è‚©æ‘„å½±åŒ…</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?CategoryId=83&minSalePrice=1&maxSalePrice=2999  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/AllSearch.aspx?CategoryId=83&minSalePrice=1&maxSalePrice=2999'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=92" title='åŒè‚©æ‘„å½±åŒ…'>åŒè‚©æ‘„å½±åŒ…</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?CategoryId=83&minSalePrice=3000&maxSalePrice=5999  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/AllSearch.aspx?CategoryId=83&minSalePrice=3000&maxSalePrice=5999'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=93" title='æ‘„å½±è…°åŒ…'>æ‘„å½±è…°åŒ…</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?CategoryId=83&minSalePrice=6000&maxSalePrice=9999  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/AllSearch.aspx?CategoryId=83&minSalePrice=6000&maxSalePrice=9999'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=95" title='é•œå¤´ç­’'>é•œå¤´ç­’</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?CategoryId=83&minSalePrice=10000  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/AllSearch.aspx?CategoryId=83&minSalePrice=10000'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=96" title='æ‘„åƒæœºåŒ…'>æ‘„åƒæœºåŒ…</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?SortBy=default&SortOrder=desc&CategoryId=83  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/AllSearch.aspx?SortBy=default&SortOrder=desc&CategoryId=83'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=97" title='æ‹‰æ†ç®±/ä¸‡ç”¨ç®±'>æ‹‰æ†ç®±/ä¸‡ç”¨ç®±</a></li>
+                                
+                                </ul>
+                            </div>
+                         </li>
+                        
+                         <li>
+                            <input name="ShopCenter$ctl03$_$recordsone1$ctl05$hidMainCategoryId" type="hidden" id="ShopCenter_ctl03___recordsone1_ctl05_hidMainCategoryId" value="57" />
+                            <a href="javascript:if(confirm('http://www.18-du.com/310_1128e74e7fef4cce90a6272f90ade2c2.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_1128e74e7fef4cce90a6272f90ade2c2.jpg'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=57" title='æ»¤é•œ'>æ»¤é•œ</a>
+                         
+                             <div class="nav_category_section">
+                                <ul class="nav_category_list">
+                                    
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?SortBy=sale&SortOrder=desc&CategoryId=83  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/AllSearch.aspx?SortBy=sale&SortOrder=desc&CategoryId=83'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=82" title='UVé•œ'>UVé•œ</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?SortBy=price&SortOrder=desc&CategoryId=83  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/AllSearch.aspx?SortBy=price&SortOrder=desc&CategoryId=83'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=83" title='åæŒ¯é•œ'>åæŒ¯é•œ</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?SortBy=newpro&SortOrder=desc&CategoryId=83  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/AllSearch.aspx?SortBy=newpro&SortOrder=desc&CategoryId=83'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=84" title='å‡å…‰é•œ'>å‡å…‰é•œ</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9653  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9653'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=85" title='ä¸­ç°æ¸å˜é•œ'>ä¸­ç°æ¸å˜é•œ</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/310_5b0ff06c18ce42d7862a69cef42d6eb3.png  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_5b0ff06c18ce42d7862a69cef42d6eb3.png'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=88" title='è¿‘æ‘„é•œ'>è¿‘æ‘„é•œ</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9651  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9651'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=89" title='æ–¹ç‰‡åŠé™„ä»¶'>æ–¹ç‰‡åŠé™„ä»¶</a></li>
+                                
+                                </ul>
+                            </div>
+                         </li>
+                        
+                         <li>
+                            <input name="ShopCenter$ctl03$_$recordsone1$ctl06$hidMainCategoryId" type="hidden" id="ShopCenter_ctl03___recordsone1_ctl06_hidMainCategoryId" value="59" />
+                            <a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9638  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9638'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=59" title='å‚¨å­˜ç³»åˆ—'>å‚¨å­˜ç³»åˆ—</a>
+                         
+                             <div class="nav_category_section">
+                                <ul class="nav_category_list">
+                                    
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/310_b9370c1c0759480fb58e177fdd950ebb.png  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_b9370c1c0759480fb58e177fdd950ebb.png'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=132" title='å­˜å‚¨å¡'>å­˜å‚¨å¡</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9634  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9634'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=133" title='è¯»å¡å™¨'>è¯»å¡å™¨</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/310_881cdda1fa6d4198878471b0b6b09d5d.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_881cdda1fa6d4198878471b0b6b09d5d.jpg'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=134" title='ç§»åŠ¨ç¡¬ç›˜'>ç§»åŠ¨ç¡¬ç›˜</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9633  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9633'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=135" title='Uç›˜'>Uç›˜</a></li>
+                                
+                                </ul>
+                            </div>
+                         </li>
+                        
+                         <li>
+                            <input name="ShopCenter$ctl03$_$recordsone1$ctl07$hidMainCategoryId" type="hidden" id="ShopCenter_ctl03___recordsone1_ctl07_hidMainCategoryId" value="60" />
+                            <a href="javascript:if(confirm('http://www.18-du.com/310_984de978ae0b43f5bc0e7583f1f41e2e.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_984de978ae0b43f5bc0e7583f1f41e2e.jpg'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=60" title='ç”µå½±è§†é¢‘è®¾å¤‡'>ç”µå½±è§†é¢‘è®¾å¤‡</a>
+                         
+                             <div class="nav_category_section">
+                                <ul class="nav_category_list">
+                                    
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/310_7dc08432b0aa453baf10a5008a8ee89b.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_7dc08432b0aa453baf10a5008a8ee89b.jpg'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=98" title='å•åè§†é¢‘å¥—ä»¶'>å•åè§†é¢‘å¥—ä»¶</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9632  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9632'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=100" title='è½¨é“åŠå¸ç›˜'>è½¨é“åŠå¸ç›˜</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/310_8515d9dc1ff746f2a21d614301e3f42a.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_8515d9dc1ff746f2a21d614301e3f42a.jpg'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=99" title='æ–¯å¦å°¼åº·ç¨³å®šå™¨'>æ–¯å¦å°¼åº·ç¨³å®šå™¨</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9631  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9631'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=101" title='ç›‘è§†å™¨åŠé…ä»¶'>ç›‘è§†å™¨åŠé…ä»¶</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/310_673a6c6d19ca4f77b6f855e6e6f1d964.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_673a6c6d19ca4f77b6f855e6e6f1d964.jpg'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=103" title='ç”µå½±è„šæ¶/æ‘‡è‡‚'>ç”µå½±è„šæ¶/æ‘‡è‡‚</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9630  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9630'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=102" title='éº¦å…‹é£ç³»åˆ—'>éº¦å…‹é£ç³»åˆ—</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/310_c933dda56a044bd6b4005877717b30f2.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_c933dda56a044bd6b4005877717b30f2.jpg'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=105" title='GOPROæ‘„å½±é…ä»¶'>GOPROæ‘„å½±é…ä»¶</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9629  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9629'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=104" title='èˆªæ‹é£è¡Œå™¨'>èˆªæ‹é£è¡Œå™¨</a></li>
+                                
+                                </ul>
+                            </div>
+                         </li>
+                        
+                         <li>
+                            <input name="ShopCenter$ctl03$_$recordsone1$ctl08$hidMainCategoryId" type="hidden" id="ShopCenter_ctl03___recordsone1_ctl08_hidMainCategoryId" value="62" />
+                            <a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9637  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9637'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=62" title='ç…§æ˜æˆ·å¤–å™¨æ'>ç…§æ˜æˆ·å¤–å™¨æ</a>
+                         
+                             <div class="nav_category_section">
+                                <ul class="nav_category_list">
+                                    
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/310_8f748b9cdbfb492981165bdca86db8a0.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_8f748b9cdbfb492981165bdca86db8a0.jpg'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=119" title='é—ªå…‰ç¯'>é—ªå…‰ç¯</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9628  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9628'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=120" title='åå…‰æ¿'>åå…‰æ¿</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/310_d8c12fff312942b5bb5c3b39ba8fc601.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_d8c12fff312942b5bb5c3b39ba8fc601.jpg'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=121" title='ç¯æ¶'>ç¯æ¶</a></li>
+                                
+                                </ul>
+                            </div>
+                         </li>
+                        
+                         <li>
+                            <input name="ShopCenter$ctl03$_$recordsone1$ctl09$hidMainCategoryId" type="hidden" id="ShopCenter_ctl03___recordsone1_ctl09_hidMainCategoryId" value="61" />
+                            <a href="javascript:if(confirm('http://www.18-du.com/310_d0b42f85f8f340dbbe17d9e5df93bfd3.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_d0b42f85f8f340dbbe17d9e5df93bfd3.jpg'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=61" title='é™„ä»¶'>é™„ä»¶</a>
+                         
+                             <div class="nav_category_section">
+                                <ul class="nav_category_list">
+                                    
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9627  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9627'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=106" title='ç”µæ± å……ç”µå™¨'>ç”µæ± å……ç”µå™¨</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/310_5438639381a64bc1be899248ebaa870e.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_5438639381a64bc1be899248ebaa870e.jpg'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=107" title='é®å…‰ç½©'>é®å…‰ç½©</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9614  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9614'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=108" title='å¿«é—¨çº¿/é¥æ§å™¨'>å¿«é—¨çº¿/é¥æ§å™¨</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/310_36eef6b395f44504855725a4fc48eeb2.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_36eef6b395f44504855725a4fc48eeb2.jpg'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=109" title='æµ‹å…‰è¡¨'>æµ‹å…‰è¡¨</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9613  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9613'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=110" title='å–æ™¯å™¨'>å–æ™¯å™¨</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/310_6bec6b6045ca479b8a83c4cc942bd6f9.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_6bec6b6045ca479b8a83c4cc942bd6f9.jpg'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=111" title='æœ›è¿œé•œ'>æœ›è¿œé•œ</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9612  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9612'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=112" title='é•œå¤´ç›–/æœºèº«ç›–'>é•œå¤´ç›–/æœºèº«ç›–</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/310_a147f110b2094a12b1f57e1f529207d6.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_a147f110b2094a12b1f57e1f529207d6.jpg'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=113" title='è½¬æ¥ç¯/è½¬æ¥é•œ'>è½¬æ¥ç¯/è½¬æ¥é•œ</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9568  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9568'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=114" title='ç›¸æœºè…•å¸¦/èƒŒå¸¦'>ç›¸æœºè…•å¸¦/èƒŒå¸¦</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/310_678f5d46d78d4d90ab207058277c5c76.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_678f5d46d78d4d90ab207058277c5c76.jpg'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=115" title='å¯¹ç„¦å±'>å¯¹ç„¦å±</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9566  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9566'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=116" title='ç”µæº/æ•°æ®çº¿'>ç”µæº/æ•°æ®çº¿</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/310_623bb956b0bf4aaeba9e1ba49990dc63.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_623bb956b0bf4aaeba9e1ba49990dc63.jpg'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=117" title='é˜²é›¨/é˜²å¯’ç½©'>é˜²é›¨/é˜²å¯’ç½©</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9565  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9565'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=118" title='æ•°ç ç›¸æ¡†/æ‰“å°'>æ•°ç ç›¸æ¡†/æ‰“å°</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/310_ade38bd0c25a4251b622b1da581813b8.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_ade38bd0c25a4251b622b1da581813b8.jpg'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=150" title='æ˜¾ç¤ºå™¨'>æ˜¾ç¤ºå™¨</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9564  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9564'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=137" title='å…¶ä»–'>å…¶ä»–</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/310_d93af1f3c5b340bf8fe9e564df4bd954.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_d93af1f3c5b340bf8fe9e564df4bd954.jpg'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=173" title='ç”µå°äºŒæˆ·å¤–ç”µæº'>ç”µå°äºŒæˆ·å¤–ç”µæº</a></li>
+                                
+                                </ul>
+                            </div>
+                         </li>
+                        
+                         <li>
+                            <input name="ShopCenter$ctl03$_$recordsone1$ctl10$hidMainCategoryId" type="hidden" id="ShopCenter_ctl03___recordsone1_ctl10_hidMainCategoryId" value="63" />
+                            <a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9636  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9636'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=63" title='æ¸…æ´ç”¨å“'>æ¸…æ´ç”¨å“</a>
+                         
+                             <div class="nav_category_section">
+                                <ul class="nav_category_list">
+                                    
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9480  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9480'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=122" title='æ¸…æ´å¥—'>æ¸…æ´å¥—</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/310_b33161a0fdba43b7898bc3b3d0760d95.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_b33161a0fdba43b7898bc3b3d0760d95.jpg'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=123" title='æ¸…æ´å¸ƒ'>æ¸…æ´å¸ƒ</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9479  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9479'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=124" title='æ¸…æ´ç¬”'>æ¸…æ´ç¬”</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/310_439880cf6d2342e3bd25f9e468d4c15b.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_439880cf6d2342e3bd25f9e468d4c15b.jpg'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=125" title='æ¸…æ´æ¶²'>æ¸…æ´æ¶²</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9478  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9478'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=126" title='æ°”å¹/æ°”ç½'>æ°”å¹/æ°”ç½</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/310_ff022ddb8bc94060a1e0e1354185a95b.png  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_ff022ddb8bc94060a1e0e1354185a95b.png'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=127" title='å…¶ä»–'>å…¶ä»–</a></li>
+                                
+                                </ul>
+                            </div>
+                         </li>
+                        
+                         <li>
+                            <input name="ShopCenter$ctl03$_$recordsone1$ctl11$hidMainCategoryId" type="hidden" id="ShopCenter_ctl03___recordsone1_ctl11_hidMainCategoryId" value="64" />
+                            <a href="javascript:if(confirm('http://www.18-du.com/310_6750919b3c76402da427eb9f09e32564.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_6750919b3c76402da427eb9f09e32564.jpg'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=64" title='å…¶ä»–'>å…¶ä»–</a>
+                         
+                             <div class="nav_category_section">
+                                <ul class="nav_category_list">
+                                    
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9477  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9477'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=128" title='æ‰‹æœºæ‘„å½±å™¨æ'>æ‰‹æœºæ‘„å½±å™¨æ</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/310_e93ce1563a3e4127a74af56e6ef6250b.png  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_e93ce1563a3e4127a74af56e6ef6250b.png'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=129" title='æŠ•å½±ä»ª/æ‰«æä»ª'>æŠ•å½±ä»ª/æ‰«æä»ª</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9476  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9476'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=130" title='å¹•å¸ƒ'>å¹•å¸ƒ</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/310_3ee8e6509a454c2286b376644274b7e4.png  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_3ee8e6509a454c2286b376644274b7e4.png'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=138" title='è“ç‰™éŸ³ç®±'>è“ç‰™éŸ³ç®±</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9444  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9444'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=139" title='éŸ³ä¹æ’­æ”¾å™¨'>éŸ³ä¹æ’­æ”¾å™¨</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/310_4d381f0e8ed149cab303300d034ad234.png  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_4d381f0e8ed149cab303300d034ad234.png'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=140" title='è€³æœº/è€³éº¦'>è€³æœº/è€³éº¦</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9443  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9443'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=141" title='è€³æœºæ”¾å¤§å™¨'>è€³æœºæ”¾å¤§å™¨</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/310_7db4d0aa72ee4ac2939affc121a856f6.png  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_7db4d0aa72ee4ac2939affc121a856f6.png'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=142" title='è‰ºæœ¯å¾®å–·'>è‰ºæœ¯å¾®å–·</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9442  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9442'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=148" title='æ‰‹æœº'>æ‰‹æœº</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/310_b7bc6a50c7524701ab2349d2e0d5aeae.png  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_b7bc6a50c7524701ab2349d2e0d5aeae.png'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=153" title='æ‰“å°æœº'>æ‰“å°æœº</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?CategoryId=84&brandid=  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/AllSearch.aspx?CategoryId=84&brandid='" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=157" title='å¾®è¯¾å ‚'>å¾®è¯¾å ‚</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?CategoryId=84&brandid=52  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/AllSearch.aspx?CategoryId=84&brandid=52'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=170" title='å¿«é€’'>å¿«é€’</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?CategoryId=84&brandid=16  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/AllSearch.aspx?CategoryId=84&brandid=16'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=171" title='è¡£æœ'>è¡£æœ</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?CategoryId=84&brandid=63  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/AllSearch.aspx?CategoryId=84&brandid=63'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=172" title='å¾½ç« '>å¾½ç« </a></li>
+                                
+                                </ul>
+                            </div>
+                         </li>
+                        
+                         <li>
+                            <input name="ShopCenter$ctl03$_$recordsone1$ctl12$hidMainCategoryId" type="hidden" id="ShopCenter_ctl03___recordsone1_ctl12_hidMainCategoryId" value="158" />
+                            <a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9635  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9635'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=158" title='å½±åƒæœåŠ¡'>å½±åƒæœåŠ¡</a>
+                         
+                             <div class="nav_category_section">
+                                <ul class="nav_category_list">
+                                    
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?CategoryId=84&brandid=95  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/AllSearch.aspx?CategoryId=84&brandid=95'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=168" title='ç”»å†Œåˆ¶ä½œ'>ç”»å†Œåˆ¶ä½œ</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?CategoryId=84&brandid=92  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/AllSearch.aspx?CategoryId=84&brandid=92'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=162" title='é¢„çº¦æ¨¡ç‰¹'>é¢„çº¦æ¨¡ç‰¹</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?CategoryId=84&brandid=119  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/AllSearch.aspx?CategoryId=84&brandid=119'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=164" title='æ‘„å½±åŸ¹è®­'>æ‘„å½±åŸ¹è®­</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?CategoryId=84&brandid=26  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/AllSearch.aspx?CategoryId=84&brandid=26'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=167" title='åå¸ˆè®²åº§'>åå¸ˆè®²åº§</a></li>
+                                
+                                     <li><a href="javascript:if(confirm('http://www.18-du.com/AllSearch.aspx?CategoryId=84&brandid=28  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/AllSearch.aspx?CategoryId=84&brandid=28'" tppabs="http://www.18-du.com/ShopSearch.aspx?ShopId=54&CategoryId=169" title='å™¨æç§Ÿèµ'>å™¨æç§Ÿèµ</a></li>
+                                
+                                </ul>
+                            </div>
+                         </li>
+                        
+            </ul>
+           
+           <script>
+               var maxcount = 0;
+               function getmaxlength() {
+                   $("ul.fl_B_navMenuUl > li").each(function () {
+                       //console.log($(this).find("ul > li").length)
+                       if ($(this).find("ul > li").length > maxcount)
+                           maxcount = $(this).find("ul > li").length;
+                   });
+                   return maxcount;
+               }
+
+               function liHeight() {
+                   var length = getmaxlength();
+                   var bW = $(".mBan2").width();
+                   var bBL = 1920 / 500;
+                   var totalLiHeight = bW / bBL; //æ•´ä¸ªliçš„é«˜åº¦
+                   length = (length <= 13 ? 13 : length);
+                   var eachLiHeight = (totalLiHeight - (length - 1)) / length + "px";
+                   //            $(".nav_category_list li").attr("style", "height: eachLiHeight;line-height: eachLiHeight;");
+                   $(".nav_category_list li").css("height", eachLiHeight);
+                   $(".nav_category_list li").css("line-height", eachLiHeight);
+                   $(".nav_category_list li a").css("height", eachLiHeight);
+                   $(".nav_category_list li a").css("line-height", eachLiHeight);
+                   //            $(".mBan2 .slideBox .bd img").css("width", mW);
+                   //            $(".mBan2 .slideBox .bd img").css("height", mW / mBL);
+               }
+               //$(window).resize(liHeight);
+               setInterval(liHeight, 200);
+           </script>
+
+
+
+
+        </div>
+    </div>
+    <div class="clear">
+    </div>
+    <!--è½®æ’­å›¾-->
+    <!--æ•ˆæœhtmlå¼€å§‹-->
+  <div class="mBan2">
+     <div id="slideBox" class="slideBox">
+  
+
+            <div class="bd">
+                <ul name="shopbarnner">
+                  
+                           <li><a href="javascript:if(confirm('http://18-du.com/AllSearch.aspx?CategoryId=84&minSalePrice=1&maxSalePrice=2999  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://18-du.com/AllSearch.aspx?CategoryId=84&minSalePrice=1&maxSalePrice=2999'" tppabs="http://18-du.com/ThemaActivityShop.aspx?ThemaId=350&ShopId=54" target="_blank">
+                                <img src="AllSearch-1.aspx-categoryid=84&minsaleprice=3000&maxsaleprice=5999" tppabs="http://www.18-du.com/Storage/master/banner/20181214172633_7417.jpg">
+                                </a>
+                            </li>
+                     
+                           <li><a href="javascript:if(confirm('http://18-du.com/AllSearch.aspx?CategoryId=84&minSalePrice=6000&maxSalePrice=9999  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://18-du.com/AllSearch.aspx?CategoryId=84&minSalePrice=6000&maxSalePrice=9999'" tppabs="http://18-du.com/ProductDetail.aspx?ProductId=6129" target="_blank">
+                                <img src="AllSearch-1.aspx-categoryid=84&minsaleprice=10000" tppabs="http://www.18-du.com/Storage/master/banner/20181215215207_0033.jpg">
+                                </a>
+                            </li>
+                     
+                           <li><a href="javascript:if(confirm('http://18-du.com/AllSearch.aspx?SortBy=default&SortOrder=desc&CategoryId=84  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://18-du.com/AllSearch.aspx?SortBy=default&SortOrder=desc&CategoryId=84'" tppabs="http://18-du.com/ProductDetail.aspx?ProductId=9067" target="_blank">
+                                <img src="AllSearch-1.aspx-sortby=sale&sortorder=desc&categoryid=84" tppabs="http://www.18-du.com/Storage/master/banner/20181215143924_8491.jpg">
+                                </a>
+                            </li>
+                     
+                           <li><a href="javascript:if(confirm('http://18-du.com/AllSearch.aspx?SortBy=price&SortOrder=desc&CategoryId=84  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://18-du.com/AllSearch.aspx?SortBy=price&SortOrder=desc&CategoryId=84'" tppabs="http://18-du.com/ProductDetail.aspx?ProductId=9007" target="_blank">
+                                <img src="AllSearch-1.aspx-sortby=newpro&sortorder=desc&categoryid=84" tppabs="http://www.18-du.com/Storage/master/banner/20181215212848_5270.jpg">
+                                </a>
+                            </li>
+                     
+                           <li><a href='' target="_blank">
+                                <img src="ProductDetail-1.aspx-productid=9658" tppabs="http://www.18-du.com/Storage/master/banner/20181222063705_0868.jpg">
+                                </a>
+                            </li>
+                     
+                           <li><a href="javascript:if(confirm('http://18-du.com/310_6f14a13a4f42474281b2932970a14652.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://18-du.com/310_6f14a13a4f42474281b2932970a14652.jpg'" tppabs="http://18-du.com/ThemaActivityShop.aspx?ThemaId=357&ShopId=54" target="_blank">
+                                <img src="ProductDetail-1.aspx-productid=9641" tppabs="http://www.18-du.com/Storage/master/banner/20181223151615_7889.jpg">
+                                </a>
+                            </li>
+                     
+                           <li><a href='' target="_blank">
+                                <img src="310_50ad0ead327143d6be4f085c43820955-1.jpg" tppabs="http://www.18-du.com/Storage/master/banner/20190122092719_0284.jpg">
+                                </a>
+                            </li>
+                     
+                </ul>
+            </div>
+
+
+    <script>
+        $(function () {
+        /*
+            var length = $("[name='shopbarnner'] li").length;
+            var html = "";
+            for (var i = 1; i <= length; i++) {
+               
+                html += ' <li class="'+(i==1?"":"")+'">' + i + '</li>';
+            }
+            $("#ulindexinfo").html(html);
+            */
+        })
+    </script>
+      
+                
+
+
+    <div class="hd">
+                <ul id="ShopCenter_ulindexinfo"><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li></ul>
+            </div>
+        </div>
+    </div>
+    <!--ä¼˜æƒ åˆ¸-->
+
+    <!--çˆ†æ¬¾æ¨è-->
+    <div class="fl_B_bktj">
+        <div class="fl_B_bktjC">
+            <p class="bktjHd">
+                /çˆ†æ¬¾æ¨è/</p>
+            <p class="bktjHdbottom">
+                <img src="AllSearch-1.aspx-categoryid=58&brandid=4" tppabs="http://www.18-du.com/Utility/sysrc/img/b_line.png" /></p>
+           <ul class="bkProUl">
+            
+
+
+       <style>
+       .fl_B_bktjC .bkProUl li a{width:initial;float:right !important}
+       </style>
+       
+                <li><a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9606  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9606'" tppabs="http://www.18-du.com/ProductDetail.aspx?productId=8089">
+                    <div class="proImg">
+                        <img src="310_5fcec1ad5c36454e96b905b4e5412c5f.jpg" tppabs="http://www.18-du.com/Storage/master/product/thumbs310/310_57d4afad94434c3e9651546f0ed097c3.jpg" onload="chgdivimgwh(this,270,330)" />
+                    </div>
+                    <p class="lineBox">
+                        <span class="rmbSymbol">ï¿¥</span><label class="rmbNum"><span id="ShopCenter_Control_Products_TagName___rptlist_ctl00_FormatedMoneyLabel2">13799.00</span></label></p>
+                    <p class="lineBox proName">
+                        Sony/ç´¢å°¼ ILCE-7M3K å…¨ç”»å¹…å¾®å•ç›¸æœºï¼ˆa7M3/A73ï¼‰</p>
+                </a>
+
+                    <div class="bottomBox">
+                        <p class="leftDP">
+                            ä¼šå‘˜åº—</p>
+                         <a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9606  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9606'" tppabs="http://www.18-du.com/ProductDetail.aspx?productId=8089">
+                        <div class="toCar">
+                            <img src="AllSearch-1.aspx-categoryid=58&brandid=12" tppabs="http://www.18-du.com/Utility/sysrc/img/B_shopcar.png" />åŠ å…¥è´­ç‰©è½¦
+                        </div>
+                        </a>
+                    </div>
+                </li>
+        
+                <li><a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9604  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9604'" tppabs="http://www.18-du.com/ProductDetail.aspx?productId=8967">
+                    <div class="proImg">
+                        <img src="310_df76770aed494c5384b8ed6b72b12644.jpg" tppabs="http://www.18-du.com/Storage/master/product/thumbs310/310_44d472042d31412784c8c75a4e8d346b.png" onload="chgdivimgwh(this,270,330)" />
+                    </div>
+                    <p class="lineBox">
+                        <span class="rmbSymbol">ï¿¥</span><label class="rmbNum"><span id="ShopCenter_Control_Products_TagName___rptlist_ctl01_FormatedMoneyLabel2">11900.00</span></label></p>
+                    <p class="lineBox proName">
+                        Fujifilm/å¯Œå£« X-T3 18-55é€åŸè£…åŒ…</p>
+                </a>
+
+                    <div class="bottomBox">
+                        <p class="leftDP">
+                            ä¼šå‘˜åº—</p>
+                         <a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9604  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9604'" tppabs="http://www.18-du.com/ProductDetail.aspx?productId=8967">
+                        <div class="toCar">
+                            <img src="AllSearch-1.aspx-categoryid=58&brandid=12" tppabs="http://www.18-du.com/Utility/sysrc/img/B_shopcar.png" />åŠ å…¥è´­ç‰©è½¦
+                        </div>
+                        </a>
+                    </div>
+                </li>
+        
+                <li><a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9602  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9602'" tppabs="http://www.18-du.com/ProductDetail.aspx?productId=9067">
+                    <div class="proImg">
+                        <img src="310_d56d6fef9ac445c5b29af821ca6fa115.jpg" tppabs="http://www.18-du.com/Storage/master/product/thumbs310/310_2abba1b55631414480d1538047f9ca0b.png" onload="chgdivimgwh(this,270,330)" />
+                    </div>
+                    <p class="lineBox">
+                        <span class="rmbSymbol">ï¿¥</span><label class="rmbNum"><span id="ShopCenter_Control_Products_TagName___rptlist_ctl02_FormatedMoneyLabel2">13399.00</span></label></p>
+                    <p class="lineBox proName">
+                        Nikon/å°¼åº· Z6 å…¨ç”»å¹…å¾®å•æ•°ç ç›¸æœº</p>
+                </a>
+
+                    <div class="bottomBox">
+                        <p class="leftDP">
+                            ä¼šå‘˜åº—</p>
+                         <a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9602  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9602'" tppabs="http://www.18-du.com/ProductDetail.aspx?productId=9067">
+                        <div class="toCar">
+                            <img src="AllSearch-1.aspx-categoryid=58&brandid=12" tppabs="http://www.18-du.com/Utility/sysrc/img/B_shopcar.png" />åŠ å…¥è´­ç‰©è½¦
+                        </div>
+                        </a>
+                    </div>
+                </li>
+        
+                <li><a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9584  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9584'" tppabs="http://www.18-du.com/ProductDetail.aspx?productId=9069">
+                    <div class="proImg">
+                        <img src="310_98ee049bcc024a5bbf2b17f25e7e7d9f.png" tppabs="http://www.18-du.com/Storage/master/product/thumbs310/310_e51b3ceb16d146fcbc4786f8acc36ae6.png" onload="chgdivimgwh(this,270,330)" />
+                    </div>
+                    <p class="lineBox">
+                        <span class="rmbSymbol">ï¿¥</span><label class="rmbNum"><span id="ShopCenter_Control_Products_TagName___rptlist_ctl03_FormatedMoneyLabel2">21099.00</span></label></p>
+                    <p class="lineBox proName">
+                        Nikon/å°¼åº· Z7 å…¨ç”»å¹…å¾®å•æ•°ç ç›¸æœº</p>
+                </a>
+
+                    <div class="bottomBox">
+                        <p class="leftDP">
+                            ä¼šå‘˜åº—</p>
+                         <a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9584  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9584'" tppabs="http://www.18-du.com/ProductDetail.aspx?productId=9069">
+                        <div class="toCar">
+                            <img src="AllSearch-1.aspx-categoryid=58&brandid=12" tppabs="http://www.18-du.com/Utility/sysrc/img/B_shopcar.png" />åŠ å…¥è´­ç‰©è½¦
+                        </div>
+                        </a>
+                    </div>
+                </li>
+        
+        <script>
+            $(function () {
+                $(".fl_B_bktjC .bkProUl li:nth-child(4n+1)").css({ "margin-right": "0" });
+             })
+        </script>
+
+           </ul>
+        </div>
+    </div>
+    <!--å¤§å›¾å¹¿å‘Š-->
+    <div class="fl_B_AD">
+              
+
+
+
+
+    </div>
+    <!--åº—é“ºæ¨è-->
+    <div class="fl_B_floorT">
+        <div class="fl_B_floorC">
+            <p class="fl_B_floorHd">
+                /åº—é“ºæ¨è/</p>
+            <p class="fl_B_floorHdbottom">
+                <img src="AllSearch-1.aspx-categoryid=58&brandid=4" tppabs="http://www.18-du.com/Utility/sysrc/img/b_line.png" /></p>
+            <div class="fl_B_dptj">
+                <div class="fl_B_dptj1_left" id="div1">
+                    
+                    
+                    </div>
+                <div class="fl_B_dptj1_right" id="div2">
+                   
+
+
+                </div>
+            </div>
+            <div class="fl_B_dptj">
+                
+                <div class="fl_B_dptj2_left" id="div3">
+                  
+ 
+                </div>
+                <div class="fl_B_dptj2_right" id="div4">
+                   
+                    
+                    </div>
+            </div>
+        </div>
+    </div>
+    <!--å¤§å›¾å¹¿å‘Š-->
+    <div class="fl_B_AD">
+      
+
+
+
+
+    </div>
+    <!--æ–°å“ä¸Šçº¿-->
+    <div class="fl_B_floorT">
+        <div class="fl_B_floorC">
+            <p class="fl_B_floorHd">
+                /æ–°å“ä¸Šå¸‚/</p>
+            <p class="fl_B_floorHdbottom">
+                <img src="AllSearch-1.aspx-categoryid=58&brandid=4" tppabs="http://www.18-du.com/Utility/sysrc/img/b_line.png" /></p>
+               <ul class="fl_B_newPro">
+               
+             
+              <li>
+                <a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9561  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9561'" tppabs="http://www.18-du.com/ProductDetail.aspx?productId=7042">
+                    <div class="newProImg"><img src="310_bc4819b03e67409a8d5bb8871b429db1.jpg" tppabs="http://www.18-du.com/Storage/master/product/thumbs310/310_79b9c1fadaec458e9207c7900d9f6f0f.png" onload="chgdivimgwh(this,370,330)" /></div>
+                    <div class="tagBox">NEW</div>
+                    
+                    <div class="newProName"><p>Nikon/å°¼åº· D850å•æœºèº« å…¨ç”»å¹…å•åç›¸æœº</p></div></a>
+                    <div class="newProPrice">
+                        <p class="leftBox"><span class="spanSy">ï¿¥</span><label class="spanNum"><span id="ShopCenter_protag1___rptlist_ctl00_FormatedMoneyLabel2">24930.00</span></label></p>
+                        
+                        <a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9561  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9561'" tppabs="http://www.18-du.com/ProductDetail.aspx?productId=7042" class="buyA">ç«‹å³æŠ¢è´­</a>
+                    </div>
+                  </a>
+               </li>
+            
+              <li>
+                <a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9482  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9482'" tppabs="http://www.18-du.com/ProductDetail.aspx?productId=6912">
+                    <div class="newProImg"><img src="310_2abd86610c2f4d14beb47afcbb3ba158.jpg" tppabs="http://www.18-du.com/Storage/master/product/thumbs310/310_2abd86610c2f4d14beb47afcbb3ba158.jpg" onload="chgdivimgwh(this,370,330)" /></div>
+                    <div class="tagBox">NEW</div>
+                    
+                    <div class="newProName"><p>ä¸½æ‹ï¼ˆLIPAï¼‰è¿‘æ‘„é•œ å¾®è·é•œ+2 +4 +10æ”¾å¤§é•œ å¸¦æ‚¨å‘ç°å¾®å¦™çš„ä¸–ç•Œ è¿‘æ‘„é•œ</p></div></a>
+                    <div class="newProPrice">
+                        <p class="leftBox"><span class="spanSy">ï¿¥</span><label class="spanNum"><span id="ShopCenter_protag1___rptlist_ctl01_FormatedMoneyLabel2">150.00</span></label></p>
+                        
+                        <a href="javascript:if(confirm('http://www.18-du.com/ProductDetail.aspx?ProductId=9482  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/ProductDetail.aspx?ProductId=9482'" tppabs="http://www.18-du.com/ProductDetail.aspx?productId=6912" class="buyA">ç«‹å³æŠ¢è´­</a>
+                    </div>
+                  </a>
+               </li>
+            
+              <li>
+                <a href="javascript:if(confirm('http://www.18-du.com/310_cf00f6330ea849d5b6c4054b0f85c130.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_cf00f6330ea849d5b6c4054b0f85c130.jpg'" tppabs="http://www.18-du.com/ProductDetail.aspx?productId=6919">
+                    <div class="newProImg"><img src="ProductDetail-1.aspx-productid=9481" tppabs="http://www.18-du.com/Storage/master/product/thumbs310/310_e9eef4016c814bf28dd64dcc4547f6c6.png" onload="chgdivimgwh(this,370,330)" /></div>
+                    <div class="tagBox">NEW</div>
+                    
+                    <div class="newProName"><p>ä¸½æ‹ï¼ˆLIPAï¼‰å¯è°ƒNDé•œ ND8-2000å‡å…‰é•œ åŒé¢é«˜æ¸…é•€è†œ</p></div></a>
+                    <div class="newProPrice">
+                        <p class="leftBox"><span class="spanSy">ï¿¥</span><label class="spanNum"><span id="ShopCenter_protag1___rptlist_ctl02_FormatedMoneyLabel2">399.00</span></label></p>
+                        
+                        <a href="javascript:if(confirm('http://www.18-du.com/310_cf00f6330ea849d5b6c4054b0f85c130.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_cf00f6330ea849d5b6c4054b0f85c130.jpg'" tppabs="http://www.18-du.com/ProductDetail.aspx?productId=6919" class="buyA">ç«‹å³æŠ¢è´­</a>
+                    </div>
+                  </a>
+               </li>
+            
+              <li>
+                <a href="javascript:if(confirm('http://www.18-du.com/310_ff57d5fa8463475f863ad15a7aa9194e.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_ff57d5fa8463475f863ad15a7aa9194e.jpg'" tppabs="http://www.18-du.com/ProductDetail.aspx?productId=7395">
+                    <div class="newProImg"><img src="ProductDetail-1.aspx-productid=9226" tppabs="http://www.18-du.com/Storage/master/product/thumbs310/310_844a6f5df14a4cc28835e322674369c1.jpg" onload="chgdivimgwh(this,370,330)" /></div>
+                    <div class="tagBox">NEW</div>
+                    
+                    <div class="newProName"><p>Fujifilm/å¯Œå£« X-E3å¥—æœº(18-55mm)æ—è½´å¾®å•ç›¸æœº</p></div></a>
+                    <div class="newProPrice">
+                        <p class="leftBox"><span class="spanSy">ï¿¥</span><label class="spanNum"><span id="ShopCenter_protag1___rptlist_ctl03_FormatedMoneyLabel2">8490.00</span></label></p>
+                        
+                        <a href="javascript:if(confirm('http://www.18-du.com/310_ff57d5fa8463475f863ad15a7aa9194e.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_ff57d5fa8463475f863ad15a7aa9194e.jpg'" tppabs="http://www.18-du.com/ProductDetail.aspx?productId=7395" class="buyA">ç«‹å³æŠ¢è´­</a>
+                    </div>
+                  </a>
+               </li>
+            
+              <li>
+                <a href="javascript:if(confirm('http://www.18-du.com/310_212d90c540c2422ba098a8df6886a857.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_212d90c540c2422ba098a8df6886a857.jpg'" tppabs="http://www.18-du.com/ProductDetail.aspx?productId=7459">
+                    <div class="newProImg"><img src="ProductDetail-1.aspx-productid=9225" tppabs="http://www.18-du.com/Storage/master/product/thumbs310/310_af591630418c4f74b317b3cc352eb7e5.png" onload="chgdivimgwh(this,370,330)" /></div>
+                    <div class="tagBox">NEW</div>
+                    
+                    <div class="newProName"><p>Sony/ç´¢å°¼ ILCE-7RM3 A7RM3 å…¨ç”»å¹…å¾®å•</p></div></a>
+                    <div class="newProPrice">
+                        <p class="leftBox"><span class="spanSy">ï¿¥</span><label class="spanNum"><span id="ShopCenter_protag1___rptlist_ctl04_FormatedMoneyLabel2">19390.00</span></label></p>
+                        
+                        <a href="javascript:if(confirm('http://www.18-du.com/310_212d90c540c2422ba098a8df6886a857.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_212d90c540c2422ba098a8df6886a857.jpg'" tppabs="http://www.18-du.com/ProductDetail.aspx?productId=7459" class="buyA">ç«‹å³æŠ¢è´­</a>
+                    </div>
+                  </a>
+               </li>
+            
+              <li>
+                <a href="javascript:if(confirm('http://www.18-du.com/310_212d90c540c2422ba098a8df6886a857.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_212d90c540c2422ba098a8df6886a857.jpg'" tppabs="http://www.18-du.com/ProductDetail.aspx?productId=7459">
+                    <div class="newProImg"><img src="ProductDetail-1.aspx-productid=9225" tppabs="http://www.18-du.com/Storage/master/product/thumbs310/310_af591630418c4f74b317b3cc352eb7e5.png" onload="chgdivimgwh(this,370,330)" /></div>
+                    <div class="tagBox">NEW</div>
+                    
+                    <div class="newProName"><p>Sony/ç´¢å°¼ ILCE-7RM3 A7RM3 å…¨ç”»å¹…å¾®å•</p></div></a>
+                    <div class="newProPrice">
+                        <p class="leftBox"><span class="spanSy">ï¿¥</span><label class="spanNum"><span id="ShopCenter_protag1___rptlist_ctl05_FormatedMoneyLabel2">19390.00</span></label></p>
+                        
+                        <a href="javascript:if(confirm('http://www.18-du.com/310_212d90c540c2422ba098a8df6886a857.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_212d90c540c2422ba098a8df6886a857.jpg'" tppabs="http://www.18-du.com/ProductDetail.aspx?productId=7459" class="buyA">ç«‹å³æŠ¢è´­</a>
+                    </div>
+                  </a>
+               </li>
+            
+
+
+
+
+
+
+     
+ 
+               </ul>
+        </div>
+    </div>
+    <!--ä¿ƒé”€ç‰¹ä»·-->
+    <div class="fl_B_floorT">
+        <div class="fl_B_floorC">
+            <p class="fl_B_floorHd">
+                /ä¿ƒé”€ç‰¹ä»·/</p>
+            <p class="fl_B_floorHdbottom">
+                <img src="AllSearch-1.aspx-categoryid=58&brandid=4" tppabs="http://www.18-du.com/Utility/sysrc/img/b_line.png" /></p>
+            <ul class="fl_B_newPro">
+               
+              <li>
+                <a href="javascript:if(confirm('http://www.18-du.com/310_141d8ba5607f4c7db923b3a728f289e0.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_141d8ba5607f4c7db923b3a728f289e0.jpg'" tppabs="http://www.18-du.com/ProductDetail.aspx?productId=6096">
+                    <div class="newProImg"><img src="ProductDetail-1.aspx-productid=9224" tppabs="http://www.18-du.com/Storage/master/product/thumbs310/310_6d07b509424b4c35be38aa272244c993.jpg" onload="chgdivimgwh(this,370,330)" /></div>
+                    <div class="tagBox">NEW</div>
+                    
+                    <div class="newProName"><p>Canon/ä½³èƒ½ EOS 5D Mark IV å…¨ç”»å¹…å•åæœºèº«/å¥—æœº</p></div></a>
+                    <div class="newProPrice">
+                        <p class="leftBox"><span class="spanSy">ï¿¥</span><label class="spanNum"><span id="ShopCenter_protag2___rptlist_ctl00_FormatedMoneyLabel2">16499.00</span></label></p>
+                        
+                        <a href="javascript:if(confirm('http://www.18-du.com/310_141d8ba5607f4c7db923b3a728f289e0.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_141d8ba5607f4c7db923b3a728f289e0.jpg'" tppabs="http://www.18-du.com/ProductDetail.aspx?productId=6096" class="buyA">ç«‹å³æŠ¢è´­</a>
+                    </div>
+                  </a>
+               </li>
+            
+              <li>
+                <a href="javascript:if(confirm('http://www.18-du.com/310_01188af7af8843d39c5fb5f00f1f0536.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_01188af7af8843d39c5fb5f00f1f0536.jpg'" tppabs="http://www.18-du.com/ProductDetail.aspx?productId=6131">
+                    <div class="newProImg"><img src="ProductDetail-1.aspx-productid=9223" tppabs="http://www.18-du.com/Storage/master/product/thumbs310/310_f2361464ad4447508a69892980d991d6.png" onload="chgdivimgwh(this,370,330)" /></div>
+                    <div class="tagBox">NEW</div>
+                    
+                    <div class="newProName"><p>Canon/ä½³èƒ½ EOS 77D æ•°ç å•åç›¸æœº/å¥—æœº</p></div></a>
+                    <div class="newProPrice">
+                        <p class="leftBox"><span class="spanSy">ï¿¥</span><label class="spanNum"><span id="ShopCenter_protag2___rptlist_ctl01_FormatedMoneyLabel2">4999.00</span></label></p>
+                        
+                        <a href="javascript:if(confirm('http://www.18-du.com/310_01188af7af8843d39c5fb5f00f1f0536.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_01188af7af8843d39c5fb5f00f1f0536.jpg'" tppabs="http://www.18-du.com/ProductDetail.aspx?productId=6131" class="buyA">ç«‹å³æŠ¢è´­</a>
+                    </div>
+                  </a>
+               </li>
+            
+              <li>
+                <a href="javascript:if(confirm('http://www.18-du.com/310_7fdff072175d4879b9c69b81e4ea6438.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_7fdff072175d4879b9c69b81e4ea6438.jpg'" tppabs="http://www.18-du.com/ProductDetail.aspx?productId=3864">
+                    <div class="newProImg"><img src="ProductDetail-1.aspx-productid=9215" tppabs="http://www.18-du.com/Storage/master/product/thumbs310/310_cfb2f36b1b744856b8663b0160077b09.jpg" onload="chgdivimgwh(this,370,330)" /></div>
+                    <div class="tagBox">NEW</div>
+                    
+                    <div class="newProName"><p>Canon/ä½³èƒ½ PowerShot G3 X é«˜æ¸…æ•°ç ç›¸æœº</p></div></a>
+                    <div class="newProPrice">
+                        <p class="leftBox"><span class="spanSy">ï¿¥</span><label class="spanNum"><span id="ShopCenter_protag2___rptlist_ctl02_FormatedMoneyLabel2">5499.00</span></label></p>
+                        
+                        <a href="javascript:if(confirm('http://www.18-du.com/310_7fdff072175d4879b9c69b81e4ea6438.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_7fdff072175d4879b9c69b81e4ea6438.jpg'" tppabs="http://www.18-du.com/ProductDetail.aspx?productId=3864" class="buyA">ç«‹å³æŠ¢è´­</a>
+                    </div>
+                  </a>
+               </li>
+            
+              <li>
+                <a href="javascript:if(confirm('http://www.18-du.com/310_49fecfabec514ff1a78e16aa434453a2.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_49fecfabec514ff1a78e16aa434453a2.jpg'" tppabs="http://www.18-du.com/ProductDetail.aspx?productId=3878">
+                    <div class="newProImg"><img src="ProductDetail-1.aspx-productid=9214" tppabs="http://www.18-du.com/Storage/master/product/thumbs310/310_2dc43257aaa74f2c832b7c25290229c0.png" onload="chgdivimgwh(this,370,330)" /></div>
+                    <div class="tagBox">NEW</div>
+                    
+                    <div class="newProName"><p>Nikon/å°¼åº· D500 å•å æœºèº«</p></div></a>
+                    <div class="newProPrice">
+                        <p class="leftBox"><span class="spanSy">ï¿¥</span><label class="spanNum"><span id="ShopCenter_protag2___rptlist_ctl03_FormatedMoneyLabel2">7880.00</span></label></p>
+                        
+                        <a href="javascript:if(confirm('http://www.18-du.com/310_49fecfabec514ff1a78e16aa434453a2.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_49fecfabec514ff1a78e16aa434453a2.jpg'" tppabs="http://www.18-du.com/ProductDetail.aspx?productId=3878" class="buyA">ç«‹å³æŠ¢è´­</a>
+                    </div>
+                  </a>
+               </li>
+            
+              <li>
+                <a href="javascript:if(confirm('http://www.18-du.com/310_da2f47d5b903452ea760c149a1edab88.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_da2f47d5b903452ea760c149a1edab88.jpg'" tppabs="http://www.18-du.com/ProductDetail.aspx?productId=6095">
+                    <div class="newProImg"><img src="ProductDetail-1.aspx-productid=9207" tppabs="http://www.18-du.com/Storage/master/product/thumbs310/310_cfd51841984b4e31905118dc1498ad2b.png" onload="chgdivimgwh(this,370,330)" /></div>
+                    <div class="tagBox">NEW</div>
+                    
+                    <div class="newProName"><p>LETO/åŠ›å›¾ GT-5428</p></div></a>
+                    <div class="newProPrice">
+                        <p class="leftBox"><span class="spanSy">ï¿¥</span><label class="spanNum"><span id="ShopCenter_protag2___rptlist_ctl04_FormatedMoneyLabel2">4280.00</span></label></p>
+                        
+                        <a href="javascript:if(confirm('http://www.18-du.com/310_da2f47d5b903452ea760c149a1edab88.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_da2f47d5b903452ea760c149a1edab88.jpg'" tppabs="http://www.18-du.com/ProductDetail.aspx?productId=6095" class="buyA">ç«‹å³æŠ¢è´­</a>
+                    </div>
+                  </a>
+               </li>
+            
+              <li>
+                <a href="javascript:if(confirm('http://www.18-du.com/310_b4d860e190344c7fb630727e4e28ab76.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_b4d860e190344c7fb630727e4e28ab76.jpg'" tppabs="http://www.18-du.com/ProductDetail.aspx?productId=6161">
+                    <div class="newProImg"><img src="ProductDetail-1.aspx-productid=9197" tppabs="http://www.18-du.com/Storage/master/product/thumbs310/310_93985d606aa040ec86f73151578341b6.png" onload="chgdivimgwh(this,370,330)" /></div>
+                    <div class="tagBox">NEW</div>
+                    
+                    <div class="newProName"><p>Canon/ä½³èƒ½ EOS M3 å¾®å•å¥—æœºï¼ˆEF-M 15-45mm f/3.5-6.3 IS STMï¼‰</p></div></a>
+                    <div class="newProPrice">
+                        <p class="leftBox"><span class="spanSy">ï¿¥</span><label class="spanNum"><span id="ShopCenter_protag2___rptlist_ctl05_FormatedMoneyLabel2">2899.00</span></label></p>
+                        
+                        <a href="javascript:if(confirm('http://www.18-du.com/310_b4d860e190344c7fb630727e4e28ab76.jpg  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ²»¿ÉÓÃ, »ò·ÅÆúÁËÏÂÔØ, »òÏîÄ¿¼´½«Í£Ö¹¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.18-du.com/310_b4d860e190344c7fb630727e4e28ab76.jpg'" tppabs="http://www.18-du.com/ProductDetail.aspx?productId=6161" class="buyA">ç«‹å³æŠ¢è´­</a>
+                    </div>
+                  </a>
+               </li>
+            
+
+
+
+
+            </ul>
+        </div>
+    </div>
+<script src="jquery.SuperSlide.2.1.1.js" tppabs="http://www.18-du.com/Utility/sysrc/js/jquery.SuperSlide.2.1.1.js" type="text/javascript"></script>
+    <script>
+        jQuery(".slideBox").slide({ mainCell: ".bd ul", effect: "fold", autoPlay: true, trigger: "click"
+
+        });
+        
+    </script>
+    <!--æ•ˆæœhtmlç»“æŸ-->
+    <!--mainç»“æŸ-->
+    <!--åº•éƒ¨å¼€å§‹-->
+    <div class="clear"></div>
+    
+    <div class="margin50"></div>
+
+    <script>
+        function searchshop() {
+            var key = $("#txtkeyword").val();
+            if (key == undefined)
+                key = "";
+
+            key = key.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace('/', '');
+            var shopid = $().getParmByUrl("ShopId");
+            var ulr = applicationPath + "/ShopSearch.aspx?ShopId=" + shopid + "&keywords=" + encodeURIComponent(key);
+            location.href = ulr;
+
+        }
+
+
+        $(document).ready(function () {
+            $(".fl_B_quanC ul li:nth-child(2n)").css({ "background": "url(/Utility/sysrc/img/B_quan_bg.png) no-repeat center center", "background-size": "100%" });
+            $(".fl_B_newPro li:nth-child(3n)").css({ "margin-right": "0" });
+
+            $(".bkProUl li").last().css({ "margin-right": "0px" });
+            function autFun() {
+                var mW = $(".mBan2").width();
+                var mBL = 1920 / 500;
+                $("http://www.18-du.com/.mBan2 .slideBox .bd").css("height", mW / mBL);
+                $(".mBan2 .slideBox .bd img").css("width", mW);
+                $(".mBan2 .slideBox .bd img").css("height", mW / mBL);
+            }
+            setInterval(autFun, 1);
+            $(".fl_B_SearchTab").click(function (event) {
+                event.stopPropagation();
+                $(this).find(".option").toggle();
+                $(this).parent().siblings().find(".option").hide();
+            });
+            $(document).click(function (event) {
+                var eo = $(event.target);
+                if ($(".fl_B_SearchTab").is(":visible") && eo.attr("class") != "option" && !eo.parent(".option").length)
+                    $('.option').hide();
+            });
+            /*èµ‹å€¼ç»™æ–‡æœ¬æ¡†*/
+            $(".option a").click(function () {
+                var value = $(this).text();
+                $(this).parent().siblings(".select_txt").text(value);
+                $("#select_value").val(value)
+            })
+            gettaglist2()
+        });
+
+
+
+        function gettaglist2() {
+            $.post("http://www.18-du.com/API/SheYingProcess.ashx", { "action": "GetSourceTypeBarner", "ShopId": $().getParmByUrl("ShopId"), "style": "2", "sourcetype": "10" }, function (data) {
+                console.log(data);
+                if (data != "") {
+                    console.log(data);
+                    var html = "";
+                    var obj = eval('(' + data + ')')
+                    $.each(obj, function (index, item) {
+                        if (index == 0) {
+                            var s = '<a href="' + item.Url + '">';
+                            s += '<img src="' + item.ImageUrl + '" width="386"/></a>';
+                            $("#div1").html(s);
+                        }
+                        if (index == 7) {
+                            var s = '<a href="' + item.Url + '">';
+                            s += '<img src="' + item.ImageUrl + '" width="386"/></a>';
+                            $("#div4").html(s);
+                        }
+
+                        if (index > 0 && index < 5) {
+                            var t = '<div class="dptjRight' + index + '">';
+                            t += '<a href="' + item.Url + '">';
+                            if (index == 1 || index == 4)
+                                t += '<img src="' + item.ImageUrl + '" onload="chgdivimgwh(this,350,246)" />';
+                            else if (index == 2 || index == 3)
+                                t += '<img src="' + item.ImageUrl + '" onload="chgdivimgwh(this,454,246)" />';
+
+                            t += '</a></div>';
+                            $("#div2").append(t);
+                        }
+                        else if (index == 5 || index == 6 || index == 8 || index == 9) {
+
+                            var idx = 0;
+                            if (index == 5)
+                                idx = 1;
+                            else if (index == 6)
+                                idx = 2
+                            else if (index == 8)
+                                idx = 3;
+                            else
+                                idx = 4;
+                            var t = '<div class="dptjRight' +idx + '">';
+                            t += '<a href="' + item.Url + '">';
+                            if (index == 5 || index == 9)
+                                t += '<img src="' + item.ImageUrl + '" onload="chgdivimgwh(this,454,246)" />';
+                            else if (index == 6 || index == 8)
+                                t += '<img src="' + item.ImageUrl + '" onload="chgdivimgwh(this,350,246)" />';
+                            t += '</a>';
+                            t += '</div>';
+                            $("#div3").append(t);
+                        }
+
+                    });
+                    $("#ultaglist").html(html);
+                }
+            })
+
+        }
+    </script>
+    <div style="display:none">1
+    </div>
+    <input type="hidden" name="ShopCenter$hidhxid" id="hidhxid" value="43567" />
+    <input type="hidden" name="ShopCenter$hidaggentname" id="hidaggentname" value="å±±ä¸œæƒ ä½³" />
+   </form>
+   <script src="310_3f466b6053364821ade568f97971d75b-1.jpg" tppabs="http://kefu.easemob.com/webim/easemob.js"></script>
+   <script>
+       /*
+        window.easemobim = window.easemobim || {};
+           easemobim.config = {
+               tenantId: "43567",
+               //å¯ç”¨æ”¶æ¶ˆæ¯åŒæ­¥
+               //resources: true,
+               agentName: "AllSearch.aspx-CategoryId=58&valuestr=48_143.htm"/*tpa=http://www.18-du.com/AllSearch.aspx?CategoryId=58&valuestr=48_143*/
+           };
+           */
+
+       function Toc() {
+           
+           if ($("#hidaggentname").val() == "" || $("#hidaggentname").val()==null) {
+               alert("å°šæœªåˆ†é…å®¢æœåå¸­");
+           }
+           else {
+               //alert($("#hidaggentname").val());
+               easemobim.bind({
+                   //è¯·ä½¿ç”¨è‡ªå·±çš„ç§Ÿæˆ·ID
+                   tenantId: "43567",
+                   //æ˜¯å¦éšè—å°çš„æ‚¬æµ®æŒ‰é’®
+                   hide:true,
+                   //agentName: $("#hidaggentname").val(),
+                   emgroup: $("#hidaggentname").val()
+               })
+           }
+
+
+       }
+</script>
+
+  		
+
+<style>
+#aaa{ display:none;}
+</style>
+  <div class="footer" style=" float:none">
+        
+      <div id="aaa"> 
+
+
+<div class="footer-ul">
+
+      
+          <div class="ifot">
+           <div class="ifot1">æ–°æ‰‹å¸®åŠ©</div>
+		       <div class="ifot2">
+               <ul>
+               
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=14.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=14">
+                              ç”¨æˆ·åè®®
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=16.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=16">
+                              æ‰¾å›å¯†ç 
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=18.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=18">
+                              ä¼šå‘˜ç»‘å®š
+                          </a>  
+                        </li>
+                 
+                 </ul>
+		       </div>
+            </div>
+      
+          <div class="ifot">
+           <div class="ifot1">æˆ‘çš„åº—é“º</div>
+		       <div class="ifot2">
+               <ul>
+               
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=20.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=20">
+                              å‘å¸ƒå•†å“
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=21.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=21">
+                              å‘è´§
+                          </a>  
+                        </li>
+                 
+                 </ul>
+		       </div>
+            </div>
+      
+          <div class="ifot">
+           <div class="ifot1">ä¼šå‘˜åº—ç²‰ä¸</div>
+		       <div class="ifot2">
+               <ul>
+               
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=22.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=22">
+                              ä¼šå‘˜æ³¨å†Œ
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=23.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=23">
+                              ä¼šå‘˜è®¤è¯
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=25.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=25">
+                              ä¼šå‘˜å‡çº§
+                          </a>  
+                        </li>
+                 
+                 </ul>
+		       </div>
+            </div>
+      
+          <div class="ifot">
+           <div class="ifot1">å¸¸è§é—®ç­”</div>
+		       <div class="ifot2">
+               <ul>
+               
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=35.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=35">
+                              ä¿®æ”¹å¯†ç 
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=36.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=36">
+                              å”®åå¤„ç†æ—¶æ•ˆ
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=34.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=34">
+                              å”®å
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=30.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=30">
+                              å…¬å¸ç®€ä»‹
+                          </a>  
+                        </li>
+                 
+                 </ul>
+		       </div>
+            </div>
+    
+
+
+<div class="ifot infotewm lastifort">
+		   <div class="ifot2 APP">
+		      <img src="sheyingwxh.jpg" tppabs="http://www.18-du.com/Utility/sysrc/vshop/img/sheyingwxh.jpg" width="124" height="124">
+		   </div>
+		   <div class="ifot1 ewm" style="width:168px">å…³æ³¨æˆ‘ä»¬å…¬ä¼—å·äº†è§£æ›´å¤š</div>
+ </div>
+
+ <div class="ifot ifotB" style=" padding-left:30px">
+				<p class="small_p">æœåŠ¡çƒ­çº¿</p>
+				<p>010-63255589</p>
+				<p>æœåŠ¡ç›‘ç£ç”µè¯ï¼š13601051438</p>
+				<p style="width:300px">å‘¨ä¸€åˆ°å‘¨å…­ï¼š9:00-18:00</p>
+		</div>
+</div>
+<div style=" width:57%; color:White; padding-left:14%; padding-top:15px; padding-bottom:10px">
+    <p class="MsoNormal">
+	    <strong><span style="font-size:14px;">åŒ—äº¬åå…«åº¦å½±åƒæ–‡åŒ–è‚¡ä»½å…¬å¸&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;åŒ—äº¬å¸‚è¥¿åŸåŒºé©¬è¿é“å—è¡—6å·é™¢1å·æ¥¼12å±‚1205A&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;010-63255589 &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;äº¬ICPå¤‡16038196å·-1 
+</span></strong> 
+    </p>
+</div>
+
+
+      </div> 
+        
+        
+        
+        
+        <div class="footer">
+        
+        
+
+
+<div class="footer-ul" style=" width:100%; min-height:240px;">
+
+      
+          <div class="ifot">
+           <div class="ifot1">æ–°æ‰‹å¸®åŠ©</div>
+		       <div class="ifot2">
+               <ul>
+               
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=14.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=14">
+                              ç”¨æˆ·åè®®
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=16.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=16">
+                              æ‰¾å›å¯†ç 
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=18.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=18">
+                              ç”¨æˆ·ç»‘å®š
+                          </a>  
+                        </li>
+                 
+                 </ul>
+		       </div>
+            </div>
+      
+          <div class="ifot" style=" display:none">
+           <div class="ifot1">æˆ‘çš„åº—é“º</div>
+		       <div class="ifot2">
+               <ul>
+               
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=20.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=20">
+                              å‘å¸ƒå•†å“
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=21.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=21">
+                              å‘è´§
+                          </a>  
+                        </li>
+                 
+                 </ul>
+		       </div>
+            </div>
+      
+          <div class="ifot" style=" display:none">
+           <div class="ifot1">ä¼šå‘˜åº—ç²‰ä¸</div>
+		       <div class="ifot2">
+               <ul>
+               
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=22.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=22">
+                              ä¼šå‘˜æ³¨å†Œ
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=23.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=23">
+                              ä¼šå‘˜è®¤è¯
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=25.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=25">
+                              ä¼šå‘˜å‡çº§
+                          </a>  
+                        </li>
+                 
+                 </ul>
+		       </div>
+            </div>
+      
+          <div class="ifot">
+           <div class="ifot1">å¸¸è§é—®ç­”</div>
+		       <div class="ifot2">
+               <ul>
+               
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=35.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=35">
+                              ä¿®æ”¹å¯†ç 
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=36.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=36">
+                              å”®åå¤„ç†æ—¶æ•ˆ
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=34.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=34">
+                              å”®å
+                          </a>  
+                        </li>
+                 
+				        <li>
+                          <a href="HelpDetail.aspx-HelpId=30.htm" tppabs="http://www.18-du.com/HelpDetail.aspx?HelpId=30">
+                              å…¬å¸ç®€ä»‹
+                          </a>  
+                        </li>
+                 
+                 </ul>
+		       </div>
+            </div>
+    
+
+
+<div class="ifot infotewm lastifort" style=" margin-left:15%;">
+		   <div class="ifot2 APP">
+		      <img src="sheyingwxh.jpg" tppabs="http://www.18-du.com/Utility/sysrc/vshop/img/sheyingwxh.jpg" width="124" height="124">
+		   </div>
+		   <div class="ifot1 ewm" style="width:168px">å…³æ³¨æˆ‘ä»¬å…¬ä¼—å·äº†è§£æ›´å¤š</div>
+ </div>
+
+ <div class="ifot ifotB" style=" padding-left:30px; width:35%">
+				<p class="small_p">æœåŠ¡çƒ­çº¿</p>
+				<p>010-63255589</p>
+				<p>æœåŠ¡ç›‘ç£ç”µè¯ï¼š13601051438</p>
+				<p style="width:300px">å‘¨ä¸€åˆ°å‘¨å…­ï¼š9:00-18:00</p>
+		</div>
+</div>
+<div style=" width:90%; color:White;padding-top:15px; padding-bottom:10px; text-align:center; margin:0 auto;">
+    <p style=" font-size:14px;">
+	 åŒ—äº¬åå…«åº¦å½±åƒæ–‡åŒ–è‚¡ä»½å…¬å¸&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;åŒ—äº¬å¸‚è¥¿åŸåŒºé©¬è¿é“å—è¡—6å·é™¢1å·æ¥¼12å±‚1205A&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;010-63255589 &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;äº¬ICPå¤‡16038196å·-1 
+    </p>
+</div>
+
+
+ </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    <div style=" display:none">
+    <div class="clear"></div>
+       <!-- å‹æƒ…é“¾æ¥-->
+        
+
+<div class="footer_friendshipLink_total">
+	<div class="footer_friendshipLink">
+		<ul>
+
+<!--<li><a href='#' target="_blank">å‹æƒ…é“¾æ¥ï¼š</a></li>-->
+
+	</ul>
+   </div>
+</div>
+
+        <div class="clear"></div>
+    </div>    
+
+       
+        <div class="footer-bottom">
+         <!--åº•éƒ¨è‡ªå®šä¹‰å†…å®¹-->
+          <p>
+	<span style="color:#999999;font-family:'Microsoft YaHei', tahoma, arial, 'Hiragino Sans GB', '\\5b8bä½“', sans-serif;line-height:22px;">Copyright&nbsp;&copy; 2016 -&nbsp;2017 åå…«åº¦ 18-du.com&nbsp;ç‰ˆæƒæ‰€æœ‰ |&nbsp;äº¬ICPå¤‡16038196å·-1</span> 
+</p>
+<p>
+	<br />
+</p>
+          <script type="text/javascript">              var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cspan id='cnzz_stat_icon_1261274722'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1261274722%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+           <!-- åˆä½œä¼™ä¼´-->
+            
+
+<div class="footer_friendshipLink_total">
+	<div class="footer_friendshipLink">
+		<ul>
+
+	</ul>
+   </div>
+</div>
+
+        </div>
+         
+ </div>
+ </body>
+ </html>
+
+
