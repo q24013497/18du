@@ -10,9 +10,17 @@ namespace DAL
     public class MasterDAL
     {
         DataContext db = new DataContext();
-        public List<Master> GetMasters()
+        public List<Master> GetMasters(int id)
         {
-            return db.Master.ToList();
+            if (id == 0)
+            {
+                return db.Master.ToList();
+            }
+            else
+            {
+                return db.Master.Where(u => u.Id == id).ToList();
+            }
+           
         }
     }
 }
