@@ -9,9 +9,9 @@ namespace BLL
     public class MasterBLL
     {
         MasterDAL dal = new MasterDAL();
-        public List<Master> GetMasters()
+        public List<Master> GetMasters(int id)
         {
-            return dal.GetMasters();
+            return dal.GetMasters(id);
         }
     }
 }
