@@ -1633,7 +1633,7 @@
                                     </div>
                                 </div>
                                 <!--gdt-right begin-->
-                                <div class="gdt-right" id="divstude">
+                                <div class="gdt-right" id="divssstude">
                                     <div class="gdt-right-main" v-for="item in InboxList">
                                         <div class="gdt-spm">{{item.name}}<span class="gdt-tag"> {{item.shopId}} </span></div>
                                         <div class="gdt-jgsm">
@@ -1748,19 +1748,22 @@
                                 </div>
                                 <script>
                                     var vm = new Vue({
-                                        el: "#divstude",
+                                        el: "#divssstude",
                                         data: {
-                                            InboxList: []
+                                            InboxList: [],
+                                            id:0
                                         },
                                         mounted() {
-                                            this.pagehandler();
+                                            this.pagehandler(); 
                                         },
                                         methods: {
                                             pagehandler: function () {
+                                               
                                                 //axios.get("/test/GetStudentList", { params: { pageindex: page, pagesize: this.pageSize, name: this.searchname} }).then((response) => {
-                                                axios.get("http://localhost:53782/api/GetMasterids",{id:2}).then((response) => {
+                                                axios.get("http://localhost:53782/api/Master", { params: { id: 2 } }).then((response) => {
                                                     this.InboxList = [];
                                                     for (var i = 0; i < response.data.length; i++) {
+                                                    
                                                             this.InboxList.push(response.data[i]);
                                                     }
                                                     console.log(this.InboxList)
@@ -1873,7 +1876,6 @@
                                                         this.InboxList.push(response.data[i]);
                                                     }
                                                 }
-                                                console.log(this.InboxList)
                                             });
                                         }
                                     }
@@ -2012,7 +2014,6 @@
                                                                 this.InboxList.push(response.data[i]);
                                                             }
                                                         }
-                                                        console.log(this.InboxList)
                                                     });
                                                 }
                                             }
@@ -2103,7 +2104,6 @@
                                                                 this.InboxList.push(response.data[i]);
                                                             }
                                                         }
-                                                        console.log(this.InboxList)
                                                     });
                                                 }
                                             }

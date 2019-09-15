@@ -13,5 +13,9 @@ namespace BLL
         {
             return dal.GetMasters(id);
         }
+        public int AddTrade(Trade trade)
+        {
+            return dal.AddTrade(trade); 
+        }
     }
 }

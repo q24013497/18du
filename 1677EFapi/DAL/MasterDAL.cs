@@ -22,5 +22,10 @@ namespace DAL
             }
            
         }
+        public int AddTrade(Trade trade)
+        {
+            db.Trade.Add(trade);
+            return db.SaveChanges();
+        }
     }
 }
