@@ -54,7 +54,7 @@ namespace DAL
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseMySQL("Data Source=10.31.54.13;Initial Catalog=videoplatform;User ID=zzh;pwd=123");
+                optionsBuilder.UseMySQL("Data Source=10.31.54.13;Initial Catalog=videoplatform;User ID=ljn;pwd=123");
             }
             
         }
